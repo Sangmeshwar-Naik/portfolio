@@ -1,0 +1,186 @@
+(node:22736) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Sangmeshwar%20Naik/portfolio/eslint.config.js?mtime=1774620630078 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Users\Sangmeshwar Naik\portfolio\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\build\chunks\[turbopack]_runtime.js
+   10:5  error  Definition for rule '@typescript-eslint/no-unused-vars' was not found  @typescript-eslint/no-unused-vars
+  622:1  error  Definition for rule '@typescript-eslint/no-unused-vars' was not found  @typescript-eslint/no-unused-vars
+  643:1  error  Definition for rule '@typescript-eslint/no-unused-vars' was not found  @typescript-eslint/no-unused-vars
+  664:1  error  Definition for rule '@typescript-eslint/no-unused-vars' was not found  @typescript-eslint/no-unused-vars
+  811:1  error  Definition for rule '@typescript-eslint/no-unused-vars' was not found  @typescript-eslint/no-unused-vars
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\build\chunks\node_modules_13sb.px._.js
+  5945:1   warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  6169:36  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  6624:9   warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  6627:13  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  6630:40  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\build\chunks\[turbopack]_runtime.js
+    10:5   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+   622:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+   643:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+   664:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+   851:5   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1234:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1505:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1591:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1649:13  warning  Unused eslint-disable directive (no problems were reported from 'no-eval')
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\build\chunks\node_modules_13sb.px._.js
+  5954:1   warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  6181:25  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  6187:36  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  6649:9   warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  6652:13  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  6655:40  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\server\chunks\ssr\[turbopack]_runtime.js
+    23:5   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+   635:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+   656:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+   677:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+   864:5   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1247:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1518:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1604:1   error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1662:13  warning  Unused eslint-disable directive (no problems were reported from 'no-eval')
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\server\chunks\ssr\node_modules_0hj6l73._.js
+  3853:1450  warning  Unused eslint-disable directive (no problems were reported)
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\server\chunks\ssr\node_modules_@react-three_fiber_dist_0a1r4fu._.js
+  14988:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+  15092:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\server\chunks\ssr\node_modules_framer-motion_dist_es_0jxayn9._.js
+  3270:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\server\chunks\ssr\node_modules_motion-dom_dist_es_13h5awl._.js
+  857:35  error  Definition for rule 'redos-detector/no-unsafe-regex' was not found  redos-detector/no-unsafe-regex
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\server\chunks\ssr\node_modules_next_dist_0yh1sr3._.js
+    115:5  error  Definition for rule 'react-hooks/rules-of-hooks' was not found         react-hooks/rules-of-hooks
+   3739:9  error  Definition for rule 'react-hooks/rules-of-hooks' was not found         react-hooks/rules-of-hooks
+  10222:1  error  Definition for rule 'import/no-extraneous-dependencies' was not found  import/no-extraneous-dependencies
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\server\chunks\ssr\node_modules_next_dist_esm_00xse_0._.js
+  12208:1    error    Definition for rule '@typescript-eslint/no-unused-vars' was not found                    @typescript-eslint/no-unused-vars
+  15247:1    error    Definition for rule '@next/internal/no-ambiguous-jsx' was not found                      @next/internal/no-ambiguous-jsx
+  15251:1    error    Definition for rule 'import/no-extraneous-dependencies' was not found                    import/no-extraneous-dependencies
+  15253:1    error    Definition for rule 'import/no-extraneous-dependencies' was not found                    import/no-extraneous-dependencies
+  16392:81   warning  Unused eslint-disable directive (no problems were reported from 'eqeqeq')
+  16395:55   warning  Unused eslint-disable directive (no problems were reported from 'eqeqeq')
+  16530:29   warning  Unused eslint-disable directive (no problems were reported from 'no-fallthrough')
+  16812:179  warning  Unused eslint-disable directive (no problems were reported from 'no-restricted-syntax')
+  17025:1    error    Definition for rule 'import/no-extraneous-dependencies' was not found                    import/no-extraneous-dependencies
+  17027:1    error    Definition for rule 'import/no-extraneous-dependencies' was not found                    import/no-extraneous-dependencies
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\server\chunks\ssr\node_modules_three_build_three_core_0usn327.js
+  24312:1  warning  Unused eslint-disable directive (no problems were reported)
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\static\chunks\node_modules_0xv.f-k._.js
+  4130:1450  warning  Unused eslint-disable directive (no problems were reported)
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\static\chunks\node_modules_@react-three_fiber_dist_0_8us68._.js
+  15022:9  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+  15144:9  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\static\chunks\node_modules_framer-motion_dist_es_07qra~f._.js
+  3485:5  error  Definition for rule 'react-hooks/exhaustive-deps' was not found  react-hooks/exhaustive-deps
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\static\chunks\node_modules_motion-dom_dist_es_06do6n1._.js
+  857:35  error  Definition for rule 'redos-detector/no-unsafe-regex' was not found  redos-detector/no-unsafe-regex
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\static\chunks\node_modules_next_dist_115brz8._.js
+  1631:5  error  Definition for rule '@next/internal/typechecked-require' was not found  @next/internal/typechecked-require
+  3683:9  error  Definition for rule 'react-hooks/rules-of-hooks' was not found          react-hooks/rules-of-hooks
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\static\chunks\node_modules_next_dist_client_0fhqo1d._.js
+    959:9  error  Definition for rule 'react-hooks/rules-of-hooks' was not found          react-hooks/rules-of-hooks
+   1339:5  error  Definition for rule 'react-hooks/rules-of-hooks' was not found          react-hooks/rules-of-hooks
+  14114:9  error  Definition for rule 'react-hooks/rules-of-hooks' was not found          react-hooks/rules-of-hooks
+  14280:9  error  Definition for rule 'react-hooks/rules-of-hooks' was not found          react-hooks/rules-of-hooks
+  15198:1  error  Definition for rule '@next/internal/typechecked-require' was not found  @next/internal/typechecked-require
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\static\chunks\node_modules_next_dist_compiled_0rpq4pf._.js
+  686:35  warning  Unused eslint-disable directive (no problems were reported from 'no-proto')
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\static\chunks\node_modules_three_build_three_core_0qefhn6.js
+  24325:1  warning  Unused eslint-disable directive (no problems were reported)
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\static\chunks\turbopack-_0p44nws._.js
+    20:5  error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+   597:5  error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+   880:5  error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1263:1  error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1543:5  error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  1955:5  error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  2122:5  error    Definition for rule '@typescript-eslint/no-unused-vars' was not found       @typescript-eslint/no-unused-vars
+  2207:5  warning  Unused eslint-disable directive (no problems were reported from 'no-eval')
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\types\cache-life.d.ts
+  3:9  error  Parsing error: Unexpected token module
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\types\routes.d.ts
+  4:6  error  Parsing error: Unexpected token AppRoutes
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\dev\types\validator.ts
+  5:13  error  Parsing error: Unexpected token {
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\server\chunks\ssr\[turbopack]_runtime.js
+   23:5  error  Definition for rule '@typescript-eslint/no-unused-vars' was not found  @typescript-eslint/no-unused-vars
+  635:1  error  Definition for rule '@typescript-eslint/no-unused-vars' was not found  @typescript-eslint/no-unused-vars
+  656:1  error  Definition for rule '@typescript-eslint/no-unused-vars' was not found  @typescript-eslint/no-unused-vars
+  677:1  error  Definition for rule '@typescript-eslint/no-unused-vars' was not found  @typescript-eslint/no-unused-vars
+  824:1  error  Definition for rule '@typescript-eslint/no-unused-vars' was not found  @typescript-eslint/no-unused-vars
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\types\routes.d.ts
+  4:6  error  Parsing error: Unexpected token AppRoutes
+
+C:\Users\Sangmeshwar Naik\portfolio\.next\types\validator.ts
+  5:13  error  Parsing error: Unexpected token {
+
+C:\Users\Sangmeshwar Naik\portfolio\next.config.ts
+  1:13  error  Parsing error: Unexpected token {
+
+C:\Users\Sangmeshwar Naik\portfolio\src\app\layout.tsx
+  1:13  error  Parsing error: Unexpected token {
+
+C:\Users\Sangmeshwar Naik\portfolio\src\app\page.tsx
+  24:5  error  Parsing error: Unexpected token <
+
+C:\Users\Sangmeshwar Naik\portfolio\src\components\About.tsx
+  27:43  error  Parsing error: Unexpected token :
+
+C:\Users\Sangmeshwar Naik\portfolio\src\components\Contact.tsx
+  31:61  error  Parsing error: Unexpected token >>
+
+C:\Users\Sangmeshwar Naik\portfolio\src\components\CustomCursor.tsx
+  15:35  error  Parsing error: Unexpected token :
+
+C:\Users\Sangmeshwar Naik\portfolio\src\components\Experience.tsx
+  7:1  error  Parsing error: The keyword 'interface' is reserved
+
+C:\Users\Sangmeshwar Naik\portfolio\src\components\Footer.tsx
+  19:30  error  Parsing error: Unexpected token :
+
+C:\Users\Sangmeshwar Naik\portfolio\src\components\Hero.tsx
+  21:5  error  Parsing error: Unexpected token <
+
+C:\Users\Sangmeshwar Naik\portfolio\src\components\LoadingScreen.tsx
+  7:5  error  Parsing error: Unexpected token <
+
+C:\Users\Sangmeshwar Naik\portfolio\src\components\Navigation.tsx
+  40:31  error  Parsing error: Unexpected token :
+
+C:\Users\Sangmeshwar Naik\portfolio\src\components\Projects.tsx
+  80:5  error  Parsing error: Unexpected token <
+
+C:\Users\Sangmeshwar Naik\portfolio\src\components\Skills.tsx
+  58:5  error  Parsing error: Unexpected token <
+
+Γ£û 98 problems (75 errors, 23 warnings)
+  0 errors and 23 warnings potentially fixable with the `--fix` option.
+
