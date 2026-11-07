@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const staticParticles = [
@@ -27,12 +28,21 @@ export default function LoadingScreen() {
     >
       {/* Brand Monogram */}
       <motion.div
-        className="text-4xl font-black text-gradient tracking-tight mb-8"
+        className="relative mb-8"
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        {"<SD />"}
+        <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-amber-500/40 shadow-2xl shadow-amber-500/25 bg-[#0a0a14]">
+          <Image
+            src="/logo.jpg"
+            alt="SAN Logo"
+            fill
+            sizes="80px"
+            className="object-cover"
+            priority
+          />
+        </div>
       </motion.div>
 
       {/* Futuristic Dual Ring Spinner */}

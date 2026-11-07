@@ -129,7 +129,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative w-full py-28 sm:py-36 overflow-hidden flex justify-center">
+    <section id="contact" className="relative w-full py-28 sm:py-36 md:py-40 scroll-mt-24 sm:scroll-mt-28 overflow-hidden flex justify-center">
       {/* Background radial glows */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-1/2 -left-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />

@@ -223,7 +223,7 @@ export default function Projects() {
       : projectsList.filter((p) => p.category === filterCategory);
 
   return (
-    <section id="projects" className="relative w-full py-28 sm:py-36 overflow-hidden flex justify-center">
+    <section id="projects" className="relative w-full py-28 sm:py-36 md:py-40 scroll-mt-24 sm:scroll-mt-28 overflow-hidden flex justify-center">
       {/* Background Lighting */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-3xl" />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -65,12 +66,24 @@ export default function Navigation() {
           {/* Logo */}
           <motion.button
             onClick={() => handleNavClick("#hero")}
-            className="text-2xl font-black text-gradient tracking-tight select-none focus:outline-none"
+            className="flex items-center gap-2.5 select-none focus:outline-none group cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="Home"
+            aria-label="Sangmeshwar Anil Naik Portfolio Home"
           >
-            {"<SD />"}
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden border border-amber-500/40 shadow-md shadow-amber-500/20 group-hover:border-amber-400 group-hover:shadow-amber-500/40 transition-all bg-[#0a0a14]">
+              <Image
+                src="/logo.jpg"
+                alt="SAN Logo"
+                fill
+                sizes="40px"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                priority
+              />
+            </div>
+            <span className="text-base sm:text-lg font-black tracking-tight text-white group-hover:text-gradient transition-colors">
+              Sangmeshwar<span className="text-cyan-400">.</span>
+            </span>
           </motion.button>
 
           {/* Desktop Nav Links */}
@@ -179,7 +192,18 @@ export default function Navigation() {
             >
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
-                  <span className="text-xl font-bold text-gradient">{"<SD />"}</span>
+                  <div className="flex items-center gap-2.5">
+                    <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-amber-500/40 shadow-sm shadow-amber-500/20 bg-[#0a0a14]">
+                      <Image
+                        src="/logo.jpg"
+                        alt="SAN Logo"
+                        fill
+                        sizes="32px"
+                        className="object-cover"
+                      />
+                    </div>
+                    <span className="text-base font-bold text-white">Sangmeshwar<span className="text-cyan-400">.</span></span>
+                  </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-1 rounded-lg text-slate-400 hover:text-white"

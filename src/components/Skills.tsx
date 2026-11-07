@@ -155,6 +155,23 @@ const skillCategories: SkillCategory[] = [
   },
 ];
 
+// Complete combined node for "All Categories" as requested
+const allCategoriesNode: SkillCategory = {
+  id: "all",
+  title: "All Categories",
+  icon: Sparkles,
+  color: "#38bdf8",
+  badge: "All 35 Skills",
+  description: "Comprehensive spectrum of 35 verified competencies spanning AI/ML research, full-stack systems, databases, and DevOps.",
+  skills: skillCategories.flatMap((cat) => cat.skills),
+};
+
+// All 6 orbital nodes revolving in circular motion
+const orbitalCategories: SkillCategory[] = [
+  allCategoriesNode,
+  ...skillCategories,
+];
+
 export default function Skills() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
@@ -170,7 +187,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative w-full py-28 sm:py-36 overflow-hidden flex justify-center bg-[#05050a]"
+      className="relative w-full py-28 sm:py-36 md:py-40 scroll-mt-24 sm:scroll-mt-28 overflow-hidden flex justify-center"
     >
       {/* Background Glows */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
@@ -231,22 +248,30 @@ export default function Skills() {
           </div>
 
           {/* The Circular Orbit Arena */}
-          <div className="relative w-[340px] h-[340px] sm:w-[460px] sm:h-[460px] flex items-center justify-center">
+          <div className="relative w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] md:w-[520px] md:h-[520px] flex items-center justify-center">
             {/* Outer Decorative Track Rings */}
             <div className="absolute inset-0 rounded-full border border-dashed border-cyan-500/25 pointer-events-none" />
-            <div className="absolute inset-6 rounded-full border border-purple-500/20 pointer-events-none" />
+            <div className="absolute inset-8 rounded-full border border-purple-500/20 pointer-events-none" />
+            <div className="absolute inset-16 rounded-full border border-white/5 pointer-events-none" />
 
             {/* Glowing Central Reactor Hub */}
-            <div className="relative z-10 w-28 h-28 sm:w-36 sm:h-36 rounded-full glass border border-cyan-500/40 flex flex-col items-center justify-center text-center p-3 shadow-2xl shadow-cyan-500/30 bg-[#080816]/95 backdrop-blur-xl pointer-events-none">
+            <button
+              onClick={() => handleOpenCategory(allCategoriesNode)}
+              className="relative z-10 w-28 h-28 sm:w-36 sm:h-36 rounded-full glass border border-cyan-500/40 flex flex-col items-center justify-center text-center p-3 shadow-2xl shadow-cyan-500/30 bg-[#080816]/95 backdrop-blur-xl hover:scale-105 hover:border-cyan-400 transition-all cursor-pointer group"
+              title="Click to view all 35 skills"
+            >
               <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping mb-1.5" />
-              <Cpu size={24} className="text-cyan-400 animate-pulse" />
-              <span className="text-[11px] sm:text-xs font-bold text-white mt-1 leading-tight uppercase font-mono">
+              <Cpu size={24} className="text-cyan-400 group-hover:rotate-90 transition-transform duration-500" />
+              <span className="text-[11px] sm:text-xs font-bold text-white mt-1 leading-tight uppercase font-mono group-hover:text-cyan-300 transition-colors">
                 Tech Orbit
               </span>
               <span className="text-[10px] text-slate-400 font-mono mt-0.5">
-                5 Fields
+                35 Skills
               </span>
-            </div>
+              <span className="text-[9px] text-cyan-400 font-mono opacity-80 group-hover:opacity-100">
+                Explore All
+              </span>
+            </button>
 
             {/* Rotating Parent Container (Constantly Rotates in 360° Circular Motion) */}
             <motion.div
@@ -255,16 +280,16 @@ export default function Skills() {
               transition={
                 isRotating
                   ? {
-                      duration: 28,
+                      duration: 32,
                       repeat: Infinity,
                       ease: "linear",
                     }
                   : undefined
               }
             >
-              {skillCategories.map((category, index) => {
-                // Calculate position along circular orbit for 5 nodes
-                const totalNodes = skillCategories.length;
+              {orbitalCategories.map((category, index) => {
+                // Calculate position along circular orbit for all 6 nodes (spaced at 60 degrees)
+                const totalNodes = orbitalCategories.length;
                 const angleInRadians = (index / totalNodes) * (2 * Math.PI) - Math.PI / 2;
                 const radiusPercent = 41;
                 const x = 50 + radiusPercent * Math.cos(angleInRadians);
@@ -284,7 +309,7 @@ export default function Skills() {
                       transition={
                         isRotating
                           ? {
-                              duration: 28,
+                              duration: 32,
                               repeat: Infinity,
                               ease: "linear",
                             }
@@ -293,23 +318,23 @@ export default function Skills() {
                     >
                       <button
                         onClick={() => handleOpenCategory(category)}
-                        className="group relative p-3 sm:p-4 rounded-2xl glass border border-white/15 hover:border-cyan-400 transition-all duration-300 flex items-center gap-2.5 cursor-pointer shadow-xl bg-[#090918]/95 hover:scale-110 hover:shadow-cyan-500/30"
+                        className="group relative p-2.5 sm:p-3.5 rounded-2xl glass border border-white/15 hover:border-cyan-400 transition-all duration-300 flex items-center gap-2 sm:gap-2.5 cursor-pointer shadow-xl bg-[#090918]/95 hover:scale-110 hover:shadow-cyan-500/30"
                       >
                         <div
-                          className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform"
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform"
                           style={{
                             backgroundColor: `${category.color}20`,
                             color: category.color,
                           }}
                         >
-                          <CatIcon size={18} />
+                          <CatIcon size={16} />
                         </div>
 
                         <div className="text-left pr-1">
-                          <span className="text-xs font-bold text-white font-mono block whitespace-nowrap group-hover:text-cyan-300 transition-colors">
+                          <span className="text-[11px] sm:text-xs font-bold text-white font-mono block whitespace-nowrap group-hover:text-cyan-300 transition-colors">
                             {category.title}
                           </span>
-                          <span className="text-[10px] text-slate-400 font-mono flex items-center gap-1">
+                          <span className="text-[9px] sm:text-[10px] text-slate-400 font-mono flex items-center gap-1">
                             <span>{category.skills.length} skills</span>
                             <ChevronRight size={10} className="text-cyan-400 group-hover:translate-x-0.5 transition-transform" />
                           </span>
@@ -334,53 +359,49 @@ export default function Skills() {
         {/* ============================================================== */}
         {/* COMPACT CATEGORY LAUNCHPAD CARDS (No Massive 35-Card Grid!)    */}
         {/* ============================================================== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {skillCategories.map((category) => {
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+          {orbitalCategories.map((category) => {
             const Icon = category.icon;
             return (
               <button
                 key={category.id}
                 onClick={() => handleOpenCategory(category)}
-                className="group p-5 rounded-3xl glass border border-white/10 hover:border-cyan-500/50 transition-all text-left flex flex-col justify-between hover:bg-cyan-500/[0.04] hover:-translate-y-1.5 shadow-xl cursor-pointer relative overflow-hidden"
+                className="group p-4 rounded-2xl glass border border-white/10 hover:border-cyan-500/50 transition-all text-left flex flex-col justify-between hover:bg-cyan-500/[0.04] hover:-translate-y-1 shadow-lg cursor-pointer relative overflow-hidden"
               >
                 {/* Subtle corner glow */}
                 <div
-                  className="absolute top-0 right-0 w-24 h-24 rounded-full blur-2xl opacity-10 group-hover:opacity-30 transition-opacity pointer-events-none"
+                  className="absolute top-0 right-0 w-16 h-16 rounded-full blur-xl opacity-10 group-hover:opacity-30 transition-opacity pointer-events-none"
                   style={{ backgroundColor: category.color }}
                 />
 
                 <div>
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-3">
                     <div
-                      className="w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+                      className="w-9 h-9 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
                       style={{
                         backgroundColor: `${category.color}20`,
                         color: category.color,
                       }}
                     >
-                      <Icon size={22} />
+                      <Icon size={18} />
                     </div>
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">
+                    <span className="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300 font-mono">
                       {category.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-300 transition-colors line-clamp-1">
                     {category.title}
                   </h3>
-
-                  <p className="text-xs text-slate-400 line-clamp-2 mt-1 leading-relaxed">
-                    {category.description}
-                  </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs">
-                  <span className="text-slate-400 font-mono font-medium text-[11px]">
-                    {category.skills.length} Verified Skills
+                <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[10px]">
+                  <span className="text-slate-400 font-mono">
+                    {category.skills.length} Skills
                   </span>
-                  <span className="text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform flex items-center gap-1 text-[11px]">
+                  <span className="text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform flex items-center gap-0.5">
                     <span>Open</span>
-                    <ChevronRight size={13} />
+                    <ChevronRight size={11} />
                   </span>
                 </div>
               </button>
@@ -450,7 +471,7 @@ export default function Skills() {
 
                 {/* Quick Field Switcher */}
                 <div className="flex flex-wrap items-center gap-1.5 self-start sm:self-auto">
-                  {skillCategories.map((cat) => (
+                  {orbitalCategories.map((cat) => (
                     <button
                       key={cat.id}
                       onClick={() => setSelectedCategory(cat)}

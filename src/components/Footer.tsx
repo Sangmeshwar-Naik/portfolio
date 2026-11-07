@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUp, Heart, Mail, Sparkles, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -37,9 +38,20 @@ export default function Footer() {
           <div className="md:col-span-5 space-y-4">
             <button
               onClick={scrollToTop}
-              className="text-3xl font-black text-gradient tracking-tight block focus:outline-none"
+              className="flex items-center gap-3 focus:outline-none group text-left cursor-pointer"
             >
-              {"<SD />"}
+              <div className="relative w-11 h-11 rounded-2xl overflow-hidden border border-amber-500/40 shadow-lg shadow-amber-500/20 group-hover:border-amber-400 group-hover:shadow-amber-500/35 transition-all bg-[#0a0a14]">
+                <Image
+                  src="/logo.jpg"
+                  alt="SAN Logo"
+                  fill
+                  sizes="44px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <span className="text-2xl font-black text-white group-hover:text-gradient transition-colors">
+                Sangmeshwar<span className="text-cyan-400">.</span>
+              </span>
             </button>
             <p className="text-sm text-slate-300 max-w-md leading-relaxed">
               Sangmeshwar Anil Naik — AI/ML Engineer, Data Scientist, and GenAI developer specializing in deep neural architectures, medical imaging AI, and modern full-stack platforms.

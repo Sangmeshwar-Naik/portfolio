@@ -52,31 +52,29 @@ const areasOfInterest = [
 
 function AnimatedCounter({ target, suffix = "", decimals = 0 }: { target: number; suffix?: string; decimals?: number }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-60px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
   const [val, setVal] = useState(0);
 
   useEffect(() => {
-    if (isInView) {
-      let current = 0;
-      const duration = 1500;
-      const steps = 40;
-      const stepTime = duration / steps;
-      const increment = target / steps;
+    if (!isInView) return;
 
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          setVal(target);
-          clearInterval(timer);
-        } else {
-          setVal(current);
-        }
-      }, stepTime);
+    let current = 0;
+    const duration = 1500;
+    const steps = 40;
+    const stepTime = duration / steps;
+    const increment = target / steps;
 
-      return () => clearInterval(timer);
-    } else {
-      setVal(0);
-    }
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setVal(target);
+        clearInterval(timer);
+      } else {
+        setVal(current);
+      }
+    }, stepTime);
+
+    return () => clearInterval(timer);
   }, [isInView, target]);
 
   return (
@@ -91,7 +89,7 @@ export default function About() {
   const containerRef = useRef(null);
 
   return (
-    <section id="about" className="relative w-full py-28 sm:py-36 overflow-hidden flex justify-center">
+    <section id="about" className="relative w-full py-28 sm:py-36 md:py-40 scroll-mt-24 sm:scroll-mt-28 overflow-hidden flex justify-center">
       {/* Background radial blurs */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-1/3 -left-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
@@ -126,7 +124,8 @@ export default function About() {
           <motion.div
             className="lg:col-span-6 space-y-8"
             initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             {/* Story Card */}
@@ -209,7 +208,8 @@ export default function About() {
           <motion.div
             className="lg:col-span-6 space-y-8"
             initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             {/* Verified Statistics Grid */}

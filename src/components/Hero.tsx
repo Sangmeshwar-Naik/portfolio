@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import {
@@ -84,9 +85,43 @@ export default function Hero() {
         <HeroCanvas />
       </div>
 
+      {/* Guaranteed Animated Cyber Cosmic Background (always active and animated) */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0">
+        {/* Animated Pulsing Nebulae */}
+        <motion.div
+          className="absolute -top-24 -left-24 w-[520px] h-[520px] bg-cyan-500/15 rounded-full blur-[120px]"
+          animate={{
+            scale: [1, 1.25, 1],
+            x: [0, 30, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-1/3 -right-28 w-[560px] h-[560px] bg-purple-600/15 rounded-full blur-[130px]"
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, -35, 0],
+            y: [0, 35, 0],
+          }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute -bottom-20 left-1/3 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[110px]"
+          animate={{
+            opacity: [0.3, 0.65, 0.3],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Ambient Subtle Cyber Grid Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30" />
+      </div>
+
       {/* Subtle vignettes */}
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-[#050508]/60 via-transparent to-[#050508] pointer-events-none z-1" />
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#050508]/70 via-transparent to-[#050508]/70 pointer-events-none z-1" />
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-[#050508]/40 via-transparent to-[#050508] pointer-events-none z-0" />
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#050508]/50 via-transparent to-[#050508]/50 pointer-events-none z-0" />
 
       {/* Main Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -199,47 +234,95 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Ambient circular glow */}
-            <div className="absolute w-80 h-80 rounded-full bg-gradient-to-tr from-cyan-500/25 via-purple-500/25 to-pink-500/25 blur-3xl pointer-events-none" />
+            {/* Animated Pulsating Cosmic Aura directly behind the Profile Card */}
+            <motion.div
+              className="absolute w-[360px] h-[480px] rounded-[48px] bg-gradient-to-tr from-cyan-500/25 via-purple-600/30 to-pink-500/20 blur-3xl pointer-events-none"
+              animate={{
+                scale: [1, 1.12, 1],
+                opacity: [0.55, 0.9, 0.55],
+                rotate: [0, 45, 0],
+              }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            />
 
-            {/* Central Profile Card with replaceable photo container */}
-            <div className="relative glass rounded-3xl p-6 border border-white/10 max-w-sm w-full shadow-2xl">
-              {/* Profile Image Frame */}
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 border border-white/10 flex items-center justify-center group">
-                <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px] opacity-25" />
+            {/* Revolving Cyber Dashed Orbital Rings behind the Card */}
+            <motion.div
+              className="absolute w-[440px] h-[440px] rounded-full border border-dashed border-cyan-500/20 pointer-events-none hidden sm:block"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.div
+              className="absolute w-[380px] h-[380px] rounded-full border border-dotted border-purple-500/25 pointer-events-none hidden sm:block"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            />
 
-                {/* Stylized AI Portrait Graphic with Initials */}
-                <div className="relative z-10 flex flex-col items-center justify-center">
-                  <div className="w-28 h-28 rounded-2xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 p-0.5 shadow-xl shadow-cyan-500/30">
-                    <div className="w-full h-full rounded-2xl bg-[#080812] flex items-center justify-center text-4xl font-black text-transparent bg-clip-text bg-gradient-to-tr from-cyan-400 via-white to-purple-400">
-                      SN
-                    </div>
+            {/* Smooth continuous 3D Floating Motion Wrapper for the Profile Card */}
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10 w-full flex justify-center"
+            >
+              {/* Central Profile Card with portrait photo and monogram logo */}
+              <div className="relative glass rounded-3xl p-5 sm:p-6 border border-white/10 max-w-sm w-full shadow-2xl">
+                {/* Profile Card Inner Display Frame with Dotted Backdrop and Generous Top Space */}
+                <div className="relative w-full rounded-2xl overflow-hidden bg-[#090b1c] border border-blue-500/20 pt-12 pb-5 px-5 sm:pt-14 sm:pb-6 sm:px-6 flex flex-col items-center text-center">
+                  <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-25 pointer-events-none" />
+
+                  {/* Portrait with Glowing Gold Border and Authentic Proportions */}
+                  <div className="relative z-10 w-40 h-[190px] sm:w-44 sm:h-[210px] rounded-[28px] sm:rounded-3xl overflow-hidden border-2 border-amber-400 shadow-[0_0_28px_rgba(251,191,36,0.45)] mb-3.5 bg-white shrink-0">
+                    <Image
+                      src="/profile.jpg"
+                      alt="Sangmeshwar Anil Naik"
+                      fill
+                      sizes="(max-width: 640px) 160px, 176px"
+                      className="object-cover object-top"
+                      priority
+                    />
                   </div>
-                  <h3 className="mt-4 text-lg font-bold text-white">Sangmeshwar Anil Naik</h3>
-                  <p className="text-xs text-cyan-400 font-medium">B.E. AIML @ VTU</p>
+
+                  {/* Monogram Emblem Badge */}
+                  <div className="relative z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden border border-amber-400/60 shadow-[0_0_15px_rgba(251,191,36,0.35)] bg-[#070814] mb-2.5">
+                    <Image
+                      src="/logo.jpg"
+                      alt="SAN Monogram"
+                      fill
+                      sizes="40px"
+                      className="object-cover"
+                    />
+                  </div>
+
+                  {/* Name & Academic Credentials */}
+                  <h3 className="relative z-10 text-xl sm:text-2xl font-black text-white tracking-tight">
+                    Sangmeshwar Anil Naik
+                  </h3>
+                  <p className="relative z-10 text-xs sm:text-sm font-semibold text-cyan-400 mt-1 mb-5">
+                    B.E. AIML @ VTU
+                  </p>
+
+                  {/* Bottom Pill Status Strip */}
+                  <div className="relative z-10 w-full py-2.5 px-4 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-between text-xs text-slate-300 font-mono">
+                    <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      CGPA 8.4 / 10
+                    </span>
+                    <span className="text-slate-300">Mangalore, KA</span>
+                  </div>
                 </div>
 
-                <div className="absolute bottom-3 left-3 right-3 py-1.5 px-3 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-between text-[11px] text-slate-300">
-                  <span className="flex items-center gap-1.5 text-emerald-400">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    CGPA 8.4 / 10
-                  </span>
-                  <span>Mangalore, KA</span>
+                {/* Quick Spec Highlights */}
+                <div className="grid grid-cols-2 gap-3 text-center mt-3.5">
+                  <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/5">
+                    <span className="text-xs text-slate-400 block font-medium">Specialization</span>
+                    <p className="text-sm sm:text-base font-bold text-white mt-0.5">AI &amp; ML</p>
+                  </div>
+                  <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/5">
+                    <span className="text-xs text-slate-400 block font-medium">Graduation</span>
+                    <p className="text-sm sm:text-base font-bold text-cyan-400 mt-0.5">2027</p>
+                  </div>
                 </div>
               </div>
-
-              {/* Quick Spec Highlights */}
-              <div className="grid grid-cols-2 gap-3 text-center">
-                <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                  <span className="text-xs text-slate-400">Specialization</span>
-                  <p className="text-sm font-bold text-white mt-0.5">AI &amp; ML</p>
-                </div>
-                <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                  <span className="text-xs text-slate-400">Graduation</span>
-                  <p className="text-sm font-bold text-cyan-400 mt-0.5">2027</p>
-                </div>
-              </div>
-            </div>
+            </motion.div>
 
             {/* Floating Satellite Badge 1 (Top Right) */}
             <motion.div

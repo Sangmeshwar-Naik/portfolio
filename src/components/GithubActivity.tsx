@@ -240,7 +240,7 @@ export default function GithubActivity() {
   return (
     <section
       id="github"
-      className="relative w-full pt-28 pb-36 sm:pt-36 sm:pb-44 overflow-hidden flex justify-center bg-[#040409]"
+      className="relative w-full py-28 sm:py-36 md:py-40 scroll-mt-24 sm:scroll-mt-28 overflow-hidden flex justify-center"
     >
       {/* Dynamic Animated Ambient Orbs & Holographic Grid Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
