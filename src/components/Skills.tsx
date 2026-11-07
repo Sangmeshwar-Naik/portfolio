@@ -318,25 +318,25 @@ export default function Skills() {
                     >
                       <button
                         onClick={() => handleOpenCategory(category)}
-                        className="group relative p-2.5 sm:p-3.5 rounded-2xl glass border border-white/15 hover:border-cyan-400 transition-all duration-300 flex items-center gap-2 sm:gap-2.5 cursor-pointer shadow-xl bg-[#090918]/95 hover:scale-110 hover:shadow-cyan-500/30"
+                        className="group relative p-3 sm:p-4 rounded-2xl glass border border-white/15 hover:border-cyan-400 transition-all duration-300 flex items-center gap-2.5 sm:gap-3 cursor-pointer shadow-xl bg-[#090918]/95 hover:scale-108 hover:shadow-cyan-500/30 min-w-[140px] sm:min-w-[165px]"
                       >
                         <div
-                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform"
+                          className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform"
                           style={{
                             backgroundColor: `${category.color}20`,
                             color: category.color,
                           }}
                         >
-                          <CatIcon size={16} />
+                          <CatIcon size={18} />
                         </div>
 
                         <div className="text-left pr-1">
-                          <span className="text-[11px] sm:text-xs font-bold text-white font-mono block whitespace-nowrap group-hover:text-cyan-300 transition-colors">
+                          <span className="text-xs sm:text-[13px] font-bold text-white font-mono block whitespace-nowrap group-hover:text-cyan-300 transition-colors">
                             {category.title}
                           </span>
-                          <span className="text-[9px] sm:text-[10px] text-slate-400 font-mono flex items-center gap-1">
+                          <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono flex items-center gap-1 mt-0.5">
                             <span>{category.skills.length} skills</span>
-                            <ChevronRight size={10} className="text-cyan-400 group-hover:translate-x-0.5 transition-transform" />
+                            <ChevronRight size={11} className="text-cyan-400 group-hover:translate-x-0.5 transition-transform" />
                           </span>
                         </div>
                       </button>
@@ -357,51 +357,51 @@ export default function Skills() {
         </div>
 
         {/* ============================================================== */}
-        {/* COMPACT CATEGORY LAUNCHPAD CARDS (No Massive 35-Card Grid!)    */}
+        {/* COMPACT CATEGORY LAUNCHPAD CARDS (Generous, Clear & Readable) */}
         {/* ============================================================== */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-5">
           {orbitalCategories.map((category) => {
             const Icon = category.icon;
             return (
               <button
                 key={category.id}
                 onClick={() => handleOpenCategory(category)}
-                className="group p-4 rounded-2xl glass border border-white/10 hover:border-cyan-500/50 transition-all text-left flex flex-col justify-between hover:bg-cyan-500/[0.04] hover:-translate-y-1 shadow-lg cursor-pointer relative overflow-hidden"
+                className="group p-5 sm:p-6 rounded-[24px] sm:rounded-[28px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/50 transition-all text-left flex flex-col justify-between hover:bg-cyan-500/[0.05] hover:-translate-y-1 shadow-xl cursor-pointer relative overflow-hidden min-h-[160px]"
               >
                 {/* Subtle corner glow */}
                 <div
-                  className="absolute top-0 right-0 w-16 h-16 rounded-full blur-xl opacity-10 group-hover:opacity-30 transition-opacity pointer-events-none"
+                  className="absolute top-0 right-0 w-20 h-20 rounded-full blur-xl opacity-10 group-hover:opacity-30 transition-opacity pointer-events-none"
                   style={{ backgroundColor: category.color }}
                 />
 
                 <div>
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center justify-between mb-3.5">
                     <div
-                      className="w-9 h-9 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
+                      className="w-10 h-10 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
                       style={{
                         backgroundColor: `${category.color}20`,
                         color: category.color,
                       }}
                     >
-                      <Icon size={18} />
+                      <Icon size={20} />
                     </div>
-                    <span className="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300 font-mono">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">
                       {category.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-300 transition-colors line-clamp-1">
+                  <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
                     {category.title}
                   </h3>
                 </div>
 
-                <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[10px]">
-                  <span className="text-slate-400 font-mono">
+                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs">
+                  <span className="text-slate-400 font-mono text-[11px]">
                     {category.skills.length} Skills
                   </span>
-                  <span className="text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform flex items-center gap-0.5">
+                  <span className="text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform flex items-center gap-0.5 text-xs">
                     <span>Open</span>
-                    <ChevronRight size={11} />
+                    <ChevronRight size={13} />
                   </span>
                 </div>
               </button>
@@ -427,7 +427,7 @@ export default function Skills() {
 
             {/* Modal Dialog */}
             <motion.div
-              className="relative z-10 w-full max-w-4xl glass rounded-3xl p-6 sm:p-8 border border-cyan-500/40 shadow-2xl shadow-cyan-500/25 bg-[#080816]/95 max-h-[90vh] overflow-y-auto"
+              className="relative z-10 w-full max-w-4xl rounded-[32px] sm:rounded-[36px] p-6 sm:p-8 border border-cyan-500/40 shadow-2xl shadow-cyan-500/25 bg-[#080816]/95 backdrop-blur-2xl max-h-[90vh] overflow-y-auto"
               initial={{ opacity: 0, scale: 0.94, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.94, y: 20 }}
@@ -509,7 +509,7 @@ export default function Skills() {
                       }}
                       onMouseEnter={() => setHoveredSkill(skill.name)}
                       onMouseLeave={() => setHoveredSkill(null)}
-                      className={`p-4 rounded-2xl glass border transition-all duration-300 flex flex-col justify-between ${
+                      className={`p-4.5 rounded-[22px] border transition-all duration-300 flex flex-col justify-between ${
                         isHovered
                           ? "border-cyan-400/60 bg-cyan-500/10 shadow-lg shadow-cyan-500/20 scale-102"
                           : "border-white/10 bg-black/40 hover:border-white/20"

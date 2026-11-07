@@ -251,39 +251,57 @@ export default function Projects() {
         </motion.div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilterCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                filterCategory === cat
-                  ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg shadow-cyan-500/20"
-                  : "glass text-slate-400 hover:text-white"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-14">
+          {categories.map((cat) => {
+            const count =
+              cat === "All"
+                ? projectsList.length
+                : projectsList.filter((p) => p.category === cat).length;
+            const isActive = filterCategory === cat;
+
+            return (
+              <button
+                key={cat}
+                onClick={() => setFilterCategory(cat)}
+                className={`px-4 py-2 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md ${
+                  isActive
+                    ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-cyan-500/25 scale-105"
+                    : "glass border border-white/10 text-slate-300 hover:text-white hover:border-white/20"
+                }`}
+              >
+                <span>{cat}</span>
+                <span
+                  className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
+                    isActive ? "bg-white/20 text-white" : "bg-white/5 text-slate-400"
+                  }`}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Projects Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
           {filteredProjects.map((project, idx) => {
             const Icon = project.icon;
             return (
               <motion.div
                 key={project.id}
-                className="group relative rounded-3xl glass border border-white/10 overflow-hidden flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300 shadow-xl"
+                className="group relative rounded-[32px] sm:rounded-[36px] glass border border-white/10 overflow-hidden flex flex-col justify-between hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/15 transition-all duration-300 bg-[#070818]/90 backdrop-blur-xl"
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.15 }}
                 transition={{ duration: 0.6, delay: idx * 0.08 }}
                 whileHover={{ y: -6 }}
               >
+                {/* Subtle corner ambient glow */}
+                <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all pointer-events-none" />
+
                 {/* Visual Header Banner with Project Image */}
                 <div>
-                  <div className="h-48 relative overflow-hidden bg-[#060714]">
+                  <div className="h-52 relative overflow-hidden bg-[#060714]">
                     {/* Project Imagery */}
                     <Image
                       src={project.image}
@@ -296,50 +314,50 @@ export default function Projects() {
                     <div className="absolute inset-0 bg-[#060714]/15 backdrop-blur-[0.5px]" />
 
                     {/* Top Badges */}
-                    <div className="relative z-10 flex items-center justify-between p-4">
-                      <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[11px] font-semibold text-cyan-300 border border-white/15 shadow-lg">
+                    <div className="relative z-10 flex items-center justify-between p-4.5">
+                      <span className="px-3.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-xs font-semibold text-cyan-300 border border-white/15 shadow-lg">
                         {project.badge}
                       </span>
                       {project.featured && (
-                        <span className="px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-[10px] font-bold tracking-wider uppercase border border-amber-400/30 backdrop-blur-md shadow-lg">
+                        <span className="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-[11px] font-bold tracking-wider uppercase border border-amber-400/30 backdrop-blur-md shadow-lg">
                           Featured
                         </span>
                       )}
                     </div>
 
                     {/* Central/Bottom Icon & Date */}
-                    <div className="absolute bottom-3 left-4 right-4 z-10 flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-400 shadow-xl group-hover:scale-110 transition-transform">
-                        <Icon size={20} />
+                    <div className="absolute bottom-3.5 left-4.5 right-4.5 z-10 flex items-center justify-between">
+                      <div className="w-11 h-11 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-400 shadow-xl group-hover:scale-110 transition-transform">
+                        <Icon size={22} />
                       </div>
-                      <span className="text-[11px] text-slate-200/90 font-mono font-medium px-2.5 py-0.5 rounded-full bg-black/60 border border-white/15 backdrop-blur-md">
+                      <span className="text-xs text-slate-200/90 font-mono font-medium px-3 py-1 rounded-full bg-black/60 border border-white/15 backdrop-blur-md">
                         {project.date}
                       </span>
                     </div>
                   </div>
 
                   {/* Body Content */}
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2.5 line-clamp-2">
+                  <div className="p-7 sm:p-8">
+                    <h3 className="text-xl sm:text-[22px] font-bold text-white group-hover:text-cyan-300 transition-colors mb-3 leading-snug">
                       {project.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-3 mb-5">
+                    <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed mb-6">
                       {project.shortDescription}
                     </p>
 
-                    {/* Tech Badges */}
-                    <div className="flex flex-wrap gap-1.5 mb-4">
+                    {/* Tech Badges with Refined Corner Boxes */}
+                    <div className="flex flex-wrap gap-2 mb-2">
                       {project.technologies.slice(0, 4).map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 py-0.5 rounded-md text-[11px] font-medium bg-white/[0.04] border border-white/10 text-slate-300"
+                          className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 hover:border-cyan-400/30 transition-colors"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 4 && (
-                        <span className="px-2 py-0.5 rounded-md text-[11px] font-medium bg-white/[0.02] text-slate-400">
+                        <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.02] text-slate-400 border border-white/5">
                           +{project.technologies.length - 4}
                         </span>
                       )}
@@ -348,39 +366,36 @@ export default function Projects() {
                 </div>
 
                 {/* Card Actions Footer */}
-                <div className="px-6 pb-6 pt-3 border-t border-white/5 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
+                <div className="px-7 sm:px-8 pb-7 pt-4 border-t border-white/5 flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-all"
+                      className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-all shadow-sm"
                       aria-label="GitHub Repository"
                     >
-                      <FaGithub size={16} />
+                      <FaGithub size={18} />
                     </a>
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-9 h-9 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all"
+                        className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all shadow-sm"
                         aria-label="Live Demo"
                       >
-                        <ExternalLink size={15} />
+                        <ExternalLink size={17} />
                       </a>
                     )}
                   </div>
 
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group/btn"
+                    className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group/btn cursor-pointer py-1.5 px-3 rounded-lg hover:bg-cyan-500/10"
                   >
-                    <span>View Details</span>
-                    <ArrowUpRight
-                      size={14}
-                      className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"
-                    />
+                    <span>Inspect Details</span>
+                    <ArrowUpRight size={15} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                   </button>
                 </div>
               </motion.div>

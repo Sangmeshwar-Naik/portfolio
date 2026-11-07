@@ -286,7 +286,7 @@ export default function GithubActivity() {
         {/* FUTURISTIC QUANTUM RADAR HUD TELEMETRY BAR                    */}
         {/* ============================================================== */}
         <motion.div
-          className="glass rounded-3xl p-5 sm:p-6 border border-cyan-500/25 mb-10 shadow-2xl shadow-cyan-500/10 bg-[#060613]/90 relative overflow-hidden"
+          className="rounded-[32px] sm:rounded-[38px] p-6 sm:p-8 border border-cyan-500/30 mb-10 shadow-2xl shadow-cyan-500/10 bg-[#070818]/90 backdrop-blur-xl relative overflow-hidden"
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: false, amount: 0.2 }}
@@ -319,37 +319,37 @@ export default function GithubActivity() {
 
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-300">
+                  <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-cyan-300">
                     Live Telemetry Radar
                   </span>
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-[10px] font-mono text-emerald-400 uppercase font-semibold">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-xs font-mono text-emerald-400 uppercase font-semibold">
                     SYS_ACTIVE
                   </span>
                 </div>
-                <p className="text-xs text-slate-400 font-mono mt-0.5">
+                <p className="text-xs sm:text-sm text-slate-300 font-mono mt-1">
                   Simulating active distributed neural clusters &amp; code pipelines
                 </p>
               </div>
             </div>
 
             {/* Right: Real-time Telemetry Metrics Chips */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full md:w-auto font-mono text-center">
-              <div className="px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10">
-                <span className="text-[10px] text-slate-400 block uppercase">Cluster Repos</span>
-                <span className="text-sm font-bold text-cyan-300">6 Verified</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 w-full md:w-auto font-mono text-center">
+              <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
+                <span className="text-[11px] text-slate-400 block uppercase font-medium">Cluster Repos</span>
+                <span className="text-sm sm:text-base font-bold text-cyan-300">6 Verified</span>
               </div>
-              <div className="px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10">
-                <span className="text-[10px] text-slate-400 block uppercase">Pipeline Latency</span>
-                <span className="text-sm font-bold text-emerald-400">&lt; 14ms</span>
+              <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
+                <span className="text-[11px] text-slate-400 block uppercase font-medium">Pipeline Latency</span>
+                <span className="text-sm sm:text-base font-bold text-emerald-400">&lt; 14ms</span>
               </div>
-              <div className="px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10">
-                <span className="text-[10px] text-slate-400 block uppercase">CI/CD Uptime</span>
-                <span className="text-sm font-bold text-purple-300">99.98%</span>
+              <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
+                <span className="text-[11px] text-slate-400 block uppercase font-medium">CI/CD Uptime</span>
+                <span className="text-sm sm:text-base font-bold text-purple-300">99.98%</span>
               </div>
-              <div className="px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10">
-                <span className="text-[10px] text-slate-400 block uppercase">Branch Protocol</span>
-                <span className="text-sm font-bold text-amber-300">Main / Prod</span>
+              <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
+                <span className="text-[11px] text-slate-400 block uppercase font-medium">Branch Protocol</span>
+                <span className="text-sm sm:text-base font-bold text-amber-300">Main / Prod</span>
               </div>
             </div>
           </div>
@@ -401,7 +401,7 @@ export default function GithubActivity() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -25 }}
             transition={{ type: "spring", stiffness: 90, damping: 18 }}
-            className="glass rounded-3xl p-6 sm:p-10 border border-cyan-500/30 shadow-2xl relative overflow-hidden mb-20 bg-[#070716]/95 backdrop-blur-2xl"
+            className="rounded-[28px] sm:rounded-[36px] p-6 sm:p-10 border border-cyan-500/35 shadow-2xl relative overflow-hidden mb-20 bg-[#070716]/95 backdrop-blur-2xl"
           >
             {/* Cyber Corner HUD Crosshairs */}
             <div className="absolute top-3 left-3 font-mono text-cyan-400/40 text-xs pointer-events-none">
@@ -640,7 +640,7 @@ export default function GithubActivity() {
                   href={repo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass rounded-3xl p-6 border border-white/10 hover:border-cyan-400/60 transition-all flex flex-col justify-between group shadow-xl hover:shadow-cyan-500/25 relative overflow-hidden cursor-pointer bg-[#070714]/90 backdrop-blur-xl"
+                  className="rounded-[32px] sm:rounded-[38px] p-7 sm:p-8 border border-white/10 hover:border-cyan-400/60 transition-all flex flex-col justify-between group shadow-xl hover:shadow-cyan-500/25 relative overflow-hidden cursor-pointer bg-[#070818]/90 backdrop-blur-xl min-h-[300px]"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.15 }}
@@ -649,34 +649,34 @@ export default function GithubActivity() {
                 >
                   {/* Ambient corner glow */}
                   <div
-                    className="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl opacity-10 group-hover:opacity-30 transition-opacity pointer-events-none"
+                    className="absolute top-0 right-0 w-36 h-36 rounded-full blur-2xl opacity-10 group-hover:opacity-30 transition-opacity pointer-events-none"
                     style={{ backgroundColor: repo.languageColor }}
                   />
 
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform shadow-lg">
-                        <Icon size={20} />
+                    <div className="flex items-center justify-between mb-4.5">
+                      <div className="w-12 h-12 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform shadow-lg">
+                        <Icon size={22} />
                       </div>
-                      <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 flex items-center gap-1.5">
-                        <GitBranch size={10} className="text-purple-400" />
+                      <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 flex items-center gap-1.5">
+                        <GitBranch size={12} className="text-purple-400" />
                         {repo.branch}
                       </span>
                     </div>
 
-                    <span className="text-[10px] font-bold text-purple-400 uppercase tracking-wider block mb-1.5">
+                    <span className="text-xs font-bold text-purple-400 uppercase tracking-wider block mb-2">
                       {repo.domain}
                     </span>
 
-                    <h4 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug mb-2 line-clamp-1">
+                    <h4 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug mb-2.5">
                       {repo.name}
                     </h4>
 
-                    <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed mb-4">
+                    <p className="text-sm text-slate-300 leading-relaxed mb-5">
                       {repo.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-1 mb-4">
+                    <div className="flex flex-wrap gap-1.5 mb-5">
                       {repo.tags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}

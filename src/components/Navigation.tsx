@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Mail } from "lucide-react";
+import { Menu, X, Mail, Search, FileText } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const navItems = [
@@ -114,7 +114,32 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Social & Action Links */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2.5">
+            {/* Quick Command Palette Button */}
+            <motion.button
+              onClick={() => window.dispatchEvent(new CustomEvent("open-command-palette"))}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl glass border border-white/10 hover:border-cyan-400/50 text-xs text-slate-300 hover:text-white transition-all shadow-md group cursor-pointer mr-1"
+              title="Search Portfolio (Ctrl+K or ⌘K)"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+            >
+              <Search size={13} className="text-cyan-400 group-hover:rotate-12 transition-transform" />
+              <span className="font-mono text-[11px] text-slate-400 group-hover:text-slate-200">Search</span>
+              <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-[9px] font-mono text-slate-400 border border-white/10">⌘K</kbd>
+            </motion.button>
+
+            {/* In-Browser CV Inspector Trigger */}
+            <motion.button
+              onClick={() => window.dispatchEvent(new CustomEvent("open-resume-modal"))}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass border border-purple-500/30 hover:border-purple-400 text-xs text-purple-300 hover:text-white transition-all shadow-md group cursor-pointer mr-1"
+              title="View Academic CV & Profile"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+            >
+              <FileText size={13} className="text-purple-400" />
+              <span className="font-mono text-[11px] font-semibold">CV</span>
+            </motion.button>
+
             <motion.a
               href="https://github.com/Sangmeshwar-Naik"
               target="_blank"
@@ -213,6 +238,36 @@ export default function Navigation() {
                 </div>
 
                 <div className="flex flex-col gap-2">
+                  {/* Mobile Search Button */}
+                  <button
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setTimeout(() => window.dispatchEvent(new CustomEvent("open-command-palette")), 100);
+                    }}
+                    className="flex items-center justify-between px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs font-mono text-slate-300 hover:text-white hover:border-cyan-400/50 mb-2 transition-colors"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Search size={14} className="text-cyan-400" />
+                      <span>Search Portfolio...</span>
+                    </span>
+                    <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-[10px] text-slate-400 border border-white/10">⌘K</kbd>
+                  </button>
+
+                  {/* View CV in Mobile */}
+                  <button
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      window.dispatchEvent(new CustomEvent("open-resume-modal"));
+                    }}
+                    className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-300 font-mono text-sm mb-3 cursor-pointer"
+                  >
+                    <span className="flex items-center gap-2 font-bold">
+                      <FileText size={16} className="text-purple-400" />
+                      <span>View &amp; Download CV</span>
+                    </span>
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-purple-500/20 text-purple-200">PDF</span>
+                  </button>
+
                   {navItems.map((item, index) => {
                     const isActive = activeSection === item.href.substring(1);
                     return (

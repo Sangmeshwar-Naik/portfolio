@@ -190,40 +190,41 @@ export default function Experience() {
                   >
                     {isEven ? (
                       /* Main Story Card on the Left */
-                      <div className="glass rounded-3xl p-7 border border-white/10 hover:border-cyan-500/40 transition-all text-left w-full group shadow-xl">
-                        <div className="flex items-center justify-between gap-3 mb-3">
-                          <span className="text-xs px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
+                      <div className="rounded-[32px] sm:rounded-[38px] p-8 sm:p-9 border border-white/10 hover:border-cyan-400/50 bg-[#070818]/90 backdrop-blur-xl transition-all text-left w-full group shadow-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-cyan-500/15 transition-all" />
+                        <div className="flex items-center justify-between gap-3 mb-4 relative z-10">
+                          <span className="text-xs px-3.5 py-1 rounded-full bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
                             {item.type}
                           </span>
                           {item.highlight && (
-                            <span className="text-[11px] font-bold text-amber-300">
+                            <span className="text-xs font-bold text-amber-300">
                               ★ {item.highlight}
                             </span>
                           )}
                         </div>
 
-                        <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                        <h3 className="text-xl sm:text-[22px] font-bold text-white group-hover:text-cyan-300 transition-colors relative z-10 leading-snug">
                           {item.title}
                         </h3>
 
-                        <p className="text-xs font-semibold text-purple-400 mt-1">
+                        <p className="text-sm font-semibold text-purple-400 mt-1.5 relative z-10">
                           {item.organization}
                         </p>
 
-                        <div className="flex items-center gap-1.5 text-xs text-slate-400 my-3">
-                          <Calendar size={13} />
+                        <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 my-3.5 relative z-10">
+                          <Calendar size={14} />
                           <span>{item.period}</span>
                         </div>
 
-                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                        <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed mb-5 relative z-10">
                           {item.description}
                         </p>
 
-                        <div className="flex flex-wrap gap-1.5">
+                        <div className="flex flex-wrap gap-2 relative z-10">
                           {item.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="px-2.5 py-0.5 rounded-md text-[11px] font-medium bg-white/[0.04] border border-white/10 text-slate-300"
+                              className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-cyan-500/20"
                             >
                               {skill}
                             </span>
@@ -281,40 +282,41 @@ export default function Experience() {
                   >
                     {!isEven ? (
                       /* Main Story Card on the Right */
-                      <div className="glass rounded-3xl p-7 border border-white/10 hover:border-purple-500/40 transition-all text-left w-full group shadow-xl">
-                        <div className="flex items-center justify-between gap-3 mb-3">
-                          <span className="text-xs px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 font-semibold border border-purple-500/30">
+                      <div className="rounded-[32px] sm:rounded-[38px] p-8 sm:p-9 border border-white/10 hover:border-purple-400/50 bg-[#070818]/90 backdrop-blur-xl transition-all text-left w-full group shadow-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-purple-500/15 transition-all" />
+                        <div className="flex items-center justify-between gap-3 mb-4 relative z-10">
+                          <span className="text-xs px-3.5 py-1 rounded-full bg-purple-500/15 text-purple-300 font-semibold border border-purple-500/30">
                             {item.type}
                           </span>
                           {item.highlight && (
-                            <span className="text-[11px] font-bold text-amber-300">
+                            <span className="text-xs font-bold text-amber-300">
                               ★ {item.highlight}
                             </span>
                           )}
                         </div>
 
-                        <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
+                        <h3 className="text-xl sm:text-[22px] font-bold text-white group-hover:text-purple-300 transition-colors relative z-10 leading-snug">
                           {item.title}
                         </h3>
 
-                        <p className="text-xs font-semibold text-cyan-400 mt-1">
+                        <p className="text-sm font-semibold text-cyan-400 mt-1.5 relative z-10">
                           {item.organization}
                         </p>
 
-                        <div className="flex items-center gap-1.5 text-xs text-slate-400 my-3">
-                          <Calendar size={13} />
+                        <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 my-3.5 relative z-10">
+                          <Calendar size={14} />
                           <span>{item.period}</span>
                         </div>
 
-                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                        <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed mb-5 relative z-10">
                           {item.description}
                         </p>
 
-                        <div className="flex flex-wrap gap-1.5">
+                        <div className="flex flex-wrap gap-2 relative z-10">
                           {item.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="px-2.5 py-0.5 rounded-md text-[11px] font-medium bg-white/[0.04] border border-white/10 text-slate-300"
+                              className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-purple-500/20"
                             >
                               {skill}
                             </span>
@@ -354,40 +356,40 @@ export default function Experience() {
                       damping: 16,
                     }}
                   >
-                    <div className="glass rounded-3xl p-6 border border-white/10">
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                        <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
+                    <div className="rounded-[30px] p-7 border border-white/10 bg-[#070818]/90 backdrop-blur-xl shadow-xl">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <span className="text-xs px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
                           {item.type}
                         </span>
                         {item.highlight && (
-                          <span className="text-[11px] font-bold text-amber-300">
+                          <span className="text-xs font-bold text-amber-300">
                             ★ {item.highlight}
                           </span>
                         )}
                       </div>
 
-                      <h3 className="text-base font-bold text-white mt-1">
+                      <h3 className="text-lg font-bold text-white mt-1 leading-snug">
                         {item.title}
                       </h3>
 
-                      <p className="text-xs font-semibold text-purple-400 mt-0.5">
+                      <p className="text-sm font-semibold text-purple-400 mt-1">
                         {item.organization}
                       </p>
 
-                      <div className="flex items-center gap-1.5 text-xs text-slate-400 my-2">
-                        <Calendar size={12} />
+                      <div className="flex items-center gap-1.5 text-xs sm:text-sm text-slate-400 my-2.5">
+                        <Calendar size={13} />
                         <span>{item.period}</span>
                       </div>
 
-                      <p className="text-xs text-slate-300 leading-relaxed mb-3">
+                      <p className="text-sm text-slate-300 leading-relaxed mb-4">
                         {item.description}
                       </p>
 
-                      <div className="flex flex-wrap gap-1.5">
+                      <div className="flex flex-wrap gap-2">
                         {item.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="px-2 py-0.5 rounded-md text-[10px] font-medium bg-white/[0.04] border border-white/10 text-slate-300"
+                            className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300"
                           >
                             {skill}
                           </span>

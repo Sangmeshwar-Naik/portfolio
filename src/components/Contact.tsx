@@ -161,39 +161,39 @@ export default function Contact() {
         </motion.div>
 
         {/* Elevated Standalone Communication Island */}
-        <div className="relative glass rounded-[32px] sm:rounded-[40px] p-6 sm:p-10 lg:p-12 border border-white/10 shadow-2xl shadow-cyan-500/5 bg-[#070816]/95 backdrop-blur-xl">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="relative glass rounded-[36px] sm:rounded-[48px] p-7 sm:p-11 lg:p-14 border border-white/10 shadow-2xl shadow-cyan-500/5 bg-[#070816]/95 backdrop-blur-xl">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
             {/* Contact Details Left Panel */}
             <motion.div
-              className="lg:col-span-5 space-y-6"
+              className="lg:col-span-5 space-y-7"
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-4">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span>Available for Full-Time Roles &amp; Internships</span>
                 </div>
-                <h3 className="text-2xl font-black text-white tracking-tight mb-2">
+                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2">
                   Contact Channels
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed mb-6 font-mono">
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-mono">
                   Reach out directly via email, phone, or connected developer platforms.
                 </p>
 
-                <div className="space-y-4">
+                <div className="space-y-4.5">
                   {/* Email */}
                   <a
                     href="mailto:sangameshnaik471@gmail.com"
-                    className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.025] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.05] transition-all group shadow-sm"
+                    className="flex items-start gap-4 p-5 rounded-[24px] bg-white/[0.03] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.05] transition-all group shadow-sm"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0 group-hover:scale-105 transition-transform shadow-md">
-                      <Mail size={18} />
+                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0 group-hover:scale-105 transition-transform shadow-md">
+                      <Mail size={20} />
                     </div>
                     <div className="overflow-hidden">
-                      <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-mono">Direct Email</p>
-                      <p className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors truncate">
+                      <p className="text-xs uppercase font-bold tracking-wider text-slate-400 font-mono">Direct Email</p>
+                      <p className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors truncate mt-0.5">
                         sangameshnaik471@gmail.com
                       </p>
                     </div>
@@ -202,30 +202,30 @@ export default function Contact() {
                   {/* Phone */}
                   <a
                     href="tel:+918080945510"
-                    className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.025] border border-white/5 hover:border-purple-500/40 hover:bg-purple-500/[0.05] transition-all group shadow-sm"
+                    className="flex items-start gap-4 p-5 rounded-[24px] bg-white/[0.03] border border-white/5 hover:border-purple-500/40 hover:bg-purple-500/[0.05] transition-all group shadow-sm"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 flex-shrink-0 group-hover:scale-105 transition-transform shadow-md">
-                      <Phone size={18} />
+                    <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 flex-shrink-0 group-hover:scale-105 transition-transform shadow-md">
+                      <Phone size={20} />
                     </div>
                     <div>
-                      <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-mono">Phone</p>
-                      <p className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors">
+                      <p className="text-xs uppercase font-bold tracking-wider text-slate-400 font-mono">Phone</p>
+                      <p className="text-sm sm:text-base font-bold text-white group-hover:text-purple-300 transition-colors mt-0.5">
                         +91 8080945510
                       </p>
                     </div>
                   </a>
 
                   {/* Location */}
-                  <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.025] border border-white/5 shadow-sm">
-                    <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0 shadow-md">
-                      <MapPin size={18} />
+                  <div className="flex items-start gap-4 p-5 rounded-[24px] bg-white/[0.03] border border-white/5 shadow-sm">
+                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0 shadow-md">
+                      <MapPin size={20} />
                     </div>
                     <div>
-                      <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-mono">Location &amp; Time Zone</p>
-                      <p className="text-sm font-bold text-white">
+                      <p className="text-xs uppercase font-bold tracking-wider text-slate-400 font-mono">Location &amp; Time Zone</p>
+                      <p className="text-sm sm:text-base font-bold text-white mt-0.5">
                         Bidar &amp; Mangalore, Karnataka, India
                       </p>
-                      <span className="text-[10px] text-slate-400 font-mono mt-0.5 block">
+                      <span className="text-xs text-slate-400 font-mono mt-0.5 block">
                         Standard Time: IST (UTC +5:30)
                       </span>
                     </div>
@@ -234,26 +234,26 @@ export default function Contact() {
 
                 {/* Social Profiles */}
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <p className="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-3 font-mono">
+                  <p className="text-xs uppercase tracking-wider font-bold text-slate-400 mb-3.5 font-mono">
                     Professional Networks
                   </p>
-                  <div className="flex gap-3">
+                  <div className="flex gap-3.5">
                     <a
                       href="https://github.com/Sangmeshwar-Naik"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 py-3 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-white hover:border-cyan-500/50 flex items-center justify-center gap-2 text-xs font-semibold transition-all group"
+                      className="flex-1 py-3.5 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-white hover:border-cyan-500/50 flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold transition-all group"
                     >
-                      <FaGithub size={16} className="text-slate-300 group-hover:text-white" />
+                      <FaGithub size={17} className="text-slate-300 group-hover:text-white" />
                       <span>GitHub</span>
                     </a>
                     <a
                       href="https://www.linkedin.com/in/sangmeshwar-naik-555828385"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 py-3 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 flex items-center justify-center gap-2 text-xs font-semibold transition-all group"
+                      className="flex-1 py-3.5 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold transition-all group"
                     >
-                      <FaLinkedin size={16} className="text-[#0a66c2]" />
+                      <FaLinkedin size={17} className="text-[#0a66c2]" />
                       <span>LinkedIn</span>
                     </a>
                   </div>
@@ -268,9 +268,9 @@ export default function Contact() {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="p-6 sm:p-8 rounded-3xl bg-black/40 border border-white/10 shadow-xl">
-                <h3 className="text-xl font-bold text-white mb-1.5">Send a Direct Message</h3>
-                <p className="text-xs text-slate-400 mb-6 font-mono">
+              <div className="p-7 sm:p-9 lg:p-10 rounded-[32px] sm:rounded-[38px] bg-[#04050e]/85 border border-white/10 shadow-2xl backdrop-blur-xl">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Send a Direct Message</h3>
+                <p className="text-xs sm:text-sm text-slate-400 mb-6 font-mono">
                   Fill in your details below and I&apos;ll get back to you promptly.
                 </p>
 

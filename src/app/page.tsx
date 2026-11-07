@@ -3,6 +3,11 @@
 import { useState, useEffect } from "react";
 import CustomCursor from "@/components/CustomCursor";
 import LoadingScreen from "@/components/LoadingScreen";
+import ScrollProgress from "@/components/ScrollProgress";
+import CommandPalette from "@/components/CommandPalette";
+import ResumeModal from "@/components/ResumeModal";
+import AiAssistant from "@/components/AiAssistant";
+import BackToTop from "@/components/BackToTop";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -43,6 +48,15 @@ export default function Home() {
       {/* Precision Glowing Custom Cursor */}
       <CustomCursor />
 
+      {/* Global Scroll Progress Neon Gradient Line */}
+      <ScrollProgress />
+
+      {/* Spotlight Command Palette (Cmd+K / Ctrl+K) */}
+      <CommandPalette />
+
+      {/* Interactive Resume / CV Viewer Modal */}
+      <ResumeModal />
+
       {/* Futuristic Initial Loader */}
       {isLoading && <LoadingScreen />}
 
@@ -77,6 +91,12 @@ export default function Home() {
 
         <SectionSpacer />
         <Footer />
+
+        {/* Interactive Virtual AI Guide Widget */}
+        <AiAssistant />
+
+        {/* Dynamic Circular Radial Scroll-to-Top Rocket */}
+        <BackToTop />
       </div>
     </main>
   );

@@ -177,17 +177,20 @@ export default function Hero() {
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </motion.button>
 
-              {/* Download Resume */}
-              <motion.a
-                href="/resume.pdf"
-                download="Sangmeshwar_Naik_Resume.pdf"
-                className="group px-6 py-3.5 rounded-xl font-semibold text-sm text-white glass hover:border-purple-400/50 hover:text-purple-300 transition-all flex items-center gap-2 cursor-pointer"
+              {/* View & Download CV */}
+              <motion.button
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    window.dispatchEvent(new CustomEvent("open-resume-modal"));
+                  }
+                }}
+                className="group px-6 py-3.5 rounded-xl font-semibold text-sm text-white glass hover:border-purple-400/50 hover:text-purple-300 transition-all flex items-center gap-2 cursor-pointer shadow-md shadow-purple-500/10"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
                 <Download size={16} className="text-purple-400 group-hover:translate-y-0.5 transition-transform" />
-                <span>Download Resume</span>
-              </motion.a>
+                <span>View &amp; Download CV</span>
+              </motion.button>
 
               {/* Contact Me */}
               <motion.button
@@ -264,61 +267,62 @@ export default function Hero() {
               className="relative z-10 w-full flex justify-center"
             >
               {/* Central Profile Card with portrait photo and monogram logo */}
-              <div className="relative glass rounded-3xl p-5 sm:p-6 border border-white/10 max-w-sm w-full shadow-2xl">
-                {/* Profile Card Inner Display Frame with Dotted Backdrop and Generous Top Space */}
-                <div className="relative w-full rounded-2xl overflow-hidden bg-[#090b1c] border border-blue-500/20 pt-12 pb-5 px-5 sm:pt-14 sm:pb-6 sm:px-6 flex flex-col items-center text-center">
-                  <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-25 pointer-events-none" />
+              <div className="relative rounded-[36px] sm:rounded-[42px] p-6 sm:p-8 border border-blue-500/30 bg-[#080b1f]/95 backdrop-blur-2xl max-w-[420px] sm:max-w-[450px] w-full shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] overflow-hidden">
+                {/* Dotted Matrix Background Pattern across Upper Section */}
+                <div className="absolute inset-x-0 top-0 h-3/4 bg-[radial-gradient(#38bdf8_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-25 pointer-events-none" />
 
-                  {/* Portrait with Glowing Gold Border and Authentic Proportions */}
-                  <div className="relative z-10 w-40 h-[190px] sm:w-44 sm:h-[210px] rounded-[28px] sm:rounded-3xl overflow-hidden border-2 border-amber-400 shadow-[0_0_28px_rgba(251,191,36,0.45)] mb-3.5 bg-white shrink-0">
+                {/* Inner flex column with generous top space above photo */}
+                <div className="relative z-10 pt-5 pb-1 sm:pt-7 flex flex-col items-center text-center">
+                  {/* Portrait with Glowing Gold Border and Generous Top Clearance */}
+                  <div className="relative w-44 h-[210px] sm:w-48 sm:h-[230px] rounded-[30px] sm:rounded-[32px] overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_32px_rgba(251,191,36,0.5)] mb-3.5 bg-white shrink-0">
                     <Image
                       src="/profile.jpg"
                       alt="Sangmeshwar Anil Naik"
                       fill
-                      sizes="(max-width: 640px) 160px, 176px"
+                      sizes="(max-width: 640px) 176px, 192px"
                       className="object-cover object-top"
                       priority
                     />
                   </div>
 
                   {/* Monogram Emblem Badge */}
-                  <div className="relative z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden border border-amber-400/60 shadow-[0_0_15px_rgba(251,191,36,0.35)] bg-[#070814] mb-2.5">
+                  <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-amber-400/80 shadow-[0_0_20px_rgba(251,191,36,0.45)] bg-[#070814] mb-3 shrink-0">
                     <Image
                       src="/logo.jpg"
                       alt="SAN Monogram"
                       fill
-                      sizes="40px"
+                      sizes="44px"
                       className="object-cover"
                     />
                   </div>
 
                   {/* Name & Academic Credentials */}
-                  <h3 className="relative z-10 text-xl sm:text-2xl font-black text-white tracking-tight">
+                  <h3 className="text-2xl sm:text-[26px] font-black text-white tracking-tight leading-snug">
                     Sangmeshwar Anil Naik
                   </h3>
-                  <p className="relative z-10 text-xs sm:text-sm font-semibold text-cyan-400 mt-1 mb-5">
+                  <p className="text-sm sm:text-base font-semibold text-cyan-400 mt-1 mb-5">
                     B.E. AIML @ VTU
                   </p>
 
-                  {/* Bottom Pill Status Strip */}
-                  <div className="relative z-10 w-full py-2.5 px-4 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-between text-xs text-slate-300 font-mono">
-                    <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  {/* Status Strip Pill */}
+                  <div className="w-full py-3 px-5 rounded-full bg-[#030617]/90 border border-white/10 flex items-center justify-between text-xs sm:text-sm text-slate-300 font-mono mb-4 shadow-inner">
+                    <span className="flex items-center gap-2 text-emerald-400 font-medium">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                       CGPA 8.4 / 10
                     </span>
                     <span className="text-slate-300">Mangalore, KA</span>
                   </div>
-                </div>
 
-                {/* Quick Spec Highlights */}
-                <div className="grid grid-cols-2 gap-3 text-center mt-3.5">
-                  <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/5">
-                    <span className="text-xs text-slate-400 block font-medium">Specialization</span>
-                    <p className="text-sm sm:text-base font-bold text-white mt-0.5">AI &amp; ML</p>
-                  </div>
-                  <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/5">
-                    <span className="text-xs text-slate-400 block font-medium">Graduation</span>
-                    <p className="text-sm sm:text-base font-bold text-cyan-400 mt-0.5">2027</p>
+                  {/* Bottom Integrated Specification Pills */}
+                  <div className="w-full pt-3.5 border-t border-white/10 grid grid-cols-2 gap-3.5 text-center">
+                    <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
+                      <span className="text-xs text-slate-400 block font-medium">Specialization</span>
+                      <p className="text-sm sm:text-base font-bold text-white mt-1">AI &amp; ML</p>
+                    </div>
+                    <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
+                      <span className="text-xs text-slate-400 block font-medium">Graduation</span>
+                      <p className="text-sm sm:text-base font-bold text-cyan-400 mt-1">2027</p>
+                    </div>
                   </div>
                 </div>
               </div>
