@@ -20,6 +20,15 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Disable custom cursor completely on mobile/touchscreen devices to maximize performance
+    if (
+      typeof window === "undefined" ||
+      !window.matchMedia("(pointer: fine)").matches ||
+      window.matchMedia("(pointer: coarse)").matches
+    ) {
+      return;
+    }
+
     let mouseX = -100;
     let mouseY = -100;
     let ringX = -100;
@@ -90,7 +99,12 @@ export default function CustomCursor() {
     };
   }, [isVisible]);
 
-  if (!isMounted) return null;
+  const isTouchDevice =
+    typeof window !== "undefined" &&
+    (!window.matchMedia("(pointer: fine)").matches ||
+      window.matchMedia("(pointer: coarse)").matches);
+
+  if (!isMounted || isTouchDevice) return null;
 
   return (
     <>

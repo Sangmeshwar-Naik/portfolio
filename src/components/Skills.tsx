@@ -275,7 +275,7 @@ export default function Skills() {
 
             {/* Rotating Parent Container (Constantly Rotates in 360° Circular Motion) */}
             <motion.div
-              className="absolute inset-0 w-full h-full pointer-events-none"
+              className="absolute inset-0 w-full h-full pointer-events-none transform-gpu will-change-transform"
               animate={isRotating ? { rotate: 360 } : undefined}
               transition={
                 isRotating

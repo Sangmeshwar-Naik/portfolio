@@ -17,14 +17,14 @@ function AnimatedSphere() {
 
   return (
     <Float speed={1.5} rotationIntensity={0.8} floatIntensity={1.2}>
-      <Sphere args={[1.1, 64, 64]} ref={meshRef}>
+      <Sphere args={[1.1, 36, 36]} ref={meshRef}>
         <MeshDistortMaterial
           color="#00f5ff"
           attach="material"
-          distort={0.45}
-          speed={1.8}
-          roughness={0.25}
-          metalness={0.8}
+          distort={0.4}
+          speed={1.6}
+          roughness={0.3}
+          metalness={0.7}
         />
       </Sphere>
     </Float>
@@ -55,7 +55,7 @@ function generateParticles(count: number) {
   return { positions, colors };
 }
 
-const staticParticles = generateParticles(350);
+const staticParticles = generateParticles(200);
 
 function FloatingParticles() {
   const particlesRef = useRef<THREE.Points>(null);
@@ -93,8 +93,15 @@ function FloatingParticles() {
 export default function HeroCanvas() {
   return (
     <Canvas
+      dpr={[1, 1.5]}
+      gl={{
+        powerPreference: "high-performance",
+        antialias: false,
+        stencil: false,
+        depth: true,
+      }}
       camera={{ position: [0, 0, 5], fov: 75 }}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "100%", height: "100%", pointerEvents: "none" }}
     >
       <ambientLight intensity={0.4} />
       <directionalLight position={[10, 10, 5]} intensity={1.5} color="#00f5ff" />
@@ -102,7 +109,7 @@ export default function HeroCanvas() {
       <pointLight position={[5, -5, 5]} intensity={0.8} color="#ff006e" />
       <AnimatedSphere />
       <FloatingParticles />
-      <Stars radius={100} depth={50} count={4000} factor={3.5} saturation={0} fade speed={1} />
+      <Stars radius={100} depth={50} count={1800} factor={3.5} saturation={0} fade speed={0.8} />
     </Canvas>
   );
 }

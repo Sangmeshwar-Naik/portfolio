@@ -23,17 +23,24 @@ export default function Navigation() {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 40);
 
-      const sections = navItems.map((item) => item.href.substring(1));
-      const reversed = [...sections].reverse();
-      for (const section of reversed) {
-        const element = document.getElementById(section);
-        if (element && window.scrollY >= element.offsetTop - 220) {
-          setActiveSection(section);
-          break;
-        }
+          const sections = navItems.map((item) => item.href.substring(1));
+          const reversed = [...sections].reverse();
+          for (const section of reversed) {
+            const element = document.getElementById(section);
+            if (element && window.scrollY >= element.offsetTop - 220) {
+              setActiveSection(section);
+              break;
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 

@@ -89,7 +89,7 @@ export default function Hero() {
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0">
         {/* Animated Pulsing Nebulae */}
         <motion.div
-          className="absolute -top-24 -left-24 w-[520px] h-[520px] bg-cyan-500/15 rounded-full blur-[120px]"
+          className="absolute -top-24 -left-24 w-[320px] h-[320px] sm:w-[520px] sm:h-[520px] bg-cyan-500/15 rounded-full blur-2xl sm:blur-[120px] transform-gpu will-change-transform"
           animate={{
             scale: [1, 1.25, 1],
             x: [0, 30, 0],
@@ -98,7 +98,7 @@ export default function Hero() {
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute top-1/3 -right-28 w-[560px] h-[560px] bg-purple-600/15 rounded-full blur-[130px]"
+          className="absolute top-1/3 -right-28 w-[340px] h-[340px] sm:w-[560px] sm:h-[560px] bg-purple-600/15 rounded-full blur-2xl sm:blur-[130px] transform-gpu will-change-transform"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, -35, 0],
@@ -107,7 +107,7 @@ export default function Hero() {
           transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -bottom-20 left-1/3 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[110px]"
+          className="absolute -bottom-20 left-1/3 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-pink-500/10 rounded-full blur-2xl sm:blur-[110px] transform-gpu will-change-transform"
           animate={{
             opacity: [0.3, 0.65, 0.3],
             scale: [1, 1.15, 1],
@@ -239,7 +239,7 @@ export default function Hero() {
           >
             {/* Animated Pulsating Cosmic Aura directly behind the Profile Card */}
             <motion.div
-              className="absolute w-[360px] h-[480px] rounded-[48px] bg-gradient-to-tr from-cyan-500/25 via-purple-600/30 to-pink-500/20 blur-3xl pointer-events-none"
+              className="absolute w-[300px] h-[400px] sm:w-[360px] sm:h-[480px] rounded-[48px] bg-gradient-to-tr from-cyan-500/25 via-purple-600/30 to-pink-500/20 blur-2xl sm:blur-3xl pointer-events-none transform-gpu will-change-transform"
               animate={{
                 scale: [1, 1.12, 1],
                 opacity: [0.55, 0.9, 0.55],
@@ -250,107 +250,113 @@ export default function Hero() {
 
             {/* Revolving Cyber Dashed Orbital Rings behind the Card */}
             <motion.div
-              className="absolute w-[440px] h-[440px] rounded-full border border-dashed border-cyan-500/20 pointer-events-none hidden sm:block"
+              className="absolute w-[320px] h-[320px] sm:w-[460px] sm:h-[460px] rounded-full border border-dashed border-cyan-500/30 pointer-events-none transform-gpu"
               animate={{ rotate: 360 }}
               transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
             />
             <motion.div
-              className="absolute w-[380px] h-[380px] rounded-full border border-dotted border-purple-500/25 pointer-events-none hidden sm:block"
+              className="absolute w-[280px] h-[280px] sm:w-[410px] sm:h-[410px] rounded-full border border-dotted border-purple-500/35 pointer-events-none transform-gpu"
               animate={{ rotate: -360 }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
             />
 
             {/* Smooth continuous 3D Floating Motion Wrapper for the Profile Card */}
             <motion.div
-              animate={{ y: [0, -12, 0] }}
+              animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="relative z-10 w-full flex justify-center"
             >
-              {/* Central Profile Card with portrait photo and monogram logo */}
-              <div className="relative rounded-[36px] sm:rounded-[42px] p-6 sm:p-8 border border-blue-500/30 bg-[#080b1f]/95 backdrop-blur-2xl max-w-[420px] sm:max-w-[450px] w-full shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] overflow-hidden">
-                {/* Dotted Matrix Background Pattern across Upper Section */}
-                <div className="absolute inset-x-0 top-0 h-3/4 bg-[radial-gradient(#38bdf8_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-25 pointer-events-none" />
+              <div className="relative w-full max-w-[340px] sm:max-w-[430px]">
+                {/* Central Profile Card with portrait photo and monogram logo */}
+                <div className="relative rounded-[36px] sm:rounded-[42px] p-5 sm:p-8 pt-8 sm:pt-10 border border-blue-500/30 bg-[#080b1f]/95 backdrop-blur-2xl w-full shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] overflow-hidden">
+                  {/* Dotted Matrix Background Pattern across Upper Section */}
+                  <div className="absolute inset-x-0 top-0 h-3/4 bg-[radial-gradient(#38bdf8_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-25 pointer-events-none" />
 
-                {/* Inner flex column with generous top space above photo */}
-                <div className="relative z-10 pt-5 pb-1 sm:pt-7 flex flex-col items-center text-center">
-                  {/* Portrait with Glowing Gold Border and Generous Top Clearance */}
-                  <div className="relative w-44 h-[210px] sm:w-48 sm:h-[230px] rounded-[30px] sm:rounded-[32px] overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_32px_rgba(251,191,36,0.5)] mb-3.5 bg-white shrink-0">
-                    <Image
-                      src="/profile.jpg"
-                      alt="Sangmeshwar Anil Naik"
-                      fill
-                      sizes="(max-width: 640px) 176px, 192px"
-                      className="object-cover object-top"
-                      priority
-                    />
-                  </div>
-
-                  {/* Monogram Emblem Badge */}
-                  <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-amber-400/80 shadow-[0_0_20px_rgba(251,191,36,0.45)] bg-[#070814] mb-3 shrink-0">
-                    <Image
-                      src="/logo.jpg"
-                      alt="SAN Monogram"
-                      fill
-                      sizes="44px"
-                      className="object-cover"
-                    />
-                  </div>
-
-                  {/* Name & Academic Credentials */}
-                  <h3 className="text-2xl sm:text-[26px] font-black text-white tracking-tight leading-snug">
-                    Sangmeshwar Anil Naik
-                  </h3>
-                  <p className="text-sm sm:text-base font-semibold text-cyan-400 mt-1 mb-5">
-                    B.E. AIML @ VTU
-                  </p>
-
-                  {/* Status Strip Pill */}
-                  <div className="w-full py-3 px-5 rounded-full bg-[#030617]/90 border border-white/10 flex items-center justify-between text-xs sm:text-sm text-slate-300 font-mono mb-4 shadow-inner">
-                    <span className="flex items-center gap-2 text-emerald-400 font-medium">
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                      CGPA 8.4 / 10
-                    </span>
-                    <span className="text-slate-300">Mangalore, KA</span>
-                  </div>
-
-                  {/* Bottom Integrated Specification Pills */}
-                  <div className="w-full pt-3.5 border-t border-white/10 grid grid-cols-2 gap-3.5 text-center">
-                    <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
-                      <span className="text-xs text-slate-400 block font-medium">Specialization</span>
-                      <p className="text-sm sm:text-base font-bold text-white mt-1">AI &amp; ML</p>
+                  {/* Inner flex column with generous top space above photo */}
+                  <div className="relative z-10 pt-4 pb-1 sm:pt-6 flex flex-col items-center text-center">
+                    {/* Portrait with Glowing Gold Border and Generous Top Clearance */}
+                    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-[30px] sm:rounded-[34px] overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_32px_rgba(251,191,36,0.5)] mb-3 bg-white shrink-0">
+                      <Image
+                        src="/profile.jpg"
+                        alt="Sangmeshwar Anil Naik"
+                        fill
+                        sizes="(max-width: 640px) 160px, 192px"
+                        className="object-cover object-top"
+                        priority
+                      />
                     </div>
-                    <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
-                      <span className="text-xs text-slate-400 block font-medium">Graduation</span>
-                      <p className="text-sm sm:text-base font-bold text-cyan-400 mt-1">2027</p>
+
+                    {/* Monogram Emblem Badge */}
+                    <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-amber-400/80 shadow-[0_0_20px_rgba(251,191,36,0.45)] bg-[#070814] mb-3 shrink-0">
+                      <Image
+                        src="/logo.jpg"
+                        alt="SAN Monogram"
+                        fill
+                        sizes="44px"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Name & Academic Credentials */}
+                    <h3 className="text-2xl sm:text-[26px] font-black text-white tracking-tight leading-snug">
+                      Sangmeshwar Anil Naik
+                    </h3>
+                    <p className="text-sm sm:text-base font-semibold text-cyan-400 mt-1 mb-5">
+                      B.E. AIML @ VTU
+                    </p>
+
+                    {/* Status Strip Pill */}
+                    <div className="w-full py-3 px-5 rounded-full bg-[#030617]/90 border border-white/10 flex items-center justify-between text-xs sm:text-sm text-slate-300 font-mono mb-4 shadow-inner">
+                      <span className="flex items-center gap-2 text-emerald-400 font-medium">
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                        CGPA 8.4 / 10
+                      </span>
+                      <span className="text-slate-300">Mangalore, KA</span>
+                    </div>
+
+                    {/* Bottom Integrated Specification Pills */}
+                    <div className="w-full pt-3.5 border-t border-white/10 grid grid-cols-2 gap-3.5 text-center">
+                      <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
+                        <span className="text-xs text-slate-400 block font-medium">Specialization</span>
+                        <p className="text-sm sm:text-base font-bold text-white mt-1">AI &amp; ML</p>
+                      </div>
+                      <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
+                        <span className="text-xs text-slate-400 block font-medium">Graduation</span>
+                        <p className="text-sm sm:text-base font-bold text-cyan-400 mt-1">2027</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
 
-            {/* Floating Satellite Badge 1 (Top Right) */}
-            <motion.div
-              className="absolute -top-4 -right-4 glass px-4 py-2.5 rounded-2xl border border-cyan-500/30 flex items-center gap-2.5 shadow-xl pointer-events-none hidden sm:flex"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Brain size={18} className="text-cyan-400" />
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase font-semibold">Focus</p>
-                <p className="text-xs font-bold text-white">Deep Learning</p>
-              </div>
-            </motion.div>
+                {/* Floating Satellite Badge 1 (Top Right) */}
+                <motion.div
+                  className="absolute -top-3 -right-2 sm:-top-5 sm:-right-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-cyan-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
+                    <Brain size={16} className="text-cyan-400" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Focus</p>
+                    <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Deep Learning</p>
+                  </div>
+                </motion.div>
 
-            {/* Floating Satellite Badge 2 (Bottom Left) */}
-            <motion.div
-              className="absolute -bottom-4 -left-4 glass px-4 py-2.5 rounded-2xl border border-purple-500/30 flex items-center gap-2.5 shadow-xl pointer-events-none hidden sm:flex"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            >
-              <Cpu size={18} className="text-purple-400" />
-              <div>
-                <p className="text-[10px] text-slate-400 uppercase font-semibold">Domain</p>
-                <p className="text-xs font-bold text-white">Computer Vision</p>
+                {/* Floating Satellite Badge 2 (Bottom Left) */}
+                <motion.div
+                  className="absolute -bottom-3 -left-2 sm:-bottom-5 sm:-left-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-purple-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                >
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center shrink-0">
+                    <Cpu size={16} className="text-purple-400" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Domain</p>
+                    <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Computer Vision</p>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </motion.div>

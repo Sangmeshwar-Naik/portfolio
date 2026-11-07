@@ -245,12 +245,12 @@ export default function GithubActivity() {
       {/* Dynamic Animated Ambient Orbs & Holographic Grid Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <motion.div
-          className="absolute top-1/4 -left-48 w-[550px] h-[550px] bg-cyan-500/10 rounded-full blur-3xl"
+          className="absolute top-1/4 -left-48 w-[350px] h-[350px] sm:w-[550px] sm:h-[550px] bg-cyan-500/10 rounded-full blur-2xl sm:blur-3xl pointer-events-none transform-gpu will-change-transform"
           animate={{ scale: [1, 1.25, 1], opacity: [0.1, 0.25, 0.1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-1/4 -right-48 w-[550px] h-[550px] bg-purple-500/10 rounded-full blur-3xl"
+          className="absolute bottom-1/4 -right-48 w-[350px] h-[350px] sm:w-[550px] sm:h-[550px] bg-purple-500/10 rounded-full blur-2xl sm:blur-3xl pointer-events-none transform-gpu will-change-transform"
           animate={{ scale: [1.25, 1, 1.25], opacity: [0.12, 0.28, 0.12] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />

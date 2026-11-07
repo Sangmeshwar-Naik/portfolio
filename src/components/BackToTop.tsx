@@ -9,13 +9,20 @@ export default function BackToTop() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        const currentProgress = (window.scrollY / totalHeight) * 100;
-        setProgress(Math.min(100, Math.max(0, currentProgress)));
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          if (totalHeight > 0) {
+            const currentProgress = (window.scrollY / totalHeight) * 100;
+            setProgress(Math.min(100, Math.max(0, currentProgress)));
+          }
+          setIsVisible(window.scrollY > 350);
+          ticking = false;
+        });
+        ticking = true;
       }
-      setIsVisible(window.scrollY > 350);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });

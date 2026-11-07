@@ -19,11 +19,16 @@
 }
 
 html {
-  scroll-behavior: smooth;
   color-scheme: dark;
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+@media (min-width: 769px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -34,6 +39,7 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 ::selection {
@@ -64,6 +70,13 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
+}
+
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
 
 .glow-cyan {
