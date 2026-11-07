@@ -17,11 +17,11 @@ import Footer from "@/components/Footer";
 function SectionSpacer() {
   return (
     <div
-      className="w-full py-12 sm:py-20 md:py-28 flex items-center justify-center pointer-events-none relative"
+      className="w-full py-18 sm:py-28 md:py-36 flex items-center justify-center pointer-events-none relative"
       aria-hidden="true"
     >
       {/* Subtle detached ambient focal beacon — completely disconnected from adjacent sections */}
-      <div className="flex items-center gap-2.5 opacity-35">
+      <div className="flex items-center gap-2.5 opacity-40">
         <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/60 shadow-sm shadow-cyan-400/50" />
         <span className="w-2.5 h-2.5 rounded-full bg-purple-400/80 shadow-md shadow-purple-500/60 animate-pulse" />
         <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/60 shadow-sm shadow-cyan-400/50" />
@@ -75,6 +75,7 @@ export default function Home() {
         <SectionSpacer />
         <Contact />
 
+        <SectionSpacer />
         <Footer />
       </div>
     </main>

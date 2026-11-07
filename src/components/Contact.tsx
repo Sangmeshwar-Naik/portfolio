@@ -129,22 +129,25 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative w-full py-28 sm:py-36 md:py-40 scroll-mt-24 sm:scroll-mt-28 overflow-hidden flex justify-center">
+    <section
+      id="contact"
+      className="relative w-full pt-32 pb-32 sm:pt-40 sm:pb-40 md:pt-48 md:pb-48 scroll-mt-32 overflow-hidden flex justify-center"
+    >
       {/* Background radial glows */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/2 -left-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 -right-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 -left-48 w-[550px] h-[550px] bg-cyan-500/10 rounded-full blur-[130px]" />
+        <div className="absolute bottom-1/4 -right-48 w-[550px] h-[550px] bg-purple-500/10 rounded-full blur-[130px]" />
       </div>
 
       <div ref={containerRef} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-16 sm:mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10">
             <Sparkles size={13} className="text-cyan-400" />
             Direct Communication
           </div>
@@ -157,107 +160,119 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* Contact Grid */}
-        <div className="grid lg:grid-cols-12 gap-10 items-start">
-          {/* Contact Details Left Panel */}
-          <motion.div
-            className="lg:col-span-5 space-y-6"
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            {/* Quick Contact Card */}
-            <div className="glass rounded-3xl p-7 sm:p-9 border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-6">Contact Channels</h3>
-
-              <div className="space-y-6">
-                {/* Email */}
-                <a
-                  href="mailto:sangameshnaik471@gmail.com"
-                  className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.025] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.05] transition-all group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0 group-hover:scale-105 transition-transform">
-                    <Mail size={20} />
-                  </div>
-                  <div className="overflow-hidden">
-                    <p className="text-xs uppercase font-semibold text-slate-400">Direct Email</p>
-                    <p className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors truncate">
-                      sangameshnaik471@gmail.com
-                    </p>
-                  </div>
-                </a>
-
-                {/* Phone */}
-                <a
-                  href="tel:+918080945510"
-                  className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.025] border border-white/5 hover:border-purple-500/40 hover:bg-purple-500/[0.05] transition-all group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 flex-shrink-0 group-hover:scale-105 transition-transform">
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase font-semibold text-slate-400">Phone</p>
-                    <p className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors">
-                      +91 8080945510
-                    </p>
-                  </div>
-                </a>
-
-                {/* Location */}
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.025] border border-white/5">
-                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase font-semibold text-slate-400">Location</p>
-                    <p className="text-sm font-bold text-white">
-                      Bidar &amp; Mangalore, Karnataka, India
-                    </p>
-                  </div>
+        {/* Elevated Standalone Communication Island */}
+        <div className="relative glass rounded-[32px] sm:rounded-[40px] p-6 sm:p-10 lg:p-12 border border-white/10 shadow-2xl shadow-cyan-500/5 bg-[#070816]/95 backdrop-blur-xl">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            {/* Contact Details Left Panel */}
+            <motion.div
+              className="lg:col-span-5 space-y-6"
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Available for Full-Time Roles &amp; Internships</span>
                 </div>
-              </div>
-
-              {/* Social Profiles */}
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <p className="text-xs uppercase tracking-wider font-semibold text-slate-400 mb-3">
-                  Professional Profiles
+                <h3 className="text-2xl font-black text-white tracking-tight mb-2">
+                  Contact Channels
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed mb-6 font-mono">
+                  Reach out directly via email, phone, or connected developer platforms.
                 </p>
-                <div className="flex gap-3">
+
+                <div className="space-y-4">
+                  {/* Email */}
                   <a
-                    href="https://github.com/Sangmeshwar-Naik"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 py-3 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-white hover:border-cyan-500/50 flex items-center justify-center gap-2 text-xs font-semibold transition-all"
+                    href="mailto:sangameshnaik471@gmail.com"
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.025] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.05] transition-all group shadow-sm"
                   >
-                    <FaGithub size={16} />
-                    <span>GitHub</span>
+                    <div className="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0 group-hover:scale-105 transition-transform shadow-md">
+                      <Mail size={18} />
+                    </div>
+                    <div className="overflow-hidden">
+                      <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-mono">Direct Email</p>
+                      <p className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors truncate">
+                        sangameshnaik471@gmail.com
+                      </p>
+                    </div>
                   </a>
+
+                  {/* Phone */}
                   <a
-                    href="https://www.linkedin.com/in/sangmeshwar-naik-555828385"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 py-3 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 flex items-center justify-center gap-2 text-xs font-semibold transition-all"
+                    href="tel:+918080945510"
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.025] border border-white/5 hover:border-purple-500/40 hover:bg-purple-500/[0.05] transition-all group shadow-sm"
                   >
-                    <FaLinkedin size={16} />
-                    <span>LinkedIn</span>
+                    <div className="w-11 h-11 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 flex-shrink-0 group-hover:scale-105 transition-transform shadow-md">
+                      <Phone size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-mono">Phone</p>
+                      <p className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors">
+                        +91 8080945510
+                      </p>
+                    </div>
                   </a>
+
+                  {/* Location */}
+                  <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.025] border border-white/5 shadow-sm">
+                    <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0 shadow-md">
+                      <MapPin size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-mono">Location &amp; Time Zone</p>
+                      <p className="text-sm font-bold text-white">
+                        Bidar &amp; Mangalore, Karnataka, India
+                      </p>
+                      <span className="text-[10px] text-slate-400 font-mono mt-0.5 block">
+                        Standard Time: IST (UTC +5:30)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Profiles */}
+                <div className="mt-8 pt-6 border-t border-white/10">
+                  <p className="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-3 font-mono">
+                    Professional Networks
+                  </p>
+                  <div className="flex gap-3">
+                    <a
+                      href="https://github.com/Sangmeshwar-Naik"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 py-3 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-white hover:border-cyan-500/50 flex items-center justify-center gap-2 text-xs font-semibold transition-all group"
+                    >
+                      <FaGithub size={16} className="text-slate-300 group-hover:text-white" />
+                      <span>GitHub</span>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/sangmeshwar-naik-555828385"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 py-3 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 flex items-center justify-center gap-2 text-xs font-semibold transition-all group"
+                    >
+                      <FaLinkedin size={16} className="text-[#0a66c2]" />
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Interactive Contact Form */}
-          <motion.div
-            className="lg:col-span-7"
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="glass rounded-3xl p-7 sm:p-9 border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-2">Send a Direct Message</h3>
-              <p className="text-xs text-slate-400 mb-6">
-                Fill in the details below and I&apos;ll get back to you promptly.
-              </p>
+            {/* Interactive Contact Form */}
+            <motion.div
+              className="lg:col-span-7"
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="p-6 sm:p-8 rounded-3xl bg-black/40 border border-white/10 shadow-xl">
+                <h3 className="text-xl font-bold text-white mb-1.5">Send a Direct Message</h3>
+                <p className="text-xs text-slate-400 mb-6 font-mono">
+                  Fill in your details below and I&apos;ll get back to you promptly.
+                </p>
 
               {/* Status Alert Banner */}
               <AnimatePresence>
@@ -404,6 +419,7 @@ export default function Contact() {
               </form>
             </div>
           </motion.div>
+        </div>
         </div>
       </div>
     </section>
