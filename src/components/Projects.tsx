@@ -1,8 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
+import CircularCarousel from "./CircularCarousel";
+
+const TechText = dynamic(() => import("./TechText"), { ssr: false });
 import {
   ExternalLink,
   X,
@@ -213,14 +217,26 @@ const projectsList: ProjectData[] = [
 export default function Projects() {
   const containerRef = useRef(null);
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
-  const [filterCategory, setFilterCategory] = useState<string>("All");
+  const [filterCategory, setFilterCategory] = useState<string | null>(null);
 
   const categories = ["All", "Quantum AI", "Computer Vision", "Conversational AI", "Full Stack & Mobile"];
 
   const filteredProjects =
-    filterCategory === "All"
+    !filterCategory || filterCategory === "All"
       ? projectsList
       : projectsList.filter((p) => p.category === filterCategory);
+
+  const carouselItems = useMemo(
+    () =>
+      projectsList.map((project) => ({
+        src: project.image,
+        alt: project.title,
+        title: project.title,
+        subtitle: project.badge,
+        project: project,
+      })),
+    []
+  );
 
   return (
     <section id="projects" className="relative w-full py-28 sm:py-36 md:py-40 scroll-mt-24 sm:scroll-mt-28 overflow-hidden flex justify-center">
@@ -232,20 +248,40 @@ export default function Projects() {
       <div ref={containerRef} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="w-full flex flex-col items-center justify-center text-center mx-auto mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.25 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-pink-500/30 text-xs font-semibold text-pink-300 mb-4">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full glass border border-pink-500/30 text-xs font-semibold text-pink-300 mb-4 mx-auto">
             <Sparkles size={13} className="text-pink-400" />
             Verified Portfolio Work
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-            Projects That Make <span className="text-gradient">An Impact</span>
-          </h2>
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <h2 className="sr-only">Projects That Make An Impact</h2>
+          <div className="w-full max-w-5xl mx-auto h-[65px] sm:h-[85px] md:h-[105px] relative flex items-center justify-center text-center">
+            <TechText
+              text="Projects That Make An Impact"
+              highlightText="Impact"
+              fontWeight={900}
+              fontSize={72}
+              color="#ffffff"
+              accentColor="#00f5ff"
+              dashLength={4}
+              dashGap={2}
+              specks={12}
+              reveal="letter"
+              speed={2.2}
+              clickKick
+              sweep
+              draggable
+              selection
+              labels={false}
+              guides={false}
+              align="center"
+            />
+          </div>
+          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-center">
             Real-world systems, AI architectures, and full-stack solutions built with modern toolchains.
           </p>
         </motion.div>
@@ -262,7 +298,7 @@ export default function Projects() {
             return (
               <button
                 key={cat}
-                onClick={() => setFilterCategory(cat)}
+                onClick={() => setFilterCategory(filterCategory === cat ? null : cat)}
                 className={`px-4 py-2 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md ${
                   isActive
                     ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-cyan-500/25 scale-105"
@@ -282,126 +318,224 @@ export default function Projects() {
           })}
         </div>
 
-        {/* Projects Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
-          {filteredProjects.map((project, idx) => {
-            const Icon = project.icon;
-            return (
-              <motion.div
-                key={project.id}
-                className="group relative rounded-[32px] sm:rounded-[36px] glass border border-white/10 overflow-hidden flex flex-col justify-between hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/15 transition-all duration-300 bg-[#070818]/90 backdrop-blur-xl"
-                initial={{ opacity: 0, y: 35 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.6, delay: idx * 0.08 }}
-                whileHover={{ y: -6 }}
-              >
-                {/* Subtle corner ambient glow */}
-                <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all pointer-events-none" />
+        {/* Continuous 3D Circular Rotating Carousel Showcase */}
+        <motion.div
+          className="mb-14 relative w-full rounded-3xl glass border border-white/10 p-4 sm:p-6 overflow-hidden bg-[#070818]/80 shadow-2xl backdrop-blur-2xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Showcase Control Bar */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-4 px-2">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shadow-sm shadow-cyan-400" />
+              <span className="text-xs sm:text-sm font-bold text-white tracking-wider uppercase font-mono">
+                3D Continuous Project Radar
+              </span>
+            </div>
+            <span className="text-xs text-slate-400 font-mono text-center sm:text-right">
+              ✦ Rotates continuously • Drag to spin or click any card to open full details
+            </span>
+          </div>
 
-                {/* Visual Header Banner with Project Image */}
-                <div>
-                  <div className="h-52 relative overflow-hidden bg-[#060714]">
-                    {/* Project Imagery */}
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#080816] via-[#080816]/30 to-transparent" />
-                    <div className="absolute inset-0 bg-[#060714]/15 backdrop-blur-[0.5px]" />
+          {/* 3D Circular Rotating Cylinder Container */}
+          <div style={{ width: "100%", height: "560px", position: "relative" }}>
+            <CircularCarousel
+              items={carouselItems}
+              preset="cylinder"
+              intro="rise"
+              cardWidth={220}
+              aspectRatio={1}
+              speed={14}
+              captions={true}
+              gap={25}
+              tilt={-5}
+              curve={1}
+              perspective={2500}
+              autoplay="drift"
+              interval={3}
+              direction="left"
+              momentum={0.6}
+              snap
+              pauseOnHover
+              focusOnClick
+              draggable
+              parallax={0.3}
+              stretch={0.5}
+              fadeColor="#000000"
+              depthFade={0.55}
+              innerShade={0.6}
+              cornerRadius={12}
+              onItemClick={(item) => {
+                if (item.project) {
+                  setSelectedProject(item.project);
+                }
+              }}
+            />
+          </div>
+        </motion.div>
 
-                    {/* Top Badges */}
-                    <div className="relative z-10 flex items-center justify-between p-4.5">
-                      <span className="px-3.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-xs font-semibold text-cyan-300 border border-white/15 shadow-lg">
-                        {project.badge}
-                      </span>
-                      {project.featured && (
-                        <span className="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-[11px] font-bold tracking-wider uppercase border border-amber-400/30 backdrop-blur-md shadow-lg">
-                          Featured
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Central/Bottom Icon & Date */}
-                    <div className="absolute bottom-3.5 left-4.5 right-4.5 z-10 flex items-center justify-between">
-                      <div className="w-11 h-11 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-400 shadow-xl group-hover:scale-110 transition-transform">
-                        <Icon size={22} />
-                      </div>
-                      <span className="text-xs text-slate-200/90 font-mono font-medium px-3 py-1 rounded-full bg-black/60 border border-white/15 backdrop-blur-md">
-                        {project.date}
-                      </span>
-                    </div>
+        {/* Detailed Project Specifications Grid - Only Shown When a Filter Category is Clicked */}
+        <AnimatePresence>
+          {filterCategory && (
+            <motion.div
+              key="filtered-specifications"
+              initial={{ opacity: 0, y: 30, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.98 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              className="mt-6 mb-12"
+            >
+              {/* Section Sub-heading with Interactive Close Control */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                    <Layers size={17} />
                   </div>
-
-                  {/* Body Content */}
-                  <div className="p-7 sm:p-8">
-                    <h3 className="text-xl sm:text-[22px] font-bold text-white group-hover:text-cyan-300 transition-colors mb-3 leading-snug">
-                      {project.title}
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+                      <span>{filterCategory === "All" ? "All Project Specifications" : `${filterCategory} Projects`}</span>
                     </h3>
-
-                    <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed mb-6">
-                      {project.shortDescription}
+                    <p className="text-xs text-slate-400 font-mono mt-0.5">
+                      Showing {filteredProjects.length} matching {filteredProjects.length === 1 ? "system" : "systems"}
                     </p>
-
-                    {/* Tech Badges with Refined Corner Boxes */}
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {project.technologies.slice(0, 4).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 hover:border-cyan-400/30 transition-colors"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies.length > 4 && (
-                        <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.02] text-slate-400 border border-white/5">
-                          +{project.technologies.length - 4}
-                        </span>
-                      )}
-                    </div>
                   </div>
                 </div>
 
-                {/* Card Actions Footer */}
-                <div className="px-7 sm:px-8 pb-7 pt-4 border-t border-white/5 flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-all shadow-sm"
-                      aria-label="GitHub Repository"
+                <button
+                  onClick={() => setFilterCategory(null)}
+                  className="text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl glass border border-white/15 hover:border-cyan-400/40 transition-all cursor-pointer shadow-sm hover:bg-white/5"
+                  title="Close and hide detailed project specifications"
+                >
+                  <X size={14} className="text-cyan-400" />
+                  <span>Hide Results</span>
+                </button>
+              </div>
+
+              {/* Projects Cards Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
+                {filteredProjects.map((project, idx) => {
+                  const Icon = project.icon;
+                  return (
+                    <motion.div
+                      key={project.id}
+                      className="group relative rounded-[32px] sm:rounded-[36px] glass border border-white/10 overflow-hidden flex flex-col justify-between hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/15 transition-all duration-300 bg-[#070818]/90 backdrop-blur-xl"
+                      initial={{ opacity: 0, y: 35 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: false, amount: 0.15 }}
+                      transition={{ duration: 0.6, delay: idx * 0.08 }}
+                      whileHover={{ y: -6 }}
                     >
-                      <FaGithub size={18} />
-                    </a>
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all shadow-sm"
-                        aria-label="Live Demo"
-                      >
-                        <ExternalLink size={17} />
-                      </a>
-                    )}
-                  </div>
+                      {/* Subtle corner ambient glow */}
+                      <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all pointer-events-none" />
 
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group/btn cursor-pointer py-1.5 px-3 rounded-lg hover:bg-cyan-500/10"
-                  >
-                    <span>Inspect Details</span>
-                    <ArrowUpRight size={15} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                  </button>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+                      {/* Visual Header Banner with Project Image */}
+                      <div>
+                        <div className="h-52 relative overflow-hidden bg-[#060714]">
+                          {/* Project Imagery */}
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#080816] via-[#080816]/30 to-transparent" />
+                          <div className="absolute inset-0 bg-[#060714]/15 backdrop-blur-[0.5px]" />
+
+                          {/* Top Badges */}
+                          <div className="relative z-10 flex items-center justify-between p-4.5">
+                            <span className="px-3.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-xs font-semibold text-cyan-300 border border-white/15 shadow-lg">
+                              {project.badge}
+                            </span>
+                            {project.featured && (
+                              <span className="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-[11px] font-bold tracking-wider uppercase border border-amber-400/30 backdrop-blur-md shadow-lg">
+                                Featured
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Central/Bottom Icon & Date */}
+                          <div className="absolute bottom-3.5 left-4.5 right-4.5 z-10 flex items-center justify-between">
+                            <div className="w-11 h-11 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-400 shadow-xl group-hover:scale-110 transition-transform">
+                              <Icon size={22} />
+                            </div>
+                            <span className="text-xs text-slate-200/90 font-mono font-medium px-3 py-1 rounded-full bg-black/60 border border-white/15 backdrop-blur-md">
+                              {project.date}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Body Content */}
+                        <div className="p-7 sm:p-8">
+                          <h3 className="text-xl sm:text-[22px] font-bold text-white group-hover:text-cyan-300 transition-colors mb-3 leading-snug">
+                            {project.title}
+                          </h3>
+
+                          <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed mb-6">
+                            {project.shortDescription}
+                          </p>
+
+                          {/* Tech Badges with Refined Corner Boxes */}
+                          <div className="flex flex-wrap gap-2 mb-2">
+                            {project.technologies.slice(0, 4).map((tech) => (
+                              <span
+                                key={tech}
+                                className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 hover:border-cyan-400/30 transition-colors"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                            {project.technologies.length > 4 && (
+                              <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.02] text-slate-400 border border-white/5">
+                                +{project.technologies.length - 4}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Card Actions Footer */}
+                      <div className="px-7 sm:px-8 pb-7 pt-4 border-t border-white/5 flex items-center justify-between">
+                        <div className="flex items-center gap-2.5">
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-all shadow-sm"
+                            aria-label="GitHub Repository"
+                          >
+                            <FaGithub size={18} />
+                          </a>
+                          {project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all shadow-sm"
+                              aria-label="Live Demo"
+                            >
+                              <ExternalLink size={17} />
+                            </a>
+                          )}
+                        </div>
+
+                        <button
+                          onClick={() => setSelectedProject(project)}
+                          className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group/btn cursor-pointer py-1.5 px-3 rounded-lg hover:bg-cyan-500/10"
+                        >
+                          <span>Inspect Details</span>
+                          <ArrowUpRight size={15} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                        </button>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* View All on GitHub Banner */}
         <div className="text-center mt-16">

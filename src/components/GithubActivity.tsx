@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   GitBranch,
@@ -25,6 +26,17 @@ import {
   Zap,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+
+// Dynamically import WebGL2 LaserFlow liquid fog simulation
+const LaserFlow = dynamic(() => import("./LaserFlow"), {
+  ssr: false,
+});
+
+// Dynamically import 3D Physics CardSwap interactive stack
+const CardSwap = dynamic(() => import("./CardSwap"), {
+  ssr: false,
+});
+import { Card } from "./CardSwap";
 
 interface RepoItem {
   id: string;
@@ -212,10 +224,13 @@ const repositories: RepoItem[] = [
 
 export default function GithubActivity() {
   const containerRef = useRef(null);
+  const telemetryBarRef = useRef<HTMLDivElement>(null);
 
   const [selectedRepoId, setSelectedRepoId] = useState<string>("quantum-tumor");
   const [copied, setCopied] = useState(false);
   const [activeCodeLine, setActiveCodeLine] = useState(0);
+  const [laserColor, setLaserColor] = useState<string>("#3847ff");
+  const [repoViewMode, setRepoViewMode] = useState<"stack" | "grid">("stack");
 
   const selectedRepo =
     repositories.find((r) => r.id === selectedRepoId) || repositories[0];
@@ -282,78 +297,160 @@ export default function GithubActivity() {
           </p>
         </motion.div>
 
-        {/* ============================================================== */}
-        {/* FUTURISTIC QUANTUM RADAR HUD TELEMETRY BAR                    */}
-        {/* ============================================================== */}
-        <motion.div
-          className="rounded-[32px] sm:rounded-[38px] p-6 sm:p-8 border border-cyan-500/30 mb-10 shadow-2xl shadow-cyan-500/10 bg-[#070818]/90 backdrop-blur-xl relative overflow-hidden"
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Subtle Top Glowing Sweep line */}
-          <motion.div
-            className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
-            animate={{ x: ["-100%", "100%"] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-          />
-
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Left: Animated Holographic Radar Scanner */}
-            <div className="flex items-center gap-4">
-              <div className="relative w-16 h-16 rounded-full glass border border-cyan-500/40 flex items-center justify-center bg-black/60 shadow-lg shadow-cyan-500/20 shrink-0">
-                {/* Radar Grid Rings */}
-                <div className="absolute inset-1 rounded-full border border-cyan-500/20" />
-                <div className="absolute inset-3 rounded-full border border-purple-500/25" />
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-                {/* 360° Rotating Radar Sweep Line */}
-                <motion.div
-                  className="absolute inset-0 rounded-full pointer-events-none"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                >
-                  <div className="w-1/2 h-0.5 bg-gradient-to-r from-transparent to-cyan-400 absolute top-1/2 left-1/2 -translate-y-1/2 origin-left shadow-[0_0_8px_#00f5ff]" />
-                </motion.div>
-              </div>
-
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-cyan-300">
-                    Live Telemetry Radar
-                  </span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-xs font-mono text-emerald-400 uppercase font-semibold">
-                    SYS_ACTIVE
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-300 font-mono mt-1">
-                  Simulating active distributed neural clusters &amp; code pipelines
-                </p>
-              </div>
-            </div>
-
-            {/* Right: Real-time Telemetry Metrics Chips */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 w-full md:w-auto font-mono text-center">
-              <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
-                <span className="text-[11px] text-slate-400 block uppercase font-medium">Cluster Repos</span>
-                <span className="text-sm sm:text-base font-bold text-cyan-300">6 Verified</span>
-              </div>
-              <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
-                <span className="text-[11px] text-slate-400 block uppercase font-medium">Pipeline Latency</span>
-                <span className="text-sm sm:text-base font-bold text-emerald-400">&lt; 14ms</span>
-              </div>
-              <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
-                <span className="text-[11px] text-slate-400 block uppercase font-medium">CI/CD Uptime</span>
-                <span className="text-sm sm:text-base font-bold text-purple-300">99.98%</span>
-              </div>
-              <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
-                <span className="text-[11px] text-slate-400 block uppercase font-medium">Branch Protocol</span>
-                <span className="text-sm sm:text-base font-bold text-amber-300">Main / Prod</span>
-              </div>
-            </div>
+        {/* Flowing Laser Fog HUD Indicator & Color Spectrum Selector */}
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-5 px-3">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500" />
+            </span>
+            <span className="text-xs font-mono font-bold text-cyan-300 uppercase tracking-wider">
+              Corner Liquid Fog Stream Active
+            </span>
+            <span className="text-[11px] font-mono text-slate-400 hidden sm:inline">
+              • Inflowing from Right Corner
+            </span>
           </div>
-        </motion.div>
+
+          <div className="flex items-center gap-1.5 text-xs font-mono">
+            <span className="text-slate-400 text-[11px] mr-1 hidden sm:inline">Liquid Fog Aura:</span>
+            <button
+              onClick={() => setLaserColor("#3847ff")}
+              className={`px-2.5 py-1 rounded-xl text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+                laserColor === "#3847ff"
+                  ? "bg-blue-600/25 text-blue-300 border border-blue-500/50 shadow-md shadow-blue-500/20 scale-105"
+                  : "bg-white/[0.04] text-slate-400 hover:text-white border border-white/10"
+              }`}
+              title="Cobalt Laser Blue Flow"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3847ff]" />
+              <span>Cobalt Blue</span>
+            </button>
+            <button
+              onClick={() => setLaserColor("#00f5ff")}
+              className={`px-2.5 py-1 rounded-xl text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+                laserColor === "#00f5ff"
+                  ? "bg-cyan-500/25 text-cyan-300 border border-cyan-400/50 shadow-md shadow-cyan-500/20 scale-105"
+                  : "bg-white/[0.04] text-slate-400 hover:text-white border border-white/10"
+              }`}
+              title="Cyber Neon Cyan Flow"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00f5ff]" />
+              <span>Neon Cyan</span>
+            </button>
+            <button
+              onClick={() => setLaserColor("#a855f7")}
+              className={`px-2.5 py-1 rounded-xl text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+                laserColor === "#a855f7"
+                  ? "bg-purple-600/25 text-purple-300 border border-purple-500/50 shadow-md shadow-purple-500/20 scale-105"
+                  : "bg-white/[0.04] text-slate-400 hover:text-white border border-white/10"
+              }`}
+              title="Quantum Purple Flow"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#a855f7]" />
+              <span>Purple</span>
+            </button>
+          </div>
+        </div>
+
+        {/* ============================================================== */}
+        {/* FUTURISTIC QUANTUM RADAR HUD TELEMETRY BAR WITH LASER FLOW    */}
+        {/* ============================================================== */}
+        <div className="relative w-full mb-10">
+          {/* Luminous Liquid Fog Laser Canopy flowing from the right corner down onto this section */}
+          <div className="absolute -top-32 sm:-top-44 inset-x-0 -bottom-8 pointer-events-none z-20 overflow-hidden">
+            <LaserFlow
+              surfaceRef={telemetryBarRef}
+              beamPosition={0.84}
+              color={laserColor}
+              intensity={1.8}
+              flare={1.6}
+              spread={1.8}
+              spill={1.3}
+              fog={0.4}
+              dust={1.8}
+              beamWidth={1.5}
+              streaks={1.6}
+              dots={1.2}
+              pulse={1.5}
+              speed={1.5}
+              seed={3}
+              mouseInteraction={true}
+              intro={true}
+            />
+          </div>
+
+          <motion.div
+            ref={telemetryBarRef}
+            className="rounded-[32px] sm:rounded-[38px] p-6 sm:p-8 border border-cyan-500/30 shadow-2xl shadow-cyan-500/10 bg-[#070818]/90 backdrop-blur-xl relative overflow-hidden z-10"
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Subtle Top Glowing Sweep line */}
+            <motion.div
+              className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
+              animate={{ x: ["-100%", "100%"] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            />
+
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              {/* Left: Animated Holographic Radar Scanner */}
+              <div className="flex items-center gap-4">
+                <div className="relative w-16 h-16 rounded-full glass border border-cyan-500/40 flex items-center justify-center bg-black/60 shadow-lg shadow-cyan-500/20 shrink-0">
+                  {/* Radar Grid Rings */}
+                  <div className="absolute inset-1 rounded-full border border-cyan-500/20" />
+                  <div className="absolute inset-3 rounded-full border border-purple-500/25" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+                  {/* 360° Rotating Radar Sweep Line */}
+                  <motion.div
+                    className="absolute inset-0 rounded-full pointer-events-none"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                  >
+                    <div className="w-1/2 h-0.5 bg-gradient-to-r from-transparent to-cyan-400 absolute top-1/2 left-1/2 -translate-y-1/2 origin-left shadow-[0_0_8px_#00f5ff]" />
+                  </motion.div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-cyan-300">
+                      Live Telemetry Radar
+                    </span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-xs font-mono text-emerald-400 uppercase font-semibold">
+                      SYS_ACTIVE
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-300 font-mono mt-1">
+                    Simulating active distributed neural clusters &amp; code pipelines
+                  </p>
+                </div>
+              </div>
+
+              {/* Right: Real-time Telemetry Metrics Chips */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 w-full md:w-auto font-mono text-center">
+                <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
+                  <span className="text-[11px] text-slate-400 block uppercase font-medium">Cluster Repos</span>
+                  <span className="text-sm sm:text-base font-bold text-cyan-300">6 Verified</span>
+                </div>
+                <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
+                  <span className="text-[11px] text-slate-400 block uppercase font-medium">Pipeline Latency</span>
+                  <span className="text-sm sm:text-base font-bold text-emerald-400">&lt; 14ms</span>
+                </div>
+                <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
+                  <span className="text-[11px] text-slate-400 block uppercase font-medium">CI/CD Uptime</span>
+                  <span className="text-sm sm:text-base font-bold text-purple-300">99.98%</span>
+                </div>
+                <div className="px-4.5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
+                  <span className="text-[11px] text-slate-400 block uppercase font-medium">Branch Protocol</span>
+                  <span className="text-sm sm:text-base font-bold text-amber-300">Main / Prod</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Animated Horizontal Repository Navigation Dock */}
         <div className="mb-10 overflow-x-auto pb-4 scrollbar-none">
@@ -620,16 +717,165 @@ export default function GithubActivity() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Floating Animated Bento Cards Showcase */}
-        <div>
-          <div className="text-center mb-10">
-            <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              All Public Production Repositories
-            </h4>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              Click any repository to inspect source code on GitHub
-            </p>
+        {/* Animated Public Production Repositories with 3D Physics CardSwap */}
+        <div className="mt-10">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+            <div className="text-center sm:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-purple-500/30 text-xs font-semibold text-purple-300 mb-2 shadow-sm shadow-purple-500/10">
+                <Layers size={12} className="text-purple-400" />
+                <span>Physics 3D Card Stack Architecture</span>
+              </div>
+              <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                All Public Production Repositories
+              </h4>
+              <p className="text-xs sm:text-sm text-slate-400 mt-1">
+                Drag, flick, or click cards to swap layers • Click Inspect Code to view source on GitHub
+              </p>
+            </div>
+
+            {/* View Mode Switcher: 3D Stack vs Grid Matrix */}
+            <div className="flex items-center gap-1.5 p-1 rounded-2xl glass border border-white/10 shrink-0">
+              <button
+                onClick={() => setRepoViewMode("stack")}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+                  repoViewMode === "stack"
+                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/25 scale-105 border border-cyan-400/30"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                <Layers size={13} />
+                <span>3D Stack</span>
+              </button>
+              <button
+                onClick={() => setRepoViewMode("grid")}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+                  repoViewMode === "grid"
+                    ? "bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-md shadow-purple-500/25 scale-105 border border-purple-400/30"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                <FolderGit2 size={13} />
+                <span>Grid View</span>
+              </button>
+            </div>
           </div>
+
+          {repoViewMode === "stack" ? (
+            /* 3D Physics Interactive CardSwap Stack View */
+            <div className="w-full h-[580px] sm:h-[640px] relative flex items-center justify-center overflow-visible">
+              <CardSwap
+                width={480}
+                height={350}
+                cardDistance={55}
+                verticalDistance={65}
+                depth={85}
+                skewAmount={5}
+                visibleCards={4}
+                cardRadius={22}
+                delay={4000}
+                speed={1}
+                bounce={0.35}
+                parallax={0.5}
+                hoverSpread={0.12}
+                dim={0.5}
+                autoplay={true}
+                pauseOnHover={true}
+                draggable={true}
+                theme="cyber"
+                onCardClick={(index) => {
+                  const target = repositories[index];
+                  if (target) setSelectedRepoId(target.id);
+                }}
+              >
+                {repositories.map((repo) => {
+                  const Icon = repo.icon;
+                  return (
+                    <Card key={repo.id}>
+                      <div className="p-6 sm:p-7 flex flex-col justify-between h-full bg-[#080a22]/95 border border-cyan-500/30 rounded-[inherit] text-white select-none backdrop-blur-xl">
+                        <div>
+                          {/* Card Top Intelligence Bar */}
+                          <div className="flex items-center justify-between mb-4">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-xl bg-black/60 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-lg shadow-cyan-500/20">
+                                <Icon size={20} />
+                              </div>
+                              <div>
+                                <span className="text-[10px] font-mono uppercase tracking-wider text-purple-300 font-bold block">
+                                  {repo.domain}
+                                </span>
+                                <span className="text-xs font-mono text-slate-400 flex items-center gap-1">
+                                  <GitBranch size={11} className="text-cyan-400" />
+                                  <span>{repo.branch}</span>
+                                </span>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-2 text-xs font-mono">
+                              <span className="px-2.5 py-1 rounded-lg bg-black/60 border border-white/10 text-amber-300 flex items-center gap-1 shadow-sm">
+                                <Star size={11} className="text-amber-400" />
+                                <span>{repo.stars}</span>
+                              </span>
+                              <span className="px-2.5 py-1 rounded-lg bg-black/60 border border-white/10 text-purple-300 flex items-center gap-1 shadow-sm">
+                                <GitFork size={11} className="text-purple-400" />
+                                <span>{repo.forks}</span>
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Repository Title */}
+                          <h4 className="text-lg sm:text-xl font-bold text-white tracking-tight mb-2">
+                            {repo.title}
+                          </h4>
+
+                          {/* Description */}
+                          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-3 mb-4">
+                            {repo.description}
+                          </p>
+
+                          {/* Tech Tags */}
+                          <div className="flex flex-wrap gap-1.5 mb-2">
+                            {repo.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-white/[0.05] border border-white/10 text-slate-200"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Card Bottom Meta & Actions */}
+                        <div className="pt-3.5 border-t border-white/10 flex items-center justify-between text-xs">
+                          <div className="flex items-center gap-1.5">
+                            <span
+                              className="w-2.5 h-2.5 rounded-full shadow-sm"
+                              style={{ backgroundColor: repo.languageColor }}
+                            />
+                            <span className="text-slate-200 font-mono text-[11px] font-semibold">
+                              {repo.language}
+                            </span>
+                          </div>
+
+                          <a
+                            href={repo.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-mono text-xs font-bold shadow-md shadow-cyan-500/25 transition-all hover:scale-105 cursor-pointer"
+                          >
+                            <span>Inspect Code</span>
+                            <ExternalLink size={12} />
+                          </a>
+                        </div>
+                      </div>
+                    </Card>
+                  );
+                })}
+              </CardSwap>
+            </div>
+          ) : (
+            /* Classic 3-Column Bento Grid View */
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {repositories.map((repo, i) => {
@@ -714,8 +960,9 @@ export default function GithubActivity() {
               );
             })}
           </div>
-        </div>
+        )}
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }

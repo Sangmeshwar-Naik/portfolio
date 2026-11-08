@@ -1,7 +1,10 @@
 "use client";
 
 import { useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+
+const TechText = dynamic(() => import("./TechText"), { ssr: false });
 import {
   Code2,
   Brain,
@@ -202,19 +205,39 @@ export default function Skills() {
       >
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="w-full flex flex-col items-center justify-center text-center mx-auto mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10 mx-auto">
             <Sparkles size={13} className="text-cyan-400" />
             Technologies &amp; Expertise
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-            Orbital <span className="text-gradient">Tech Radar</span>
-          </h2>
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <h2 className="sr-only">Orbital Tech Radar</h2>
+          <div className="w-full max-w-5xl mx-auto h-[65px] sm:h-[85px] md:h-[105px] relative flex items-center justify-center text-center">
+            <TechText
+              text="Orbital Tech Radar"
+              highlightText="Tech Radar"
+              fontWeight={900}
+              fontSize={75}
+              color="#ffffff"
+              accentColor="#00f5ff"
+              dashLength={4}
+              dashGap={2}
+              specks={12}
+              reveal="letter"
+              speed={2.2}
+              clickKick
+              sweep
+              draggable
+              selection
+              labels={false}
+              guides={false}
+              align="center"
+            />
+          </div>
+          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-center">
             Click any rotating category node on the orbit below to project and explore its verified technical skills.
           </p>
         </motion.div>

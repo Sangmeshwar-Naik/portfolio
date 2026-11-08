@@ -1,7 +1,10 @@
 "use client";
 
 import { useRef } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+
+const TechText = dynamic(() => import("./TechText"), { ssr: false });
 import {
   Briefcase,
   GraduationCap,
@@ -139,20 +142,40 @@ export default function Experience() {
       <div ref={containerRef} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-20"
+          className="w-full flex flex-col items-center justify-center text-center mx-auto mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-purple-500/30 text-xs font-semibold text-purple-300 mb-4">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full glass border border-purple-500/30 text-xs font-semibold text-purple-300 mb-4 mx-auto">
             <Sparkles size={13} className="text-purple-400" />
             Milestones &amp; Learning
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-            My <span className="text-gradient">Journey</span>
-          </h2>
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <h2 className="sr-only">My Journey</h2>
+          <div className="w-full max-w-5xl mx-auto h-[65px] sm:h-[85px] md:h-[100px] relative flex items-center justify-center text-center">
+            <TechText
+              text="My Journey"
+              highlightText="Journey"
+              fontWeight={900}
+              fontSize={85}
+              color="#ffffff"
+              accentColor="#00f5ff"
+              dashLength={4}
+              dashGap={2}
+              specks={12}
+              reveal="letter"
+              speed={2.2}
+              clickKick
+              sweep
+              draggable
+              selection
+              labels={false}
+              guides={false}
+              align="center"
+            />
+          </div>
+          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-center">
             Verified chronology of academic study, virtual internships, hackathons, and technical bootcamps.
           </p>
         </motion.div>

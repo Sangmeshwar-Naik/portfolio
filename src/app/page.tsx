@@ -8,6 +8,7 @@ import CommandPalette from "@/components/CommandPalette";
 import ResumeModal from "@/components/ResumeModal";
 import AiAssistant from "@/components/AiAssistant";
 import BackToTop from "@/components/BackToTop";
+import FallingLeavesBackground from "@/components/FallingLeavesBackground";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -47,6 +48,9 @@ export default function Home() {
     <main className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-[#050508] text-white flex flex-col items-center">
       {/* Precision Glowing Custom Cursor */}
       <CustomCursor />
+
+      {/* Atmospheric Autumn Falling Leaves Particle Effect */}
+      <FallingLeavesBackground />
 
       {/* Global Scroll Progress Neon Gradient Line */}
       <ScrollProgress />

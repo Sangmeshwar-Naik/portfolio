@@ -20,6 +20,7 @@ import {
   Sparkles,
   ArrowRight,
   Terminal,
+  Leaf,
 } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -270,6 +271,18 @@ export default function CommandPalette() {
       badge: "PDF",
       action: () => {
         window.open("/resume.pdf", "_blank");
+        setIsOpen(false);
+      },
+    },
+    {
+      id: "act-toggle-leaves",
+      category: "Quick Actions",
+      title: "Toggle Falling Leaves 🍂",
+      subtitle: "Pause or resume the autumn falling leaves animation",
+      icon: Leaf,
+      badge: "Animation",
+      action: () => {
+        window.dispatchEvent(new CustomEvent("toggle-falling-leaves"));
         setIsOpen(false);
       },
     },

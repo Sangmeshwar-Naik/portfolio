@@ -23,6 +23,11 @@ const HeroCanvas = dynamic(() => import("./HeroCanvas"), {
   ),
 });
 
+// Dynamically import 3D Interactive Physics Lanyard
+const Lanyard = dynamic(() => import("./Lanyard"), {
+  ssr: false,
+});
+
 const roles = [
   "AI/ML Engineer",
   "Data Scientist",
@@ -69,6 +74,8 @@ function RoleTypingEffect({ roles }: { roles: string[] }) {
 }
 
 export default function Hero() {
+  const [cardMode, setCardMode] = useState<"lanyard" | "classic">("lanyard");
+
   const scrollTo = (id: string) => {
     if (typeof document !== "undefined") {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -260,105 +267,193 @@ export default function Hero() {
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
             />
 
-            {/* Smooth continuous 3D Floating Motion Wrapper for the Profile Card */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-full flex justify-center"
-            >
-              <div className="relative w-full max-w-[340px] sm:max-w-[430px]">
-                {/* Central Profile Card with portrait photo and monogram logo */}
-                <div className="relative rounded-[36px] sm:rounded-[42px] p-5 sm:p-8 pt-8 sm:pt-10 border border-blue-500/30 bg-[#080b1f]/95 backdrop-blur-2xl w-full shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] overflow-hidden">
-                  {/* Dotted Matrix Background Pattern across Upper Section */}
-                  <div className="absolute inset-x-0 top-0 h-3/4 bg-[radial-gradient(#38bdf8_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-25 pointer-events-none" />
-
-                  {/* Inner flex column with generous top space above photo */}
-                  <div className="relative z-10 pt-4 pb-1 sm:pt-6 flex flex-col items-center text-center">
-                    {/* Portrait with Glowing Gold Border and Generous Top Clearance */}
-                    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-[30px] sm:rounded-[34px] overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_32px_rgba(251,191,36,0.5)] mb-3 bg-white shrink-0">
-                      <Image
-                        src="/profile.jpg"
-                        alt="Sangmeshwar Anil Naik"
-                        fill
-                        sizes="(max-width: 640px) 160px, 192px"
-                        className="object-cover object-top"
-                        priority
-                      />
-                    </div>
-
-                    {/* Monogram Emblem Badge */}
-                    <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-amber-400/80 shadow-[0_0_20px_rgba(251,191,36,0.45)] bg-[#070814] mb-3 shrink-0">
-                      <Image
-                        src="/logo.jpg"
-                        alt="SAN Monogram"
-                        fill
-                        sizes="44px"
-                        className="object-cover"
-                      />
-                    </div>
-
-                    {/* Name & Academic Credentials */}
-                    <h3 className="text-2xl sm:text-[26px] font-black text-white tracking-tight leading-snug">
-                      Sangmeshwar Anil Naik
-                    </h3>
-                    <p className="text-sm sm:text-base font-semibold text-cyan-400 mt-1 mb-5">
-                      B.E. AIML @ VTU
-                    </p>
-
-                    {/* Status Strip Pill */}
-                    <div className="w-full py-3 px-5 rounded-full bg-[#030617]/90 border border-white/10 flex items-center justify-between text-xs sm:text-sm text-slate-300 font-mono mb-4 shadow-inner">
-                      <span className="flex items-center gap-2 text-emerald-400 font-medium">
-                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                        CGPA 8.4 / 10
-                      </span>
-                      <span className="text-slate-300">Mangalore, KA</span>
-                    </div>
-
-                    {/* Bottom Integrated Specification Pills */}
-                    <div className="w-full pt-3.5 border-t border-white/10 grid grid-cols-2 gap-3.5 text-center">
-                      <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
-                        <span className="text-xs text-slate-400 block font-medium">Specialization</span>
-                        <p className="text-sm sm:text-base font-bold text-white mt-1">AI &amp; ML</p>
-                      </div>
-                      <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
-                        <span className="text-xs text-slate-400 block font-medium">Graduation</span>
-                        <p className="text-sm sm:text-base font-bold text-cyan-400 mt-1">2027</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Satellite Badge 1 (Top Right) */}
-                <motion.div
-                  className="absolute -top-3 -right-2 sm:-top-5 sm:-right-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-cyan-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            {/* Interactive Profile Area: 3D Physics Lanyard Card or Classic Card */}
+            <div className="relative z-10 w-full flex flex-col items-center justify-center">
+              {/* Card Mode Toggle Switch */}
+              <div className="flex items-center gap-2 mb-3 z-30">
+                <button
+                  onClick={() => setCardMode("lanyard")}
+                  className={`px-3 py-1.5 rounded-full text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 shadow-md ${
+                    cardMode === "lanyard"
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-cyan-500/25 scale-105 border border-cyan-400/40"
+                      : "glass text-slate-400 hover:text-white border border-white/10"
+                  }`}
+                  title="Switch to 3D Physics Lanyard Card"
                 >
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
-                    <Brain size={16} className="text-cyan-400" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Focus</p>
-                    <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Deep Learning</p>
-                  </div>
-                </motion.div>
-
-                {/* Floating Satellite Badge 2 (Bottom Left) */}
-                <motion.div
-                  className="absolute -bottom-3 -left-2 sm:-bottom-5 sm:-left-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-purple-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  <span>🪪</span>
+                  <span>3D Lanyard</span>
+                </button>
+                <button
+                  onClick={() => setCardMode("classic")}
+                  className={`px-3 py-1.5 rounded-full text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 shadow-md ${
+                    cardMode === "classic"
+                      ? "bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-purple-500/25 scale-105 border border-purple-400/40"
+                      : "glass text-slate-400 hover:text-white border border-white/10"
+                  }`}
+                  title="Switch to Classic Card View"
                 >
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center shrink-0">
-                    <Cpu size={16} className="text-purple-400" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Domain</p>
-                    <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Computer Vision</p>
-                  </div>
-                </motion.div>
+                  <span>📋</span>
+                  <span>Classic Card</span>
+                </button>
               </div>
-            </motion.div>
+
+              {cardMode === "lanyard" ? (
+                /* 3D Physics Interactive Lanyard View */
+                <div className="relative w-full max-w-[390px] sm:max-w-[450px] h-[550px] sm:h-[610px] flex items-center justify-center">
+                  <Lanyard
+                    frontImage="/profile-card.png"
+                    backImage="/profile-card.png"
+                    imageFit="contain"
+                    cardColor="#080b1f"
+                    orientation="square"
+                    finish="glossy"
+                    cornerRadius={0.20}
+                    size={0.68}
+                    anchor="center"
+                    strapLength={0.42}
+                    strapColor="#0a0f2d"
+                    strapWidth={0.65}
+                    metal="gold"
+                    gravity={1}
+                    damping={0.5}
+                    elasticity={0.5}
+                    breeze={0.35}
+                    interactive
+                    intro
+                  />
+
+                  {/* Floating Satellite Badge 1 (Top Right) */}
+                  <motion.div
+                    className="absolute top-20 -right-2 sm:top-24 sm:-right-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-cyan-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
+                      <Brain size={16} className="text-cyan-400" />
+                    </div>
+                    <div className="text-left">
+                      <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Focus</p>
+                      <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Deep Learning</p>
+                    </div>
+                  </motion.div>
+
+                  {/* Floating Satellite Badge 2 (Bottom Left) */}
+                  <motion.div
+                    className="absolute bottom-10 -left-2 sm:bottom-12 sm:-left-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-purple-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  >
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center shrink-0">
+                      <Cpu size={16} className="text-purple-400" />
+                    </div>
+                    <div className="text-left">
+                      <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Domain</p>
+                      <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Computer Vision</p>
+                    </div>
+                  </motion.div>
+                </div>
+              ) : (
+                /* Classic Card View with Continuous 3D Floating Motion */
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative z-10 w-full flex justify-center"
+                >
+                  <div className="relative w-full max-w-[340px] sm:max-w-[430px]">
+                    {/* Central Profile Card with portrait photo and monogram logo */}
+                    <div className="relative rounded-[36px] sm:rounded-[42px] p-5 sm:p-8 pt-8 sm:pt-10 border border-blue-500/30 bg-[#080b1f]/95 backdrop-blur-2xl w-full shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] overflow-hidden">
+                      {/* Dotted Matrix Background Pattern across Upper Section */}
+                      <div className="absolute inset-x-0 top-0 h-3/4 bg-[radial-gradient(#38bdf8_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-25 pointer-events-none" />
+
+                      {/* Inner flex column with generous top space above photo */}
+                      <div className="relative z-10 pt-4 pb-1 sm:pt-6 flex flex-col items-center text-center">
+                        {/* Portrait with Glowing Gold Border and Generous Top Clearance */}
+                        <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-[30px] sm:rounded-[34px] overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_32px_rgba(251,191,36,0.5)] mb-3 bg-white shrink-0">
+                          <Image
+                            src="/profile.jpg"
+                            alt="Sangmeshwar Anil Naik"
+                            fill
+                            sizes="(max-width: 640px) 160px, 192px"
+                            className="object-cover object-top"
+                            priority
+                          />
+                        </div>
+
+                        {/* Monogram Emblem Badge */}
+                        <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-amber-400/80 shadow-[0_0_20px_rgba(251,191,36,0.45)] bg-[#070814] mb-3 shrink-0">
+                          <Image
+                            src="/logo.jpg"
+                            alt="SAN Monogram"
+                            fill
+                            sizes="44px"
+                            className="object-cover"
+                          />
+                        </div>
+
+                        {/* Name & Academic Credentials */}
+                        <h3 className="text-2xl sm:text-[26px] font-black text-white tracking-tight leading-snug">
+                          Sangmeshwar Anil Naik
+                        </h3>
+                        <p className="text-sm sm:text-base font-semibold text-cyan-400 mt-1 mb-5">
+                          B.E. AIML @ VTU
+                        </p>
+
+                        {/* Status Strip Pill */}
+                        <div className="w-full py-3 px-5 rounded-full bg-[#030617]/90 border border-white/10 flex items-center justify-between text-xs sm:text-sm text-slate-300 font-mono mb-4 shadow-inner">
+                          <span className="flex items-center gap-2 text-emerald-400 font-medium">
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                            CGPA 8.4 / 10
+                          </span>
+                          <span className="text-slate-300">Mangalore, KA</span>
+                        </div>
+
+                        {/* Bottom Integrated Specification Pills */}
+                        <div className="w-full pt-3.5 border-t border-white/10 grid grid-cols-2 gap-3.5 text-center">
+                          <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
+                            <span className="text-xs text-slate-400 block font-medium">Specialization</span>
+                            <p className="text-sm sm:text-base font-bold text-white mt-1">AI &amp; ML</p>
+                          </div>
+                          <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
+                            <span className="text-xs text-slate-400 block font-medium">Graduation</span>
+                            <p className="text-sm sm:text-base font-bold text-cyan-400 mt-1">2027</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Floating Satellite Badge 1 (Top Right) */}
+                    <motion.div
+                      className="absolute -top-3 -right-2 sm:-top-5 sm:-right-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-cyan-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                      animate={{ y: [0, -6, 0] }}
+                      transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
+                        <Brain size={16} className="text-cyan-400" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Focus</p>
+                        <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Deep Learning</p>
+                      </div>
+                    </motion.div>
+
+                    {/* Floating Satellite Badge 2 (Bottom Left) */}
+                    <motion.div
+                      className="absolute -bottom-3 -left-2 sm:-bottom-5 sm:-left-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-purple-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                      animate={{ y: [0, 6, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    >
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center shrink-0">
+                        <Cpu size={16} className="text-purple-400" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Domain</p>
+                        <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Computer Vision</p>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              )}
+            </div>
           </motion.div>
         </div>
 
