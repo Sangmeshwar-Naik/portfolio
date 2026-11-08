@@ -23,6 +23,9 @@ import {
   Clock,
   ArrowRight,
   Zap,
+  Brain,
+  Briefcase,
+  Code2,
 } from "lucide-react";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
@@ -41,10 +44,34 @@ interface FormErrors {
 }
 
 const QUICK_SUBJECTS = [
-  "🚀 AI / ML Project Collaboration",
-  "💼 Internship Opportunity",
-  "💻 Full-Stack Development",
-  "💬 General Inquiry",
+  {
+    id: "ai-ml",
+    title: "AI / ML Collaboration",
+    subject: "🚀 AI / ML Project Collaboration & Research",
+    icon: Brain,
+    color: "#00f5ff",
+  },
+  {
+    id: "internship",
+    title: "Internship Opportunity",
+    subject: "💼 Internship Opportunity for Sangmeshwar",
+    icon: Briefcase,
+    color: "#bf00ff",
+  },
+  {
+    id: "fullstack",
+    title: "Full-Stack Project",
+    subject: "💻 Full-Stack Web / Mobile Development",
+    icon: Code2,
+    color: "#10b981",
+  },
+  {
+    id: "general",
+    title: "General Inquiry",
+    subject: "💬 General Engineering Inquiry",
+    icon: Sparkles,
+    color: "#ec4899",
+  },
 ];
 
 export default function Contact() {
@@ -463,19 +490,27 @@ export default function Contact() {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="p-7 sm:p-10 lg:p-11 rounded-[32px] sm:rounded-[38px] bg-[#04050e]/90 border border-white/10 shadow-2xl backdrop-blur-xl relative overflow-hidden">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2.5">
-                    <Zap size={20} className="text-cyan-400" />
-                    <span>Send a Direct Message</span>
-                  </h3>
-                  <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300">
-                    Live Channel
-                  </span>
+              <div className="p-7 sm:p-10 lg:p-11 rounded-[32px] sm:rounded-[38px] bg-[#04050e]/95 border border-white/10 shadow-2xl backdrop-blur-xl relative overflow-hidden">
+                {/* Header Bar */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-5 border-b border-white/10">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-md shrink-0">
+                      <Zap size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                        Send a Direct Message
+                      </h3>
+                      <p className="text-xs sm:text-sm text-slate-400 font-mono mt-0.5">
+                        Transmitted directly to Sangmeshwar with instant delivery.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-semibold shrink-0 w-fit self-start sm:self-auto">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Live Channel Active</span>
+                  </div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-400 mb-6 font-mono">
-                  Fill in your details below. Your message will be recorded and delivered to Sangmeshwar promptly.
-                </p>
 
                 {/* Status Alert Banner */}
                 <AnimatePresence>
@@ -533,16 +568,23 @@ export default function Contact() {
                   )}
                 </AnimatePresence>
 
-                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {/* Name Input with Embedded Icon */}
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                  {/* Row 1: Name and Email with Dedicated Addon Icon Boxes */}
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    {/* Name Input */}
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-300 mb-2">
                         Your Name <span className="text-cyan-400">*</span>
                       </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                          <User size={17} className="text-cyan-400/80" />
+                      <div
+                        className={`flex items-center rounded-2xl bg-white/[0.04] border transition-all overflow-hidden ${
+                          errors.name
+                            ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
+                            : "border-white/10 focus-within:border-cyan-400 focus-within:ring-2 focus-within:ring-cyan-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(0,245,255,0.15)]"
+                        }`}
+                      >
+                        <div className="px-4 py-3.5 bg-white/[0.03] border-r border-white/10 flex items-center justify-center text-cyan-400 shrink-0">
+                          <User size={18} />
                         </div>
                         <input
                           type="text"
@@ -550,11 +592,7 @@ export default function Contact() {
                           value={formState.name}
                           onChange={handleChange}
                           placeholder="e.g. John Doe"
-                          className={`w-full pl-11 pr-4 py-3 rounded-xl bg-white/[0.04] border text-sm text-white placeholder-slate-500 focus:outline-none transition-all ${
-                            errors.name
-                              ? "border-red-500/60 focus:border-red-500 focus:ring-1 focus:ring-red-500/50"
-                              : "border-white/10 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/40 focus:bg-white/[0.07]"
-                          }`}
+                          className="w-full px-4 py-3.5 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none font-sans"
                         />
                       </div>
                       {errors.name && (
@@ -564,14 +602,20 @@ export default function Contact() {
                       )}
                     </div>
 
-                    {/* Email Input with Embedded Icon */}
+                    {/* Email Input */}
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                        Your Email <span className="text-cyan-400">*</span>
+                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-300 mb-2">
+                        Your Email <span className="text-purple-400">*</span>
                       </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                          <Mail size={17} className="text-purple-400/80" />
+                      <div
+                        className={`flex items-center rounded-2xl bg-white/[0.04] border transition-all overflow-hidden ${
+                          errors.email
+                            ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
+                            : "border-white/10 focus-within:border-purple-400 focus-within:ring-2 focus-within:ring-purple-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(191,0,255,0.15)]"
+                        }`}
+                      >
+                        <div className="px-4 py-3.5 bg-white/[0.03] border-r border-white/10 flex items-center justify-center text-purple-400 shrink-0">
+                          <Mail size={18} />
                         </div>
                         <input
                           type="email"
@@ -579,11 +623,7 @@ export default function Contact() {
                           value={formState.email}
                           onChange={handleChange}
                           placeholder="e.g. john@example.com"
-                          className={`w-full pl-11 pr-4 py-3 rounded-xl bg-white/[0.04] border text-sm text-white placeholder-slate-500 focus:outline-none transition-all ${
-                            errors.email
-                              ? "border-red-500/60 focus:border-red-500 focus:ring-1 focus:ring-red-500/50"
-                              : "border-white/10 focus:border-purple-400 focus:ring-1 focus:ring-purple-400/40 focus:bg-white/[0.07]"
-                          }`}
+                          className="w-full px-4 py-3.5 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none font-sans"
                         />
                       </div>
                       {errors.email && (
@@ -594,14 +634,26 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Subject Input with Embedded Icon and Quick Subject Pills */}
+                  {/* Row 2: Subject Input with Dedicated Icon and Preset Selector */}
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                      Subject <span className="text-cyan-400">*</span>
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                        <Sparkles size={17} className="text-pink-400/80" />
+                    <div className="flex items-center justify-between mb-2">
+                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
+                        Subject / Inquiry Topic <span className="text-pink-400">*</span>
+                      </label>
+                      <span className="text-[11px] text-slate-400 font-mono hidden sm:inline">
+                        Click a topic below or type your own
+                      </span>
+                    </div>
+
+                    <div
+                      className={`flex items-center rounded-2xl bg-white/[0.04] border transition-all overflow-hidden ${
+                        errors.subject
+                          ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
+                          : "border-white/10 focus-within:border-pink-400 focus-within:ring-2 focus-within:ring-pink-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(236,72,153,0.15)]"
+                      }`}
+                    >
+                      <div className="px-4 py-3.5 bg-white/[0.03] border-r border-white/10 flex items-center justify-center text-pink-400 shrink-0">
+                        <Sparkles size={18} />
                       </div>
                       <input
                         type="text"
@@ -609,11 +661,7 @@ export default function Contact() {
                         value={formState.subject}
                         onChange={handleChange}
                         placeholder="e.g. AI / ML Internship or Engineering Opportunity"
-                        className={`w-full pl-11 pr-4 py-3 rounded-xl bg-white/[0.04] border text-sm text-white placeholder-slate-500 focus:outline-none transition-all ${
-                          errors.subject
-                            ? "border-red-500/60 focus:border-red-500 focus:ring-1 focus:ring-red-500/50"
-                            : "border-white/10 focus:border-pink-400 focus:ring-1 focus:ring-pink-400/40 focus:bg-white/[0.07]"
-                        }`}
+                        className="w-full px-4 py-3.5 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none font-sans"
                       />
                     </div>
                     {errors.subject && (
@@ -622,46 +670,65 @@ export default function Contact() {
                       </p>
                     )}
 
-                    {/* Quick Subject Suggestion Pills */}
-                    <div className="flex flex-wrap gap-2 mt-2.5">
-                      {QUICK_SUBJECTS.map((sub, idx) => (
-                        <button
-                          key={idx}
-                          type="button"
-                          onClick={() => setFormState((prev) => ({ ...prev, subject: sub }))}
-                          className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white/[0.03] hover:bg-cyan-500/15 border border-white/10 hover:border-cyan-400/50 text-slate-300 hover:text-cyan-300 transition-all cursor-pointer"
-                        >
-                          {sub}
-                        </button>
-                      ))}
+                    {/* Spacious Quick Topic Selection Cards */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3">
+                      {QUICK_SUBJECTS.map((sub) => {
+                        const SubIcon = sub.icon;
+                        const isSelected = formState.subject === sub.subject;
+                        return (
+                          <button
+                            key={sub.id}
+                            type="button"
+                            onClick={() => setFormState((prev) => ({ ...prev, subject: sub.subject }))}
+                            className={`p-3 rounded-xl border text-left transition-all cursor-pointer flex items-center gap-2.5 ${
+                              isSelected
+                                ? "bg-cyan-500/20 border-cyan-400 text-cyan-200 shadow-md shadow-cyan-500/20 scale-[1.02]"
+                                : "bg-white/[0.03] border-white/10 text-slate-300 hover:border-cyan-500/40 hover:bg-white/[0.06] hover:text-white"
+                            }`}
+                          >
+                            <div
+                              className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 shadow-sm"
+                              style={{ backgroundColor: `${sub.color}20`, color: sub.color }}
+                            >
+                              <SubIcon size={14} />
+                            </div>
+                            <span className="text-xs font-mono font-medium leading-tight truncate">
+                              {sub.title}
+                            </span>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
-                  {/* Message Input with Embedded Icon */}
+                  {/* Row 3: Message Textarea with Terminal Header & Live Character Count */}
                   <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300">
-                        Message <span className="text-cyan-400">*</span>
-                      </label>
-                      <span className="text-[11px] text-slate-400 font-mono">
-                        {formState.message.length} chars
-                      </span>
-                    </div>
-                    <div className="relative">
-                      <div className="absolute top-3.5 left-3.5 pointer-events-none text-slate-400">
-                        <MessageSquare size={17} className="text-cyan-400/80" />
+                    <div
+                      className={`rounded-2xl bg-white/[0.04] border transition-all overflow-hidden ${
+                        errors.message
+                          ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
+                          : "border-white/10 focus-within:border-cyan-400 focus-within:ring-2 focus-within:ring-cyan-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(0,245,255,0.15)]"
+                      }`}
+                    >
+                      {/* Textarea Header Bar */}
+                      <div className="px-4 py-2.5 bg-white/[0.03] border-b border-white/10 flex items-center justify-between text-xs font-mono">
+                        <div className="flex items-center gap-2 text-cyan-400">
+                          <MessageSquare size={15} />
+                          <span className="font-bold uppercase tracking-wider text-slate-200">
+                            Message Content <span className="text-cyan-400">*</span>
+                          </span>
+                        </div>
+                        <span className="text-[11px] text-slate-400">
+                          {formState.message.length} chars
+                        </span>
                       </div>
                       <textarea
-                        rows={5}
+                        rows={6}
                         name="message"
                         value={formState.message}
                         onChange={handleChange}
-                        placeholder="Describe your project, role, research topic, or inquiry..."
-                        className={`w-full pl-11 pr-4 py-3 rounded-xl bg-white/[0.04] border text-sm text-white placeholder-slate-500 focus:outline-none resize-none transition-all ${
-                          errors.message
-                            ? "border-red-500/60 focus:border-red-500 focus:ring-1 focus:ring-red-500/50"
-                            : "border-white/10 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/40 focus:bg-white/[0.07]"
-                        }`}
+                        placeholder="Describe your project, role, research collaboration, or technical inquiry..."
+                        className="w-full p-4 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none resize-none leading-relaxed font-sans"
                       />
                     </div>
                     {errors.message && (
@@ -671,11 +738,11 @@ export default function Contact() {
                     )}
                   </div>
 
-                  {/* Submit Button with Gradient Animation */}
+                  {/* Submit Button */}
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 hover:from-cyan-400 hover:to-pink-400 flex items-center justify-center gap-2.5 shadow-xl shadow-cyan-500/25 transition-all disabled:opacity-50 cursor-pointer group"
+                    className="w-full py-4 rounded-xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 hover:from-cyan-400 hover:to-pink-400 flex items-center justify-center gap-2.5 shadow-xl shadow-cyan-500/25 transition-all disabled:opacity-50 cursor-pointer group"
                     whileHover={{ scale: isSubmitting ? 1 : 1.01 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   >
