@@ -207,7 +207,7 @@ export default function About() {
         <div className="grid lg:grid-cols-12 gap-7 sm:gap-9 items-stretch mb-10 sm:mb-14">
           {/* Executive Overview Card */}
           <motion.div
-            className="lg:col-span-7 rounded-[32px] sm:rounded-[36px] p-8 sm:p-10 lg:p-12 pb-9 sm:pb-11 lg:pb-12 border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/40 transition-all flex flex-col justify-between relative shadow-2xl group min-h-[480px]"
+            className="lg:col-span-7 rounded-[32px] sm:rounded-[36px] p-8 sm:p-10 lg:p-12 pb-10 sm:pb-12 lg:pb-14 border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/40 transition-all flex flex-col justify-between relative shadow-2xl group min-h-[500px]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
@@ -266,18 +266,18 @@ export default function About() {
 
             {/* Bottom Meta Pill Strip - Fully padded away from rounded corners so all corner text is 100% visible */}
             <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-mono">
-              <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/[0.04] border border-white/10 text-slate-200 shadow-sm">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/[0.04] border border-white/10 text-slate-200 shadow-sm hover:border-cyan-500/30 transition-colors">
                 <MapPin size={16} className="text-cyan-400 shrink-0" />
                 <span className="font-medium">Bidar &amp; Mangalore, Karnataka</span>
               </div>
-              <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/[0.04] border border-white/10 text-slate-200 shadow-sm">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/[0.04] border border-white/10 text-slate-200 shadow-sm hover:border-purple-500/30 transition-colors">
                 <GraduationCap size={17} className="text-purple-400 shrink-0" />
                 <span className="font-medium">VTU Class of 2027</span>
               </div>
             </div>
           </motion.div>
 
-          {/* 4 Verified Metric Capsules - Enlarged, spacious, clean shapes */}
+          {/* 4 Verified Metric Capsules - Enlarged, spacious, clean shapes with smooth spring hover */}
           <motion.div
             className="lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-6"
             initial={{ opacity: 0, y: 30 }}
@@ -285,37 +285,53 @@ export default function About() {
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <div className="rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/50 hover:bg-cyan-500/[0.06] transition-all duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden">
+            <motion.div
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              className="rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/50 hover:bg-cyan-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
+            >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-cyan-400 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={8.4} decimals={1} />
               </div>
               <p className="text-sm sm:text-base font-bold text-white mt-1">B.E. AIML CGPA</p>
               <span className="text-xs sm:text-[13px] text-slate-400 font-mono mt-1">Scale: 10.0 (VTU)</span>
-            </div>
+            </motion.div>
 
-            <div className="rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-purple-400/50 hover:bg-purple-500/[0.06] transition-all duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden">
+            <motion.div
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              className="rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-purple-400/50 hover:bg-purple-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
+            >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-purple-400 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={4} suffix="+" />
               </div>
               <p className="text-sm sm:text-base font-bold text-white mt-1">Virtual Internships</p>
               <span className="text-xs sm:text-[13px] text-slate-400 font-mono mt-1">AICTE &amp; EduSkills</span>
-            </div>
+            </motion.div>
 
-            <div className="rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-pink-400/50 hover:bg-pink-500/[0.06] transition-all duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden">
+            <motion.div
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              className="rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-pink-400/50 hover:bg-pink-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
+            >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-pink-400 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={6} suffix="+" />
               </div>
               <p className="text-sm sm:text-base font-bold text-white mt-1">Core Deployments</p>
               <span className="text-xs sm:text-[13px] text-slate-400 font-mono mt-1">AI &amp; Web Systems</span>
-            </div>
+            </motion.div>
 
-            <div className="rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-emerald-400/50 hover:bg-emerald-500/[0.06] transition-all duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden">
+            <motion.div
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              className="rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-emerald-400/50 hover:bg-emerald-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
+            >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-emerald-400 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={8} suffix="+" />
               </div>
               <p className="text-sm sm:text-base font-bold text-white mt-1">Certifications</p>
               <span className="text-xs sm:text-[13px] text-slate-400 font-mono mt-1">AWS, IBM, Certiport</span>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -325,7 +341,7 @@ export default function About() {
         <div className="grid lg:grid-cols-12 gap-7 sm:gap-9 items-start">
           {/* Academic Education Timeline Card */}
           <motion.div
-            className="lg:col-span-6 rounded-[32px] sm:rounded-[36px] p-8 sm:p-10 lg:p-12 border border-white/10 bg-[#070818]/90 backdrop-blur-xl shadow-2xl hover:border-purple-400/40 transition-all"
+            className="lg:col-span-6 rounded-[32px] sm:rounded-[36px] p-8 sm:p-10 lg:p-12 pb-10 sm:pb-12 border border-white/10 bg-[#070818]/90 backdrop-blur-xl shadow-2xl hover:border-purple-400/40 transition-all"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
@@ -346,36 +362,45 @@ export default function About() {
               </span>
             </div>
 
-            <div className="space-y-8 pl-1">
+            {/* Completely non-overlapping timeline using dedicated flex columns */}
+            <div className="space-y-6 sm:space-y-7">
               {educationList.map((edu, idx) => (
                 <div
                   key={idx}
-                  className="relative pl-10 sm:pl-11 border-l-2 border-white/10 last:border-0 pb-2"
+                  className="flex items-start gap-4 sm:gap-5 group"
                 >
-                  {/* Glowing Node Dot - Positioned with safe clearance so it never overlaps the text */}
-                  <span
-                    className={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 border-[#050612] ${
-                      edu.current
-                        ? "bg-cyan-400 shadow-[0_0_14px_#00f5ff]"
-                        : "bg-slate-500"
-                    }`}
-                  />
-
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <h4 className="text-base sm:text-lg font-bold text-white leading-snug">
-                      {edu.degree}
-                    </h4>
-                    <span className="text-xs sm:text-sm px-3.5 py-1.5 rounded-full glass text-cyan-300 border border-cyan-500/30 font-semibold font-mono shrink-0 shadow-sm">
-                      {edu.score}
-                    </span>
+                  {/* Dedicated Timeline Track & Glowing Dot Column */}
+                  <div className="flex flex-col items-center self-stretch shrink-0 pt-1.5">
+                    <span
+                      className={`w-4 h-4 rounded-full border-2 border-[#070818] z-10 shrink-0 transition-transform duration-300 group-hover:scale-125 ${
+                        edu.current
+                          ? "bg-cyan-400 shadow-[0_0_14px_#00f5ff] ring-4 ring-cyan-500/20"
+                          : "bg-slate-500 ring-2 ring-white/10"
+                      }`}
+                    />
+                    {idx !== educationList.length - 1 && (
+                      <div className="w-0.5 flex-1 bg-gradient-to-b from-cyan-500/30 via-white/10 to-white/5 my-2 min-h-[50px]" />
+                    )}
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-300 mt-2 font-medium">
-                    {edu.institution}
-                  </p>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-1 font-mono">
-                    {edu.university} • {edu.duration}
-                  </p>
+                  {/* Text Information Container */}
+                  <div className="flex-1 min-w-0 pb-4">
+                    <div className="flex flex-wrap items-center justify-between gap-2.5">
+                      <h4 className="text-base sm:text-lg font-bold text-white leading-snug group-hover:text-cyan-300 transition-colors">
+                        {edu.degree}
+                      </h4>
+                      <span className="text-xs sm:text-sm px-3.5 py-1.5 rounded-full glass text-cyan-300 border border-cyan-500/30 font-semibold font-mono shrink-0 shadow-sm">
+                        {edu.score}
+                      </span>
+                    </div>
+
+                    <p className="text-sm sm:text-base text-slate-300 mt-1.5 font-medium">
+                      {edu.institution}
+                    </p>
+                    <p className="text-xs sm:text-sm text-slate-400 mt-1 font-mono">
+                      {edu.university} • {edu.duration}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -405,9 +430,11 @@ export default function About() {
                 {coreDomains.map((domain, idx) => {
                   const Icon = domain.icon;
                   return (
-                    <div
+                    <motion.div
                       key={idx}
-                      className="p-5 sm:p-5.5 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.06] transition-all group flex items-start gap-4 min-h-[96px] sm:min-h-[104px]"
+                      whileHover={{ y: -3, scale: 1.01 }}
+                      transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                      className="p-5 sm:p-5.5 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.06] transition-colors group flex items-start gap-4 min-h-[96px] sm:min-h-[104px]"
                     >
                       <div
                         className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm mt-0.5"
@@ -418,7 +445,7 @@ export default function About() {
                       >
                         <Icon size={20} />
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <h5 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
                           {domain.name}
                         </h5>
@@ -426,14 +453,14 @@ export default function About() {
                           {domain.detail}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
             </div>
 
             {/* Career Objective Terminal Console - Full clearance at bottom so no corner text is clipped */}
-            <div className="rounded-[28px] sm:rounded-[32px] p-7 sm:p-9 pb-9 sm:pb-11 border border-cyan-500/30 relative overflow-hidden shadow-xl bg-[#050612]/95 backdrop-blur-xl">
+            <div className="rounded-[28px] sm:rounded-[32px] p-7 sm:p-9 pb-10 sm:pb-12 border border-cyan-500/30 relative overflow-hidden shadow-xl bg-[#050612]/95 backdrop-blur-xl">
               <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5 text-xs sm:text-sm font-mono text-slate-400">
                 <div className="flex items-center gap-2.5">
                   <Terminal size={17} className="text-cyan-400" />
@@ -446,7 +473,7 @@ export default function About() {
                 </div>
               </div>
 
-              <p className="text-sm sm:text-[15px] md:text-base text-slate-200 leading-relaxed font-mono tracking-tight pb-1">
+              <p className="text-sm sm:text-[15px] md:text-base text-slate-200 leading-relaxed font-mono tracking-tight pb-2">
                 <span className="text-cyan-400 font-bold">$ </span>
                 Seeking high-impact software &amp; machine learning engineering roles to deploy innovative AI solutions, contribute to organizational breakthroughs, and continuously master advanced computational systems.
               </p>
