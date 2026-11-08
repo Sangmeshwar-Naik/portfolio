@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Mail, Search, FileText } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import NotificationBell from "./NotificationBell";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -181,23 +182,29 @@ export default function Navigation() {
 
             <motion.button
               onClick={() => handleNavClick("#contact")}
-              className="ml-2 px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all"
+              className="ml-2 px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all cursor-pointer"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
             >
               Let&apos;s Talk
             </motion.button>
+
+            {/* Notification Bell right side of Let's Talk */}
+            <NotificationBell />
           </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl glass text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            whileTap={{ scale: 0.92 }}
-            aria-label="Toggle navigation menu"
-          >
-            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </motion.button>
+          {/* Mobile Right Controls: Notification Bell & Hamburger Menu */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <NotificationBell />
+            <motion.button
+              className="w-10 h-10 flex items-center justify-center rounded-xl glass text-white cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              whileTap={{ scale: 0.92 }}
+              aria-label="Toggle navigation menu"
+            >
+              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </motion.button>
+          </div>
         </div>
       </motion.nav>
 

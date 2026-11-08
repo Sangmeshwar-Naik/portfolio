@@ -160,6 +160,33 @@ export default function Contact() {
 
     const snapshot = { ...formState };
 
+    const newNotification = {
+      id: "msg-" + Date.now(),
+      timestamp: new Date().toISOString(),
+      name: snapshot.name.trim(),
+      email: snapshot.email.trim(),
+      subject: snapshot.subject.trim(),
+      message: snapshot.message.trim(),
+      read: false,
+    };
+
+    // Instant real-time broadcast to Notification Bell
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("portfolio-new-message", { detail: newNotification })
+      );
+      try {
+        const stored = JSON.parse(localStorage.getItem("portfolio_notifications") || "[]");
+        const list = Array.isArray(stored) ? stored : [];
+        localStorage.setItem(
+          "portfolio_notifications",
+          JSON.stringify([newNotification, ...list])
+        );
+      } catch {
+        // Safe fallback
+      }
+    }
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
