@@ -8,17 +8,11 @@ import {
   CheckCheck,
   Trash2,
   Mail,
-  User,
   Clock,
   Sparkles,
-  ExternalLink,
   X,
   Inbox,
-  AlertCircle,
-  MessageSquare,
-  ArrowRight,
 } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
 
 export interface ContactNotification {
   id: string;
@@ -48,35 +42,36 @@ const INITIAL_DEMO_NOTIFICATIONS: ContactNotification[] = [
 
 export default function NotificationBell() {
   const [isOpen, setIsOpen] = useState(false);
-  const [notifications, setNotifications] = useState<ContactNotification[]>([]);
   const [hasNewAlert, setHasNewAlert] = useState(false);
   const popoverRef = useRef<HTMLDivElement>(null);
 
-  // Load notifications from localStorage & backend on mount
-  useEffect(() => {
-    let initialList: ContactNotification[] = [];
+  // Load notifications with safe lazy initializer (avoids cascading render and setState in effect)
+  const [notifications, setNotifications] = useState<ContactNotification[]>(() => {
+    if (typeof window === "undefined") return INITIAL_DEMO_NOTIFICATIONS;
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          initialList = parsed;
+          return parsed;
         }
       }
     } catch {
-      // Fallback
+      // Safe fallback
     }
+    return INITIAL_DEMO_NOTIFICATIONS;
+  });
 
-    if (initialList.length === 0) {
-      initialList = INITIAL_DEMO_NOTIFICATIONS;
-      try {
+  // Sync notifications from server and ensure storage exists
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (!stored) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_DEMO_NOTIFICATIONS));
-      } catch {
-        // Safe
       }
+    } catch {
+      // Safe
     }
-
-    setNotifications(initialList);
 
     // Sync from server if available
     fetch("/api/contact")
