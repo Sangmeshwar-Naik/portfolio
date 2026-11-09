@@ -136,16 +136,16 @@ export default function Navigation() {
               <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-[9px] font-mono text-slate-400 border border-white/10">⌘K</kbd>
             </motion.button>
 
-            {/* In-Browser CV Inspector Trigger */}
+            {/* In-Browser CV & Resume Inspector Trigger */}
             <motion.button
               onClick={() => window.dispatchEvent(new CustomEvent("open-resume-modal"))}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass border border-purple-500/30 hover:border-purple-400 text-xs text-purple-300 hover:text-white transition-all shadow-md group cursor-pointer mr-1"
-              title="View Academic CV & Profile"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass border border-purple-500/35 hover:border-purple-400 bg-purple-500/10 text-xs text-purple-200 hover:text-white transition-all shadow-md shadow-purple-500/10 group cursor-pointer mr-1"
+              title="View Official PDF Resume & CV"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <FileText size={13} className="text-purple-400" />
-              <span className="font-mono text-[11px] font-semibold">CV</span>
+              <FileText size={13} className="text-purple-400 group-hover:scale-110 transition-transform" />
+              <span className="font-mono text-[11px] font-bold">Resume</span>
             </motion.button>
 
             <motion.a
