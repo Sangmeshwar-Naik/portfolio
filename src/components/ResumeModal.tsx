@@ -84,9 +84,9 @@ export default function ResumeModal() {
 
           {/* Modal Container */}
           <motion.div
-            className={`relative z-10 w-full glass rounded-none border border-cyan-500/40 shadow-2xl shadow-cyan-500/25 bg-[#060714]/98 flex flex-col overflow-hidden transition-all duration-300 ${
+            className={`relative z-10 w-full glass rounded-3xl border border-cyan-500/40 shadow-2xl shadow-cyan-500/25 bg-[#060714]/98 flex flex-col overflow-hidden transition-all duration-300 ${
               isFullscreen
-                ? "w-[98vw] h-[96vh] max-w-none max-h-none rounded-none"
+                ? "w-[98vw] h-[96vh] max-w-none max-h-none rounded-2xl"
                 : "max-w-5xl h-[90vh] max-h-[850px]"
             }`}
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
@@ -100,8 +100,8 @@ export default function ResumeModal() {
             <div className="p-4 sm:p-5 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 bg-black/40">
               {/* Left Identity Strip */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-none bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 p-0.5 shadow-md shrink-0">
-                  <div className="w-full h-full rounded-none bg-[#070818] flex items-center justify-center text-cyan-300">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 p-0.5 shadow-md shrink-0">
+                  <div className="w-full h-full rounded-xl bg-[#070818] flex items-center justify-center text-cyan-300">
                     <FileText size={20} />
                   </div>
                 </div>
@@ -110,8 +110,8 @@ export default function ResumeModal() {
                     <h3 className="text-sm sm:text-base font-bold text-white font-mono tracking-tight">
                       Sangmeshwar Anil Naik
                     </h3>
-                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-none bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-semibold">
-                      <span className="w-1.5 h-1.5 rounded-none bg-emerald-400 animate-pulse" />
+                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-semibold">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                       <span>Verified Official Resume</span>
                     </span>
                   </div>
@@ -122,10 +122,10 @@ export default function ResumeModal() {
               </div>
 
               {/* Center Mode Switcher Tabs (Real PDF Document vs Digital CV) */}
-              <div className="flex items-center p-1 rounded-none bg-white/[0.04] border border-white/10 shadow-inner">
+              <div className="flex items-center p-1 rounded-xl bg-white/[0.04] border border-white/10 shadow-inner">
                 <button
                   onClick={() => setViewMode("pdf")}
-                  className={`px-3.5 py-1.5 rounded-none text-xs font-mono font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
                     viewMode === "pdf"
                       ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/25 border border-cyan-400/40"
                       : "text-slate-400 hover:text-white"
@@ -137,7 +137,7 @@ export default function ResumeModal() {
                 </button>
                 <button
                   onClick={() => setViewMode("digital")}
-                  className={`px-3.5 py-1.5 rounded-none text-xs font-mono font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
                     viewMode === "digital"
                       ? "bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-md shadow-purple-500/25 border border-purple-400/40"
                       : "text-slate-400 hover:text-white"
@@ -154,7 +154,7 @@ export default function ResumeModal() {
                 {/* Print Shortcut */}
                 <button
                   onClick={handlePrint}
-                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none glass border border-white/10 hover:border-cyan-400/50 text-slate-300 hover:text-white text-xs font-mono font-medium transition-all cursor-pointer"
+                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass border border-white/10 hover:border-cyan-400/50 text-slate-300 hover:text-white text-xs font-mono font-medium transition-all cursor-pointer"
                   title="Print Resume"
                 >
                   <Printer size={13} className="text-cyan-400" />
@@ -166,7 +166,7 @@ export default function ResumeModal() {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none glass border border-white/10 hover:border-cyan-400/50 text-slate-300 hover:text-white text-xs font-mono font-medium transition-all"
+                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass border border-white/10 hover:border-cyan-400/50 text-slate-300 hover:text-white text-xs font-mono font-medium transition-all"
                   title="Open in new browser tab"
                 >
                   <ExternalLink size={13} className="text-purple-400" />
@@ -177,7 +177,7 @@ export default function ResumeModal() {
                 <a
                   href="/resume.pdf"
                   download="Sangmeshwar_Anil_Naik_Resume.pdf"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-none bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold text-xs shadow-md shadow-cyan-500/25 hover:from-cyan-400 hover:to-purple-500 transition-all cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold text-xs shadow-md shadow-cyan-500/25 hover:from-cyan-400 hover:to-purple-500 transition-all cursor-pointer"
                   title="Download verified PDF resume file"
                 >
                   <Download size={13} />
@@ -187,7 +187,7 @@ export default function ResumeModal() {
                 {/* Fullscreen Expand Button */}
                 <button
                   onClick={() => setIsFullscreen(!isFullscreen)}
-                  className="hidden md:inline-flex p-2 rounded-none bg-white/[0.05] border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
+                  className="hidden md:inline-flex p-2 rounded-xl bg-white/[0.05] border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
                   title={isFullscreen ? "Exit Fullscreen" : "Fullscreen View"}
                 >
                   {isFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
@@ -196,7 +196,7 @@ export default function ResumeModal() {
                 {/* Close Modal Button */}
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 rounded-none bg-white/[0.05] border border-white/10 text-slate-400 hover:text-white hover:bg-white/[0.08] transition-colors cursor-pointer ml-1"
+                  className="p-2 rounded-xl bg-white/[0.05] border border-white/10 text-slate-400 hover:text-white hover:bg-white/[0.08] transition-colors cursor-pointer ml-1"
                   aria-label="Close modal"
                 >
                   <X size={18} />
@@ -237,7 +237,7 @@ export default function ResumeModal() {
                     ref={iframeRef}
                     src="/resume.pdf#view=FitH&toolbar=1&navpanes=0&scrollbar=1"
                     title="Sangmeshwar Anil Naik Official Resume"
-                    className="w-full h-full min-h-[500px] rounded-none border border-white/10 bg-[#0d0e24] shadow-2xl"
+                    className="w-full h-full min-h-[500px] rounded-2xl border border-white/10 bg-[#0d0e24] shadow-2xl"
                     onLoad={() => setPdfLoaded(true)}
                   />
 
@@ -250,7 +250,7 @@ export default function ResumeModal() {
                       <a
                         href="/resume.pdf"
                         target="_blank"
-                        className="px-5 py-2.5 rounded-none bg-cyan-500 text-white font-bold"
+                        className="px-5 py-2.5 rounded-xl bg-cyan-500 text-white font-bold"
                       >
                         Open Resume PDF
                       </a>
@@ -264,7 +264,7 @@ export default function ResumeModal() {
               /* ============================================================== */
               <div className="flex-1 overflow-y-auto p-5 sm:p-8 space-y-7 font-sans text-xs sm:text-sm">
                 {/* Executive Contact Strip */}
-                <div className="p-5 sm:p-6 rounded-none bg-white/[0.025] border border-white/10 flex flex-wrap items-center justify-between gap-4 shadow-xl">
+                <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.025] border border-white/10 flex flex-wrap items-center justify-between gap-4 shadow-xl">
                   <div className="space-y-1">
                     <h4 className="text-xl font-black text-white tracking-tight">
                       Sangmeshwar Anil Naik
@@ -302,7 +302,7 @@ export default function ResumeModal() {
                     <span>Academic Roadmap &amp; Scores</span>
                   </h4>
                   <div className="space-y-3">
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5 flex flex-wrap items-center justify-between gap-2">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 flex flex-wrap items-center justify-between gap-2">
                       <div>
                         <h5 className="font-bold text-white text-sm">
                           B.E. in Artificial Intelligence &amp; Machine Learning
@@ -314,12 +314,12 @@ export default function ResumeModal() {
                           Sept 2023 – July 2027 (Currently Pursuing, Class of 2027)
                         </p>
                       </div>
-                      <span className="px-3.5 py-1.5 rounded-none bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 font-black font-mono text-xs shadow-sm">
+                      <span className="px-4 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 font-black font-mono text-xs shadow-sm">
                         CGPA: 8.4 / 10
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5 flex flex-wrap items-center justify-between gap-2">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 flex flex-wrap items-center justify-between gap-2">
                       <div>
                         <h5 className="font-bold text-white text-sm">
                           12th (DPUC) - Science
@@ -331,12 +331,12 @@ export default function ResumeModal() {
                           Completed 2022
                         </p>
                       </div>
-                      <span className="px-3.5 py-1.5 rounded-none bg-purple-500/15 border border-purple-500/30 text-purple-300 font-bold font-mono text-xs">
+                      <span className="px-4 py-1.5 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 font-bold font-mono text-xs">
                         64.33%
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5 flex flex-wrap items-center justify-between gap-2">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 flex flex-wrap items-center justify-between gap-2">
                       <div>
                         <h5 className="font-bold text-white text-sm">
                           10th (KSEEB) - Secondary Education
@@ -348,7 +348,7 @@ export default function ResumeModal() {
                           Completed 2020
                         </p>
                       </div>
-                      <span className="px-3.5 py-1.5 rounded-none bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-bold font-mono text-xs">
+                      <span className="px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-bold font-mono text-xs">
                         79.04%
                       </span>
                     </div>
@@ -361,11 +361,11 @@ export default function ResumeModal() {
                     <Award size={17} />
                     <span>Verified Certifications &amp; Distinctions</span>
                   </h4>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5">
-                      <div className="flex items-center justify-between mb-1">
+                  <div className="grid sm:grid-cols-2 gap-3.5">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5">
+                      <div className="flex items-center justify-between mb-1.5">
                         <h5 className="font-bold text-white text-sm">AWS Academy Data Engineering</h5>
-                        <span className="text-[10px] font-mono text-amber-300 px-2 py-0.5 rounded-none bg-amber-500/10 border border-amber-500/30">
+                        <span className="text-[10px] font-mono text-amber-300 px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30">
                           Credly
                         </span>
                       </div>
@@ -374,10 +374,10 @@ export default function ResumeModal() {
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5">
-                      <div className="flex items-center justify-between mb-1">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5">
+                      <div className="flex items-center justify-between mb-1.5">
                         <h5 className="font-bold text-white text-sm">IT Specialist – Data Analytics</h5>
-                        <span className="text-[10px] font-mono text-emerald-300 px-2 py-0.5 rounded-none bg-emerald-500/10 border border-emerald-500/30">
+                        <span className="text-[10px] font-mono text-emerald-300 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
                           929 / 1000 (93%)
                         </span>
                       </div>
@@ -386,10 +386,10 @@ export default function ResumeModal() {
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5">
-                      <div className="flex items-center justify-between mb-1">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5">
+                      <div className="flex items-center justify-between mb-1.5">
                         <h5 className="font-bold text-white text-sm">National C++ Mastery Challenge</h5>
-                        <span className="text-[10px] font-mono text-cyan-300 px-2 py-0.5 rounded-none bg-cyan-500/10 border border-cyan-500/30">
+                        <span className="text-[10px] font-mono text-cyan-300 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30">
                           93% Score
                         </span>
                       </div>
@@ -398,10 +398,10 @@ export default function ResumeModal() {
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5">
-                      <div className="flex items-center justify-between mb-1">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5">
+                      <div className="flex items-center justify-between mb-1.5">
                         <h5 className="font-bold text-white text-sm">AI/ML for Geodata Analytics</h5>
-                        <span className="text-[10px] font-mono text-pink-300 px-2 py-0.5 rounded-none bg-pink-500/10 border border-pink-500/30">
+                        <span className="text-[10px] font-mono text-pink-300 px-2.5 py-0.5 rounded-full bg-pink-500/10 border border-pink-500/30">
                           ISRO - IIRS
                         </span>
                       </div>
@@ -418,8 +418,8 @@ export default function ResumeModal() {
                     <Code2 size={17} />
                     <span>Key Engineering Projects</span>
                   </h4>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5">
+                  <div className="grid sm:grid-cols-2 gap-3.5">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5">
                       <h5 className="font-bold text-white text-sm">
                         Hybrid Quantum AI for Brain Tumor Analysis
                       </h5>
@@ -431,7 +431,7 @@ export default function ResumeModal() {
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5">
                       <h5 className="font-bold text-white text-sm">
                         CampusConnect Service Platform
                       </h5>
@@ -443,7 +443,7 @@ export default function ResumeModal() {
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5">
                       <h5 className="font-bold text-white text-sm">
                         Coastal Maritime Vessel Detection
                       </h5>
@@ -455,7 +455,7 @@ export default function ResumeModal() {
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-none bg-white/[0.02] border border-white/5">
+                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5">
                       <h5 className="font-bold text-white text-sm">
                         Real-time Messaging Engine
                       </h5>
@@ -490,7 +490,7 @@ export default function ResumeModal() {
                 <a
                   href="/resume.pdf"
                   download="Sangmeshwar_Anil_Naik_Resume.pdf"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 text-white font-bold text-xs shadow-lg shadow-cyan-500/25 hover:from-cyan-400 hover:to-pink-400 transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 text-white font-bold text-xs shadow-lg shadow-cyan-500/25 hover:from-cyan-400 hover:to-pink-400 transition-all cursor-pointer"
                 >
                   <Download size={14} />
                   <span>Download Official PDF</span>

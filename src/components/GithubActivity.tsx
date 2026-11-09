@@ -298,11 +298,11 @@ export default function GithubActivity() {
         </motion.div>
 
         {/* Flowing Laser Fog HUD Indicator & Color Spectrum Selector */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-5 px-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 px-3">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-none bg-cyan-400 opacity-75" />
-              <span className="relative inline-flex rounded-none h-2.5 w-2.5 bg-cyan-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500" />
             </span>
             <span className="text-xs font-mono font-bold text-cyan-300 uppercase tracking-wider">
               Corner Liquid Fog Stream Active
@@ -316,38 +316,38 @@ export default function GithubActivity() {
             <span className="text-slate-400 text-[11px] mr-1 hidden sm:inline">Liquid Fog Aura:</span>
             <button
               onClick={() => setLaserColor("#3847ff")}
-              className={`px-2.5 py-1 rounded-none text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+              className={`px-3 py-1.5 rounded-xl text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                 laserColor === "#3847ff"
                   ? "bg-blue-600/25 text-blue-300 border border-blue-500/50 shadow-md shadow-blue-500/20 scale-105"
                   : "bg-white/[0.04] text-slate-400 hover:text-white border border-white/10"
               }`}
               title="Cobalt Laser Blue Flow"
             >
-              <span className="w-1.5 h-1.5 rounded-none bg-[#3847ff]" />
+              <span className="w-2 h-2 rounded-full bg-[#3847ff]" />
               <span>Cobalt Blue</span>
             </button>
             <button
               onClick={() => setLaserColor("#00f5ff")}
-              className={`px-2.5 py-1 rounded-none text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+              className={`px-3 py-1.5 rounded-xl text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                 laserColor === "#00f5ff"
                   ? "bg-cyan-500/25 text-cyan-300 border border-cyan-400/50 shadow-md shadow-cyan-500/20 scale-105"
                   : "bg-white/[0.04] text-slate-400 hover:text-white border border-white/10"
               }`}
               title="Cyber Neon Cyan Flow"
             >
-              <span className="w-1.5 h-1.5 rounded-none bg-[#00f5ff]" />
+              <span className="w-2 h-2 rounded-full bg-[#00f5ff]" />
               <span>Neon Cyan</span>
             </button>
             <button
               onClick={() => setLaserColor("#a855f7")}
-              className={`px-2.5 py-1 rounded-none text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+              className={`px-3 py-1.5 rounded-xl text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                 laserColor === "#a855f7"
                   ? "bg-purple-600/25 text-purple-300 border border-purple-500/50 shadow-md shadow-purple-500/20 scale-105"
                   : "bg-white/[0.04] text-slate-400 hover:text-white border border-white/10"
               }`}
               title="Quantum Purple Flow"
             >
-              <span className="w-1.5 h-1.5 rounded-none bg-[#a855f7]" />
+              <span className="w-2 h-2 rounded-full bg-[#a855f7]" />
               <span>Purple</span>
             </button>
           </div>
@@ -382,7 +382,7 @@ export default function GithubActivity() {
 
           <motion.div
             ref={telemetryBarRef}
-            className="rounded-none p-6 sm:p-8 border border-cyan-500/30 shadow-2xl shadow-cyan-500/10 bg-[#070818]/90 backdrop-blur-xl relative overflow-hidden z-10"
+            className="rounded-2xl sm:rounded-3xl p-7 sm:p-9 border border-cyan-500/30 shadow-2xl shadow-cyan-500/10 bg-[#070818]/90 backdrop-blur-xl relative overflow-hidden z-10"
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false, amount: 0.2 }}
@@ -398,14 +398,14 @@ export default function GithubActivity() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               {/* Left: Animated Holographic Radar Scanner */}
               <div className="flex items-center gap-4">
-                <div className="relative w-16 h-16 rounded-none glass border border-cyan-500/40 flex items-center justify-center bg-black/60 shadow-lg shadow-cyan-500/20 shrink-0">
+                <div className="relative w-16 h-16 rounded-2xl glass border border-cyan-500/40 flex items-center justify-center bg-black/60 shadow-lg shadow-cyan-500/20 shrink-0">
                   {/* Radar Grid Rings */}
-                  <div className="absolute inset-1 rounded-none border border-cyan-500/20" />
-                  <div className="absolute inset-3 rounded-none border border-purple-500/25" />
-                  <div className="w-1.5 h-1.5 rounded-none bg-cyan-400 animate-ping" />
+                  <div className="absolute inset-1 rounded-xl border border-cyan-500/20" />
+                  <div className="absolute inset-3 rounded-lg border border-purple-500/25" />
+                  <div className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
                   {/* 360° Rotating Radar Sweep Line */}
                   <motion.div
-                    className="absolute inset-0 rounded-none pointer-events-none"
+                    className="absolute inset-0 rounded-2xl pointer-events-none"
                     animate={{ rotate: 360 }}
                     transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                   >
@@ -418,7 +418,7 @@ export default function GithubActivity() {
                     <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-cyan-300">
                       Live Telemetry Radar
                     </span>
-                    <span className="w-2.5 h-2.5 rounded-none bg-emerald-400 animate-pulse" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                     <span className="text-xs font-mono text-emerald-400 uppercase font-semibold">
                       SYS_ACTIVE
                     </span>
@@ -431,19 +431,19 @@ export default function GithubActivity() {
 
               {/* Right: Real-time Telemetry Metrics Chips */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 w-full md:w-auto font-mono text-center">
-                <div className="px-4.5 py-3 rounded-none bg-white/[0.04] border border-white/10">
+                <div className="px-5 py-3.5 rounded-xl bg-white/[0.04] border border-white/10">
                   <span className="text-[11px] text-slate-400 block uppercase font-medium">Cluster Repos</span>
                   <span className="text-sm sm:text-base font-bold text-cyan-300">6 Verified</span>
                 </div>
-                <div className="px-4.5 py-3 rounded-none bg-white/[0.04] border border-white/10">
+                <div className="px-5 py-3.5 rounded-xl bg-white/[0.04] border border-white/10">
                   <span className="text-[11px] text-slate-400 block uppercase font-medium">Pipeline Latency</span>
                   <span className="text-sm sm:text-base font-bold text-emerald-400">&lt; 14ms</span>
                 </div>
-                <div className="px-4.5 py-3 rounded-none bg-white/[0.04] border border-white/10">
+                <div className="px-5 py-3.5 rounded-xl bg-white/[0.04] border border-white/10">
                   <span className="text-[11px] text-slate-400 block uppercase font-medium">CI/CD Uptime</span>
                   <span className="text-sm sm:text-base font-bold text-purple-300">99.98%</span>
                 </div>
-                <div className="px-4.5 py-3 rounded-none bg-white/[0.04] border border-white/10">
+                <div className="px-5 py-3.5 rounded-xl bg-white/[0.04] border border-white/10">
                   <span className="text-[11px] text-slate-400 block uppercase font-medium">Branch Protocol</span>
                   <span className="text-sm sm:text-base font-bold text-amber-300">Main / Prod</span>
                 </div>
@@ -462,14 +462,14 @@ export default function GithubActivity() {
                 <button
                   key={repo.id}
                   onClick={() => setSelectedRepoId(repo.id)}
-                  className={`relative px-4 py-3 rounded-none border transition-all duration-300 flex items-center gap-2.5 cursor-pointer ${
+                  className={`relative px-4 py-3 rounded-xl border transition-all duration-300 flex items-center gap-2.5 cursor-pointer ${
                     isSelected
                       ? "glass border-cyan-500/60 bg-cyan-500/15 text-white shadow-xl shadow-cyan-500/25 scale-105"
                       : "glass border-white/10 text-slate-400 hover:text-white hover:border-white/20 hover:bg-white/[0.03]"
                   }`}
                 >
                   <div
-                    className={`w-7 h-7 rounded-none flex items-center justify-center transition-transform ${
+                    className={`w-7 h-7 rounded-lg flex items-center justify-center transition-transform ${
                       isSelected ? "scale-110 text-cyan-400" : "text-slate-400"
                     }`}
                   >
@@ -480,7 +480,7 @@ export default function GithubActivity() {
                   </span>
                   {isSelected && (
                     <motion.div
-                      className="absolute -bottom-1 left-3 right-3 h-0.5 rounded-none bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500"
+                      className="absolute -bottom-1 left-3 right-3 h-0.5 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500"
                       layoutId="active-dock-indicator"
                     />
                   )}
@@ -498,19 +498,19 @@ export default function GithubActivity() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -25 }}
             transition={{ type: "spring", stiffness: 90, damping: 18 }}
-            className="rounded-none p-6 sm:p-10 border border-cyan-500/35 shadow-2xl relative overflow-hidden mb-20 bg-[#070716]/95 backdrop-blur-2xl"
+            className="rounded-2xl sm:rounded-3xl p-8 sm:p-11 border border-cyan-500/35 shadow-2xl relative overflow-hidden mb-20 bg-[#070716]/95 backdrop-blur-2xl"
           >
             {/* Cyber Corner HUD Crosshairs */}
-            <div className="absolute top-3 left-3 font-mono text-cyan-400/40 text-xs pointer-events-none">
+            <div className="absolute top-4 left-4 font-mono text-cyan-400/40 text-xs pointer-events-none">
               ┌──[SYS.EXEC]
             </div>
-            <div className="absolute top-3 right-3 font-mono text-cyan-400/40 text-xs pointer-events-none">
+            <div className="absolute top-4 right-4 font-mono text-cyan-400/40 text-xs pointer-events-none">
               [HUD.ONLINE]──┐
             </div>
-            <div className="absolute bottom-3 left-3 font-mono text-cyan-400/40 text-xs pointer-events-none">
+            <div className="absolute bottom-4 left-4 font-mono text-cyan-400/40 text-xs pointer-events-none">
               └──[DIAG.01]
             </div>
-            <div className="absolute bottom-3 right-3 font-mono text-cyan-400/40 text-xs pointer-events-none">
+            <div className="absolute bottom-4 right-4 font-mono text-cyan-400/40 text-xs pointer-events-none">
               [PORT.3000]──┘
             </div>
 
@@ -518,11 +518,11 @@ export default function GithubActivity() {
               {/* Left Column: Repository Intelligence & Architecture */}
               <div className="lg:col-span-6 space-y-6">
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="px-3 py-1 rounded-none text-xs font-bold uppercase tracking-wider bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                  <span className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-500/15 text-purple-300 border border-purple-500/30">
                     {selectedRepo.domain}
                   </span>
-                  <span className="px-2.5 py-1 rounded-none text-xs font-mono font-semibold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-none bg-cyan-400 animate-ping" />
+                  <span className="px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
                     <span>git: {selectedRepo.branch}</span>
                   </span>
                 </div>
@@ -538,18 +538,18 @@ export default function GithubActivity() {
                 </div>
 
                 {/* Performance & Engineering Metrics Bar */}
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-3 gap-3.5">
                   {selectedRepo.metrics.map((m, idx) => (
                     <motion.div
                       key={idx}
-                      className="p-3.5 rounded-none bg-black/50 border border-white/10 text-center hover:border-cyan-500/40 transition-colors"
+                      className="p-4 rounded-xl bg-black/50 border border-white/10 text-center hover:border-cyan-500/40 transition-colors"
                       whileHover={{ scale: 1.05 }}
                     >
                       <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider font-mono">
                         {m.label}
                       </span>
                       <span
-                        className="text-lg font-mono font-black mt-0.5 block"
+                        className="text-lg font-mono font-black mt-1 block"
                         style={{ color: m.color }}
                       >
                         {m.value}
@@ -559,11 +559,11 @@ export default function GithubActivity() {
                 </div>
 
                 {/* Tech Pills */}
-                <div className="flex flex-wrap gap-1.5 pt-1">
+                <div className="flex flex-wrap gap-2 pt-1">
                   {selectedRepo.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 rounded-none text-xs font-mono font-semibold bg-white/[0.04] border border-white/10 text-slate-200 hover:border-cyan-500/30 transition-colors"
+                      className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold bg-white/[0.04] border border-white/10 text-slate-200 hover:border-cyan-500/30 transition-colors"
                     >
                       {tag}
                     </span>
@@ -571,15 +571,15 @@ export default function GithubActivity() {
                 </div>
 
                 {/* Interactive Copyable Clone Command */}
-                <div className="p-3.5 rounded-none bg-black/70 border border-white/15 flex items-center justify-between gap-3 font-mono text-xs shadow-inner">
-                  <div className="flex items-center gap-2 text-slate-400 overflow-hidden truncate">
-                    <Terminal size={14} className="text-cyan-400 shrink-0" />
+                <div className="p-4 rounded-xl bg-black/70 border border-white/15 flex items-center justify-between gap-3 font-mono text-xs shadow-inner">
+                  <div className="flex items-center gap-2.5 text-slate-400 overflow-hidden truncate">
+                    <Terminal size={15} className="text-cyan-400 shrink-0" />
                     <span className="text-cyan-300 truncate">{selectedRepo.cloneCmd}</span>
                   </div>
 
                   <button
                     onClick={() => handleCopy(selectedRepo.cloneCmd)}
-                    className="px-3 py-1.5 rounded-none bg-white/10 hover:bg-cyan-500/20 border border-white/10 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-300 transition-all flex items-center gap-1.5 shrink-0 cursor-pointer text-[11px]"
+                    className="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-cyan-500/20 border border-white/10 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-300 transition-all flex items-center gap-1.5 shrink-0 cursor-pointer text-[11px]"
                   >
                     {copied ? (
                       <>
@@ -601,19 +601,19 @@ export default function GithubActivity() {
                     href={selectedRepo.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-cyan-500/25 transition-all cursor-pointer hover:scale-105"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-cyan-500/25 transition-all cursor-pointer hover:scale-105"
                   >
                     <span>View Repository on GitHub</span>
                     <ExternalLink size={14} />
                   </a>
 
-                  <div className="flex items-center gap-3 text-xs text-slate-400">
+                  <div className="flex items-center gap-3.5 text-xs text-slate-400">
                     <span className="flex items-center gap-1.5">
-                      <Star size={13} className="text-amber-400" />
+                      <Star size={14} className="text-amber-400" />
                       <span className="font-bold text-white">{selectedRepo.stars}</span>
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <GitFork size={13} className="text-purple-400" />
+                      <GitFork size={14} className="text-purple-400" />
                       <span className="font-bold text-white">{selectedRepo.forks}</span>
                     </span>
                   </div>
@@ -622,20 +622,20 @@ export default function GithubActivity() {
 
               {/* Right Column: Live Animated Neural & Execution Pipeline Visualizer */}
               <div className="lg:col-span-6">
-                <div className="glass rounded-none border border-cyan-500/30 p-6 bg-[#080816]/95 relative shadow-2xl overflow-hidden">
+                <div className="glass rounded-2xl border border-cyan-500/30 p-6 sm:p-7 bg-[#080816]/95 relative shadow-2xl overflow-hidden">
                   {/* Chrome top bar */}
                   <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
                     <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-none bg-rose-500" />
-                      <span className="w-2.5 h-2.5 rounded-none bg-amber-500" />
-                      <span className="w-2.5 h-2.5 rounded-none bg-emerald-500" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                       <span className="ml-2 font-mono text-[11px] text-slate-400">
                         pipeline_diagnostics.py
                       </span>
                     </div>
 
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-none bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-none bg-emerald-400 animate-ping" />
+                    <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
                       <span>LIVE RUNTIME</span>
                     </span>
                   </div>
@@ -654,7 +654,7 @@ export default function GithubActivity() {
                       return (
                         <motion.div
                           key={idx}
-                          className={`p-3.5 rounded-none border transition-all duration-300 flex items-start gap-3 relative z-10 ${
+                          className={`p-4 rounded-xl border transition-all duration-300 flex items-start gap-3.5 relative z-10 ${
                             isActive
                               ? "bg-cyan-500/15 border-cyan-500/50 shadow-lg shadow-cyan-500/20 scale-[1.02]"
                               : "bg-white/[0.02] border-white/5"
@@ -662,12 +662,12 @@ export default function GithubActivity() {
                         >
                           <div className="mt-0.5">
                             {step.status === "success" ? (
-                              <div className="w-5 h-5 rounded-none bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.3)]">
-                                <Check size={11} className="stroke-[3]" />
+                              <div className="w-6 h-6 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.3)]">
+                                <Check size={12} className="stroke-[3]" />
                               </div>
                             ) : (
-                              <div className="w-5 h-5 rounded-none bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 animate-spin">
-                                <Play size={10} />
+                              <div className="w-6 h-6 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 animate-spin">
+                                <Play size={11} />
                               </div>
                             )}
                           </div>
@@ -677,7 +677,7 @@ export default function GithubActivity() {
                               <h5 className="text-xs font-mono font-bold text-white flex items-center gap-1.5">
                                 <span>{step.title}</span>
                                 {isActive && (
-                                  <span className="text-[9px] px-1.5 py-0.2 rounded-none bg-cyan-400 text-slate-950 font-bold">
+                                  <span className="text-[9px] px-1.5 py-0.5 rounded-md bg-cyan-400 text-slate-950 font-bold">
                                     PROCESSING
                                   </span>
                                 )}
@@ -686,7 +686,7 @@ export default function GithubActivity() {
                                 Step 0{idx + 1}
                               </span>
                             </div>
-                            <p className="text-[11px] text-slate-300 mt-0.5 font-mono">
+                            <p className="text-[11px] text-slate-300 mt-1 font-mono">
                               {step.detail}
                             </p>
                           </div>
@@ -696,7 +696,7 @@ export default function GithubActivity() {
                   </div>
 
                   {/* Live Streaming Console Logs with Blinking Terminal Cursor */}
-                  <div className="p-3.5 rounded-none bg-black/90 border border-white/10 font-mono text-[11px] text-slate-300 space-y-1">
+                  <div className="p-4 rounded-xl bg-black/90 border border-white/10 font-mono text-[11px] text-slate-300 space-y-1">
                     <p className="text-slate-500">
                       $ python -m {selectedRepo.name.toLowerCase().replace(/-/g, "_")}.run
                     </p>
@@ -734,10 +734,10 @@ export default function GithubActivity() {
             </div>
 
             {/* View Mode Switcher: 3D Stack vs Grid Matrix */}
-            <div className="flex items-center gap-1.5 p-1 rounded-none glass border border-white/10 shrink-0">
+            <div className="flex items-center gap-1.5 p-1.5 rounded-xl glass border border-white/10 shrink-0">
               <button
                 onClick={() => setRepoViewMode("stack")}
-                className={`px-3.5 py-1.5 rounded-none text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+                className={`px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                   repoViewMode === "stack"
                     ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/25 scale-105 border border-cyan-400/30"
                     : "text-slate-400 hover:text-white"
@@ -748,7 +748,7 @@ export default function GithubActivity() {
               </button>
               <button
                 onClick={() => setRepoViewMode("grid")}
-                className={`px-3.5 py-1.5 rounded-none text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+                className={`px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                   repoViewMode === "grid"
                     ? "bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-md shadow-purple-500/25 scale-105 border border-purple-400/30"
                     : "text-slate-400 hover:text-white"
@@ -771,7 +771,7 @@ export default function GithubActivity() {
                 depth={85}
                 skewAmount={5}
                 visibleCards={4}
-                cardRadius={0}
+                cardRadius={20}
                 delay={4000}
                 speed={1}
                 bounce={0.35}
@@ -791,12 +791,12 @@ export default function GithubActivity() {
                   const Icon = repo.icon;
                   return (
                     <Card key={repo.id}>
-                      <div className="p-6 sm:p-7 flex flex-col justify-between h-full bg-[#080a22]/95 border border-cyan-500/30 rounded-none text-white select-none backdrop-blur-xl">
+                      <div className="p-6 sm:p-7 flex flex-col justify-between h-full bg-[#080a22]/95 border border-cyan-500/30 rounded-2xl text-white select-none backdrop-blur-xl">
                         <div>
                           {/* Card Top Intelligence Bar */}
                           <div className="flex items-center justify-between mb-4">
                             <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 rounded-none bg-black/60 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-lg shadow-cyan-500/20">
+                              <div className="w-10 h-10 rounded-xl bg-black/60 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-lg shadow-cyan-500/20">
                                 <Icon size={20} />
                               </div>
                               <div>
@@ -811,11 +811,11 @@ export default function GithubActivity() {
                             </div>
 
                             <div className="flex items-center gap-2 text-xs font-mono">
-                              <span className="px-2.5 py-1 rounded-none bg-black/60 border border-white/10 text-amber-300 flex items-center gap-1 shadow-sm">
+                              <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10 text-amber-300 flex items-center gap-1 shadow-sm">
                                 <Star size={11} className="text-amber-400" />
                                 <span>{repo.stars}</span>
                               </span>
-                              <span className="px-2.5 py-1 rounded-none bg-black/60 border border-white/10 text-purple-300 flex items-center gap-1 shadow-sm">
+                              <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10 text-purple-300 flex items-center gap-1 shadow-sm">
                                 <GitFork size={11} className="text-purple-400" />
                                 <span>{repo.forks}</span>
                               </span>
@@ -833,11 +833,11 @@ export default function GithubActivity() {
                           </p>
 
                           {/* Tech Tags */}
-                          <div className="flex flex-wrap gap-1.5 mb-2">
+                          <div className="flex flex-wrap gap-2 mb-2">
                             {repo.tags.map((tag) => (
                               <span
                                 key={tag}
-                                className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-white/[0.05] border border-white/10 text-slate-200"
+                                className="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/[0.05] border border-white/10 text-slate-200"
                               >
                                 {tag}
                               </span>
@@ -849,7 +849,7 @@ export default function GithubActivity() {
                         <div className="pt-3.5 border-t border-white/10 flex items-center justify-between text-xs">
                           <div className="flex items-center gap-1.5">
                             <span
-                              className="w-2.5 h-2.5 rounded-none shadow-sm"
+                              className="w-2.5 h-2.5 rounded-full shadow-sm"
                               style={{ backgroundColor: repo.languageColor }}
                             />
                             <span className="text-slate-200 font-mono text-[11px] font-semibold">
@@ -862,7 +862,7 @@ export default function GithubActivity() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-none bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-mono text-xs font-bold shadow-md shadow-cyan-500/25 transition-all hover:scale-105 cursor-pointer"
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-mono text-xs font-bold shadow-md shadow-cyan-500/25 transition-all hover:scale-105 cursor-pointer"
                           >
                             <span>Inspect Code</span>
                             <ExternalLink size={12} />
@@ -886,7 +886,7 @@ export default function GithubActivity() {
                   href={repo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-none p-7 sm:p-8 border border-white/10 hover:border-cyan-400/60 transition-all flex flex-col justify-between group shadow-xl hover:shadow-cyan-500/25 relative overflow-hidden cursor-pointer bg-[#070818]/90 backdrop-blur-xl min-h-[300px]"
+                  className="rounded-2xl sm:rounded-3xl p-7 sm:p-8 border border-white/10 hover:border-cyan-400/60 transition-all flex flex-col justify-between group shadow-xl hover:shadow-cyan-500/25 relative overflow-hidden cursor-pointer bg-[#070818]/90 backdrop-blur-xl min-h-[320px]"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.15 }}
@@ -900,11 +900,11 @@ export default function GithubActivity() {
                   />
 
                   <div>
-                    <div className="flex items-center justify-between mb-4.5">
-                      <div className="w-12 h-12 rounded-none bg-black/60 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform shadow-lg">
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-12 h-12 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform shadow-lg">
                         <Icon size={22} />
                       </div>
-                      <span className="text-xs font-mono px-3 py-1 rounded-none bg-white/[0.04] border border-white/10 text-slate-300 flex items-center gap-1.5">
+                      <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 flex items-center gap-1.5">
                         <GitBranch size={12} className="text-purple-400" />
                         {repo.branch}
                       </span>
@@ -922,11 +922,11 @@ export default function GithubActivity() {
                       {repo.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-1.5 mb-5">
+                    <div className="flex flex-wrap gap-2 mb-5">
                       {repo.tags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}
-                          className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-white/[0.03] border border-white/10 text-slate-300"
+                          className="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/[0.03] border border-white/10 text-slate-300"
                         >
                           {tag}
                         </span>
@@ -934,10 +934,10 @@ export default function GithubActivity() {
                     </div>
                   </div>
 
-                  <div className="pt-3.5 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
                     <div className="flex items-center gap-1.5">
                       <span
-                        className="w-2 h-2 rounded-none"
+                        className="w-2.5 h-2.5 rounded-full"
                         style={{ backgroundColor: repo.languageColor }}
                       />
                       <span className="text-slate-300 font-medium text-[11px]">
@@ -947,7 +947,7 @@ export default function GithubActivity() {
 
                     <div className="flex items-center gap-3">
                       <span className="flex items-center gap-1 text-[11px]">
-                        <Star size={11} className="text-amber-400" />
+                        <Star size={12} className="text-amber-400" />
                         {repo.stars}
                       </span>
                       <span className="inline-flex items-center gap-1 text-cyan-400 group-hover:translate-x-1 transition-transform text-xs font-semibold">

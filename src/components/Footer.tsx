@@ -40,7 +40,7 @@ export default function Footer() {
               onClick={scrollToTop}
               className="flex items-center gap-3 focus:outline-none group text-left cursor-pointer"
             >
-              <div className="relative w-11 h-11 rounded-none overflow-hidden border border-amber-500/40 shadow-lg shadow-amber-500/20 group-hover:border-amber-400 group-hover:shadow-amber-500/35 transition-all bg-[#0a0a14]">
+              <div className="relative w-11 h-11 rounded-xl overflow-hidden border border-amber-500/40 shadow-lg shadow-amber-500/20 group-hover:border-amber-400 group-hover:shadow-amber-500/35 transition-all bg-[#0a0a14]">
                 <Image
                   src="/logo.jpg"
                   alt="SAN Logo"
@@ -90,7 +90,7 @@ export default function Footer() {
                 href="https://github.com/Sangmeshwar-Naik"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-none glass border border-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-all"
+                className="w-10.5 h-10.5 rounded-xl glass border border-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-all shadow-sm"
                 aria-label="GitHub Profile"
               >
                 <FaGithub size={18} />
@@ -99,14 +99,14 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/sangmeshwar-naik-555828385"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-none glass border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 transition-all"
+                className="w-10.5 h-10.5 rounded-xl glass border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 transition-all shadow-sm"
                 aria-label="LinkedIn Profile"
               >
                 <FaLinkedin size={18} />
               </a>
               <a
                 href="mailto:sangameshnaik471@gmail.com"
-                className="w-10 h-10 rounded-none glass border border-white/10 flex items-center justify-center text-slate-300 hover:text-pink-400 hover:border-pink-400/50 transition-all"
+                className="w-10.5 h-10.5 rounded-xl glass border border-white/10 flex items-center justify-center text-slate-300 hover:text-pink-400 hover:border-pink-400/50 transition-all shadow-sm"
                 aria-label="Email"
               >
                 <Mail size={18} />
@@ -131,7 +131,7 @@ export default function Footer() {
           {/* Back to top button */}
           <button
             onClick={scrollToTop}
-            className="p-2.5 rounded-none glass border border-white/10 text-slate-300 hover:text-cyan-400 hover:border-cyan-400/40 transition-all flex items-center gap-1.5"
+            className="px-3.5 py-2 rounded-xl glass border border-white/10 text-slate-300 hover:text-cyan-400 hover:border-cyan-400/40 transition-all flex items-center gap-1.5"
             aria-label="Back to top"
           >
             <span>Top</span>

@@ -259,8 +259,8 @@ export default function Contact() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          {/* Centered Symmetrical Direct Communication Pill - Crisp Square */}
-          <div className="inline-flex items-center justify-center gap-2.5 px-5 py-2 rounded-none glass border border-cyan-500/30 text-xs sm:text-sm font-semibold text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10 mx-auto">
+          {/* Centered Symmetrical Direct Communication Pill */}
+          <div className="inline-flex items-center justify-center gap-2.5 px-5 py-2 rounded-full glass border border-cyan-500/30 text-xs sm:text-sm font-semibold text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10 mx-auto">
             <Sparkles size={14} className="text-cyan-400 shrink-0" />
             <div className="w-[195px] h-[22px] relative flex items-center justify-center mx-auto">
               <TechText
@@ -315,8 +315,8 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* Elevated Standalone Communication Island - Crisp Square Cyber Box */}
-        <div className="relative glass rounded-none p-7 sm:p-11 lg:p-14 border border-white/10 shadow-2xl shadow-cyan-500/5 bg-[#070816]/95 backdrop-blur-xl">
+        {/* Elevated Standalone Communication Island - Spacious Rounded Box */}
+        <div className="relative glass rounded-3xl p-8 sm:p-12 lg:p-14 border border-white/10 shadow-2xl shadow-cyan-500/5 bg-[#070816]/95 backdrop-blur-xl">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Contact Channels Left Panel */}
             <motion.div
@@ -326,8 +326,8 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-4 shadow-sm">
-                  <span className="w-2 h-2 rounded-none bg-emerald-400 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-4 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>Available for Full-Time Roles &amp; Internships</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2">
@@ -339,10 +339,10 @@ export default function Contact() {
 
                 <div className="space-y-4">
                   {/* Direct Email Card with One-Click Actions */}
-                  <div className="p-5 sm:p-6 rounded-none bg-white/[0.03] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.04] transition-all group shadow-sm">
+                  <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.04] transition-all group shadow-sm">
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-none bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0 group-hover:scale-105 transition-transform shadow-md">
+                        <div className="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0 group-hover:scale-105 transition-transform shadow-md">
                           <Mail size={22} />
                         </div>
                         <div>
@@ -361,7 +361,7 @@ export default function Contact() {
                       {/* Copy Email Button */}
                       <button
                         onClick={() => handleCopy("sangameshnaik471@gmail.com", "email")}
-                        className="px-3 py-1.5 rounded-none glass border border-white/10 hover:border-cyan-400 text-slate-300 hover:text-white text-xs font-mono font-semibold flex items-center gap-1.5 transition-all shrink-0 cursor-pointer"
+                        className="px-3 py-1.5 rounded-lg glass border border-white/10 hover:border-cyan-400 text-slate-300 hover:text-white text-xs font-mono font-semibold flex items-center gap-1.5 transition-all shrink-0 cursor-pointer shadow-sm"
                         title="Copy email address"
                       >
                         {copiedEmail ? (
@@ -378,7 +378,7 @@ export default function Contact() {
                       </button>
                     </div>
 
-                    <div className="mt-3.5 pt-3 border-t border-white/5 flex items-center gap-3 text-xs font-mono">
+                    <div className="mt-4 pt-3.5 border-t border-white/5 flex items-center gap-3 text-xs font-mono">
                       <a
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=sangameshnaik471@gmail.com"
                         target="_blank"
@@ -398,11 +398,11 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Phone & WhatsApp Card - Crisp Square */}
-                  <div className="p-5 sm:p-6 rounded-none bg-white/[0.03] border border-white/5 hover:border-emerald-500/40 hover:bg-emerald-500/[0.04] transition-all group shadow-sm">
+                  {/* Phone & WhatsApp Card */}
+                  <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-emerald-500/40 hover:bg-emerald-500/[0.04] transition-all group shadow-sm">
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-none bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition-transform shadow-md">
+                        <div className="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition-transform shadow-md">
                           <Phone size={22} />
                         </div>
                         <div>
@@ -421,7 +421,7 @@ export default function Contact() {
                       {/* Copy Phone Button */}
                       <button
                         onClick={() => handleCopy("+918080945510", "phone")}
-                        className="px-3 py-1.5 rounded-none glass border border-white/10 hover:border-emerald-400 text-slate-300 hover:text-white text-xs font-mono font-semibold flex items-center gap-1.5 transition-all shrink-0 cursor-pointer"
+                        className="px-3 py-1.5 rounded-lg glass border border-white/10 hover:border-emerald-400 text-slate-300 hover:text-white text-xs font-mono font-semibold flex items-center gap-1.5 transition-all shrink-0 cursor-pointer shadow-sm"
                         title="Copy phone number"
                       >
                         {copiedPhone ? (
@@ -438,7 +438,7 @@ export default function Contact() {
                       </button>
                     </div>
 
-                    <div className="mt-3.5 pt-3 border-t border-white/5 flex items-center gap-3 text-xs font-mono">
+                    <div className="mt-4 pt-3.5 border-t border-white/5 flex items-center gap-3 text-xs font-mono">
                       <a
                         href="https://wa.me/918080945510?text=Hi%20Sangmeshwar,%20I%20am%20reaching%20out%20from%20your%20portfolio!"
                         target="_blank"
@@ -459,10 +459,10 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Location & Live Clock Card - Crisp Square */}
-                  <div className="p-5 sm:p-6 rounded-none bg-white/[0.03] border border-white/5 shadow-sm">
+                  {/* Location & Live Clock Card */}
+                  <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/5 shadow-sm">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-none bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 shrink-0 shadow-md">
+                      <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 shrink-0 shadow-md">
                         <MapPin size={22} />
                       </div>
                       <div className="flex-1">
@@ -472,7 +472,7 @@ export default function Contact() {
                         <p className="text-sm sm:text-base font-bold text-white mt-0.5">
                           Bidar &amp; Mangalore, Karnataka, India
                         </p>
-                        <div className="flex items-center gap-2 mt-2 font-mono text-xs text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-none w-fit">
+                        <div className="flex items-center gap-2 mt-2 font-mono text-xs text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1.5 rounded-full w-fit">
                           <Clock size={12} className="animate-spin text-cyan-400" style={{ animationDuration: "12s" }} />
                           <span>{currentTime ? `${currentTime} IST` : "IST (UTC +5:30)"}</span>
                         </div>
@@ -491,7 +491,7 @@ export default function Contact() {
                       href="https://github.com/Sangmeshwar-Naik"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-3 px-4 rounded-none glass border border-white/10 text-slate-200 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/10 flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold transition-all group shadow-sm"
+                      className="py-3.5 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/10 flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold transition-all group shadow-sm"
                     >
                       <FaGithub size={18} className="text-slate-300 group-hover:text-white transition-colors" />
                       <span>GitHub</span>
@@ -500,7 +500,7 @@ export default function Contact() {
                       href="https://www.linkedin.com/in/sangmeshwar-naik-555828385"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-3 px-4 rounded-none glass border border-white/10 text-slate-200 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 hover:bg-[#0a66c2]/10 flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold transition-all group shadow-sm"
+                      className="py-3.5 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 hover:bg-[#0a66c2]/10 flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold transition-all group shadow-sm"
                     >
                       <FaLinkedin size={18} className="text-[#0a66c2]" />
                       <span>LinkedIn</span>
@@ -510,19 +510,19 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Interactive Contact Form Right Panel - Crisp Square Box */}
+            {/* Interactive Contact Form Right Panel */}
             <motion.div
               className="lg:col-span-7"
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="p-7 sm:p-10 lg:p-11 rounded-none bg-[#04050e]/95 border border-white/10 shadow-2xl backdrop-blur-xl relative">
-                {/* Header Bar */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-5 border-b border-white/10">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-none bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-md shrink-0">
-                      <Zap size={20} />
+              <div className="p-8 sm:p-11 lg:p-12 rounded-3xl bg-[#04050e]/95 border border-white/10 shadow-2xl backdrop-blur-xl relative">
+                {/* Header Bar with generous padding & no corner clipping */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7 pb-6 border-b border-white/10">
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-md shrink-0">
+                      <Zap size={22} />
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
@@ -533,9 +533,9 @@ export default function Contact() {
                       </p>
                     </div>
                   </div>
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-semibold shrink-0 w-fit self-start sm:self-auto">
-                    <span className="w-2 h-2 rounded-none bg-emerald-400 animate-pulse" />
-                    <span>Live Channel Active</span>
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-semibold shrink-0 w-fit self-start sm:self-auto shadow-sm">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="whitespace-nowrap">Live Channel Active</span>
                   </div>
                 </div>
 
@@ -543,7 +543,7 @@ export default function Contact() {
                 <AnimatePresence>
                   {statusMessage && (
                     <motion.div
-                      className={`mb-6 p-4 rounded-none flex flex-col gap-2.5 text-xs sm:text-sm font-semibold border ${
+                      className={`mb-6 p-4 rounded-xl flex flex-col gap-2.5 text-xs sm:text-sm font-semibold border ${
                         statusMessage.type === "success"
                           ? "bg-emerald-500/15 border-emerald-500/30 text-emerald-300"
                           : "bg-red-500/15 border-red-500/30 text-red-300"
@@ -571,7 +571,7 @@ export default function Contact() {
                             )}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-3 py-1.5 rounded-none bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-200 border border-emerald-500/40 text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-sm"
+                            className="px-3.5 py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-200 border border-emerald-500/40 text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-sm"
                           >
                             <FaWhatsapp size={14} />
                             <span>Forward on WhatsApp</span>
@@ -584,7 +584,7 @@ export default function Contact() {
                             )}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-3 py-1.5 rounded-none bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 border border-cyan-500/40 text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-sm"
+                            className="px-3.5 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 border border-cyan-500/40 text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-sm"
                           >
                             <Mail size={13} />
                             <span>Open in Gmail</span>
@@ -604,7 +604,7 @@ export default function Contact() {
                         Your Name <span className="text-cyan-400">*</span>
                       </label>
                       <div
-                        className={`flex items-center rounded-none bg-white/[0.04] border transition-all ${
+                        className={`flex items-center rounded-xl overflow-hidden bg-white/[0.04] border transition-all ${
                           errors.name
                             ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
                             : "border-white/10 focus-within:border-cyan-400 focus-within:ring-2 focus-within:ring-cyan-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(0,245,255,0.15)]"
@@ -635,7 +635,7 @@ export default function Contact() {
                         Your Email <span className="text-purple-400">*</span>
                       </label>
                       <div
-                        className={`flex items-center rounded-none bg-white/[0.04] border transition-all ${
+                        className={`flex items-center rounded-xl overflow-hidden bg-white/[0.04] border transition-all ${
                           errors.email
                             ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
                             : "border-white/10 focus-within:border-purple-400 focus-within:ring-2 focus-within:ring-purple-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(191,0,255,0.15)]"
@@ -673,7 +673,7 @@ export default function Contact() {
                     </div>
 
                     <div
-                      className={`flex items-center rounded-none bg-white/[0.04] border transition-all ${
+                      className={`flex items-center rounded-xl overflow-hidden bg-white/[0.04] border transition-all ${
                         errors.subject
                           ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
                           : "border-white/10 focus-within:border-pink-400 focus-within:ring-2 focus-within:ring-pink-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(236,72,153,0.15)]"
@@ -697,8 +697,8 @@ export default function Contact() {
                       </p>
                     )}
 
-                    {/* Spacious Quick Topic Selection Cards - Crisp Squares */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3">
+                    {/* Spacious Quick Topic Selection Cards */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3.5">
                       {QUICK_SUBJECTS.map((sub) => {
                         const SubIcon = sub.icon;
                         const isSelected = formState.subject === sub.subject;
@@ -707,17 +707,17 @@ export default function Contact() {
                             key={sub.id}
                             type="button"
                             onClick={() => setFormState((prev) => ({ ...prev, subject: sub.subject }))}
-                            className={`p-3 rounded-none border text-left transition-all cursor-pointer flex items-center gap-2.5 ${
+                            className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center gap-2.5 ${
                               isSelected
                                 ? "bg-cyan-500/20 border-cyan-400 text-cyan-200 shadow-md shadow-cyan-500/20 scale-[1.02]"
                                 : "bg-white/[0.03] border-white/10 text-slate-300 hover:border-cyan-500/40 hover:bg-white/[0.06] hover:text-white"
                             }`}
                           >
                             <div
-                              className="w-7 h-7 rounded-none flex items-center justify-center shrink-0 shadow-sm"
+                              className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 shadow-sm"
                               style={{ backgroundColor: `${sub.color}20`, color: sub.color }}
                             >
-                              <SubIcon size={14} />
+                              <SubIcon size={15} />
                             </div>
                             <span className="text-xs font-mono font-medium leading-tight truncate">
                               {sub.title}
@@ -731,7 +731,7 @@ export default function Contact() {
                   {/* Row 3: Message Textarea with Terminal Header & Live Character Count */}
                   <div>
                     <div
-                      className={`rounded-none bg-white/[0.04] border transition-all ${
+                      className={`rounded-xl overflow-hidden bg-white/[0.04] border transition-all ${
                         errors.message
                           ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
                           : "border-white/10 focus-within:border-cyan-400 focus-within:ring-2 focus-within:ring-cyan-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(0,245,255,0.15)]"
@@ -765,11 +765,11 @@ export default function Contact() {
                     )}
                   </div>
 
-                  {/* Submit Button - Crisp Square */}
+                  {/* Submit Button */}
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-none font-bold text-sm sm:text-base text-white bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 hover:from-cyan-400 hover:to-pink-400 flex items-center justify-center gap-2.5 shadow-xl shadow-cyan-500/25 transition-all disabled:opacity-50 cursor-pointer group"
+                    className="w-full py-4 rounded-xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 hover:from-cyan-400 hover:to-pink-400 flex items-center justify-center gap-2.5 shadow-xl shadow-cyan-500/25 transition-all disabled:opacity-50 cursor-pointer group"
                     whileHover={{ scale: isSubmitting ? 1 : 1.01 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   >

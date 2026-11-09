@@ -49,7 +49,7 @@ export default function BackToTop() {
         >
           <button
             onClick={scrollToTop}
-            className="relative w-12 h-12 rounded-none glass border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-300 shadow-xl shadow-cyan-500/10 cursor-pointer group hover:scale-108 transition-all bg-[#080918]/90"
+            className="relative w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-300 shadow-xl shadow-cyan-500/10 cursor-pointer group hover:scale-108 transition-all bg-[#080918]/90"
             title={`Scroll to Top (${Math.round(progress)}%)`}
             aria-label="Scroll to top"
           >

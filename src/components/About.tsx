@@ -205,22 +205,22 @@ export default function About() {
         {/* TOP ROW: EXECUTIVE BIOGRAPHY & LIVE METRIC CARDS                */}
         {/* ============================================================== */}
         <div className="grid lg:grid-cols-12 gap-7 sm:gap-9 items-stretch mb-10 sm:mb-14">
-          {/* Executive Overview Card - Crisp Square Cyber Box */}
+          {/* Executive Overview Card - Spacious Rounded Box */}
           <motion.div
-            className="lg:col-span-7 rounded-none p-8 sm:p-10 lg:p-12 pb-10 sm:pb-12 lg:pb-14 border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/40 transition-all flex flex-col justify-between relative shadow-2xl group min-h-[500px]"
+            className="lg:col-span-7 rounded-3xl p-8 sm:p-10 lg:p-12 pb-10 sm:pb-12 lg:pb-14 border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/40 transition-all flex flex-col justify-between relative shadow-2xl group min-h-[500px]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7 }}
           >
             {/* Subtle corner glow */}
-            <div className="absolute top-0 right-0 w-72 h-72 bg-cyan-500/10 blur-3xl pointer-events-none group-hover:bg-cyan-500/15 transition-all" />
+            <div className="absolute top-0 right-0 w-72 h-72 bg-cyan-500/10 blur-3xl pointer-events-none group-hover:bg-cyan-500/15 transition-all rounded-3xl" />
 
             <div>
               {/* Header Badge Strip */}
               <div className="flex flex-wrap items-center justify-between gap-3.5 mb-7">
                 <div className="flex items-center gap-3.5">
-                  <div className="relative w-10 h-10 rounded-none overflow-hidden border border-amber-500/50 shadow-md bg-[#0a0a14] shrink-0">
+                  <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-amber-500/50 shadow-md bg-[#0a0a14] shrink-0">
                     <Image
                       src="/logo.jpg"
                       alt="SAN Logo"
@@ -235,8 +235,8 @@ export default function About() {
                   </div>
                 </div>
 
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-semibold shadow-sm">
-                  <span className="w-2.5 h-2.5 rounded-none bg-emerald-400 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-semibold shadow-sm">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span>Available for Roles &amp; Internships</span>
                 </div>
               </div>
@@ -266,18 +266,18 @@ export default function About() {
 
             {/* Bottom Meta Pill Strip */}
             <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-mono">
-              <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-none bg-white/[0.04] border border-white/10 text-slate-200 shadow-sm hover:border-cyan-500/30 transition-colors">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-slate-200 shadow-sm hover:border-cyan-500/30 transition-colors">
                 <MapPin size={16} className="text-cyan-400 shrink-0" />
                 <span className="font-medium">Bidar &amp; Mangalore, Karnataka</span>
               </div>
-              <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-none bg-white/[0.04] border border-white/10 text-slate-200 shadow-sm hover:border-purple-500/30 transition-colors">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-slate-200 shadow-sm hover:border-purple-500/30 transition-colors">
                 <GraduationCap size={17} className="text-purple-400 shrink-0" />
                 <span className="font-medium">VTU Class of 2027</span>
               </div>
             </div>
           </motion.div>
 
-          {/* 4 Verified Metric Capsules - Crisp Square Boxes */}
+          {/* 4 Verified Metric Capsules - Spacious Rounded Boxes */}
           <motion.div
             className="lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-6"
             initial={{ opacity: 0, y: 30 }}
@@ -288,7 +288,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="rounded-none p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/50 hover:bg-cyan-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
+              className="rounded-2xl p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/50 hover:bg-cyan-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
             >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-cyan-400 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={8.4} decimals={1} />
@@ -300,7 +300,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="rounded-none p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-purple-400/50 hover:bg-purple-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
+              className="rounded-2xl p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-purple-400/50 hover:bg-purple-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
             >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-purple-400 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={4} suffix="+" />
@@ -312,7 +312,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="rounded-none p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-pink-400/50 hover:bg-pink-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
+              className="rounded-2xl p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-pink-400/50 hover:bg-pink-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
             >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-pink-400 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={6} suffix="+" />
@@ -324,7 +324,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="rounded-none p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-emerald-400/50 hover:bg-emerald-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
+              className="rounded-2xl p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-emerald-400/50 hover:bg-emerald-500/[0.06] transition-colors duration-300 flex flex-col justify-center shadow-xl group relative overflow-hidden"
             >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-emerald-400 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={8} suffix="+" />
@@ -340,9 +340,8 @@ export default function About() {
         {/* ============================================================== */}
         <div className="grid lg:grid-cols-12 gap-7 sm:gap-9 items-start">
           {/* Academic Education Timeline Card */}
-          {/* Academic Education Timeline Card - Crisp Square */}
           <motion.div
-            className="lg:col-span-6 rounded-none p-8 sm:p-10 lg:p-12 pb-10 sm:pb-12 border border-white/10 bg-[#070818]/90 backdrop-blur-xl shadow-2xl hover:border-purple-400/40 transition-all"
+            className="lg:col-span-6 rounded-3xl p-8 sm:p-10 lg:p-12 pb-10 sm:pb-12 border border-white/10 bg-[#070818]/90 backdrop-blur-xl shadow-2xl hover:border-purple-400/40 transition-all"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
@@ -350,7 +349,7 @@ export default function About() {
           >
             <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-8">
               <div className="flex items-center gap-3.5">
-                <div className="w-12 h-12 rounded-none bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 shadow-md shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 shadow-md shrink-0">
                   <GraduationCap size={24} />
                 </div>
                 <div>
@@ -358,7 +357,7 @@ export default function About() {
                   <p className="text-xs sm:text-sm text-slate-400 font-mono mt-0.5">Formal Education &amp; Scores</p>
                 </div>
               </div>
-              <span className="text-xs uppercase font-bold tracking-wider px-3.5 py-1.5 rounded-none bg-white/5 border border-white/10 text-slate-300 font-mono">
+              <span className="text-xs uppercase font-bold tracking-wider px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 font-mono">
                 Verified
               </span>
             </div>
@@ -373,7 +372,7 @@ export default function About() {
                   {/* Dedicated Timeline Track & Glowing Dot Column */}
                   <div className="flex flex-col items-center self-stretch shrink-0 pt-1.5">
                     <span
-                      className={`w-3.5 h-3.5 rounded-none border-2 border-[#070818] z-10 shrink-0 transition-transform duration-300 group-hover:scale-125 ${
+                      className={`w-3.5 h-3.5 rounded-full border-2 border-[#070818] z-10 shrink-0 transition-transform duration-300 group-hover:scale-125 ${
                         edu.current
                           ? "bg-cyan-400 shadow-[0_0_14px_#00f5ff] ring-2 ring-cyan-500/25"
                           : "bg-slate-500 ring-1 ring-white/10"
@@ -390,7 +389,7 @@ export default function About() {
                       <h4 className="text-base sm:text-lg font-bold text-white leading-snug group-hover:text-cyan-300 transition-colors">
                         {edu.degree}
                       </h4>
-                      <span className="text-xs sm:text-sm px-3.5 py-1.5 rounded-none glass text-cyan-300 border border-cyan-500/30 font-semibold font-mono shrink-0 shadow-sm">
+                      <span className="text-xs sm:text-sm px-4 py-1.5 rounded-full glass text-cyan-300 border border-cyan-500/30 font-semibold font-mono shrink-0 shadow-sm">
                         {edu.score}
                       </span>
                     </div>
@@ -415,10 +414,10 @@ export default function About() {
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7 }}
           >
-            {/* 6 Core Specialization Domains Grid - Crisp Square */}
-            <div className="rounded-none p-8 sm:p-10 lg:p-11 border border-white/10 bg-[#070818]/90 backdrop-blur-xl shadow-2xl hover:border-cyan-400/40 transition-all">
+            {/* 6 Core Specialization Domains Grid */}
+            <div className="rounded-3xl p-8 sm:p-10 lg:p-11 border border-white/10 bg-[#070818]/90 backdrop-blur-xl shadow-2xl hover:border-cyan-400/40 transition-all">
               <div className="flex items-center gap-3.5 pb-6 border-b border-white/10 mb-7">
-                <div className="w-12 h-12 rounded-none bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-md shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-md shrink-0">
                   <Compass size={24} />
                 </div>
                 <div>
@@ -435,10 +434,10 @@ export default function About() {
                       key={idx}
                       whileHover={{ y: -3, scale: 1.01 }}
                       transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                      className="p-5 sm:p-5.5 rounded-none bg-white/[0.03] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.06] transition-colors group flex items-start gap-4 min-h-[96px] sm:min-h-[104px]"
+                      className="p-5 sm:p-5.5 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.06] transition-colors group flex items-start gap-4 min-h-[96px] sm:min-h-[104px]"
                     >
                       <div
-                        className="w-10 h-10 rounded-none flex items-center justify-center shrink-0 shadow-sm mt-0.5"
+                        className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 shadow-sm mt-0.5"
                         style={{
                           backgroundColor: `${domain.color}20`,
                           color: domain.color,
@@ -460,17 +459,17 @@ export default function About() {
               </div>
             </div>
 
-            {/* Career Objective Terminal Console - Crisp Square Box */}
-            <div className="rounded-none p-7 sm:p-9 pb-10 sm:pb-12 border border-cyan-500/30 relative overflow-hidden shadow-xl bg-[#050612]/95 backdrop-blur-xl">
+            {/* Career Objective Terminal Console */}
+            <div className="rounded-3xl p-7 sm:p-9 pb-10 sm:pb-12 border border-cyan-500/30 relative overflow-hidden shadow-xl bg-[#050612]/95 backdrop-blur-xl">
               <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5 text-xs sm:text-sm font-mono text-slate-400">
                 <div className="flex items-center gap-2.5">
                   <Terminal size={17} className="text-cyan-400" />
                   <span className="font-semibold text-slate-300">career_mission.sh</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-none bg-rose-500/90 shadow-sm" />
-                  <span className="w-3 h-3 rounded-none bg-amber-500/90 shadow-sm" />
-                  <span className="w-3 h-3 rounded-none bg-emerald-500/90 shadow-sm" />
+                  <span className="w-3 h-3 rounded-full bg-rose-500/90 shadow-sm" />
+                  <span className="w-3 h-3 rounded-full bg-amber-500/90 shadow-sm" />
+                  <span className="w-3 h-3 rounded-full bg-emerald-500/90 shadow-sm" />
                 </div>
               </div>
 

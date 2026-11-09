@@ -341,10 +341,10 @@ export default function Skills() {
                     >
                       <button
                         onClick={() => handleOpenCategory(category)}
-                        className="group relative p-3 sm:p-4 rounded-none glass border border-white/15 hover:border-cyan-400 transition-all duration-300 flex items-center gap-2.5 sm:gap-3 cursor-pointer shadow-xl bg-[#090918]/95 hover:scale-108 hover:shadow-cyan-500/30 min-w-[140px] sm:min-w-[165px]"
+                        className="group relative p-3.5 sm:p-4.5 rounded-2xl glass border border-white/15 hover:border-cyan-400 transition-all duration-300 flex items-center gap-2.5 sm:gap-3 cursor-pointer shadow-xl bg-[#090918]/95 hover:scale-108 hover:shadow-cyan-500/30 min-w-[145px] sm:min-w-[170px]"
                       >
                         <div
-                          className="w-8 h-8 sm:w-9 sm:h-9 rounded-none flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform"
+                          className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform"
                           style={{
                             backgroundColor: `${category.color}20`,
                             color: category.color,
@@ -373,14 +373,14 @@ export default function Skills() {
           {/* Prompt Banner below the Orbit */}
           <div className="mt-8 text-center">
             <p className="text-xs sm:text-sm text-slate-400 font-mono flex items-center justify-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-none bg-cyan-400 animate-ping" />
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
               <span>Click any rotating node to open its verified skills deck</span>
             </p>
           </div>
         </div>
 
         {/* ============================================================== */}
-        {/* COMPACT CATEGORY LAUNCHPAD CARDS (Generous, Clear & Readable) */}
+        {/* COMPACT CATEGORY LAUNCHPAD CARDS (Spacious, Clear & Readable)  */}
         {/* ============================================================== */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-5">
           {orbitalCategories.map((category) => {
@@ -389,7 +389,7 @@ export default function Skills() {
               <button
                 key={category.id}
                 onClick={() => handleOpenCategory(category)}
-                className="group p-5 sm:p-6 rounded-none border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/50 transition-all text-left flex flex-col justify-between hover:bg-cyan-500/[0.05] hover:-translate-y-1 shadow-xl cursor-pointer relative overflow-hidden min-h-[160px]"
+                className="group p-6 sm:p-7 rounded-2xl sm:rounded-3xl border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/50 transition-all text-left flex flex-col justify-between hover:bg-cyan-500/[0.05] hover:-translate-y-1 shadow-xl cursor-pointer relative overflow-hidden min-h-[175px]"
               >
                 {/* Subtle corner glow */}
                 <div
@@ -398,9 +398,9 @@ export default function Skills() {
                 />
 
                 <div>
-                  <div className="flex items-center justify-between mb-3.5">
+                  <div className="flex items-center justify-between mb-4">
                     <div
-                      className="w-10 h-10 rounded-none flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
+                      className="w-11 h-11 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
                       style={{
                         backgroundColor: `${category.color}20`,
                         color: category.color,
@@ -408,7 +408,7 @@ export default function Skills() {
                     >
                       <Icon size={20} />
                     </div>
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-none bg-white/5 border border-white/10 text-slate-300 font-mono">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-300 font-mono">
                       {category.badge}
                     </span>
                   </div>
@@ -448,9 +448,9 @@ export default function Skills() {
               onClick={() => setSelectedCategory(null)}
             />
 
-            {/* Modal Dialog - Crisp Square Box */}
+            {/* Modal Dialog - Spacious Rounded Box */}
             <motion.div
-              className="relative z-10 w-full max-w-4xl rounded-none p-6 sm:p-8 border border-cyan-500/40 shadow-2xl shadow-cyan-500/25 bg-[#080816]/95 backdrop-blur-2xl max-h-[90vh] overflow-y-auto"
+              className="relative z-10 w-full max-w-4xl rounded-3xl p-7 sm:p-9 border border-cyan-500/40 shadow-2xl shadow-cyan-500/25 bg-[#080816]/95 backdrop-blur-2xl max-h-[90vh] overflow-y-auto"
               initial={{ opacity: 0, scale: 0.94, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.94, y: 20 }}
@@ -459,7 +459,7 @@ export default function Skills() {
               {/* Close Button */}
               <button
                 onClick={() => setSelectedCategory(null)}
-                className="absolute top-5 right-5 p-2 rounded-none bg-white/[0.05] border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                className="absolute top-5 right-5 p-2.5 rounded-xl bg-white/[0.05] border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
                 aria-label="Close skills dialog"
               >
                 <X size={20} />
@@ -467,26 +467,26 @@ export default function Skills() {
 
               {/* Modal Category Header */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10 mb-6">
-                <div className="flex items-center gap-3.5">
+                <div className="flex items-center gap-4">
                   <div
-                    className="w-13 h-13 rounded-none flex items-center justify-center shadow-xl"
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl"
                     style={{
                       backgroundColor: `${selectedCategory.color}25`,
                       color: selectedCategory.color,
                     }}
                   >
-                    <selectedCategory.icon size={26} />
+                    <selectedCategory.icon size={28} />
                   </div>
                   <div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2.5">
                       <h3 className="text-2xl font-black text-white tracking-tight">
                         {selectedCategory.title}
                       </h3>
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-none bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-mono">
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-mono">
                         {selectedCategory.skills.length} Technologies
                       </span>
                     </div>
-                    <p className="text-xs text-slate-300 mt-1 max-w-xl">
+                    <p className="text-xs text-slate-300 mt-1.5 max-w-xl">
                       {selectedCategory.description}
                     </p>
                   </div>
@@ -498,7 +498,7 @@ export default function Skills() {
                     <button
                       key={cat.id}
                       onClick={() => setSelectedCategory(cat)}
-                      className={`px-2.5 py-1 rounded-none text-[11px] font-mono font-semibold transition-all cursor-pointer ${
+                      className={`px-3 py-1.5 rounded-xl text-[11px] font-mono font-semibold transition-all cursor-pointer ${
                         selectedCategory.id === cat.id
                           ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40"
                           : "text-slate-400 hover:text-white border border-white/5 bg-white/[0.02]"
@@ -532,22 +532,22 @@ export default function Skills() {
                       }}
                       onMouseEnter={() => setHoveredSkill(skill.name)}
                       onMouseLeave={() => setHoveredSkill(null)}
-                      className={`p-4.5 rounded-none border transition-all duration-300 flex flex-col justify-between ${
+                      className={`p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${
                         isHovered
                           ? "border-cyan-400/60 bg-cyan-500/10 shadow-lg shadow-cyan-500/20 scale-102"
                           : "border-white/10 bg-black/40 hover:border-white/20"
                       }`}
                     >
                       <div>
-                        <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center justify-between mb-3.5">
                           <div
-                            className="w-10 h-10 rounded-none bg-black/60 border border-white/10 flex items-center justify-center shadow-lg"
+                            className="w-11 h-11 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center shadow-lg"
                             style={{ color: skill.color }}
                           >
                             <SkillIcon size={20} />
                           </div>
 
-                          <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-none bg-white/[0.04] border border-white/10 text-slate-300 uppercase">
+                          <span className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 uppercase">
                             {skill.level}
                           </span>
                         </div>
@@ -557,11 +557,11 @@ export default function Skills() {
                         </h4>
                       </div>
 
-                      <div className="mt-3 pt-2 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                      <div className="mt-3.5 pt-2.5 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400 font-mono">
                         <span className="text-cyan-400/90 truncate">
                           {skill.tag || selectedCategory.title}
                         </span>
-                        <span className="w-1.5 h-1.5 rounded-none bg-cyan-400 animate-pulse" />
+                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                       </div>
                     </motion.div>
                   );
@@ -569,13 +569,13 @@ export default function Skills() {
               </div>
 
               {/* Bottom Footer Action */}
-              <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+              <div className="mt-7 pt-4 border-t border-white/10 flex items-center justify-between">
                 <span className="text-xs text-slate-400 font-mono">
                   Verified proficiency supported by academic coursework and project code.
                 </span>
                 <button
                   onClick={() => setSelectedCategory(null)}
-                  className="px-4 py-2 rounded-none text-xs font-semibold text-slate-300 hover:text-white glass border border-white/10 hover:border-cyan-400/40 transition-all cursor-pointer"
+                  className="px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white glass border border-white/10 hover:border-cyan-400/40 transition-all cursor-pointer"
                 >
                   Back to Orbit Wheel
                 </button>

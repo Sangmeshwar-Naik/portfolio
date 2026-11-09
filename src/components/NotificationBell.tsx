@@ -260,7 +260,7 @@ export default function NotificationBell() {
       {/* ============================================================== */}
       <motion.button
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`relative w-9 h-9 sm:w-10 sm:h-10 rounded-none glass border flex items-center justify-center transition-all cursor-pointer shadow-md ${
+        className={`relative w-9.5 h-9.5 sm:w-10 sm:h-10 rounded-xl glass border flex items-center justify-center transition-all cursor-pointer shadow-md ${
           isOpen
             ? "border-cyan-400 bg-cyan-500/20 text-cyan-300 shadow-cyan-500/30 scale-105"
             : unreadCount > 0
@@ -279,8 +279,8 @@ export default function NotificationBell() {
         {/* Unread Counter Badge with Pulsing Beacon */}
         {unreadCount > 0 && (
           <>
-            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-none bg-rose-500 animate-ping opacity-75 pointer-events-none" />
-            <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-none bg-gradient-to-r from-rose-500 to-pink-500 text-[10px] font-mono font-black text-white flex items-center justify-center border-2 border-[#050508] shadow-md shadow-rose-500/50">
+            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-rose-500 animate-ping opacity-75 pointer-events-none" />
+            <span className="absolute -top-1.5 -right-1.5 min-w-[20px] h-[20px] px-1 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-[10px] font-mono font-black text-white flex items-center justify-center border-2 border-[#050508] shadow-md shadow-rose-500/50">
               {unreadCount > 9 ? "9+" : unreadCount}
             </span>
           </>
@@ -297,14 +297,14 @@ export default function NotificationBell() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.95 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="absolute right-0 top-12 sm:top-14 w-[92vw] sm:w-[420px] max-w-[440px] rounded-none glass border border-cyan-500/40 shadow-2xl shadow-cyan-500/25 bg-[#070818]/98 backdrop-blur-2xl z-50 overflow-hidden flex flex-col"
+            className="absolute right-0 top-12 sm:top-14 w-[92vw] sm:w-[420px] max-w-[440px] rounded-3xl glass border border-cyan-500/40 shadow-2xl shadow-cyan-500/25 bg-[#070818]/98 backdrop-blur-2xl z-50 overflow-hidden flex flex-col"
             style={{ maxHeight: "calc(100vh - 100px)" }}
           >
             {/* Popover Header */}
-            <div className="p-4 border-b border-white/10 flex items-center justify-between bg-black/40">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-none bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
-                  <Inbox size={16} />
+            <div className="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between bg-black/40">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                  <Inbox size={17} />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
@@ -312,7 +312,7 @@ export default function NotificationBell() {
                       Inquiries &amp; Messages
                     </h3>
                     {unreadCount > 0 && (
-                      <span className="px-2 py-0.5 rounded-none bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-[10px] font-mono font-bold">
+                      <span className="px-2.5 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-[10px] font-mono font-bold">
                         {unreadCount} new
                       </span>
                     )}
@@ -327,7 +327,7 @@ export default function NotificationBell() {
                 {unreadCount > 0 && (
                   <button
                     onClick={handleMarkAllAsRead}
-                    className="p-1.5 rounded-none text-slate-400 hover:text-cyan-300 hover:bg-white/[0.06] transition-colors cursor-pointer text-xs font-mono flex items-center gap-1"
+                    className="p-2 rounded-xl text-slate-400 hover:text-cyan-300 hover:bg-white/[0.06] transition-colors cursor-pointer text-xs font-mono flex items-center gap-1"
                     title="Mark all as read"
                   >
                     <CheckCheck size={14} />
@@ -336,7 +336,7 @@ export default function NotificationBell() {
                 )}
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-1.5 rounded-none text-slate-400 hover:text-white hover:bg-white/[0.06] transition-colors cursor-pointer"
+                  className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/[0.06] transition-colors cursor-pointer"
                   title="Close notifications"
                 >
                   <X size={16} />
@@ -345,20 +345,20 @@ export default function NotificationBell() {
             </div>
 
             {/* Notification Messages List */}
-            <div className="flex-1 overflow-y-auto p-3.5 space-y-3 max-h-[460px] text-xs">
+            <div className="flex-1 overflow-y-auto p-4 space-y-3.5 max-h-[460px] text-xs">
               {notifications.length === 0 ? (
                 /* Empty State */
                 <div className="py-12 px-6 text-center flex flex-col items-center justify-center">
-                  <div className="w-14 h-14 rounded-none bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-500 mb-3 shadow-inner">
+                  <div className="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-500 mb-3.5 shadow-inner">
                     <Bell size={24} className="opacity-60" />
                   </div>
                   <h4 className="text-sm font-bold text-white font-mono">No New Inquiries</h4>
-                  <p className="text-xs text-slate-400 mt-1.5 max-w-xs leading-relaxed font-sans">
+                  <p className="text-xs text-slate-400 mt-2 max-w-xs leading-relaxed font-sans">
                     When anyone fills out the <strong className="text-cyan-300 font-medium">Send a Direct Message</strong> form in the contact section, their message will appear here with instant alerts.
                   </p>
                   <button
                     onClick={handleAddTestNotification}
-                    className="mt-4 px-3.5 py-2 rounded-none bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/25 text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
+                    className="mt-4 px-4 py-2 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/25 text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
                   >
                     <Sparkles size={13} />
                     <span>Send Test Notification</span>
@@ -369,7 +369,7 @@ export default function NotificationBell() {
                 notifications.map((item) => (
                   <div
                     key={item.id}
-                    className={`p-3.5 rounded-none border transition-all relative overflow-hidden ${
+                    className={`p-4 rounded-2xl border transition-all relative overflow-hidden ${
                       item.read
                         ? "bg-white/[0.02] border-white/5 text-slate-300"
                         : "bg-cyan-500/[0.06] border-cyan-500/35 text-white shadow-md shadow-cyan-500/10"
@@ -377,13 +377,13 @@ export default function NotificationBell() {
                   >
                     {/* Unread Indicator Bar */}
                     {!item.read && (
-                      <span className="absolute top-3 right-3 w-2 h-2 rounded-none bg-cyan-400 animate-pulse shadow-sm shadow-cyan-400" />
+                      <span className="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shadow-sm shadow-cyan-400" />
                     )}
 
                     {/* Sender Info Row */}
-                    <div className="flex items-start gap-2.5 mb-2">
+                    <div className="flex items-start gap-3 mb-2.5">
                       <div
-                        className={`w-8 h-8 rounded-none flex items-center justify-center font-bold text-xs uppercase shrink-0 shadow-sm ${
+                        className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs uppercase shrink-0 shadow-sm ${
                           item.read
                             ? "bg-white/10 text-slate-300"
                             : "bg-gradient-to-tr from-cyan-500 to-purple-600 text-white"
@@ -411,25 +411,25 @@ export default function NotificationBell() {
                     </div>
 
                     {/* Subject Pill */}
-                    <div className="mb-2">
-                      <span className="inline-block text-[11px] font-mono px-2.5 py-0.5 rounded-none bg-white/[0.05] border border-white/10 text-slate-200">
+                    <div className="mb-2.5">
+                      <span className="inline-block text-[11px] font-mono px-3 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-slate-200">
                         {item.subject}
                       </span>
                     </div>
 
                     {/* Message Body */}
-                    <div className="p-2.5 rounded-none bg-black/30 border border-white/5 text-slate-200 text-xs leading-relaxed font-sans whitespace-pre-wrap mb-3">
+                    <div className="p-3 rounded-xl bg-black/30 border border-white/5 text-slate-200 text-xs leading-relaxed font-sans whitespace-pre-wrap mb-3.5">
                       {item.message}
                     </div>
 
                     {/* ============================================================== */}
                     {/* THE 2 REQUESTED OPTIONS: "Mark as Read" & "Delete"            */}
                     {/* ============================================================== */}
-                    <div className="flex items-center justify-between gap-2 pt-2 border-t border-white/10">
+                    <div className="flex items-center justify-between gap-2 pt-2.5 border-t border-white/10">
                       {/* Option 1: Mark as Read / Unread */}
                       <button
                         onClick={(e) => handleToggleRead(item.id, e)}
-                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none text-[11px] font-mono font-semibold transition-all cursor-pointer ${
+                        className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-[11px] font-mono font-semibold transition-all cursor-pointer ${
                           item.read
                             ? "bg-white/[0.04] text-slate-400 hover:text-cyan-300 hover:bg-white/[0.08] border border-white/10"
                             : "bg-cyan-500/20 text-cyan-300 hover:bg-cyan-500/30 border border-cyan-500/40 shadow-sm"
@@ -449,7 +449,7 @@ export default function NotificationBell() {
                           )}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1.5 rounded-none text-slate-400 hover:text-cyan-300 hover:bg-white/[0.06] transition-colors"
+                          className="p-1.5 rounded-lg text-slate-400 hover:text-cyan-300 hover:bg-white/[0.06] transition-colors"
                           title="Reply via Email"
                         >
                           <Mail size={13} />
@@ -457,7 +457,7 @@ export default function NotificationBell() {
 
                         <button
                           onClick={(e) => handleDelete(item.id, e)}
-                          className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-none bg-rose-500/10 hover:bg-rose-500/25 border border-rose-500/25 text-rose-300 text-[11px] font-mono font-semibold transition-all cursor-pointer"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/25 border border-rose-500/25 text-rose-300 text-[11px] font-mono font-semibold transition-all cursor-pointer"
                           title="Delete message permanently"
                         >
                           <Trash2 size={12} />
@@ -472,7 +472,7 @@ export default function NotificationBell() {
 
             {/* Popover Footer Strip */}
             {notifications.length > 0 && (
-              <div className="p-3 border-t border-white/10 bg-black/40 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <div className="p-3.5 border-t border-white/10 bg-black/40 flex items-center justify-between text-[11px] font-mono text-slate-400">
                 <span>Total: {notifications.length} message{notifications.length > 1 ? "s" : ""}</span>
                 <div className="flex items-center gap-3">
                   <button
