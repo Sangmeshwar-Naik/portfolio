@@ -148,7 +148,7 @@ export default function Experience() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full glass border border-purple-500/30 text-xs font-semibold text-purple-300 mb-4 mx-auto">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-none glass border border-purple-500/30 text-xs font-semibold text-purple-300 mb-4 mx-auto">
             <Sparkles size={13} className="text-purple-400" />
             Milestones &amp; Learning
           </div>
@@ -212,15 +212,15 @@ export default function Experience() {
                     }}
                   >
                     {isEven ? (
-                      /* Main Story Card on the Left */
-                      <div className="rounded-[32px] sm:rounded-[38px] p-8 sm:p-9 border border-white/10 hover:border-cyan-400/50 bg-[#070818]/90 backdrop-blur-xl transition-all text-left w-full group shadow-2xl relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-cyan-500/15 transition-all" />
-                        <div className="flex items-center justify-between gap-3 mb-4 relative z-10">
-                          <span className="text-xs px-3.5 py-1 rounded-full bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
+                      /* Main Story Card on the Left - Crisp Square Cyber Box (No Corner Clipping) */
+                      <div className="rounded-none p-7 sm:p-9 border border-white/10 hover:border-cyan-400/50 bg-[#070818]/95 backdrop-blur-xl transition-all text-left w-full group shadow-2xl relative">
+                        <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/10 blur-2xl pointer-events-none group-hover:bg-cyan-500/15 transition-all" />
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-4 relative z-10">
+                          <span className="text-xs px-3.5 py-1 rounded-none bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
                             {item.type}
                           </span>
                           {item.highlight && (
-                            <span className="text-xs font-bold text-amber-300">
+                            <span className="text-xs font-bold text-amber-300 px-2 py-0.5 border border-amber-400/30 bg-amber-400/10">
                               ★ {item.highlight}
                             </span>
                           )}
@@ -247,7 +247,7 @@ export default function Experience() {
                           {item.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-cyan-500/20"
+                              className="px-3 py-1 rounded-none text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-cyan-500/20"
                             >
                               {skill}
                             </span>
@@ -257,16 +257,16 @@ export default function Experience() {
                     ) : (
                       /* Complementary Highlights in the Left Space when Main Card is on the Right */
                       <div className="w-full text-right flex flex-col items-end gap-3.5 pr-2">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl glass border border-purple-500/30 text-purple-300 text-xs font-bold shadow-lg shadow-purple-500/10">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none glass border border-purple-500/30 text-purple-300 text-xs font-bold shadow-lg shadow-purple-500/10">
                           <Calendar size={14} className="text-purple-400" />
                           <span>{item.period}</span>
                         </div>
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold">
                           <Building size={13} className="text-cyan-400" />
                           <span>{item.organization}</span>
                         </div>
                         {item.highlight && (
-                          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold">
+                          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold">
                             <Award size={13} />
                             <span>{item.highlight}</span>
                           </div>
@@ -275,9 +275,9 @@ export default function Experience() {
                     )}
                   </motion.div>
 
-                  {/* Center Node / Dot - Locked on Center Spine */}
+                  {/* Center Node / Dot - Crisp Square Diamond Locked on Center Spine */}
                   <motion.div
-                    className="absolute left-5 md:left-1/2 -translate-x-1/2 w-11 h-11 rounded-2xl glass border border-white/20 bg-[#080814] flex items-center justify-center text-cyan-400 shadow-xl shadow-cyan-500/25 z-10"
+                    className="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-none glass border border-white/20 bg-[#080814] flex items-center justify-center text-cyan-400 shadow-xl shadow-cyan-500/25 z-10"
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: false, amount: 0.25 }}
@@ -304,15 +304,15 @@ export default function Experience() {
                     }}
                   >
                     {!isEven ? (
-                      /* Main Story Card on the Right */
-                      <div className="rounded-[32px] sm:rounded-[38px] p-8 sm:p-9 border border-white/10 hover:border-purple-400/50 bg-[#070818]/90 backdrop-blur-xl transition-all text-left w-full group shadow-2xl relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-purple-500/15 transition-all" />
-                        <div className="flex items-center justify-between gap-3 mb-4 relative z-10">
-                          <span className="text-xs px-3.5 py-1 rounded-full bg-purple-500/15 text-purple-300 font-semibold border border-purple-500/30">
+                      /* Main Story Card on the Right - Crisp Square Box (No Corner Clipping) */
+                      <div className="rounded-none p-7 sm:p-9 border border-white/10 hover:border-purple-400/50 bg-[#070818]/95 backdrop-blur-xl transition-all text-left w-full group shadow-2xl relative">
+                        <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 blur-2xl pointer-events-none group-hover:bg-purple-500/15 transition-all" />
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-4 relative z-10">
+                          <span className="text-xs px-3.5 py-1 rounded-none bg-purple-500/15 text-purple-300 font-semibold border border-purple-500/30">
                             {item.type}
                           </span>
                           {item.highlight && (
-                            <span className="text-xs font-bold text-amber-300">
+                            <span className="text-xs font-bold text-amber-300 px-2 py-0.5 border border-amber-400/30 bg-amber-400/10">
                               ★ {item.highlight}
                             </span>
                           )}
@@ -339,7 +339,7 @@ export default function Experience() {
                           {item.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-purple-500/20"
+                              className="px-3 py-1 rounded-none text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-purple-500/20"
                             >
                               {skill}
                             </span>
@@ -349,16 +349,16 @@ export default function Experience() {
                     ) : (
                       /* Complementary Highlights in the Right Space when Main Card is on the Left */
                       <div className="w-full text-left flex flex-col items-start gap-3.5 pl-2">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl glass border border-cyan-500/30 text-cyan-300 text-xs font-bold shadow-lg shadow-cyan-500/10">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none glass border border-cyan-500/30 text-cyan-300 text-xs font-bold shadow-lg shadow-cyan-500/10">
                           <Calendar size={14} className="text-cyan-400" />
                           <span>{item.period}</span>
                         </div>
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold">
                           <Building size={13} className="text-purple-400" />
                           <span>{item.organization}</span>
                         </div>
                         {item.highlight && (
-                          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold">
+                          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold">
                             <Award size={13} />
                             <span>{item.highlight}</span>
                           </div>
@@ -367,7 +367,7 @@ export default function Experience() {
                     )}
                   </motion.div>
 
-                  {/* Mobile Content (Always right of line) */}
+                  {/* Mobile Content (Always right of line) - Crisp Square Box */}
                   <motion.div
                     className="md:hidden ml-14 w-[calc(100%-3.5rem)]"
                     initial={{ opacity: 0, x: 60 }}
@@ -379,13 +379,13 @@ export default function Experience() {
                       damping: 16,
                     }}
                   >
-                    <div className="rounded-[30px] p-7 border border-white/10 bg-[#070818]/90 backdrop-blur-xl shadow-xl">
+                    <div className="rounded-none p-6 sm:p-7 border border-white/10 bg-[#070818]/95 backdrop-blur-xl shadow-xl">
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <span className="text-xs px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
+                        <span className="text-xs px-3 py-1 rounded-none bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
                           {item.type}
                         </span>
                         {item.highlight && (
-                          <span className="text-xs font-bold text-amber-300">
+                          <span className="text-xs font-bold text-amber-300 px-2 py-0.5 border border-amber-400/30 bg-amber-400/10">
                             ★ {item.highlight}
                           </span>
                         )}
@@ -412,7 +412,7 @@ export default function Experience() {
                         {item.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300"
+                            className="px-2.5 py-1 rounded-none text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300"
                           >
                             {skill}
                           </span>

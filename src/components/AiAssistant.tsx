@@ -608,18 +608,18 @@ export default function AiAssistant() {
             if (soundEnabled) playSynthesizedSound("pop");
             setIsOpen((prev) => !prev);
           }}
-          className="relative group p-3 sm:p-3.5 rounded-2xl glass border border-cyan-500/40 shadow-2xl shadow-cyan-500/30 bg-[#07091e]/95 text-white flex items-center gap-3 cursor-pointer hover:border-cyan-400 hover:shadow-cyan-400/40 transition-all"
+          className="relative group p-3 sm:p-3.5 rounded-none glass border border-cyan-500/40 shadow-2xl shadow-cyan-500/30 bg-[#07091e]/95 text-white flex items-center gap-3 cursor-pointer hover:border-cyan-400 hover:shadow-cyan-400/40 transition-all"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           aria-label="Open Professional AI Assistant"
         >
           {/* Luminous Pulsing Beacon */}
-          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-cyan-400 animate-ping opacity-75" />
-          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-[#07091e]" />
+          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-none bg-cyan-400 animate-ping opacity-75" />
+          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-none bg-cyan-400 border-2 border-[#07091e]" />
 
           {/* Holographic Glowing Avatar */}
-          <div className="relative w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 p-0.5 shadow-md flex items-center justify-center shrink-0">
-            <div className="w-full h-full rounded-[10px] bg-[#07091e] flex items-center justify-center text-cyan-300 group-hover:scale-105 transition-transform">
+          <div className="relative w-9 h-9 rounded-none bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 p-0.5 shadow-md flex items-center justify-center shrink-0">
+            <div className="w-full h-full rounded-none bg-[#07091e] flex items-center justify-center text-cyan-300 group-hover:scale-105 transition-transform">
               <Bot size={20} className="text-cyan-400 group-hover:text-white transition-colors" />
             </div>
           </div>
@@ -628,7 +628,7 @@ export default function AiAssistant() {
           <div className="text-left hidden sm:block pr-1">
             <div className="flex items-center gap-1.5">
               <span className="text-xs font-bold text-white font-mono tracking-tight">SAN-AI</span>
-              <span className="px-1.5 py-0.2 rounded-full bg-cyan-500/20 text-cyan-300 text-[9px] font-mono font-semibold border border-cyan-500/30">
+              <span className="px-1.5 py-0.2 rounded-none bg-cyan-500/20 text-cyan-300 text-[9px] font-mono font-semibold border border-cyan-500/30">
                 ACTIVE
               </span>
             </div>
@@ -667,8 +667,8 @@ export default function AiAssistant() {
             <motion.div
               className={`relative glass border border-cyan-500/40 shadow-2xl shadow-cyan-500/30 bg-[#070818]/98 flex flex-col overflow-hidden ${
                 isFullscreen
-                  ? "w-full h-full rounded-3xl"
-                  : "w-full sm:w-[440px] max-h-[85vh] sm:max-h-[640px] h-[580px] rounded-t-3xl sm:rounded-3xl"
+                  ? "w-full h-full rounded-none"
+                  : "w-full sm:w-[440px] max-h-[85vh] sm:max-h-[640px] h-[580px] rounded-none"
               }`}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -678,8 +678,8 @@ export default function AiAssistant() {
               {/* Header Bar */}
               <div className="p-3.5 sm:p-4 border-b border-white/10 flex items-center justify-between bg-black/40">
                 <div className="flex items-center gap-3">
-                  <div className="relative w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 p-0.5 shadow-md shrink-0">
-                    <div className="w-full h-full rounded-[10px] bg-[#07091e] flex items-center justify-center text-cyan-300">
+                  <div className="relative w-9 h-9 rounded-none bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 p-0.5 shadow-md shrink-0">
+                    <div className="w-full h-full rounded-none bg-[#07091e] flex items-center justify-center text-cyan-300">
                       <Bot size={18} />
                     </div>
                   </div>
@@ -688,8 +688,8 @@ export default function AiAssistant() {
                       <h3 className="text-sm font-bold text-white font-mono flex items-center gap-1.5">
                         <span>Sangmeshwar AI</span>
                       </h3>
-                      <span className="flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[9px] font-mono text-emerald-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="flex items-center gap-1 px-1.5 py-0.5 rounded-none bg-emerald-500/15 border border-emerald-500/30 text-[9px] font-mono text-emerald-300">
+                        <span className="w-1.5 h-1.5 rounded-none bg-emerald-400 animate-pulse" />
                         <span>Online</span>
                       </span>
                     </div>
@@ -704,7 +704,7 @@ export default function AiAssistant() {
                   {/* Sound Toggle */}
                   <button
                     onClick={() => setSoundEnabled((prev) => !prev)}
-                    className="p-1.5 rounded-lg hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer"
+                    className="p-1.5 rounded-none hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer"
                     title={soundEnabled ? "Mute audio cues" : "Enable audio cues"}
                   >
                     {soundEnabled ? <Volume2 size={15} /> : <VolumeX size={15} />}
@@ -713,7 +713,7 @@ export default function AiAssistant() {
                   {/* Reset Chat */}
                   <button
                     onClick={handleResetChat}
-                    className="p-1.5 rounded-lg hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer"
+                    className="p-1.5 rounded-none hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer"
                     title="Reset conversation"
                   >
                     <RotateCcw size={15} />
@@ -722,7 +722,7 @@ export default function AiAssistant() {
                   {/* Fullscreen Toggle (Desktop) */}
                   <button
                     onClick={() => setIsFullscreen((prev) => !prev)}
-                    className="hidden sm:inline-flex p-1.5 rounded-lg hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer"
+                    className="hidden sm:inline-flex p-1.5 rounded-none hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer"
                     title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
                   >
                     {isFullscreen ? <Minimize2 size={15} /> : <Maximize2 size={15} />}
@@ -731,7 +731,7 @@ export default function AiAssistant() {
                   {/* Close */}
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-1.5 rounded-lg hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer ml-1"
+                    className="p-1.5 rounded-none hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer ml-1"
                     title="Close Assistant"
                   >
                     <X size={17} />
@@ -749,10 +749,10 @@ export default function AiAssistant() {
                     }`}
                   >
                     <div
-                      className={`max-w-[88%] p-3.5 sm:p-4 rounded-2xl leading-relaxed whitespace-pre-line shadow-lg ${
+                      className={`max-w-[88%] p-3.5 sm:p-4 rounded-none leading-relaxed whitespace-pre-line shadow-lg ${
                         msg.sender === "user"
-                          ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-tr-none font-medium shadow-cyan-500/20"
-                          : "bg-white/[0.04] border border-white/10 text-slate-200 rounded-tl-none font-sans"
+                          ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-none font-medium shadow-cyan-500/20"
+                          : "bg-white/[0.04] border border-white/10 text-slate-200 rounded-none font-sans"
                       }`}
                     >
                       {/* Formatted Text Content */}
@@ -770,7 +770,7 @@ export default function AiAssistant() {
                                   href={act.href}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/25 hover:border-cyan-400 text-[11px] font-mono font-semibold transition-all shadow-sm"
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/25 hover:border-cyan-400 text-[11px] font-mono font-semibold transition-all shadow-sm"
                                 >
                                   <span>{act.label}</span>
                                   <ActIcon size={11} />
@@ -781,7 +781,7 @@ export default function AiAssistant() {
                               <button
                                 key={i}
                                 onClick={act.onClick}
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/25 hover:border-cyan-400 text-[11px] font-mono font-semibold transition-all cursor-pointer shadow-sm"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/25 hover:border-cyan-400 text-[11px] font-mono font-semibold transition-all cursor-pointer shadow-sm"
                               >
                                 <span>{act.label}</span>
                                 <ActIcon size={11} />
@@ -832,10 +832,10 @@ export default function AiAssistant() {
 
                 {/* Live Neural Typing Indicator */}
                 {isTyping && (
-                  <div className="flex items-center gap-2 p-3.5 rounded-2xl bg-white/[0.04] border border-cyan-500/20 w-fit text-cyan-400">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce" />
-                    <span className="w-2 h-2 rounded-full bg-purple-400 animate-bounce [animation-delay:0.2s]" />
-                    <span className="w-2 h-2 rounded-full bg-pink-400 animate-bounce [animation-delay:0.4s]" />
+                  <div className="flex items-center gap-2 p-3.5 rounded-none bg-white/[0.04] border border-cyan-500/20 w-fit text-cyan-400">
+                    <span className="w-2 h-2 rounded-none bg-cyan-400 animate-bounce" />
+                    <span className="w-2 h-2 rounded-none bg-purple-400 animate-bounce [animation-delay:0.2s]" />
+                    <span className="w-2 h-2 rounded-none bg-pink-400 animate-bounce [animation-delay:0.4s]" />
                     <span className="text-[10px] font-mono text-slate-400 ml-1">
                       Analyzing portfolio neural graph...
                     </span>
@@ -853,7 +853,7 @@ export default function AiAssistant() {
                     <button
                       key={idx}
                       onClick={() => setSelectedCategory(idx)}
-                      className={`whitespace-nowrap px-2.5 py-1 rounded-lg text-[10px] font-mono font-semibold transition-all shrink-0 cursor-pointer flex items-center gap-1 ${
+                      className={`whitespace-nowrap px-2.5 py-1 rounded-none text-[10px] font-mono font-semibold transition-all shrink-0 cursor-pointer flex items-center gap-1 ${
                         selectedCategory === idx
                           ? "bg-cyan-500/25 border border-cyan-400/50 text-cyan-300"
                           : "bg-white/[0.03] border border-white/10 text-slate-400 hover:text-white"
@@ -872,7 +872,7 @@ export default function AiAssistant() {
                       <button
                         key={pIdx}
                         onClick={() => handleSend(prompt)}
-                        className="whitespace-nowrap px-2.5 py-1 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-500/10 text-[10px] text-slate-300 hover:text-white font-mono transition-all shrink-0 cursor-pointer flex items-center gap-1"
+                        className="whitespace-nowrap px-2.5 py-1 rounded-none bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-500/10 text-[10px] text-slate-300 hover:text-white font-mono transition-all shrink-0 cursor-pointer flex items-center gap-1"
                       >
                         <Zap size={10} className="text-cyan-400 shrink-0" />
                         <span>{prompt}</span>
@@ -890,12 +890,12 @@ export default function AiAssistant() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSend()}
                   placeholder="Ask about AI models, CGPA, stack, certifications..."
-                  className="flex-1 bg-white/[0.04] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400/60 focus:ring-1 focus:ring-cyan-500/40 font-sans transition-all"
+                  className="flex-1 bg-white/[0.04] border border-white/10 rounded-none px-3.5 py-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400/60 focus:ring-1 focus:ring-cyan-500/40 font-sans transition-all"
                 />
                 <button
                   onClick={() => handleSend()}
                   disabled={!input.trim() || isTyping}
-                  className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 flex items-center justify-center text-white disabled:opacity-40 hover:opacity-95 hover:scale-105 active:scale-95 transition-all cursor-pointer shrink-0 shadow-lg shadow-cyan-500/25"
+                  className="w-10 h-10 rounded-none bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 flex items-center justify-center text-white disabled:opacity-40 hover:opacity-95 hover:scale-105 active:scale-95 transition-all cursor-pointer shrink-0 shadow-lg shadow-cyan-500/25"
                   aria-label="Send query"
                 >
                   <Send size={15} />

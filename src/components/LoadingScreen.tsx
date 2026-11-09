@@ -33,7 +33,7 @@ export default function LoadingScreen() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-amber-500/40 shadow-2xl shadow-amber-500/25 bg-[#0a0a14]">
+        <div className="relative w-20 h-20 rounded-none overflow-hidden border border-amber-500/40 shadow-2xl shadow-amber-500/25 bg-[#0a0a14]">
           <Image
             src="/logo.jpg"
             alt="SAN Logo"

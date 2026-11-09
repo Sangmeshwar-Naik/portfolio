@@ -141,8 +141,8 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             {/* Availability Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-6">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-6">
+              <span className="w-2 h-2 rounded-none bg-emerald-400 animate-ping" />
               <Sparkles size={13} className="text-cyan-400" />
               Available for Opportunities &amp; Internships
             </div>
@@ -171,12 +171,12 @@ export default function Hero() {
               into real-world applications.
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Crisp Square Cyber Buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10">
               {/* View Projects */}
               <motion.button
                 onClick={() => scrollTo("projects")}
-                className="group relative px-6 py-3.5 rounded-xl font-semibold text-sm text-white overflow-hidden shadow-lg shadow-cyan-500/25 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 transition-all flex items-center gap-2 cursor-pointer"
+                className="group relative px-6 py-3.5 rounded-none font-semibold text-sm text-white overflow-hidden shadow-lg shadow-cyan-500/25 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 transition-all flex items-center gap-2 cursor-pointer"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
@@ -191,7 +191,7 @@ export default function Hero() {
                     window.dispatchEvent(new CustomEvent("open-resume-modal"));
                   }
                 }}
-                className="group px-6 py-3.5 rounded-xl font-semibold text-sm text-white glass hover:border-purple-400/50 hover:text-purple-300 transition-all flex items-center gap-2 cursor-pointer shadow-md shadow-purple-500/10"
+                className="group px-6 py-3.5 rounded-none font-semibold text-sm text-white glass hover:border-purple-400/50 hover:text-purple-300 transition-all flex items-center gap-2 cursor-pointer shadow-md shadow-purple-500/10"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
@@ -202,7 +202,7 @@ export default function Hero() {
               {/* Contact Me */}
               <motion.button
                 onClick={() => scrollTo("contact")}
-                className="group px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 glass hover:border-cyan-400/50 hover:text-cyan-300 transition-all flex items-center gap-2 cursor-pointer"
+                className="group px-6 py-3.5 rounded-none font-semibold text-sm text-slate-200 glass hover:border-cyan-400/50 hover:text-cyan-300 transition-all flex items-center gap-2 cursor-pointer"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
@@ -220,7 +220,7 @@ export default function Hero() {
                 href="https://github.com/Sangmeshwar-Naik"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all"
+                className="w-10 h-10 rounded-none glass flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all"
                 aria-label="GitHub Profile"
               >
                 <FaGithub size={18} />
@@ -229,7 +229,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/sangmeshwar-naik-555828385"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 hover:bg-[#0a66c2]/10 transition-all"
+                className="w-10 h-10 rounded-none glass flex items-center justify-center text-slate-300 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 hover:bg-[#0a66c2]/10 transition-all"
                 aria-label="LinkedIn Profile"
               >
                 <FaLinkedin size={18} />
@@ -269,11 +269,11 @@ export default function Hero() {
 
             {/* Interactive Profile Area: 3D Physics Lanyard Card or Classic Card */}
             <div className="relative z-10 w-full flex flex-col items-center justify-center">
-              {/* Card Mode Toggle Switch */}
+              {/* Card Mode Toggle Switch - Crisp Square Buttons */}
               <div className="flex items-center gap-2 mb-3 z-30">
                 <button
                   onClick={() => setCardMode("lanyard")}
-                  className={`px-3 py-1.5 rounded-full text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 shadow-md ${
+                  className={`px-3 py-1.5 rounded-none text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 shadow-md ${
                     cardMode === "lanyard"
                       ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-cyan-500/25 scale-105 border border-cyan-400/40"
                       : "glass text-slate-400 hover:text-white border border-white/10"
@@ -285,7 +285,7 @@ export default function Hero() {
                 </button>
                 <button
                   onClick={() => setCardMode("classic")}
-                  className={`px-3 py-1.5 rounded-full text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 shadow-md ${
+                  className={`px-3 py-1.5 rounded-none text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 shadow-md ${
                     cardMode === "classic"
                       ? "bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-purple-500/25 scale-105 border border-purple-400/40"
                       : "glass text-slate-400 hover:text-white border border-white/10"
@@ -307,7 +307,7 @@ export default function Hero() {
                     cardColor="#080b1f"
                     orientation="square"
                     finish="glossy"
-                    cornerRadius={0.20}
+                    cornerRadius={0.05}
                     size={0.68}
                     anchor="center"
                     strapLength={0.42}
@@ -322,13 +322,13 @@ export default function Hero() {
                     intro
                   />
 
-                  {/* Floating Satellite Badge 1 (Top Right) */}
+                  {/* Floating Satellite Badge 1 (Top Right) - Crisp Square */}
                   <motion.div
-                    className="absolute top-20 -right-2 sm:top-24 sm:-right-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-cyan-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                    className="absolute top-20 -right-2 sm:top-24 sm:-right-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-none border border-cyan-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
                     animate={{ y: [0, -6, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-none bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
                       <Brain size={16} className="text-cyan-400" />
                     </div>
                     <div className="text-left">
@@ -337,13 +337,13 @@ export default function Hero() {
                     </div>
                   </motion.div>
 
-                  {/* Floating Satellite Badge 2 (Bottom Left) */}
+                  {/* Floating Satellite Badge 2 (Bottom Left) - Crisp Square */}
                   <motion.div
-                    className="absolute bottom-10 -left-2 sm:bottom-12 sm:-left-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-purple-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                    className="absolute bottom-10 -left-2 sm:bottom-12 sm:-left-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-none border border-purple-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
                     animate={{ y: [0, 6, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                   >
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center shrink-0">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-none bg-purple-500/15 border border-purple-500/30 flex items-center justify-center shrink-0">
                       <Cpu size={16} className="text-purple-400" />
                     </div>
                     <div className="text-left">
@@ -353,7 +353,7 @@ export default function Hero() {
                   </motion.div>
                 </div>
               ) : (
-                /* Classic Card View with Continuous 3D Floating Motion */
+                /* Classic Card View with Continuous 3D Floating Motion - Crisp Square Cyber Box */
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -361,14 +361,14 @@ export default function Hero() {
                 >
                   <div className="relative w-full max-w-[340px] sm:max-w-[430px]">
                     {/* Central Profile Card with portrait photo and monogram logo */}
-                    <div className="relative rounded-[36px] sm:rounded-[42px] p-5 sm:p-8 pt-8 sm:pt-10 border border-blue-500/30 bg-[#080b1f]/95 backdrop-blur-2xl w-full shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] overflow-hidden">
+                    <div className="relative rounded-none p-5 sm:p-8 pt-8 sm:pt-10 border border-blue-500/30 bg-[#080b1f]/95 backdrop-blur-2xl w-full shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] overflow-hidden">
                       {/* Dotted Matrix Background Pattern across Upper Section */}
                       <div className="absolute inset-x-0 top-0 h-3/4 bg-[radial-gradient(#38bdf8_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-25 pointer-events-none" />
 
                       {/* Inner flex column with generous top space above photo */}
                       <div className="relative z-10 pt-4 pb-1 sm:pt-6 flex flex-col items-center text-center">
                         {/* Portrait with Glowing Gold Border and Generous Top Clearance */}
-                        <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-[30px] sm:rounded-[34px] overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_32px_rgba(251,191,36,0.5)] mb-3 bg-white shrink-0">
+                        <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-none overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_32px_rgba(251,191,36,0.5)] mb-3 bg-white shrink-0">
                           <Image
                             src="/profile.jpg"
                             alt="Sangmeshwar Anil Naik"
@@ -380,7 +380,7 @@ export default function Hero() {
                         </div>
 
                         {/* Monogram Emblem Badge */}
-                        <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-amber-400/80 shadow-[0_0_20px_rgba(251,191,36,0.45)] bg-[#070814] mb-3 shrink-0">
+                        <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-none overflow-hidden border border-amber-400/80 shadow-[0_0_20px_rgba(251,191,36,0.45)] bg-[#070814] mb-3 shrink-0">
                           <Image
                             src="/logo.jpg"
                             alt="SAN Monogram"
@@ -399,9 +399,9 @@ export default function Hero() {
                         </p>
 
                         {/* Status Strip Pill */}
-                        <div className="w-full py-3 px-5 rounded-full bg-[#030617]/90 border border-white/10 flex items-center justify-between text-xs sm:text-sm text-slate-300 font-mono mb-4 shadow-inner">
+                        <div className="w-full py-3 px-5 rounded-none bg-[#030617]/90 border border-white/10 flex items-center justify-between text-xs sm:text-sm text-slate-300 font-mono mb-4 shadow-inner">
                           <span className="flex items-center gap-2 text-emerald-400 font-medium">
-                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                            <span className="w-2.5 h-2.5 rounded-none bg-emerald-400 animate-pulse" />
                             CGPA 8.4 / 10
                           </span>
                           <span className="text-slate-300">Mangalore, KA</span>
@@ -409,11 +409,11 @@ export default function Hero() {
 
                         {/* Bottom Integrated Specification Pills */}
                         <div className="w-full pt-3.5 border-t border-white/10 grid grid-cols-2 gap-3.5 text-center">
-                          <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
+                          <div className="py-3 px-3.5 rounded-none bg-[#030617]/75 border border-white/10 shadow-sm">
                             <span className="text-xs text-slate-400 block font-medium">Specialization</span>
                             <p className="text-sm sm:text-base font-bold text-white mt-1">AI &amp; ML</p>
                           </div>
-                          <div className="py-3 px-3.5 rounded-2xl bg-[#030617]/75 border border-white/10 shadow-sm">
+                          <div className="py-3 px-3.5 rounded-none bg-[#030617]/75 border border-white/10 shadow-sm">
                             <span className="text-xs text-slate-400 block font-medium">Graduation</span>
                             <p className="text-sm sm:text-base font-bold text-cyan-400 mt-1">2027</p>
                           </div>
@@ -423,11 +423,11 @@ export default function Hero() {
 
                     {/* Floating Satellite Badge 1 (Top Right) */}
                     <motion.div
-                      className="absolute -top-3 -right-2 sm:-top-5 sm:-right-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-cyan-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                      className="absolute -top-3 -right-2 sm:-top-5 sm:-right-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-none border border-cyan-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
                       animate={{ y: [0, -6, 0] }}
                       transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-none bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
                         <Brain size={16} className="text-cyan-400" />
                       </div>
                       <div className="text-left">
@@ -438,11 +438,11 @@ export default function Hero() {
 
                     {/* Floating Satellite Badge 2 (Bottom Left) */}
                     <motion.div
-                      className="absolute -bottom-3 -left-2 sm:-bottom-5 sm:-left-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-purple-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                      className="absolute -bottom-3 -left-2 sm:-bottom-5 sm:-left-4 z-20 glass px-3 sm:px-4 py-2 sm:py-2.5 rounded-none border border-purple-500/40 flex items-center gap-2 sm:gap-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
                       animate={{ y: [0, 6, 0] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                     >
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center shrink-0">
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-none bg-purple-500/15 border border-purple-500/30 flex items-center justify-center shrink-0">
                         <Cpu size={16} className="text-purple-400" />
                       </div>
                       <div className="text-left">

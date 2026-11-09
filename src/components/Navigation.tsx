@@ -79,7 +79,7 @@ export default function Navigation() {
             whileTap={{ scale: 0.95 }}
             aria-label="Sangmeshwar Anil Naik Portfolio Home"
           >
-            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden border border-amber-500/40 shadow-md shadow-amber-500/20 group-hover:border-amber-400 group-hover:shadow-amber-500/40 transition-all bg-[#0a0a14]">
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-none overflow-hidden border border-amber-500/40 shadow-md shadow-amber-500/20 group-hover:border-amber-400 group-hover:shadow-amber-500/40 transition-all bg-[#0a0a14]">
               <Image
                 src="/logo.jpg"
                 alt="SAN Logo"
@@ -111,7 +111,7 @@ export default function Navigation() {
                   {item.name}
                   {isActive && (
                     <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-none bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500"
                       layoutId="nav-underline"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
@@ -121,25 +121,25 @@ export default function Navigation() {
             })}
           </div>
 
-          {/* Desktop Social & Action Links */}
+          {/* Desktop Social & Action Links - Crisp Square Cyber Buttons */}
           <div className="hidden md:flex items-center gap-2.5">
             {/* Quick Command Palette Button */}
             <motion.button
               onClick={() => window.dispatchEvent(new CustomEvent("open-command-palette"))}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl glass border border-white/10 hover:border-cyan-400/50 text-xs text-slate-300 hover:text-white transition-all shadow-md group cursor-pointer mr-1"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-none glass border border-white/10 hover:border-cyan-400/50 text-xs text-slate-300 hover:text-white transition-all shadow-md group cursor-pointer mr-1"
               title="Search Portfolio (Ctrl+K or ⌘K)"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
             >
               <Search size={13} className="text-cyan-400 group-hover:rotate-12 transition-transform" />
               <span className="font-mono text-[11px] text-slate-400 group-hover:text-slate-200">Search</span>
-              <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-[9px] font-mono text-slate-400 border border-white/10">⌘K</kbd>
+              <kbd className="px-1.5 py-0.5 rounded-none bg-white/10 text-[9px] font-mono text-slate-400 border border-white/10">⌘K</kbd>
             </motion.button>
 
             {/* In-Browser CV & Resume Inspector Trigger */}
             <motion.button
               onClick={() => window.dispatchEvent(new CustomEvent("open-resume-modal"))}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass border border-purple-500/35 hover:border-purple-400 bg-purple-500/10 text-xs text-purple-200 hover:text-white transition-all shadow-md shadow-purple-500/10 group cursor-pointer mr-1"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none glass border border-purple-500/35 hover:border-purple-400 bg-purple-500/10 text-xs text-purple-200 hover:text-white transition-all shadow-md shadow-purple-500/10 group cursor-pointer mr-1"
               title="View Official PDF Resume & CV"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -152,7 +152,7 @@ export default function Navigation() {
               href="https://github.com/Sangmeshwar-Naik"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 flex items-center justify-center rounded-xl glass text-slate-300 hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
+              className="w-9 h-9 flex items-center justify-center rounded-none glass text-slate-300 hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
               whileHover={{ scale: 1.08, y: -2 }}
               whileTap={{ scale: 0.94 }}
               aria-label="GitHub"
@@ -163,7 +163,7 @@ export default function Navigation() {
               href="https://www.linkedin.com/in/sangmeshwar-naik-555828385"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 flex items-center justify-center rounded-xl glass text-slate-300 hover:text-[#0a66c2] hover:border-[#0a66c2]/40 transition-all"
+              className="w-9 h-9 flex items-center justify-center rounded-none glass text-slate-300 hover:text-[#0a66c2] hover:border-[#0a66c2]/40 transition-all"
               whileHover={{ scale: 1.08, y: -2 }}
               whileTap={{ scale: 0.94 }}
               aria-label="LinkedIn"
@@ -172,7 +172,7 @@ export default function Navigation() {
             </motion.a>
             <motion.a
               href="mailto:sangameshnaik471@gmail.com"
-              className="w-9 h-9 flex items-center justify-center rounded-xl glass text-slate-300 hover:text-pink-400 hover:border-pink-400/40 transition-all"
+              className="w-9 h-9 flex items-center justify-center rounded-none glass text-slate-300 hover:text-pink-400 hover:border-pink-400/40 transition-all"
               whileHover={{ scale: 1.08, y: -2 }}
               whileTap={{ scale: 0.94 }}
               aria-label="Email"
@@ -182,7 +182,7 @@ export default function Navigation() {
 
             <motion.button
               onClick={() => handleNavClick("#contact")}
-              className="ml-2 px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all cursor-pointer"
+              className="ml-2 px-4 py-2 rounded-none text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all cursor-pointer"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
             >
@@ -197,7 +197,7 @@ export default function Navigation() {
           <div className="flex items-center gap-2 lg:hidden">
             <NotificationBell />
             <motion.button
-              className="w-10 h-10 flex items-center justify-center rounded-xl glass text-white cursor-pointer"
+              className="w-10 h-10 flex items-center justify-center rounded-none glass text-white cursor-pointer"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               whileTap={{ scale: 0.92 }}
               aria-label="Toggle navigation menu"
@@ -232,7 +232,7 @@ export default function Navigation() {
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
                   <div className="flex items-center gap-2.5">
-                    <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-amber-500/40 shadow-sm shadow-amber-500/20 bg-[#0a0a14]">
+                    <div className="relative w-8 h-8 rounded-none overflow-hidden border border-amber-500/40 shadow-sm shadow-amber-500/20 bg-[#0a0a14]">
                       <Image
                         src="/logo.jpg"
                         alt="SAN Logo"
@@ -245,7 +245,7 @@ export default function Navigation() {
                   </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-1 rounded-lg text-slate-400 hover:text-white"
+                    className="p-1 rounded-none text-slate-400 hover:text-white"
                   >
                     <X size={22} />
                   </button>
@@ -258,13 +258,13 @@ export default function Navigation() {
                       setIsMobileMenuOpen(false);
                       setTimeout(() => window.dispatchEvent(new CustomEvent("open-command-palette")), 100);
                     }}
-                    className="flex items-center justify-between px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs font-mono text-slate-300 hover:text-white hover:border-cyan-400/50 mb-2 transition-colors"
+                    className="flex items-center justify-between px-4 py-2.5 rounded-none bg-white/[0.04] border border-white/10 text-xs font-mono text-slate-300 hover:text-white hover:border-cyan-400/50 mb-2 transition-colors"
                   >
                     <span className="flex items-center gap-2">
                       <Search size={14} className="text-cyan-400" />
                       <span>Search Portfolio...</span>
                     </span>
-                    <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-[10px] text-slate-400 border border-white/10">⌘K</kbd>
+                    <kbd className="px-1.5 py-0.5 rounded-none bg-white/10 text-[10px] text-slate-400 border border-white/10">⌘K</kbd>
                   </button>
 
                   {/* View CV in Mobile */}
@@ -273,13 +273,13 @@ export default function Navigation() {
                       setIsMobileMenuOpen(false);
                       window.dispatchEvent(new CustomEvent("open-resume-modal"));
                     }}
-                    className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-300 font-mono text-sm mb-3 cursor-pointer"
+                    className="w-full flex items-center justify-between px-4 py-3 rounded-none bg-purple-500/10 border border-purple-500/30 text-purple-300 font-mono text-sm mb-3 cursor-pointer"
                   >
                     <span className="flex items-center gap-2 font-bold">
                       <FileText size={16} className="text-purple-400" />
                       <span>View &amp; Download CV</span>
                     </span>
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-purple-500/20 text-purple-200">PDF</span>
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-none bg-purple-500/20 text-purple-200">PDF</span>
                   </button>
 
                   {navItems.map((item, index) => {
@@ -288,7 +288,7 @@ export default function Navigation() {
                       <motion.button
                         key={item.name}
                         onClick={() => handleNavClick(item.href)}
-                        className={`text-left px-4 py-3 rounded-xl text-base font-semibold transition-all ${
+                        className={`text-left px-4 py-3 rounded-none text-base font-semibold transition-all ${
                           isActive
                             ? "bg-cyan-500/15 text-cyan-400 border border-cyan-500/30"
                             : "text-slate-300 hover:text-white hover:bg-white/5"
@@ -313,7 +313,7 @@ export default function Navigation() {
                     href="https://github.com/Sangmeshwar-Naik"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-xl glass text-slate-300 hover:text-cyan-400"
+                    className="w-10 h-10 flex items-center justify-center rounded-none glass text-slate-300 hover:text-cyan-400"
                   >
                     <FaGithub size={18} />
                   </a>
@@ -321,13 +321,13 @@ export default function Navigation() {
                     href="https://www.linkedin.com/in/sangmeshwar-naik-555828385"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-xl glass text-slate-300 hover:text-[#0a66c2]"
+                    className="w-10 h-10 flex items-center justify-center rounded-none glass text-slate-300 hover:text-[#0a66c2]"
                   >
                     <FaLinkedin size={18} />
                   </a>
                   <a
                     href="mailto:sangameshnaik471@gmail.com"
-                    className="w-10 h-10 flex items-center justify-center rounded-xl glass text-slate-300 hover:text-pink-400"
+                    className="w-10 h-10 flex items-center justify-center rounded-none glass text-slate-300 hover:text-pink-400"
                   >
                     <Mail size={18} />
                   </a>

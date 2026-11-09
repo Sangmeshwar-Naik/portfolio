@@ -254,7 +254,7 @@ export default function Projects() {
           viewport={{ once: false, amount: 0.25 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full glass border border-pink-500/30 text-xs font-semibold text-pink-300 mb-4 mx-auto">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-none glass border border-pink-500/30 text-xs font-semibold text-pink-300 mb-4 mx-auto">
             <Sparkles size={13} className="text-pink-400" />
             Verified Portfolio Work
           </div>
@@ -286,7 +286,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Category Filters */}
+        {/* Category Filters - Crisp Square Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-14">
           {categories.map((cat) => {
             const count =
@@ -299,7 +299,7 @@ export default function Projects() {
               <button
                 key={cat}
                 onClick={() => setFilterCategory(filterCategory === cat ? null : cat)}
-                className={`px-4 py-2 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md ${
+                className={`px-4 py-2 rounded-none text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md ${
                   isActive
                     ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-cyan-500/25 scale-105"
                     : "glass border border-white/10 text-slate-300 hover:text-white hover:border-white/20"
@@ -307,7 +307,7 @@ export default function Projects() {
               >
                 <span>{cat}</span>
                 <span
-                  className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
+                  className={`text-[10px] font-mono px-1.5 py-0.5 rounded-none ${
                     isActive ? "bg-white/20 text-white" : "bg-white/5 text-slate-400"
                   }`}
                 >
@@ -318,9 +318,9 @@ export default function Projects() {
           })}
         </div>
 
-        {/* Continuous 3D Circular Rotating Carousel Showcase */}
+        {/* Continuous 3D Circular Rotating Carousel Showcase - Crisp Square */}
         <motion.div
-          className="mb-14 relative w-full rounded-3xl glass border border-white/10 p-4 sm:p-6 overflow-hidden bg-[#070818]/80 shadow-2xl backdrop-blur-2xl"
+          className="mb-14 relative w-full rounded-none glass border border-white/10 p-4 sm:p-6 overflow-hidden bg-[#070818]/80 shadow-2xl backdrop-blur-2xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
@@ -390,7 +390,7 @@ export default function Projects() {
               {/* Section Sub-heading with Interactive Close Control */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-3 border-b border-white/10">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                  <div className="w-8 h-8 rounded-none bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
                     <Layers size={17} />
                   </div>
                   <div>
@@ -405,7 +405,7 @@ export default function Projects() {
 
                 <button
                   onClick={() => setFilterCategory(null)}
-                  className="text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl glass border border-white/15 hover:border-cyan-400/40 transition-all cursor-pointer shadow-sm hover:bg-white/5"
+                  className="text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 px-3.5 py-1.5 rounded-none glass border border-white/15 hover:border-cyan-400/40 transition-all cursor-pointer shadow-sm hover:bg-white/5"
                   title="Close and hide detailed project specifications"
                 >
                   <X size={14} className="text-cyan-400" />
@@ -413,14 +413,14 @@ export default function Projects() {
                 </button>
               </div>
 
-              {/* Projects Cards Grid */}
+              {/* Projects Cards Grid - Crisp Square Cyber Boxes */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
                 {filteredProjects.map((project, idx) => {
                   const Icon = project.icon;
                   return (
                     <motion.div
                       key={project.id}
-                      className="group relative rounded-[32px] sm:rounded-[36px] glass border border-white/10 overflow-hidden flex flex-col justify-between hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/15 transition-all duration-300 bg-[#070818]/90 backdrop-blur-xl"
+                      className="group relative rounded-none glass border border-white/10 overflow-hidden flex flex-col justify-between hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/15 transition-all duration-300 bg-[#070818]/90 backdrop-blur-xl"
                       initial={{ opacity: 0, y: 35 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: false, amount: 0.15 }}
@@ -428,7 +428,7 @@ export default function Projects() {
                       whileHover={{ y: -6 }}
                     >
                       {/* Subtle corner ambient glow */}
-                      <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all pointer-events-none" />
+                      <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-none blur-2xl group-hover:bg-cyan-500/20 transition-all pointer-events-none" />
 
                       {/* Visual Header Banner with Project Image */}
                       <div>
@@ -446,11 +446,11 @@ export default function Projects() {
 
                           {/* Top Badges */}
                           <div className="relative z-10 flex items-center justify-between p-4.5">
-                            <span className="px-3.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-xs font-semibold text-cyan-300 border border-white/15 shadow-lg">
+                            <span className="px-3.5 py-1 rounded-none bg-black/60 backdrop-blur-md text-xs font-semibold text-cyan-300 border border-white/15 shadow-lg">
                               {project.badge}
                             </span>
                             {project.featured && (
-                              <span className="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-[11px] font-bold tracking-wider uppercase border border-amber-400/30 backdrop-blur-md shadow-lg">
+                              <span className="px-3 py-1 rounded-none bg-amber-400/20 text-amber-300 text-[11px] font-bold tracking-wider uppercase border border-amber-400/30 backdrop-blur-md shadow-lg">
                                 Featured
                               </span>
                             )}
@@ -458,10 +458,10 @@ export default function Projects() {
 
                           {/* Central/Bottom Icon & Date */}
                           <div className="absolute bottom-3.5 left-4.5 right-4.5 z-10 flex items-center justify-between">
-                            <div className="w-11 h-11 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-400 shadow-xl group-hover:scale-110 transition-transform">
+                            <div className="w-11 h-11 rounded-none bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-400 shadow-xl group-hover:scale-110 transition-transform">
                               <Icon size={22} />
                             </div>
-                            <span className="text-xs text-slate-200/90 font-mono font-medium px-3 py-1 rounded-full bg-black/60 border border-white/15 backdrop-blur-md">
+                            <span className="text-xs text-slate-200/90 font-mono font-medium px-3 py-1 rounded-none bg-black/60 border border-white/15 backdrop-blur-md">
                               {project.date}
                             </span>
                           </div>
@@ -482,13 +482,13 @@ export default function Projects() {
                             {project.technologies.slice(0, 4).map((tech) => (
                               <span
                                 key={tech}
-                                className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 hover:border-cyan-400/30 transition-colors"
+                                className="px-3 py-1.5 rounded-none text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 hover:border-cyan-400/30 transition-colors"
                               >
                                 {tech}
                               </span>
                             ))}
                             {project.technologies.length > 4 && (
-                              <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.02] text-slate-400 border border-white/5">
+                              <span className="px-2.5 py-1 rounded-none text-xs font-mono font-medium bg-white/[0.02] text-slate-400 border border-white/5">
                                 +{project.technologies.length - 4}
                               </span>
                             )}
@@ -503,7 +503,7 @@ export default function Projects() {
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-all shadow-sm"
+                            className="w-10 h-10 rounded-none glass flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400/50 transition-all shadow-sm"
                             aria-label="GitHub Repository"
                           >
                             <FaGithub size={18} />
@@ -513,7 +513,7 @@ export default function Projects() {
                               href={project.liveUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all shadow-sm"
+                              className="w-10 h-10 rounded-none glass flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all shadow-sm"
                               aria-label="Live Demo"
                             >
                               <ExternalLink size={17} />
@@ -523,7 +523,7 @@ export default function Projects() {
 
                         <button
                           onClick={() => setSelectedProject(project)}
-                          className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group/btn cursor-pointer py-1.5 px-3 rounded-lg hover:bg-cyan-500/10"
+                          className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group/btn cursor-pointer py-1.5 px-3 rounded-none hover:bg-cyan-500/10"
                         >
                           <span>Inspect Details</span>
                           <ArrowUpRight size={15} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
@@ -543,7 +543,7 @@ export default function Projects() {
             href="https://github.com/Sangmeshwar-Naik"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl glass border border-white/10 text-sm font-semibold text-white hover:border-cyan-500/50 hover:text-cyan-300 transition-all shadow-xl"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-none glass border border-white/10 text-sm font-semibold text-white hover:border-cyan-500/50 hover:text-cyan-300 transition-all shadow-xl"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
           >
@@ -569,7 +569,7 @@ export default function Projects() {
             />
 
             <motion.div
-              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto glass rounded-3xl border border-white/15 p-6 sm:p-8 shadow-2xl z-10"
+              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto glass rounded-none border border-white/15 p-6 sm:p-8 shadow-2xl z-10"
               initial={{ scale: 0.92, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.92, opacity: 0, y: 20 }}
@@ -578,14 +578,14 @@ export default function Projects() {
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-2 rounded-xl glass text-slate-400 hover:text-white transition-colors"
+                className="absolute top-6 right-6 p-2 rounded-none glass text-slate-400 hover:text-white transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
                 <X size={20} />
               </button>
 
-              {/* Modal Project Image Banner */}
-              <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden mb-6 border border-white/15 shadow-xl bg-[#060714]">
+              {/* Modal Project Image Banner - Crisp Square */}
+              <div className="relative w-full h-48 sm:h-56 rounded-none overflow-hidden mb-6 border border-white/15 shadow-xl bg-[#060714]">
                 <Image
                   src={selectedProject.image}
                   alt={selectedProject.title}
@@ -595,16 +595,16 @@ export default function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080816] via-transparent to-black/40" />
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/25 text-cyan-300 border border-cyan-500/30 backdrop-blur-md">
+                  <span className="px-3 py-1 rounded-none text-xs font-semibold bg-cyan-500/25 text-cyan-300 border border-cyan-500/30 backdrop-blur-md">
                     {selectedProject.badge}
                   </span>
                   {selectedProject.featured && (
-                    <span className="px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-[10px] font-bold tracking-wider uppercase border border-amber-400/30 backdrop-blur-md">
+                    <span className="px-2.5 py-0.5 rounded-none bg-amber-400/20 text-amber-300 text-[10px] font-bold tracking-wider uppercase border border-amber-400/30 backdrop-blur-md">
                       Featured
                     </span>
                   )}
                 </div>
-                <div className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs text-slate-300 font-mono bg-black/60 px-2.5 py-1 rounded-lg border border-white/10 backdrop-blur-md">
+                <div className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs text-slate-300 font-mono bg-black/60 px-2.5 py-1 rounded-none border border-white/10 backdrop-blur-md">
                   <Calendar size={13} className="text-cyan-400" />
                   <span>{selectedProject.date}</span>
                 </div>
@@ -643,7 +643,7 @@ export default function Projects() {
                   {selectedProject.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 rounded-lg text-xs font-semibold bg-white/[0.04] border border-white/10 text-cyan-300"
+                      className="px-3 py-1 rounded-none text-xs font-semibold bg-white/[0.04] border border-white/10 text-cyan-300"
                     >
                       {tech}
                     </span>
@@ -657,7 +657,7 @@ export default function Projects() {
                   href={selectedProject.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 min-w-[160px] py-3 rounded-xl font-semibold text-xs sm:text-sm text-white glass hover:border-cyan-400/50 flex items-center justify-center gap-2 transition-all"
+                  className="flex-1 min-w-[160px] py-3 rounded-none font-semibold text-xs sm:text-sm text-white glass hover:border-cyan-400/50 flex items-center justify-center gap-2 transition-all"
                 >
                   <FaGithub size={16} />
                   <span>View Source Code</span>
@@ -667,7 +667,7 @@ export default function Projects() {
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 min-w-[160px] py-3 rounded-xl font-semibold text-xs sm:text-sm text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 transition-all"
+                    className="flex-1 min-w-[160px] py-3 rounded-none font-semibold text-xs sm:text-sm text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 transition-all"
                   >
                     <span>Open Project Page</span>
                     <ExternalLink size={16} />

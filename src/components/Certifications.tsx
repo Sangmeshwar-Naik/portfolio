@@ -260,7 +260,7 @@ export default function Certifications() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10 mx-auto">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-none glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10 mx-auto">
             <Award size={13} className="text-cyan-400" />
             Accreditations &amp; Honors
           </div>
@@ -292,7 +292,7 @@ export default function Certifications() {
           </p>
         </motion.div>
 
-        {/* Top Metric Overview Badges */}
+        {/* Top Metric Overview Badges - Crisp Square Cyber Boxes */}
         <motion.div
           className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 max-w-4xl mx-auto mb-14"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -302,7 +302,7 @@ export default function Certifications() {
         >
           <div
             data-crosshair-target
-            className="rounded-[26px] sm:rounded-[30px] p-6 sm:p-7 min-h-[135px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-cyan-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-cyan-500/5 group flex flex-col justify-center cursor-crosshair"
+            className="rounded-none p-6 sm:p-7 min-h-[135px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-cyan-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-cyan-500/5 group flex flex-col justify-center cursor-crosshair"
           >
             <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:scale-105 transition-transform inline-block">
               8+
@@ -313,7 +313,7 @@ export default function Certifications() {
           </div>
           <div
             data-crosshair-target
-            className="rounded-[26px] sm:rounded-[30px] p-6 sm:p-7 min-h-[135px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-purple-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-purple-500/5 group flex flex-col justify-center cursor-crosshair"
+            className="rounded-none p-6 sm:p-7 min-h-[135px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-purple-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-purple-500/5 group flex flex-col justify-center cursor-crosshair"
           >
             <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 group-hover:scale-105 transition-transform inline-block">
               929 &amp; 860
@@ -324,7 +324,7 @@ export default function Certifications() {
           </div>
           <div
             data-crosshair-target
-            className="rounded-[26px] sm:rounded-[30px] p-6 sm:p-7 min-h-[135px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-amber-500/5 group flex flex-col justify-center cursor-crosshair"
+            className="rounded-none p-6 sm:p-7 min-h-[135px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-amber-500/5 group flex flex-col justify-center cursor-crosshair"
           >
             <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 group-hover:scale-105 transition-transform inline-block">
               93%
@@ -335,7 +335,7 @@ export default function Certifications() {
           </div>
           <div
             data-crosshair-target
-            className="rounded-[26px] sm:rounded-[30px] p-6 sm:p-7 min-h-[135px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-emerald-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-emerald-500/5 group flex flex-col justify-center cursor-crosshair"
+            className="rounded-none p-6 sm:p-7 min-h-[135px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-emerald-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-emerald-500/5 group flex flex-col justify-center cursor-crosshair"
           >
             <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 group-hover:scale-105 transition-transform inline-block">
               100%
@@ -346,7 +346,7 @@ export default function Certifications() {
           </div>
         </motion.div>
 
-        {/* Animated Interactive Filter Pills Options */}
+        {/* Animated Interactive Filter Pills Options - Crisp Square Buttons */}
         <motion.div
           className="flex flex-wrap items-center justify-center gap-2.5 mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -374,7 +374,7 @@ export default function Certifications() {
                 transition={{ duration: 0.3, delay: idx * 0.05 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                className={`relative px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
+                className={`relative px-4 py-2 rounded-none text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                   isActive
                     ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg shadow-cyan-500/25 scale-105 border border-cyan-400/40"
                     : "glass border border-white/10 text-slate-300 hover:text-white hover:border-white/20 hover:bg-white/[0.04]"
@@ -383,7 +383,7 @@ export default function Certifications() {
                 {isActive && (
                   <motion.span
                     layoutId="activeCertFilter"
-                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 -z-10 shadow-lg shadow-cyan-500/25"
+                    className="absolute inset-0 rounded-none bg-gradient-to-r from-cyan-500 to-purple-600 -z-10 shadow-lg shadow-cyan-500/25"
                     transition={{ type: "spring", stiffness: 320, damping: 25 }}
                   />
                 )}
@@ -439,10 +439,10 @@ export default function Certifications() {
                     )}
 
                     {isEven ? (
-                      /* Main 3D Holographic Credential Dossier (Left Side) */
+                      /* Main 3D Holographic Credential Dossier (Left Side) - Crisp Square Cyber Box */
                       <motion.div
                         data-crosshair-target
-                        className="w-full rounded-[32px] sm:rounded-[38px] p-8 sm:p-9 border border-white/10 hover:border-cyan-400/50 transition-all text-left group shadow-2xl relative overflow-hidden bg-[#070818]/90 backdrop-blur-xl hover:shadow-cyan-500/20"
+                        className="w-full rounded-none p-7 sm:p-9 border border-white/10 hover:border-cyan-400/50 transition-all text-left group shadow-2xl relative bg-[#070818]/95 backdrop-blur-xl hover:shadow-cyan-500/20"
                         initial={{ opacity: 0, scale: 0.88, rotateX: 16, y: 35 }}
                         whileInView={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -455,19 +455,19 @@ export default function Certifications() {
                       >
                         {/* Shimmering Brand Light Orb */}
                         <div
-                          className="absolute -top-10 -right-10 w-40 h-40 rounded-full blur-3xl opacity-15 group-hover:opacity-35 transition-opacity pointer-events-none"
+                          className="absolute -top-10 -right-10 w-40 h-40 blur-3xl opacity-15 group-hover:opacity-35 transition-opacity pointer-events-none"
                           style={{ backgroundColor: item.color }}
                         />
 
                         {/* Top Protocol Bar */}
-                        <div className="flex items-center justify-between gap-3 mb-4">
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                           <div className="flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping" />
-                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3 py-1 rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                            <span className="w-2.5 h-2.5 rounded-none bg-cyan-400 animate-ping" />
+                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3 py-1 rounded-none bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
                               {item.type}
                             </span>
                           </div>
-                          <span className="text-xs font-bold text-amber-300 font-mono flex items-center gap-1">
+                          <span className="text-xs font-bold text-amber-300 font-mono flex items-center gap-1 px-2 py-0.5 border border-amber-400/30 bg-amber-400/10">
                             <span>★</span>
                             <span>{item.badge}</span>
                           </span>
@@ -490,7 +490,7 @@ export default function Certifications() {
 
                         {/* Performance Cyber Gauge for Scored Credentials */}
                         {item.scorePercent && (
-                          <div className="mb-4.5 p-4 rounded-2xl bg-black/50 border border-white/5 relative overflow-hidden">
+                          <div className="mb-4.5 p-4 rounded-none bg-black/50 border border-white/5 relative overflow-hidden">
                             <div className="flex items-center justify-between text-xs mb-2 font-mono">
                               <span className="text-slate-300 flex items-center gap-1.5">
                                 <Target size={14} className="text-emerald-400" />
@@ -498,9 +498,9 @@ export default function Certifications() {
                               </span>
                               <span className="font-bold text-emerald-300">{item.score}</span>
                             </div>
-                            <div className="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden border border-white/10">
+                            <div className="w-full h-2.5 bg-slate-900 rounded-none overflow-hidden border border-white/10">
                               <motion.div
-                                className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 rounded-full"
+                                className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 rounded-none"
                                 initial={{ width: 0 }}
                                 whileInView={{ width: `${item.scorePercent}%` }}
                                 viewport={{ once: false }}
@@ -519,7 +519,7 @@ export default function Certifications() {
                           {item.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-cyan-500/20"
+                              className="px-3 py-1 rounded-none text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-cyan-500/20"
                             >
                               {skill}
                             </span>
@@ -550,20 +550,20 @@ export default function Certifications() {
                         viewport={{ once: false, amount: 0.2 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                       >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl glass border border-purple-500/30 text-purple-300 text-xs font-bold shadow-lg shadow-purple-500/10 font-mono">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none glass border border-purple-500/30 text-purple-300 text-xs font-bold shadow-lg shadow-purple-500/10 font-mono">
                           <Calendar size={13} className="text-purple-400" />
                           <span>{item.period}</span>
                         </div>
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold">
                           <Building size={13} className="text-cyan-400" />
                           <span>{item.issuer}</span>
                         </div>
-                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold font-mono">
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold font-mono">
                           <Award size={13} />
                           <span>{item.badge}</span>
                         </div>
                         {item.score && (
-                          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold font-mono">
+                          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold font-mono">
                             <Target size={13} />
                             <span>{item.score}</span>
                           </div>
@@ -583,7 +583,7 @@ export default function Certifications() {
                   {/* ========================================================== */}
                   <motion.div
                     data-crosshair-target
-                    className="absolute left-5 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl glass border border-white/25 bg-[#090918] flex items-center justify-center shadow-2xl z-20 group cursor-pointer"
+                    className="absolute left-5 md:left-1/2 -translate-x-1/2 w-11 h-11 rounded-none glass border border-white/25 bg-[#090918] flex items-center justify-center shadow-2xl z-20 group cursor-pointer"
                     initial={{ scale: 0, rotate: -45 }}
                     whileInView={{ scale: 1, rotate: 0 }}
                     viewport={{ once: false, amount: 0.2 }}
@@ -593,7 +593,7 @@ export default function Certifications() {
                   >
                     {/* Pulsing Orbital Radar Ring */}
                     <div
-                      className="absolute inset-0 rounded-2xl border border-dashed opacity-40 animate-spin"
+                      className="absolute inset-0 rounded-none border border-dashed opacity-40 animate-spin"
                       style={{
                         borderColor: item.color,
                         animationDuration: "14s",
@@ -622,10 +622,10 @@ export default function Certifications() {
                     )}
 
                     {!isEven ? (
-                      /* Main 3D Holographic Credential Dossier (Right Side) */
+                      /* Main 3D Holographic Credential Dossier (Right Side) - Crisp Square */
                       <motion.div
                         data-crosshair-target
-                        className="w-full rounded-[32px] sm:rounded-[38px] p-8 sm:p-9 border border-white/10 hover:border-purple-400/50 transition-all text-left group shadow-2xl relative overflow-hidden bg-[#070818]/90 backdrop-blur-xl hover:shadow-purple-500/20"
+                        className="w-full rounded-none p-7 sm:p-9 border border-white/10 hover:border-purple-400/50 transition-all text-left group shadow-2xl relative bg-[#070818]/95 backdrop-blur-xl hover:shadow-purple-500/20"
                         initial={{ opacity: 0, scale: 0.88, rotateX: 16, y: 35 }}
                         whileInView={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -638,19 +638,19 @@ export default function Certifications() {
                       >
                         {/* Shimmering Brand Light Orb */}
                         <div
-                          className="absolute -top-10 -right-10 w-40 h-40 rounded-full blur-3xl opacity-15 group-hover:opacity-35 transition-opacity pointer-events-none"
+                          className="absolute -top-10 -right-10 w-40 h-40 blur-3xl opacity-15 group-hover:opacity-35 transition-opacity pointer-events-none"
                           style={{ backgroundColor: item.color }}
                         />
 
                         {/* Top Protocol Bar */}
-                        <div className="flex items-center justify-between gap-3 mb-4">
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                           <div className="flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-ping" />
-                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3 py-1 rounded-md bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                            <span className="w-2.5 h-2.5 rounded-none bg-purple-400 animate-ping" />
+                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3 py-1 rounded-none bg-purple-500/15 text-purple-300 border border-purple-500/30">
                               {item.type}
                             </span>
                           </div>
-                          <span className="text-xs font-bold text-amber-300 font-mono flex items-center gap-1">
+                          <span className="text-xs font-bold text-amber-300 font-mono flex items-center gap-1 px-2 py-0.5 border border-amber-400/30 bg-amber-400/10">
                             <span>★</span>
                             <span>{item.badge}</span>
                           </span>
@@ -673,7 +673,7 @@ export default function Certifications() {
 
                         {/* Performance Cyber Gauge for Scored Credentials */}
                         {item.scorePercent && (
-                          <div className="mb-4.5 p-4 rounded-2xl bg-black/50 border border-white/5 relative overflow-hidden">
+                          <div className="mb-4.5 p-4 rounded-none bg-black/50 border border-white/5 relative overflow-hidden">
                             <div className="flex items-center justify-between text-xs mb-2 font-mono">
                               <span className="text-slate-300 flex items-center gap-1.5">
                                 <Target size={14} className="text-emerald-400" />
@@ -681,9 +681,9 @@ export default function Certifications() {
                               </span>
                               <span className="font-bold text-emerald-300">{item.score}</span>
                             </div>
-                            <div className="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden border border-white/10">
+                            <div className="w-full h-2.5 bg-slate-900 rounded-none overflow-hidden border border-white/10">
                               <motion.div
-                                className="h-full bg-gradient-to-r from-purple-500 via-pink-400 to-cyan-400 rounded-full"
+                                className="h-full bg-gradient-to-r from-purple-500 via-pink-400 to-cyan-400 rounded-none"
                                 initial={{ width: 0 }}
                                 whileInView={{ width: `${item.scorePercent}%` }}
                                 viewport={{ once: false }}
@@ -702,7 +702,7 @@ export default function Certifications() {
                           {item.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-purple-500/20"
+                              className="px-3 py-1 rounded-none text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-purple-500/20"
                             >
                               {skill}
                             </span>
@@ -733,20 +733,20 @@ export default function Certifications() {
                         viewport={{ once: false, amount: 0.2 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                       >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl glass border border-cyan-500/30 text-cyan-300 text-xs font-bold shadow-lg shadow-cyan-500/10 font-mono">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none glass border border-cyan-500/30 text-cyan-300 text-xs font-bold shadow-lg shadow-cyan-500/10 font-mono">
                           <Calendar size={13} className="text-cyan-400" />
                           <span>{item.period}</span>
                         </div>
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold">
                           <Building size={13} className="text-purple-400" />
                           <span>{item.issuer}</span>
                         </div>
-                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold font-mono">
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold font-mono">
                           <Award size={13} />
                           <span>{item.badge}</span>
                         </div>
                         {item.score && (
-                          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold font-mono">
+                          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold font-mono">
                             <Target size={13} />
                             <span>{item.score}</span>
                           </div>
@@ -772,12 +772,12 @@ export default function Certifications() {
                     viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className="rounded-[30px] p-7 border border-white/10 text-left bg-[#070818]/90 backdrop-blur-xl shadow-xl">
+                    <div className="rounded-none p-6 sm:p-7 border border-white/10 text-left bg-[#070818]/90 backdrop-blur-xl shadow-xl">
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <span className="text-xs px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
+                        <span className="text-xs px-3 py-1 rounded-none bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
                           {item.type}
                         </span>
-                        <span className="text-xs font-bold text-amber-300 font-mono">
+                        <span className="text-xs font-bold text-amber-300 font-mono px-2 py-0.5 border border-amber-400/30 bg-amber-400/10">
                           ★ {item.badge}
                         </span>
                       </div>
@@ -809,7 +809,7 @@ export default function Certifications() {
                         {item.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="px-2 py-0.5 rounded-md text-[10px] font-medium bg-white/[0.04] border border-white/10 text-slate-300"
+                            className="px-2 py-0.5 rounded-none text-[10px] font-medium bg-white/[0.04] border border-white/10 text-slate-300"
                           >
                             {skill}
                           </span>
@@ -847,10 +847,10 @@ export default function Certifications() {
               onClick={() => setSelectedItem(null)}
             />
 
-            {/* Modal Dialog */}
+            {/* Modal Dialog - Crisp Square Box */}
             <motion.div
               data-crosshair-target
-              className="relative z-10 w-full max-w-xl rounded-[32px] p-6 sm:p-8 border border-cyan-500/40 shadow-2xl shadow-cyan-500/20 text-left bg-[#080816]/95 backdrop-blur-2xl overflow-hidden"
+              className="relative z-10 w-full max-w-xl rounded-none p-6 sm:p-8 border border-cyan-500/40 shadow-2xl shadow-cyan-500/20 text-left bg-[#080816]/95 backdrop-blur-2xl overflow-hidden"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -864,20 +864,20 @@ export default function Certifications() {
               />
               <button
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-5 right-5 p-2 rounded-xl bg-white/[0.05] border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                className="absolute top-5 right-5 p-2 rounded-none bg-white/[0.05] border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
               >
                 <X size={18} />
               </button>
 
               <div className="flex items-center gap-3.5 mb-4">
                 <div
-                  className="w-12 h-12 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center shadow-lg"
+                  className="w-12 h-12 rounded-none bg-black/60 border border-white/10 flex items-center justify-center shadow-lg"
                   style={{ color: selectedItem.color }}
                 >
                   <selectedItem.icon size={26} />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-none bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
                     {selectedItem.badge}
                   </span>
                   <div className="text-xs text-purple-400 font-semibold mt-1">
@@ -898,15 +898,15 @@ export default function Certifications() {
               </div>
 
               {selectedItem.score && (
-                <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-emerald-500/30 mb-5">
+                <div className="p-3.5 rounded-none bg-white/[0.03] border border-emerald-500/30 mb-5">
                   <div className="flex items-center justify-between text-xs mb-1.5">
                     <span className="text-slate-300 font-semibold">Performance Metric</span>
                     <span className="text-emerald-400 font-bold">{selectedItem.score}</span>
                   </div>
                   {selectedItem.scorePercent && (
-                    <div className="w-full h-2 bg-black/50 rounded-full overflow-hidden">
+                    <div className="w-full h-2 bg-black/50 rounded-none overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full"
+                        className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-none"
                         style={{ width: `${selectedItem.scorePercent}%` }}
                       />
                     </div>
@@ -926,7 +926,7 @@ export default function Certifications() {
                   {selectedItem.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 rounded-lg text-xs font-medium bg-white/[0.04] border border-white/10 text-cyan-200"
+                      className="px-3 py-1 rounded-none text-xs font-medium bg-white/[0.04] border border-white/10 text-cyan-200"
                     >
                       {skill}
                     </span>
@@ -940,7 +940,7 @@ export default function Certifications() {
                     href={selectedItem.credentialUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all cursor-pointer"
                   >
                     <span>Verify Credly Badge</span>
                     <ExternalLink size={14} />
