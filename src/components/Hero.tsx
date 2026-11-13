@@ -64,7 +64,7 @@ function RoleTypingEffect({ roles }: { roles: string[] }) {
   }, [subIndex, index, isDeleting, roles]);
 
   return (
-    <div className="inline-flex items-center text-xl md:text-2xl lg:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 min-h-[44px]">
+    <div className="inline-flex items-center text-xl md:text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 min-h-[44px]">
       <span>{roles[index].substring(0, subIndex)}</span>
       <span className="w-[3px] h-6 md:h-8 bg-cyan-400 ml-1.5 animate-pulse rounded" />
     </div>
@@ -129,7 +129,7 @@ export default function Hero() {
       <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/40 via-transparent to-white/40 pointer-events-none z-0" />
 
       {/* Main Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Left / Main Introduction */}
           <motion.div
@@ -139,8 +139,8 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             {/* Availability Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-cyan-500/40 text-xs font-semibold text-cyan-700 bg-cyan-50/70 mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass border border-cyan-500/40 text-xs font-semibold text-cyan-700 bg-cyan-50/70 mb-6 shadow-sm">
+              <span className="w-2 h-2 rounded-md bg-emerald-500 animate-ping" />
               <Sparkles size={13} className="text-cyan-600" />
               Available for Opportunities &amp; Internships
             </div>
@@ -231,6 +231,13 @@ export default function Hero() {
                 aria-label="LinkedIn Profile"
               >
                 <FaLinkedin size={18} />
+              </a>
+              <a
+                href="mailto:sangameshnaik471@gmail.com"
+                className="w-11 h-11 rounded-xl glass border border-slate-200 bg-white/80 flex items-center justify-center text-slate-700 hover:text-pink-600 hover:border-pink-500 hover:bg-pink-50/50 transition-all shadow-sm"
+                aria-label="Email"
+              >
+                <Mail size={18} />
               </a>
             </div>
           </motion.div>

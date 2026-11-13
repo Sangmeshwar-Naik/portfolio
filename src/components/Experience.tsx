@@ -275,9 +275,9 @@ export default function Experience() {
                     )}
                   </motion.div>
 
-                  {/* Center Node / Dot - Beautiful Rounded Floating Beacon */}
+                  {/* Center Node / Dot - Beautiful Square Floating Beacon with Subtle Halo */}
                   <motion.div
-                    className="absolute left-5 md:left-1/2 -translate-x-1/2 w-11 h-11 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-cyan-600 shadow-lg z-10"
+                    className="absolute left-5 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl bg-white border border-slate-200/90 flex items-center justify-center text-cyan-600 shadow-xl shadow-cyan-500/10 z-10 group"
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: false, amount: 0.25 }}
@@ -287,7 +287,7 @@ export default function Experience() {
                       damping: 14,
                     }}
                   >
-                    <Icon size={19} />
+                    <Icon size={20} className="group-hover:scale-110 transition-transform" />
                   </motion.div>
 
                   {/* Right Slot (Desktop) - Moves strictly from far right inward into place */}

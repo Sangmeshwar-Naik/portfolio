@@ -372,7 +372,7 @@ export default function About() {
                   {/* Dedicated Timeline Track & Glowing Dot Column */}
                   <div className="flex flex-col items-center self-stretch shrink-0 pt-1.5">
                     <span
-                      className={`w-3.5 h-3.5 rounded-full border-2 border-white z-10 shrink-0 transition-transform duration-300 group-hover:scale-125 ${
+                      className={`w-3.5 h-3.5 rounded-md border-2 border-white z-10 shrink-0 transition-transform duration-300 group-hover:scale-125 ${
                         edu.current
                           ? "bg-cyan-500 shadow-md ring-2 ring-cyan-500/25"
                           : "bg-slate-400 ring-1 ring-slate-200"

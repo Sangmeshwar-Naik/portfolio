@@ -28,9 +28,9 @@ function SectionSpacer() {
     >
       {/* Subtle detached ambient focal beacon — completely disconnected from adjacent sections */}
       <div className="flex items-center gap-2.5 opacity-40">
-        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/60 shadow-sm shadow-cyan-400/50" />
-        <span className="w-2.5 h-2.5 rounded-full bg-purple-400/80 shadow-md shadow-purple-500/60 animate-pulse" />
-        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/60 shadow-sm shadow-cyan-400/50" />
+        <span className="w-1.5 h-1.5 rounded-sm bg-cyan-400/60 shadow-sm shadow-cyan-400/50" />
+        <span className="w-2.5 h-2.5 rounded-sm bg-purple-400/80 shadow-md shadow-purple-500/60 animate-pulse" />
+        <span className="w-1.5 h-1.5 rounded-sm bg-cyan-400/60 shadow-sm shadow-cyan-400/50" />
       </div>
     </div>
   );

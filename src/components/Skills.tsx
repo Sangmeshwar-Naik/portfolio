@@ -508,7 +508,7 @@ export default function Skills() {
                         <span className="text-cyan-700 truncate font-semibold">
                           {skill.tag || selectedCategory.title}
                         </span>
-                        <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                        <span className="w-2 h-2 rounded-md bg-cyan-500 animate-pulse" />
                       </div>
                     </motion.div>
                   );

@@ -70,7 +70,7 @@ export default function Navigation() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <motion.button
             onClick={() => handleNavClick("#hero")}
@@ -111,7 +111,7 @@ export default function Navigation() {
                   {item.name}
                   {isActive && (
                     <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-md bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500"
                       layoutId="nav-underline"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
