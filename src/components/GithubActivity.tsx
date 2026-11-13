@@ -498,7 +498,7 @@ export default function GithubActivity() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -25 }}
             transition={{ type: "spring", stiffness: 90, damping: 18 }}
-            className="rounded-2xl sm:rounded-3xl p-8 sm:p-11 border border-slate-200/90 shadow-2xl relative overflow-hidden mb-20 bg-white/98 backdrop-blur-2xl text-slate-900"
+            className="rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-14 border border-slate-200/90 shadow-2xl relative overflow-hidden mb-20 bg-white/98 backdrop-blur-2xl text-slate-900"
           >
             {/* Cyber Corner HUD Crosshairs */}
             <div className="absolute top-4 left-4 font-mono text-cyan-600/50 text-xs pointer-events-none">
@@ -514,7 +514,7 @@ export default function GithubActivity() {
               [PORT.3000]──┘
             </div>
 
-            <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10 pt-2">
+            <div className="grid lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-14 items-center relative z-10 pt-2">
               {/* Left Column: Repository Intelligence & Architecture */}
               <div className="lg:col-span-6 space-y-6">
                 <div className="flex flex-wrap items-center gap-2.5">
@@ -622,7 +622,7 @@ export default function GithubActivity() {
 
               {/* Right Column: Live Animated Neural & Execution Pipeline Visualizer */}
               <div className="lg:col-span-6">
-                <div className="rounded-2xl border border-slate-200 p-6 sm:p-7 bg-slate-50 relative shadow-md overflow-hidden">
+                <div className="rounded-2xl border border-slate-200 p-7 sm:p-8 lg:p-9 bg-slate-50 relative shadow-md overflow-hidden">
                   {/* Chrome top bar */}
                   <div className="flex items-center justify-between pb-4 border-b border-slate-200 mb-5">
                     <div className="flex items-center gap-2">

@@ -189,22 +189,22 @@ export default function Hero() {
                     window.dispatchEvent(new CustomEvent("open-resume-modal"));
                   }
                 }}
-                className="group px-7 py-3.5 rounded-xl font-semibold text-sm text-purple-700 glass border border-purple-500/30 bg-purple-50/70 hover:bg-purple-100 hover:border-purple-400 transition-all flex items-center gap-2 cursor-pointer shadow-sm"
+                className="group px-8 py-4 rounded-xl font-semibold text-sm text-purple-700 glass border border-purple-500/30 bg-purple-50/70 hover:bg-purple-100 hover:border-purple-400 transition-all flex items-center gap-2.5 cursor-pointer shadow-sm"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
-                <Download size={16} className="text-purple-600 group-hover:translate-y-0.5 transition-transform" />
+                <Download size={17} className="text-purple-600 group-hover:translate-y-0.5 transition-transform" />
                 <span>View &amp; Download CV</span>
               </motion.button>
 
               {/* Contact Me */}
               <motion.button
                 onClick={() => scrollTo("contact")}
-                className="group px-7 py-3.5 rounded-xl font-semibold text-sm text-slate-800 glass border border-slate-200 bg-white/80 hover:border-cyan-400 hover:text-cyan-700 hover:bg-cyan-50/50 transition-all flex items-center gap-2 cursor-pointer shadow-sm"
+                className="group px-8 py-4 rounded-xl font-semibold text-sm text-slate-800 glass border border-slate-200 bg-white/80 hover:border-cyan-400 hover:text-cyan-700 hover:bg-cyan-50/50 transition-all flex items-center gap-2.5 cursor-pointer shadow-sm"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
-                <Mail size={16} className="text-cyan-600" />
+                <Mail size={17} className="text-cyan-600" />
                 <span>Contact Me</span>
               </motion.button>
             </div>
@@ -357,39 +357,39 @@ export default function Hero() {
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                   className="relative z-10 w-full flex justify-center"
                 >
-                  <div className="relative w-full max-w-[340px] sm:max-w-[430px]">
-                    {/* Central Profile Card with portrait photo and monogram logo */}
-                    <div className="relative rounded-3xl p-6 sm:p-9 pt-8 sm:pt-10 border border-slate-200/90 bg-white/95 backdrop-blur-2xl w-full shadow-[0_20px_50px_rgba(0,0,0,0.08)] overflow-hidden">
+                  <div className="relative w-full max-w-[370px] sm:max-w-[460px]">
+                    {/* Central Profile Card with portrait photo and monogram logo - Big & Compactful Box */}
+                    <div className="relative rounded-3xl p-8 sm:p-11 pt-10 sm:pt-12 border border-slate-200/90 bg-white/95 backdrop-blur-2xl w-full shadow-[0_20px_50px_rgba(0,0,0,0.08)] overflow-hidden">
                       {/* Dotted Matrix Background Pattern across Upper Section */}
                       <div className="absolute inset-x-0 top-0 h-3/4 bg-[radial-gradient(#0891b2_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-15 pointer-events-none" />
 
                       {/* Inner flex column with generous top space above photo */}
                       <div className="relative z-10 pt-4 pb-1 sm:pt-6 flex flex-col items-center text-center">
                         {/* Portrait with Glowing Gold Border and Generous Top Clearance */}
-                        <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_28px_rgba(251,191,36,0.4)] mb-3.5 bg-white shrink-0">
+                        <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-2xl overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_28px_rgba(251,191,36,0.4)] mb-4 bg-white shrink-0">
                           <Image
                             src="/profile.jpg"
                             alt="Sangmeshwar Anil Naik"
                             fill
-                            sizes="(max-width: 640px) 160px, 192px"
+                            sizes="(max-width: 640px) 176px, 208px"
                             className="object-cover object-top"
                             priority
                           />
                         </div>
 
                         {/* Monogram Emblem Badge */}
-                        <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-amber-400/80 shadow-[0_0_16px_rgba(251,191,36,0.35)] bg-slate-900 mb-3.5 shrink-0">
+                        <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden border border-amber-400/80 shadow-[0_0_16px_rgba(251,191,36,0.35)] bg-slate-900 mb-4 shrink-0">
                           <Image
                             src="/logo.jpg"
                             alt="SAN Monogram"
                             fill
-                            sizes="44px"
+                            sizes="48px"
                             className="object-cover"
                           />
                         </div>
 
                         {/* Name & Academic Credentials */}
-                        <h3 className="text-2xl sm:text-[26px] font-black text-slate-950 tracking-tight leading-snug">
+                        <h3 className="text-2xl sm:text-[27px] font-black text-slate-950 tracking-tight leading-snug">
                           Sangmeshwar Anil Naik
                         </h3>
                         <p className="text-sm sm:text-base font-semibold text-cyan-600 mt-1 mb-5">
@@ -397,7 +397,7 @@ export default function Hero() {
                         </p>
 
                         {/* Status Strip Pill */}
-                        <div className="w-full py-3 px-5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs sm:text-sm text-slate-700 font-mono mb-4 shadow-sm">
+                        <div className="w-full py-3.5 px-6 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs sm:text-sm text-slate-700 font-mono mb-4 shadow-sm">
                           <span className="flex items-center gap-2 text-emerald-600 font-bold">
                             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                             CGPA 8.4 / 10
@@ -406,12 +406,12 @@ export default function Hero() {
                         </div>
 
                         {/* Bottom Integrated Specification Pills */}
-                        <div className="w-full pt-4 border-t border-slate-100 grid grid-cols-2 gap-3.5 text-center">
-                          <div className="py-3 px-3.5 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
+                        <div className="w-full pt-4 border-t border-slate-100 grid grid-cols-2 gap-4 text-center">
+                          <div className="py-3.5 px-4 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
                             <span className="text-xs text-slate-500 block font-medium">Specialization</span>
                             <p className="text-sm sm:text-base font-bold text-slate-900 mt-1">AI &amp; ML</p>
                           </div>
-                          <div className="py-3 px-3.5 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
+                          <div className="py-3.5 px-4 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
                             <span className="text-xs text-slate-500 block font-medium">Graduation</span>
                             <p className="text-sm sm:text-base font-bold text-cyan-600 mt-1">2027</p>
                           </div>

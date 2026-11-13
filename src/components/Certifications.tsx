@@ -292,9 +292,9 @@ export default function Certifications() {
           </p>
         </motion.div>
 
-        {/* Top Metric Overview Badges - Spacious Rounded Boxes */}
+        {/* Top Metric Overview Badges - Big Compactful Boxes */}
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 max-w-4xl mx-auto mb-14"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6 max-w-5xl mx-auto mb-16"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -302,45 +302,45 @@ export default function Certifications() {
         >
           <div
             data-crosshair-target
-            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-cyan-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
+            className="rounded-2xl p-7 sm:p-8 min-h-[155px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-cyan-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
           >
             <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 group-hover:scale-105 transition-transform inline-block">
               8+
             </div>
-            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-1.5">
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-2">
               Industry Certifications
             </div>
           </div>
           <div
             data-crosshair-target
-            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-purple-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
+            className="rounded-2xl p-7 sm:p-8 min-h-[155px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-purple-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
           >
             <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 group-hover:scale-105 transition-transform inline-block">
               929 &amp; 860
             </div>
-            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-1.5">
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-2">
               Certiport Exam Scores
             </div>
           </div>
           <div
             data-crosshair-target
-            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
+            className="rounded-2xl p-7 sm:p-8 min-h-[155px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
           >
             <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 group-hover:scale-105 transition-transform inline-block">
               93%
             </div>
-            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-1.5">
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-2">
               National C++ Challenge
             </div>
           </div>
           <div
             data-crosshair-target
-            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-emerald-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
+            className="rounded-2xl p-7 sm:p-8 min-h-[155px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-emerald-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
           >
             <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 group-hover:scale-105 transition-transform inline-block">
               100%
             </div>
-            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-1.5">
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-2">
               Credly &amp; AICTE Verified
             </div>
           </div>
@@ -413,7 +413,7 @@ export default function Certifications() {
           {/* Left Spine Line (Mobile) */}
           <div className="md:hidden absolute left-5 top-4 bottom-4 w-0.5 bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-500 rounded-full opacity-40" />
 
-          <div className="space-y-16">
+          <div className="space-y-24 sm:space-y-28">
             {filteredItems.map((item, index) => {
               const isEven = index % 2 === 0;
               const Icon = item.icon;
@@ -425,7 +425,7 @@ export default function Certifications() {
                   style={{ perspective: 1200 }}
                 >
                   {/* Left Slot (Desktop) */}
-                  <div className="hidden md:flex w-5/12 items-center justify-end pr-10 relative">
+                  <div className="hidden md:flex w-[47%] items-center justify-end pr-8 lg:pr-10 relative">
                     {/* Horizontal Laser Connector Beam (from Center Line to Left Card) */}
                     {isEven && (
                       <motion.div
@@ -439,10 +439,10 @@ export default function Certifications() {
                     )}
 
                     {isEven ? (
-                      /* Main 3D Holographic Credential Dossier (Left Side) - Spacious Rounded Box */
+                      /* Main 3D Holographic Credential Dossier (Left Side) - Big & Compactful Box */
                       <motion.div
                         data-crosshair-target
-                        className="w-full rounded-2xl sm:rounded-3xl p-8 sm:p-10 border border-slate-200/90 hover:border-cyan-400/50 transition-all text-left group shadow-xl relative bg-white/95 backdrop-blur-xl hover:shadow-2xl"
+                        className="w-full rounded-2xl p-8 sm:p-10 md:p-12 border border-slate-200/90 hover:border-cyan-400/50 transition-all text-left group shadow-xl relative bg-white/95 backdrop-blur-xl hover:shadow-2xl"
                         initial={{ opacity: 0, scale: 0.88, rotateX: 16, y: 35 }}
                         whileInView={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -608,7 +608,7 @@ export default function Certifications() {
                   </motion.div>
 
                   {/* Right Slot (Desktop) */}
-                  <div className="hidden md:flex w-5/12 items-center justify-start pl-10 relative">
+                  <div className="hidden md:flex w-[47%] items-center justify-start pl-8 lg:pl-10 relative">
                     {/* Horizontal Laser Connector Beam (from Center Line to Right Card) */}
                     {!isEven && (
                       <motion.div
@@ -622,10 +622,10 @@ export default function Certifications() {
                     )}
 
                     {!isEven ? (
-                      /* Main 3D Holographic Credential Dossier (Right Side) - Spacious Rounded */
+                      /* Main 3D Holographic Credential Dossier (Right Side) - Big & Compactful */
                       <motion.div
                         data-crosshair-target
-                        className="w-full rounded-2xl sm:rounded-3xl p-8 sm:p-10 border border-slate-200/90 hover:border-purple-400/50 transition-all text-left group shadow-xl relative bg-white/95 backdrop-blur-xl hover:shadow-2xl"
+                        className="w-full rounded-2xl p-8 sm:p-10 md:p-12 border border-slate-200/90 hover:border-purple-400/50 transition-all text-left group shadow-xl relative bg-white/95 backdrop-blur-xl hover:shadow-2xl"
                         initial={{ opacity: 0, scale: 0.88, rotateX: 16, y: 35 }}
                         whileInView={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -766,18 +766,18 @@ export default function Certifications() {
                   {/* ========================================================== */}
                   <motion.div
                     data-crosshair-target
-                    className="md:hidden ml-14 w-[calc(100%-3.5rem)]"
+                    className="md:hidden ml-12 sm:ml-16 w-[calc(100%-3rem)] sm:w-[calc(100%-4rem)]"
                     initial={{ opacity: 0, scale: 0.9, y: 25 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className="rounded-2xl p-7 sm:p-8 border border-slate-200 text-left bg-white/95 backdrop-blur-xl shadow-xl">
-                      <div className="flex flex-wrap items-center justify-between gap-2.5 mb-3.5">
-                        <span className="text-xs px-3.5 py-1 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
+                    <div className="rounded-2xl p-8 sm:p-9 border border-slate-200 text-left bg-white/95 backdrop-blur-xl shadow-xl">
+                      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <span className="text-xs px-3.5 py-1.5 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
                           {item.type}
                         </span>
-                        <span className="text-xs font-bold text-amber-800 font-mono px-2.5 py-1 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
+                        <span className="text-xs font-bold text-amber-800 font-mono px-3 py-1.5 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                           ★ {item.badge}
                         </span>
                       </div>

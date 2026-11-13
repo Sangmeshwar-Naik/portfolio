@@ -204,10 +204,10 @@ export default function About() {
         {/* ============================================================== */}
         {/* TOP ROW: EXECUTIVE BIOGRAPHY & LIVE METRIC CARDS                */}
         {/* ============================================================== */}
-        <div className="grid lg:grid-cols-12 gap-7 sm:gap-9 items-stretch mb-10 sm:mb-14">
-          {/* Executive Overview Card - Spacious Rounded Box */}
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-stretch mb-14 sm:mb-18">
+          {/* Executive Overview Card - Big & Compactful Box */}
           <motion.div
-            className="lg:col-span-7 rounded-3xl p-8 sm:p-10 lg:p-12 pb-10 sm:pb-12 lg:pb-14 border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-cyan-400/50 transition-all flex flex-col justify-between relative shadow-xl group min-h-[500px]"
+            className="lg:col-span-7 rounded-3xl p-8 sm:p-11 lg:p-13 pb-10 sm:pb-12 border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-cyan-400/50 transition-all flex flex-col justify-between relative shadow-xl group min-h-[520px]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
@@ -277,9 +277,9 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* 4 Verified Metric Capsules - Spacious Rounded Boxes */}
+          {/* 4 Verified Metric Capsules - Big & Compactful Boxes */}
           <motion.div
-            className="lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-6"
+            className="lg:col-span-5 grid grid-cols-2 gap-5 sm:gap-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
@@ -288,7 +288,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="rounded-2xl p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-cyan-400 hover:bg-cyan-50/30 transition-colors duration-300 flex flex-col justify-center shadow-md group relative overflow-hidden"
+              className="rounded-2xl p-7 sm:p-8 min-h-[175px] sm:min-h-[190px] text-center border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-cyan-400 hover:bg-cyan-50/30 transition-colors duration-300 flex flex-col justify-center shadow-md group relative overflow-hidden"
             >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-cyan-600 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={8.4} decimals={1} />
@@ -300,7 +300,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="rounded-2xl p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-purple-400 hover:bg-purple-50/30 transition-colors duration-300 flex flex-col justify-center shadow-md group relative overflow-hidden"
+              className="rounded-2xl p-7 sm:p-8 min-h-[175px] sm:min-h-[190px] text-center border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-purple-400 hover:bg-purple-50/30 transition-colors duration-300 flex flex-col justify-center shadow-md group relative overflow-hidden"
             >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-purple-600 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={4} suffix="+" />
@@ -312,7 +312,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="rounded-2xl p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-pink-400 hover:bg-pink-50/30 transition-colors duration-300 flex flex-col justify-center shadow-md group relative overflow-hidden"
+              className="rounded-2xl p-7 sm:p-8 min-h-[175px] sm:min-h-[190px] text-center border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-pink-400 hover:bg-pink-50/30 transition-colors duration-300 flex flex-col justify-center shadow-md group relative overflow-hidden"
             >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-pink-600 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={6} suffix="+" />
@@ -324,7 +324,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="rounded-2xl p-7 sm:p-8 min-h-[165px] sm:min-h-[180px] text-center border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-emerald-400 hover:bg-emerald-50/30 transition-colors duration-300 flex flex-col justify-center shadow-md group relative overflow-hidden"
+              className="rounded-2xl p-7 sm:p-8 min-h-[175px] sm:min-h-[190px] text-center border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-emerald-400 hover:bg-emerald-50/30 transition-colors duration-300 flex flex-col justify-center shadow-md group relative overflow-hidden"
             >
               <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-emerald-600 mb-1.5 group-hover:scale-105 transition-transform">
                 <AnimatedCounter target={8} suffix="+" />
@@ -338,10 +338,10 @@ export default function About() {
         {/* ============================================================== */}
         {/* BOTTOM ROW: ACADEMIC ROADMAP & CORE SPECIALIZATION PILLARS      */}
         {/* ============================================================== */}
-        <div className="grid lg:grid-cols-12 gap-7 sm:gap-9 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-start">
           {/* Academic Education Timeline Card */}
           <motion.div
-            className="lg:col-span-6 rounded-3xl p-8 sm:p-10 lg:p-12 pb-10 sm:pb-12 border border-slate-200/90 bg-white/95 backdrop-blur-xl shadow-xl hover:border-purple-400/50 transition-all"
+            className="lg:col-span-6 rounded-3xl p-8 sm:p-11 lg:p-13 pb-10 sm:pb-12 border border-slate-200/90 bg-white/95 backdrop-blur-xl shadow-xl hover:border-purple-400/50 transition-all"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
@@ -415,7 +415,7 @@ export default function About() {
             transition={{ duration: 0.7 }}
           >
             {/* 6 Core Specialization Domains Grid */}
-            <div className="rounded-3xl p-8 sm:p-10 lg:p-11 border border-slate-200/90 bg-white/95 backdrop-blur-xl shadow-xl hover:border-cyan-400/50 transition-all">
+            <div className="rounded-3xl p-8 sm:p-11 lg:p-13 border border-slate-200/90 bg-white/95 backdrop-blur-xl shadow-xl hover:border-cyan-400/50 transition-all">
               <div className="flex items-center gap-3.5 pb-6 border-b border-slate-100 mb-7">
                 <div className="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-600 shadow-sm shrink-0">
                   <Compass size={24} />
@@ -426,7 +426,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 {coreDomains.map((domain, idx) => {
                   const Icon = domain.icon;
                   return (
@@ -434,7 +434,7 @@ export default function About() {
                       key={idx}
                       whileHover={{ y: -3, scale: 1.01 }}
                       transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                      className="p-5 sm:p-5.5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-cyan-400 hover:bg-cyan-50/40 transition-colors group flex items-start gap-4 min-h-[96px] sm:min-h-[104px]"
+                      className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-cyan-400 hover:bg-cyan-50/40 transition-colors group flex items-start gap-4 min-h-[105px] sm:min-h-[115px]"
                     >
                       <div
                         className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 shadow-sm mt-0.5"

@@ -188,7 +188,7 @@ export default function Experience() {
           {/* Left Spine Line (Mobile) */}
           <div className="md:hidden absolute left-5 top-4 bottom-4 w-0.5 bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-500 rounded-full opacity-40" />
 
-          <div className="space-y-16">
+          <div className="space-y-24 sm:space-y-28">
             {journeyTimeline.map((item, index) => {
               const isEven = index % 2 === 0;
               const Icon = item.icon;
@@ -200,7 +200,7 @@ export default function Experience() {
                 >
                   {/* Left Slot (Desktop) - Moves strictly from far left inward toward center spine */}
                   <motion.div
-                    className="hidden md:flex w-5/12 items-center justify-end pr-10"
+                    className="hidden md:flex w-[47%] items-center justify-end pr-8 lg:pr-10"
                     initial={{ opacity: 0, x: -140 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false, amount: 0.25 }}
@@ -213,14 +213,14 @@ export default function Experience() {
                   >
                     {isEven ? (
                       /* Main Story Card on the Left - Square with Curved Corners and Full Clearance */
-                      <div className="rounded-2xl p-8 sm:p-10 border border-slate-200/90 hover:border-cyan-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
+                      <div className="rounded-2xl p-8 sm:p-10 md:p-12 border border-slate-200/90 hover:border-cyan-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
                         <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/5 blur-3xl pointer-events-none group-hover:bg-cyan-500/10 transition-all rounded-2xl" />
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-5 relative z-10">
-                          <span className="text-xs px-3.5 py-1.5 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 relative z-10">
+                          <span className="text-xs px-4 py-2 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
                             {item.type}
                           </span>
                           {item.highlight && (
-                            <span className="text-xs font-bold text-amber-800 px-3.5 py-1.5 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
+                            <span className="text-xs font-bold text-amber-800 px-4 py-2 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                               ★ {item.highlight}
                             </span>
                           )}
@@ -292,7 +292,7 @@ export default function Experience() {
 
                   {/* Right Slot (Desktop) - Moves strictly from far right inward into place */}
                   <motion.div
-                    className="hidden md:flex w-5/12 items-center justify-start pl-10"
+                    className="hidden md:flex w-[47%] items-center justify-start pl-8 lg:pl-10"
                     initial={{ opacity: 0, x: 140 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false, amount: 0.25 }}
@@ -305,14 +305,14 @@ export default function Experience() {
                   >
                     {!isEven ? (
                       /* Main Story Card on the Right - Square with Curved Corners and Full Clearance */
-                      <div className="rounded-2xl p-8 sm:p-10 border border-slate-200/90 hover:border-purple-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
+                      <div className="rounded-2xl p-8 sm:p-10 md:p-12 border border-slate-200/90 hover:border-purple-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
                         <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 blur-3xl pointer-events-none group-hover:bg-purple-500/10 transition-all rounded-2xl" />
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-5 relative z-10">
-                          <span className="text-xs px-3.5 py-1.5 rounded-xl bg-purple-50 text-purple-700 font-semibold border border-purple-200 shadow-sm">
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 relative z-10">
+                          <span className="text-xs px-4 py-2 rounded-xl bg-purple-50 text-purple-700 font-semibold border border-purple-200 shadow-sm">
                             {item.type}
                           </span>
                           {item.highlight && (
-                            <span className="text-xs font-bold text-amber-800 px-3.5 py-1.5 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
+                            <span className="text-xs font-bold text-amber-800 px-4 py-2 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                               ★ {item.highlight}
                             </span>
                           )}
@@ -367,9 +367,9 @@ export default function Experience() {
                     )}
                   </motion.div>
 
-                  {/* Mobile Content (Always right of line) - Spacious Rounded Box */}
+                  {/* Mobile Content (Always right of line) - Spacious Box with Full Clearance */}
                   <motion.div
-                    className="md:hidden ml-14 w-[calc(100%-3.5rem)]"
+                    className="md:hidden ml-12 sm:ml-16 w-[calc(100%-3rem)] sm:w-[calc(100%-4rem)]"
                     initial={{ opacity: 0, x: 60 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false, amount: 0.2 }}
@@ -379,13 +379,13 @@ export default function Experience() {
                       damping: 16,
                     }}
                   >
-                    <div className="rounded-2xl p-7 sm:p-8 border border-slate-200 bg-white/95 backdrop-blur-xl shadow-xl">
-                      <div className="flex flex-wrap items-center justify-between gap-2.5 mb-4">
-                        <span className="text-xs px-3 py-1 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
+                    <div className="rounded-2xl p-8 sm:p-9 border border-slate-200 bg-white/95 backdrop-blur-xl shadow-xl">
+                      <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+                        <span className="text-xs px-3.5 py-1.5 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
                           {item.type}
                         </span>
                         {item.highlight && (
-                          <span className="text-xs font-bold text-amber-800 px-3 py-1 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
+                          <span className="text-xs font-bold text-amber-800 px-3.5 py-1.5 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                             ★ {item.highlight}
                           </span>
                         )}

@@ -317,7 +317,7 @@ export default function Contact() {
 
         {/* Elevated Standalone Communication Island - Spacious Rounded Box */}
         <div className="relative glass rounded-3xl p-8 sm:p-12 lg:p-14 border border-slate-200/90 shadow-xl bg-white/95 backdrop-blur-xl">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Contact Channels Left Panel */}
             <motion.div
               className="lg:col-span-5 space-y-6 sm:space-y-7"

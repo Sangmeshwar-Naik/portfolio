@@ -413,8 +413,8 @@ export default function Projects() {
                 </button>
               </div>
 
-              {/* Projects Cards Grid - Spacious Rounded Boxes */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
+              {/* Projects Cards Grid - Big & Compactful Boxes with Generous Space */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
                 {filteredProjects.map((project, idx) => {
                   const Icon = project.icon;
                   return (
@@ -432,7 +432,7 @@ export default function Projects() {
 
                       {/* Visual Header Banner with Project Image */}
                       <div>
-                        <div className="h-52 relative overflow-hidden bg-slate-100">
+                        <div className="h-56 sm:h-60 relative overflow-hidden bg-slate-100">
                           {/* Project Imagery */}
                           <Image
                             src={project.image}
@@ -444,31 +444,31 @@ export default function Projects() {
                           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
 
                           {/* Top Badges */}
-                          <div className="relative z-10 flex items-center justify-between p-4.5">
-                            <span className="px-3.5 py-1 rounded-xl bg-white/90 backdrop-blur-md text-xs font-semibold text-cyan-700 border border-slate-200 shadow-md">
+                          <div className="relative z-10 flex items-center justify-between p-5">
+                            <span className="px-3.5 py-1.5 rounded-xl bg-white/90 backdrop-blur-md text-xs font-semibold text-cyan-700 border border-slate-200 shadow-md">
                               {project.badge}
                             </span>
                             {project.featured && (
-                              <span className="px-3 py-1 rounded-xl bg-amber-400/20 text-amber-700 text-[11px] font-bold tracking-wider uppercase border border-amber-400/40 backdrop-blur-md shadow-sm">
+                              <span className="px-3.5 py-1.5 rounded-xl bg-amber-400/20 text-amber-700 text-[11px] font-bold tracking-wider uppercase border border-amber-400/40 backdrop-blur-md shadow-sm">
                                 Featured
                               </span>
                             )}
                           </div>
 
                           {/* Central/Bottom Icon & Date */}
-                          <div className="absolute bottom-3.5 left-4.5 right-4.5 z-10 flex items-center justify-between">
+                          <div className="absolute bottom-4 left-5 right-5 z-10 flex items-center justify-between">
                             <div className="w-11 h-11 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 flex items-center justify-center text-cyan-600 shadow-md group-hover:scale-110 transition-transform">
                               <Icon size={22} />
                             </div>
-                            <span className="text-xs text-slate-700 font-mono font-medium px-3.5 py-1 rounded-xl bg-white/90 border border-slate-200 backdrop-blur-md shadow-sm">
+                            <span className="text-xs text-slate-700 font-mono font-medium px-3.5 py-1.5 rounded-xl bg-white/90 border border-slate-200 backdrop-blur-md shadow-sm">
                               {project.date}
                             </span>
                           </div>
                         </div>
 
                         {/* Body Content with generous breathing room */}
-                        <div className="p-7 sm:p-8">
-                          <h3 className="text-xl sm:text-[22px] font-bold text-slate-950 group-hover:text-cyan-600 transition-colors mb-3 leading-snug">
+                        <div className="p-8 sm:p-9 md:p-10">
+                          <h3 className="text-xl sm:text-[23px] font-bold text-slate-950 group-hover:text-cyan-600 transition-colors mb-3.5 leading-snug">
                             {project.title}
                           </h3>
 
@@ -477,17 +477,17 @@ export default function Projects() {
                           </p>
 
                           {/* Tech Badges with Refined Rounded Boxes */}
-                          <div className="flex flex-wrap gap-2 mb-2">
+                          <div className="flex flex-wrap gap-2.5 mb-2">
                             {project.technologies.slice(0, 4).map((tech) => (
                               <span
                                 key={tech}
-                                className="px-3 py-1.5 rounded-xl text-xs font-mono font-medium bg-slate-100 border border-slate-200 text-slate-700 hover:border-cyan-400/40 transition-colors"
+                                className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-slate-100 border border-slate-200 text-slate-700 hover:border-cyan-400/40 transition-colors"
                               >
                                 {tech}
                               </span>
                             ))}
                             {project.technologies.length > 4 && (
-                              <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-medium bg-slate-50 text-slate-500 border border-slate-200">
+                              <span className="px-3 py-1.5 rounded-xl text-xs font-mono font-medium bg-slate-50 text-slate-500 border border-slate-200">
                                 +{project.technologies.length - 4}
                               </span>
                             )}
@@ -496,7 +496,7 @@ export default function Projects() {
                       </div>
 
                       {/* Card Actions Footer */}
-                      <div className="px-7 sm:px-8 pb-7 pt-4 border-t border-slate-100 flex items-center justify-between">
+                      <div className="px-8 sm:px-9 pb-8 pt-5 border-t border-slate-100 flex items-center justify-between">
                         <div className="flex items-center gap-2.5">
                           <a
                             href={project.githubUrl}
