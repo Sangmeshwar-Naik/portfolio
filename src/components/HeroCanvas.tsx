@@ -2,79 +2,7 @@
 
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Torus } from "@react-three/drei";
 import * as THREE from "three";
-
-/**
- * 3D Gyroscopic Quantum Rings
- * Hollow center featuring multi-axis counter-rotating rings with deep, rich contrast
- */
-function GyroscopicQuantumRings() {
-  const ring1Ref = useRef<THREE.Mesh>(null);
-  const ring2Ref = useRef<THREE.Mesh>(null);
-  const ring3Ref = useRef<THREE.Mesh>(null);
-
-  useFrame((state) => {
-    const t = state.clock.elapsedTime;
-    if (ring1Ref.current) {
-      ring1Ref.current.rotation.x = t * 0.45;
-      ring1Ref.current.rotation.y = t * 0.28;
-    }
-    if (ring2Ref.current) {
-      ring2Ref.current.rotation.x = -t * 0.35;
-      ring2Ref.current.rotation.z = t * 0.5;
-    }
-    if (ring3Ref.current) {
-      ring3Ref.current.rotation.y = t * 0.38;
-      ring3Ref.current.rotation.z = -t * 0.25;
-    }
-  });
-
-  return (
-    <Float speed={2.2} rotationIntensity={1.2} floatIntensity={1.6}>
-      <group position={[1.4, 0.1, 0]}>
-        {/* Inner Gyroscopic Quantum Energy Ring (Deep Cyan) */}
-        <Torus ref={ring1Ref} args={[1.5, 0.038, 16, 80]}>
-          <meshStandardMaterial
-            color="#0284c7"
-            emissive="#0369a1"
-            emissiveIntensity={0.65}
-            roughness={0.15}
-            metalness={0.85}
-            transparent
-            opacity={0.92}
-          />
-        </Torus>
-
-        {/* Middle Gyroscopic Energy Ring (Deep Purple/Indigo) */}
-        <Torus ref={ring2Ref} args={[1.9, 0.032, 16, 80]}>
-          <meshStandardMaterial
-            color="#6d28d9"
-            emissive="#581c87"
-            emissiveIntensity={0.6}
-            roughness={0.15}
-            metalness={0.85}
-            transparent
-            opacity={0.88}
-          />
-        </Torus>
-
-        {/* Outer Gyroscopic Energy Ring (Deep Slate/Midnight Cobalt) */}
-        <Torus ref={ring3Ref} args={[2.25, 0.026, 16, 80]}>
-          <meshStandardMaterial
-            color="#0f172a"
-            emissive="#1e3a8a"
-            emissiveIntensity={0.4}
-            roughness={0.2}
-            metalness={0.9}
-            transparent
-            opacity={0.82}
-          />
-        </Torus>
-      </group>
-    </Float>
-  );
-}
 
 function pseudoRandom(seed: number) {
   const x = Math.sin(seed * 9999) * 10000;
@@ -269,10 +197,7 @@ export default function HeroCanvas() {
       <pointLight position={[4, -4, 5]} intensity={1.5} color="#ec4899" />
       <pointLight position={[0, 6, 4]} intensity={1.2} color="#0f172a" />
 
-      {/* 3D Gyroscopic Quantum Counter-Rotating Rings */}
-      <GyroscopicQuantumRings />
-
-      {/* Orbiting Micro-Swarm Hugging the Dark Sphere */}
+      {/* Orbiting Micro-Swarm */}
       <OrbitingMicroSwarm />
 
       {/* High-Contrast Dark Swirling Particles across the Hero Screen */}
