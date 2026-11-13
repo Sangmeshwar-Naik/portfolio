@@ -272,18 +272,18 @@ export default function Skills() {
 
           {/* The Circular Orbit Arena - Roomy & Expanded */}
           <div className="relative w-[380px] h-[380px] sm:w-[530px] sm:h-[530px] md:w-[600px] md:h-[600px] flex items-center justify-center">
-            {/* Outer Decorative Track Rings */}
-            <div className="absolute inset-0 rounded-3xl border border-dashed border-cyan-500/25 pointer-events-none" />
-            <div className="absolute inset-8 rounded-2xl border border-purple-500/20 pointer-events-none" />
-            <div className="absolute inset-16 rounded-2xl border border-slate-200 pointer-events-none" />
+            {/* Outer Decorative Track Rings - Circular Radar */}
+            <div className="absolute inset-0 rounded-full border border-dashed border-cyan-500/25 pointer-events-none" />
+            <div className="absolute inset-8 rounded-full border border-purple-500/20 pointer-events-none" />
+            <div className="absolute inset-16 rounded-full border border-slate-200 pointer-events-none" />
 
-            {/* Glowing Central Reactor Hub - Big Square with Curved Corners */}
+            {/* Glowing Central Reactor Hub - Circular Tech Radar Core */}
             <button
               onClick={() => handleOpenCategory(allCategoriesNode)}
-              className="relative z-10 w-36 h-36 sm:w-44 sm:h-44 rounded-2xl sm:rounded-3xl glass border border-cyan-400 flex flex-col items-center justify-center text-center p-5 shadow-2xl bg-white/95 backdrop-blur-xl hover:scale-105 hover:border-cyan-500 transition-all cursor-pointer group"
+              className="relative z-10 w-36 h-36 sm:w-44 sm:h-44 rounded-full glass border border-cyan-400 flex flex-col items-center justify-center text-center p-5 shadow-2xl bg-white/95 backdrop-blur-xl hover:scale-105 hover:border-cyan-500 transition-all cursor-pointer group"
               title="Click to view all 35 skills"
             >
-              <span className="w-2.5 h-2.5 rounded-md bg-cyan-500 animate-ping mb-2" />
+              <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-ping mb-2" />
               <Cpu size={28} className="text-cyan-600 group-hover:rotate-90 transition-transform duration-500" />
               <span className="text-xs sm:text-sm font-bold text-slate-950 mt-1.5 leading-tight uppercase font-mono group-hover:text-cyan-700 transition-colors">
                 Tech Orbit
