@@ -1,32 +1,79 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Stars, Sphere, MeshDistortMaterial } from "@react-three/drei";
+import { Float, Sphere, MeshDistortMaterial, Torus } from "@react-three/drei";
 import * as THREE from "three";
 
-function AnimatedSphere() {
+/**
+ * 3D Dark Liquid Sphere with Specular Iridescent Sheen
+ * Engineered specifically for high contrast and organic morphing against pure white backgrounds
+ */
+function DarkMorphingSphere() {
   const meshRef = useRef<THREE.Mesh>(null);
+  const ring1Ref = useRef<THREE.Mesh>(null);
+  const ring2Ref = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
+    const t = state.clock.elapsedTime;
     if (meshRef.current) {
-      meshRef.current.rotation.x = state.clock.elapsedTime * 0.15;
-      meshRef.current.rotation.y = state.clock.elapsedTime * 0.25;
+      meshRef.current.rotation.x = t * 0.22;
+      meshRef.current.rotation.y = t * 0.35;
+      meshRef.current.rotation.z = Math.sin(t * 0.15) * 0.2;
+    }
+    if (ring1Ref.current) {
+      ring1Ref.current.rotation.x = t * 0.4;
+      ring1Ref.current.rotation.y = t * 0.25;
+    }
+    if (ring2Ref.current) {
+      ring2Ref.current.rotation.x = -t * 0.3;
+      ring2Ref.current.rotation.z = t * 0.45;
     }
   });
 
   return (
-    <Float speed={1.5} rotationIntensity={0.8} floatIntensity={1.2}>
-      <Sphere args={[1.1, 36, 36]} ref={meshRef}>
-        <MeshDistortMaterial
-          color="#00f5ff"
-          attach="material"
-          distort={0.4}
-          speed={1.6}
-          roughness={0.3}
-          metalness={0.7}
-        />
-      </Sphere>
+    <Float speed={2.2} rotationIntensity={1.2} floatIntensity={1.6}>
+      <group position={[1.4, 0.1, 0]}>
+        {/* Main Dark Liquid Morphing Ball */}
+        <Sphere args={[1.25, 64, 64]} ref={meshRef}>
+          <MeshDistortMaterial
+            color="#090d1f"
+            attach="material"
+            distort={0.48}
+            speed={2.4}
+            roughness={0.18}
+            metalness={0.92}
+            clearcoat={1}
+            clearcoatRoughness={0.1}
+          />
+        </Sphere>
+
+        {/* Inner Gyroscopic Quantum Energy Ring (Deep Cyan) */}
+        <Torus ref={ring1Ref} args={[1.7, 0.022, 16, 64]}>
+          <meshStandardMaterial
+            color="#0284c7"
+            emissive="#0369a1"
+            emissiveIntensity={0.6}
+            roughness={0.2}
+            metalness={0.8}
+            transparent
+            opacity={0.85}
+          />
+        </Torus>
+
+        {/* Outer Gyroscopic Energy Ring (Deep Purple/Indigo) */}
+        <Torus ref={ring2Ref} args={[2.05, 0.018, 16, 64]}>
+          <meshStandardMaterial
+            color="#6d28d9"
+            emissive="#581c87"
+            emissiveIntensity={0.5}
+            roughness={0.2}
+            metalness={0.8}
+            transparent
+            opacity={0.75}
+          />
+        </Torus>
+      </group>
     </Float>
   );
 }
@@ -36,55 +83,169 @@ function pseudoRandom(seed: number) {
   return x - Math.floor(x);
 }
 
-function generateParticles(count: number) {
-  const positions = new Float32Array(count * 3);
-  const colors = new Float32Array(count * 3);
+/**
+ * High-Contrast Dark Swirling Particle Constellation
+ * Specially formulated with dark indigo, midnight cobalt, deep cyan, and charcoal tones
+ * so every particle is sharply visible and dynamically animated against the white canvas
+ */
+function DarkFloatingParticles({ count = 380 }: { count?: number }) {
+  const pointsRef = useRef<THREE.Points>(null);
 
-  for (let i = 0; i < count; i++) {
-    positions[i * 3] = (pseudoRandom(i * 3 + 1) - 0.5) * 14;
-    positions[i * 3 + 1] = (pseudoRandom(i * 3 + 2) - 0.5) * 14;
-    positions[i * 3 + 2] = (pseudoRandom(i * 3 + 3) - 0.5) * 14;
+  // Generate particle positions, colors, and per-particle speed factors
+  const { positions, colors, speeds, initialAngles, radii, yOffsets } = useMemo(() => {
+    const pos = new Float32Array(count * 3);
+    const col = new Float32Array(count * 3);
+    const spd = new Float32Array(count);
+    const ang = new Float32Array(count);
+    const rad = new Float32Array(count);
+    const yOff = new Float32Array(count);
 
-    const color = new THREE.Color();
-    color.setHSL(pseudoRandom(i * 3 + 4) * 0.3 + 0.5, 0.9, 0.6);
-    colors[i * 3] = color.r;
-    colors[i * 3 + 1] = color.g;
-    colors[i * 3 + 2] = color.b;
-  }
+    // Color palette: deep dark, vivid contrasting tones
+    const darkPalette = [
+      new THREE.Color("#0f172a"), // deep slate black
+      new THREE.Color("#1e293b"), // dark slate
+      new THREE.Color("#1e3a8a"), // deep dark blue
+      new THREE.Color("#1d4ed8"), // rich cobalt blue
+      new THREE.Color("#0369a1"), // deep cyan
+      new THREE.Color("#0284c7"), // vibrant sky
+      new THREE.Color("#4338ca"), // deep indigo
+      new THREE.Color("#6d28d9"), // deep violet
+      new THREE.Color("#7c3aed"), // rich purple
+      new THREE.Color("#be185d"), // deep magenta
+    ];
 
-  return { positions, colors };
-}
+    for (let i = 0; i < count; i++) {
+      const radius = 1.2 + pseudoRandom(i * 5 + 1) * 7.5;
+      const angle = pseudoRandom(i * 5 + 2) * Math.PI * 2;
+      const y = (pseudoRandom(i * 5 + 3) - 0.5) * 8.5;
 
-const staticParticles = generateParticles(200);
+      pos[i * 3] = Math.cos(angle) * radius + (radius > 3 ? 0 : 1.4);
+      pos[i * 3 + 1] = y;
+      pos[i * 3 + 2] = Math.sin(angle) * radius * 0.8;
 
-function FloatingParticles() {
-  const particlesRef = useRef<THREE.Points>(null);
+      // Select rich dark color
+      const colorIndex = Math.floor(pseudoRandom(i * 5 + 4) * darkPalette.length);
+      const chosenColor = darkPalette[colorIndex];
+      col[i * 3] = chosenColor.r;
+      col[i * 3 + 1] = chosenColor.g;
+      col[i * 3 + 2] = chosenColor.b;
+
+      spd[i] = 0.3 + pseudoRandom(i * 5 + 5) * 0.7;
+      ang[i] = angle;
+      rad[i] = radius;
+      yOff[i] = y;
+    }
+
+    return {
+      positions: pos,
+      colors: col,
+      speeds: spd,
+      initialAngles: ang,
+      radii: rad,
+      yOffsets: yOff,
+    };
+  }, [count]);
 
   useFrame((state) => {
-    if (particlesRef.current) {
-      particlesRef.current.rotation.y = state.clock.elapsedTime * 0.03;
-      particlesRef.current.rotation.x = state.clock.elapsedTime * 0.015;
+    if (!pointsRef.current) return;
+    const t = state.clock.elapsedTime;
+    const posAttr = pointsRef.current.geometry.attributes.position as THREE.BufferAttribute;
+    const posArr = posAttr.array as Float32Array;
+
+    for (let i = 0; i < count; i++) {
+      const currentAngle = initialAngles[i] + t * 0.08 * speeds[i];
+      const r = radii[i] + Math.sin(t * 0.4 + i) * 0.25;
+      const centerX = radii[i] < 3.2 ? 1.4 : 0;
+
+      posArr[i * 3] = Math.cos(currentAngle) * r + centerX;
+      posArr[i * 3 + 1] = yOffsets[i] + Math.sin(t * 0.5 + i * 0.5) * 0.35;
+      posArr[i * 3 + 2] = Math.sin(currentAngle) * r * 0.85 + Math.cos(t * 0.3 + i) * 0.2;
+    }
+
+    posAttr.needsUpdate = true;
+
+    // Gentle overall swirl
+    pointsRef.current.rotation.y = t * 0.02;
+    pointsRef.current.rotation.x = Math.sin(t * 0.03) * 0.05;
+  });
+
+  return (
+    <points ref={pointsRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          args={[positions, 3]}
+        />
+        <bufferAttribute
+          attach="attributes-color"
+          args={[colors, 3]}
+        />
+      </bufferGeometry>
+      <pointsMaterial
+        size={0.075}
+        vertexColors
+        transparent
+        opacity={0.92}
+        sizeAttenuation
+        depthWrite={false}
+      />
+    </points>
+  );
+}
+
+/**
+ * Secondary Orbiting Particle Cluster
+ * Provides an active swarm of orbiting micro-particles directly hugging the dark sphere
+ */
+function OrbitingMicroSwarm({ count = 120 }: { count?: number }) {
+  const swarmRef = useRef<THREE.Points>(null);
+
+  const { positions, colors } = useMemo(() => {
+    const pos = new Float32Array(count * 3);
+    const col = new Float32Array(count * 3);
+
+    for (let i = 0; i < count; i++) {
+      const theta = pseudoRandom(i * 3 + 1) * Math.PI * 2;
+      const phi = Math.acos(pseudoRandom(i * 3 + 2) * 2 - 1);
+      const r = 1.4 + pseudoRandom(i * 3 + 3) * 0.7;
+
+      pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+      pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+      pos[i * 3 + 2] = r * Math.cos(phi);
+
+      // Deep cyan to purple gradient
+      const isCyan = pseudoRandom(i * 3 + 4) > 0.45;
+      const c = isCyan ? new THREE.Color("#0284c7") : new THREE.Color("#6d28d9");
+      col[i * 3] = c.r;
+      col[i * 3 + 1] = c.g;
+      col[i * 3 + 2] = c.b;
+    }
+
+    return { positions: pos, colors: col };
+  }, [count]);
+
+  useFrame((state) => {
+    if (swarmRef.current) {
+      const t = state.clock.elapsedTime;
+      swarmRef.current.rotation.y = t * 0.28;
+      swarmRef.current.rotation.x = t * 0.18;
+      swarmRef.current.rotation.z = Math.sin(t * 0.2) * 0.2;
     }
   });
 
   return (
-    <points ref={particlesRef}>
+    <points ref={swarmRef} position={[1.4, 0.1, 0]}>
       <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          args={[staticParticles.positions, 3]}
-        />
-        <bufferAttribute
-          attach="attributes-color"
-          args={[staticParticles.colors, 3]}
-        />
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+        <bufferAttribute attach="attributes-color" args={[colors, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.035}
+        size={0.06}
         vertexColors
         transparent
-        opacity={0.85}
+        opacity={0.88}
         sizeAttenuation
+        depthWrite={false}
       />
     </points>
   );
@@ -96,21 +257,28 @@ export default function HeroCanvas() {
       dpr={[1, 1.5]}
       gl={{
         powerPreference: "high-performance",
-        antialias: false,
+        antialias: true,
         stencil: false,
         depth: true,
       }}
-      camera={{ position: [0, 0, 5], fov: 75 }}
+      camera={{ position: [0, 0, 5.2], fov: 72 }}
       style={{ width: "100%", height: "100%", pointerEvents: "none" }}
     >
-      <ambientLight intensity={0.4} />
-      <directionalLight position={[10, 10, 5]} intensity={1.5} color="#00f5ff" />
-      <pointLight position={[-10, -10, -5]} intensity={1.2} color="#bf00ff" />
-      <pointLight position={[5, -5, 5]} intensity={0.8} color="#ff006e" />
-      <AnimatedSphere />
-      <FloatingParticles />
-      <Stars radius={100} depth={50} count={1800} factor={3.5} saturation={0} fade speed={0.8} />
+      {/* Dynamic Dramatic Lighting Setup for Deep Metallic Sheen */}
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[8, 10, 6]} intensity={2.8} color="#0284c7" />
+      <pointLight position={[-8, -8, -4]} intensity={2.2} color="#7c3aed" />
+      <pointLight position={[4, -4, 5]} intensity={1.5} color="#ec4899" />
+      <pointLight position={[0, 6, 4]} intensity={1.2} color="#0f172a" />
+
+      {/* Main Dark 3D Morphing Ball with Gyroscopic Quantum Rings */}
+      <DarkMorphingSphere />
+
+      {/* Orbiting Micro-Swarm Hugging the Dark Sphere */}
+      <OrbitingMicroSwarm />
+
+      {/* High-Contrast Dark Swirling Particles across the Hero Screen */}
+      <DarkFloatingParticles />
     </Canvas>
   );
 }
-

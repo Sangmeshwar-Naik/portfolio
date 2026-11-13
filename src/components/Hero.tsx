@@ -18,9 +18,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 // Dynamically import Three.js Canvas with SSR disabled to guarantee no server-side WebGL rendering errors
 const HeroCanvas = dynamic(() => import("./HeroCanvas"), {
   ssr: false,
-  loading: () => (
-    <div className="w-full h-full bg-[#050508] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,245,255,0.15),rgba(255,255,255,0))]" />
-  ),
+  loading: () => <div className="w-full h-full bg-transparent" />,
 });
 
 // Dynamically import 3D Interactive Physics Lanyard
@@ -88,7 +86,7 @@ export default function Hero() {
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-28 pb-16"
     >
       {/* 3D Animated Background - Rendered Client-Side Only */}
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-85 overflow-hidden">
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-100 overflow-hidden">
         <HeroCanvas />
       </div>
 
