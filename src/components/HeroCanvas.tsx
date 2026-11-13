@@ -2,75 +2,73 @@
 
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Sphere, MeshDistortMaterial, Torus } from "@react-three/drei";
+import { Float, Torus } from "@react-three/drei";
 import * as THREE from "three";
 
 /**
- * 3D Dark Liquid Sphere with Specular Iridescent Sheen
- * Engineered specifically for high contrast and organic morphing against pure white backgrounds
+ * 3D Gyroscopic Quantum Rings
+ * Hollow center featuring multi-axis counter-rotating rings with deep, rich contrast
  */
-function DarkMorphingSphere() {
-  const meshRef = useRef<THREE.Mesh>(null);
+function GyroscopicQuantumRings() {
   const ring1Ref = useRef<THREE.Mesh>(null);
   const ring2Ref = useRef<THREE.Mesh>(null);
+  const ring3Ref = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     const t = state.clock.elapsedTime;
-    if (meshRef.current) {
-      meshRef.current.rotation.x = t * 0.22;
-      meshRef.current.rotation.y = t * 0.35;
-      meshRef.current.rotation.z = Math.sin(t * 0.15) * 0.2;
-    }
     if (ring1Ref.current) {
-      ring1Ref.current.rotation.x = t * 0.4;
-      ring1Ref.current.rotation.y = t * 0.25;
+      ring1Ref.current.rotation.x = t * 0.45;
+      ring1Ref.current.rotation.y = t * 0.28;
     }
     if (ring2Ref.current) {
-      ring2Ref.current.rotation.x = -t * 0.3;
-      ring2Ref.current.rotation.z = t * 0.45;
+      ring2Ref.current.rotation.x = -t * 0.35;
+      ring2Ref.current.rotation.z = t * 0.5;
+    }
+    if (ring3Ref.current) {
+      ring3Ref.current.rotation.y = t * 0.38;
+      ring3Ref.current.rotation.z = -t * 0.25;
     }
   });
 
   return (
     <Float speed={2.2} rotationIntensity={1.2} floatIntensity={1.6}>
       <group position={[1.4, 0.1, 0]}>
-        {/* Main Dark Liquid Morphing Ball */}
-        <Sphere args={[1.25, 64, 64]} ref={meshRef}>
-          <MeshDistortMaterial
-            color="#090d1f"
-            attach="material"
-            distort={0.48}
-            speed={2.4}
-            roughness={0.18}
-            metalness={0.92}
-            clearcoat={1}
-            clearcoatRoughness={0.1}
-          />
-        </Sphere>
-
         {/* Inner Gyroscopic Quantum Energy Ring (Deep Cyan) */}
-        <Torus ref={ring1Ref} args={[1.7, 0.022, 16, 64]}>
+        <Torus ref={ring1Ref} args={[1.5, 0.038, 16, 80]}>
           <meshStandardMaterial
             color="#0284c7"
             emissive="#0369a1"
-            emissiveIntensity={0.6}
-            roughness={0.2}
-            metalness={0.8}
+            emissiveIntensity={0.65}
+            roughness={0.15}
+            metalness={0.85}
             transparent
-            opacity={0.85}
+            opacity={0.92}
           />
         </Torus>
 
-        {/* Outer Gyroscopic Energy Ring (Deep Purple/Indigo) */}
-        <Torus ref={ring2Ref} args={[2.05, 0.018, 16, 64]}>
+        {/* Middle Gyroscopic Energy Ring (Deep Purple/Indigo) */}
+        <Torus ref={ring2Ref} args={[1.9, 0.032, 16, 80]}>
           <meshStandardMaterial
             color="#6d28d9"
             emissive="#581c87"
-            emissiveIntensity={0.5}
-            roughness={0.2}
-            metalness={0.8}
+            emissiveIntensity={0.6}
+            roughness={0.15}
+            metalness={0.85}
             transparent
-            opacity={0.75}
+            opacity={0.88}
+          />
+        </Torus>
+
+        {/* Outer Gyroscopic Energy Ring (Deep Slate/Midnight Cobalt) */}
+        <Torus ref={ring3Ref} args={[2.25, 0.026, 16, 80]}>
+          <meshStandardMaterial
+            color="#0f172a"
+            emissive="#1e3a8a"
+            emissiveIntensity={0.4}
+            roughness={0.2}
+            metalness={0.9}
+            transparent
+            opacity={0.82}
           />
         </Torus>
       </group>
@@ -271,8 +269,8 @@ export default function HeroCanvas() {
       <pointLight position={[4, -4, 5]} intensity={1.5} color="#ec4899" />
       <pointLight position={[0, 6, 4]} intensity={1.2} color="#0f172a" />
 
-      {/* Main Dark 3D Morphing Ball with Gyroscopic Quantum Rings */}
-      <DarkMorphingSphere />
+      {/* 3D Gyroscopic Quantum Counter-Rotating Rings */}
+      <GyroscopicQuantumRings />
 
       {/* Orbiting Micro-Swarm Hugging the Dark Sphere */}
       <OrbitingMicroSwarm />
