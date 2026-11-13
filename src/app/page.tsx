@@ -45,7 +45,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-[#050508] text-white flex flex-col items-center">
+    <main className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-white text-slate-900 flex flex-col items-center">
       {/* Precision Glowing Custom Cursor */}
       <CustomCursor />
 

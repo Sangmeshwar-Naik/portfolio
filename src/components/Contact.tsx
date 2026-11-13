@@ -260,16 +260,16 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
         >
           {/* Centered Symmetrical Direct Communication Pill */}
-          <div className="inline-flex items-center justify-center gap-2.5 px-5 py-2 rounded-full glass border border-cyan-500/30 text-xs sm:text-sm font-semibold text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10 mx-auto">
-            <Sparkles size={14} className="text-cyan-400 shrink-0" />
+          <div className="inline-flex items-center justify-center gap-2.5 px-5 py-2 rounded-full glass border border-cyan-500/30 text-xs sm:text-sm font-semibold text-cyan-700 bg-cyan-50/70 mb-4 shadow-sm mx-auto">
+            <Sparkles size={14} className="text-cyan-600 shrink-0" />
             <div className="w-[195px] h-[22px] relative flex items-center justify-center mx-auto">
               <TechText
                 text="Direct Communication"
                 gradient={true}
                 fontWeight={700}
                 fontSize={15}
-                color="#00f5ff"
-                accentColor="#a855f7"
+                color="#0f172a"
+                accentColor="#9333ea"
                 dashLength={2}
                 dashGap={1}
                 specks={6}
@@ -284,7 +284,7 @@ export default function Contact() {
                 align="center"
               />
             </div>
-            <Sparkles size={14} className="text-cyan-400 shrink-0" />
+            <Sparkles size={14} className="text-cyan-600 shrink-0" />
           </div>
 
           <h2 className="sr-only">Let&apos;s Build Something Amazing Together</h2>
@@ -294,8 +294,8 @@ export default function Contact() {
               highlightText="Amazing Together"
               fontWeight={900}
               fontSize={68}
-              color="#ffffff"
-              accentColor="#00f5ff"
+              color="#0f172a"
+              accentColor="#0891b2"
               dashLength={4}
               dashGap={2}
               specks={12}
@@ -310,13 +310,13 @@ export default function Contact() {
               align="center"
             />
           </div>
-          <p className="mt-5 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-center">
+          <p className="mt-5 text-slate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-center font-medium">
             Interested in collaborating on AI projects, internships, research, or scalable engineering? Let&apos;s connect!
           </p>
         </motion.div>
 
         {/* Elevated Standalone Communication Island - Spacious Rounded Box */}
-        <div className="relative glass rounded-3xl p-8 sm:p-12 lg:p-14 border border-white/10 shadow-2xl shadow-cyan-500/5 bg-[#070816]/95 backdrop-blur-xl">
+        <div className="relative glass rounded-3xl p-8 sm:p-12 lg:p-14 border border-slate-200/90 shadow-xl bg-white/95 backdrop-blur-xl">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Contact Channels Left Panel */}
             <motion.div
@@ -326,32 +326,32 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-4 shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-500/30 text-emerald-800 text-xs font-semibold mb-4 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span>Available for Full-Time Roles &amp; Internships</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2">
+                <h3 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight mb-2">
                   Contact Channels
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-mono">
+                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6 font-mono">
                   Reach out directly via email, phone, WhatsApp, or developer platforms.
                 </p>
 
                 <div className="space-y-4">
                   {/* Direct Email Card with One-Click Actions */}
-                  <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-cyan-500/40 hover:bg-cyan-500/[0.04] transition-all group shadow-sm">
+                  <div className="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200 hover:border-cyan-400 hover:bg-cyan-50/30 transition-all group shadow-sm">
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0 group-hover:scale-105 transition-transform shadow-md">
+                        <div className="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-600 shrink-0 group-hover:scale-105 transition-transform shadow-sm">
                           <Mail size={22} />
                         </div>
                         <div>
-                          <p className="text-xs uppercase font-bold tracking-wider text-slate-400 font-mono">
+                          <p className="text-xs uppercase font-bold tracking-wider text-slate-500 font-mono">
                             Direct Email
                           </p>
                           <a
                             href="mailto:sangameshnaik471@gmail.com"
-                            className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors block mt-0.5 break-all"
+                            className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-cyan-700 transition-colors block mt-0.5 break-all"
                           >
                             sangameshnaik471@gmail.com
                           </a>
@@ -361,13 +361,13 @@ export default function Contact() {
                       {/* Copy Email Button */}
                       <button
                         onClick={() => handleCopy("sangameshnaik471@gmail.com", "email")}
-                        className="px-3 py-1.5 rounded-lg glass border border-white/10 hover:border-cyan-400 text-slate-300 hover:text-white text-xs font-mono font-semibold flex items-center gap-1.5 transition-all shrink-0 cursor-pointer shadow-sm"
+                        className="px-3 py-1.5 rounded-lg glass border border-slate-200 bg-white hover:border-cyan-400 text-slate-700 hover:text-slate-950 text-xs font-mono font-semibold flex items-center gap-1.5 transition-all shrink-0 cursor-pointer shadow-sm"
                         title="Copy email address"
                       >
                         {copiedEmail ? (
                           <>
-                            <Check size={13} className="text-emerald-400" />
-                            <span className="text-emerald-400">Copied</span>
+                            <Check size={13} className="text-emerald-600" />
+                            <span className="text-emerald-600 font-bold">Copied</span>
                           </>
                         ) : (
                           <>
@@ -378,20 +378,20 @@ export default function Contact() {
                       </button>
                     </div>
 
-                    <div className="mt-4 pt-3.5 border-t border-white/5 flex items-center gap-3 text-xs font-mono">
+                    <div className="mt-4 pt-3.5 border-t border-slate-200 flex items-center gap-3 text-xs font-mono">
                       <a
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=sangameshnaik471@gmail.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-cyan-400 hover:underline flex items-center gap-1"
+                        className="text-cyan-600 hover:underline flex items-center gap-1 font-semibold"
                       >
                         <span>Open in Gmail</span>
                         <ExternalLink size={11} />
                       </a>
-                      <span className="text-slate-600">•</span>
+                      <span className="text-slate-400">•</span>
                       <a
                         href="mailto:sangameshnaik471@gmail.com"
-                        className="text-slate-400 hover:text-white transition-colors"
+                        className="text-slate-500 hover:text-slate-900 transition-colors"
                       >
                         Default Client
                       </a>
@@ -399,19 +399,19 @@ export default function Contact() {
                   </div>
 
                   {/* Phone & WhatsApp Card */}
-                  <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-emerald-500/40 hover:bg-emerald-500/[0.04] transition-all group shadow-sm">
+                  <div className="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50/30 transition-all group shadow-sm">
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition-transform shadow-md">
+                        <div className="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-105 transition-transform shadow-sm">
                           <Phone size={22} />
                         </div>
                         <div>
-                          <p className="text-xs uppercase font-bold tracking-wider text-slate-400 font-mono">
+                          <p className="text-xs uppercase font-bold tracking-wider text-slate-500 font-mono">
                             Phone &amp; WhatsApp
                           </p>
                           <a
                             href="tel:+918080945510"
-                            className="text-sm sm:text-base font-bold text-white group-hover:text-emerald-300 transition-colors block mt-0.5"
+                            className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-emerald-700 transition-colors block mt-0.5"
                           >
                             +91 8080945510
                           </a>
@@ -421,13 +421,13 @@ export default function Contact() {
                       {/* Copy Phone Button */}
                       <button
                         onClick={() => handleCopy("+918080945510", "phone")}
-                        className="px-3 py-1.5 rounded-lg glass border border-white/10 hover:border-emerald-400 text-slate-300 hover:text-white text-xs font-mono font-semibold flex items-center gap-1.5 transition-all shrink-0 cursor-pointer shadow-sm"
+                        className="px-3 py-1.5 rounded-lg glass border border-slate-200 bg-white hover:border-emerald-400 text-slate-700 hover:text-slate-950 text-xs font-mono font-semibold flex items-center gap-1.5 transition-all shrink-0 cursor-pointer shadow-sm"
                         title="Copy phone number"
                       >
                         {copiedPhone ? (
                           <>
-                            <Check size={13} className="text-emerald-400" />
-                            <span className="text-emerald-400">Copied</span>
+                            <Check size={13} className="text-emerald-600" />
+                            <span className="text-emerald-600 font-bold">Copied</span>
                           </>
                         ) : (
                           <>
@@ -438,20 +438,20 @@ export default function Contact() {
                       </button>
                     </div>
 
-                    <div className="mt-4 pt-3.5 border-t border-white/5 flex items-center gap-3 text-xs font-mono">
+                    <div className="mt-4 pt-3.5 border-t border-slate-200 flex items-center gap-3 text-xs font-mono">
                       <a
                         href="https://wa.me/918080945510?text=Hi%20Sangmeshwar,%20I%20am%20reaching%20out%20from%20your%20portfolio!"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-emerald-400 hover:underline flex items-center gap-1 font-semibold"
+                        className="text-emerald-600 hover:underline flex items-center gap-1 font-semibold"
                       >
                         <FaWhatsapp size={13} />
                         <span>Chat on WhatsApp</span>
                       </a>
-                      <span className="text-slate-600">•</span>
+                      <span className="text-slate-400">•</span>
                       <a
                         href="tel:+918080945510"
-                        className="text-slate-400 hover:text-white transition-colors flex items-center gap-1"
+                        className="text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-1"
                       >
                         <PhoneCall size={11} />
                         <span>Direct Call</span>
@@ -460,20 +460,20 @@ export default function Contact() {
                   </div>
 
                   {/* Location & Live Clock Card */}
-                  <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/5 shadow-sm">
+                  <div className="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 shrink-0 shadow-md">
+                      <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-600 shrink-0 shadow-sm">
                         <MapPin size={22} />
                       </div>
                       <div className="flex-1">
-                        <p className="text-xs uppercase font-bold tracking-wider text-slate-400 font-mono">
+                        <p className="text-xs uppercase font-bold tracking-wider text-slate-500 font-mono">
                           Location &amp; Local Time
                         </p>
-                        <p className="text-sm sm:text-base font-bold text-white mt-0.5">
+                        <p className="text-sm sm:text-base font-bold text-slate-900 mt-0.5">
                           Bidar &amp; Mangalore, Karnataka, India
                         </p>
-                        <div className="flex items-center gap-2 mt-2 font-mono text-xs text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1.5 rounded-full w-fit">
-                          <Clock size={12} className="animate-spin text-cyan-400" style={{ animationDuration: "12s" }} />
+                        <div className="flex items-center gap-2 mt-2 font-mono text-xs text-cyan-800 bg-cyan-100 border border-cyan-200 px-3.5 py-1.5 rounded-full w-fit">
+                          <Clock size={12} className="animate-spin text-cyan-600" style={{ animationDuration: "12s" }} />
                           <span>{currentTime ? `${currentTime} IST` : "IST (UTC +5:30)"}</span>
                         </div>
                       </div>
@@ -482,8 +482,8 @@ export default function Contact() {
                 </div>
 
                 {/* Social Profiles */}
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <p className="text-xs uppercase tracking-wider font-bold text-slate-400 mb-3.5 font-mono">
+                <div className="mt-8 pt-6 border-t border-slate-200">
+                  <p className="text-xs uppercase tracking-wider font-bold text-slate-500 mb-3.5 font-mono">
                     Professional Networks
                   </p>
                   <div className="grid grid-cols-2 gap-3.5">
@@ -491,16 +491,16 @@ export default function Contact() {
                       href="https://github.com/Sangmeshwar-Naik"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-3.5 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/10 flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold transition-all group shadow-sm"
+                      className="py-3.5 px-4 rounded-xl glass border border-slate-200 bg-slate-50 text-slate-700 hover:text-slate-950 hover:border-cyan-500 hover:bg-cyan-50/50 flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold transition-all group shadow-sm"
                     >
-                      <FaGithub size={18} className="text-slate-300 group-hover:text-white transition-colors" />
+                      <FaGithub size={18} className="text-slate-600 group-hover:text-slate-950 transition-colors" />
                       <span>GitHub</span>
                     </a>
                     <a
                       href="https://www.linkedin.com/in/sangmeshwar-naik-555828385"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-3.5 px-4 rounded-xl glass border border-white/10 text-slate-200 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 hover:bg-[#0a66c2]/10 flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold transition-all group shadow-sm"
+                      className="py-3.5 px-4 rounded-xl glass border border-slate-200 bg-slate-50 text-slate-700 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 hover:bg-[#0a66c2]/10 flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold transition-all group shadow-sm"
                     >
                       <FaLinkedin size={18} className="text-[#0a66c2]" />
                       <span>LinkedIn</span>
@@ -517,24 +517,24 @@ export default function Contact() {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="p-8 sm:p-11 lg:p-12 rounded-3xl bg-[#04050e]/95 border border-white/10 shadow-2xl backdrop-blur-xl relative">
+              <div className="p-8 sm:p-11 lg:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl backdrop-blur-xl relative">
                 {/* Header Bar with generous padding & no corner clipping */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7 pb-6 border-b border-white/10">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7 pb-6 border-b border-slate-100">
                   <div className="flex items-center gap-3.5">
-                    <div className="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-md shrink-0">
+                    <div className="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-600 shadow-sm shrink-0">
                       <Zap size={22} />
                     </div>
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                      <h3 className="text-xl sm:text-2xl font-bold text-slate-950 tracking-tight">
                         Send a Direct Message
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-400 font-mono mt-0.5">
+                      <p className="text-xs sm:text-sm text-slate-500 font-mono mt-0.5">
                         Transmitted directly to Sangmeshwar with instant delivery.
                       </p>
                     </div>
                   </div>
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-semibold shrink-0 w-fit self-start sm:self-auto shadow-sm">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-500/30 text-emerald-800 text-xs font-mono font-semibold shrink-0 w-fit self-start sm:self-auto shadow-sm">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                     <span className="whitespace-nowrap">Live Channel Active</span>
                   </div>
                 </div>
@@ -543,20 +543,19 @@ export default function Contact() {
                 <AnimatePresence>
                   {statusMessage && (
                     <motion.div
-                      className={`mb-6 p-4 rounded-xl flex flex-col gap-2.5 text-xs sm:text-sm font-semibold border ${
-                        statusMessage.type === "success"
-                          ? "bg-emerald-500/15 border-emerald-500/30 text-emerald-300"
-                          : "bg-red-500/15 border-red-500/30 text-red-300"
-                      }`}
+                      className={`mb-6 p-4 rounded-xl flex flex-col gap-2.5 text-xs sm:text-sm font-semibold border ${statusMessage.type === "success"
+                          ? "bg-emerald-50 border-emerald-500/30 text-emerald-800"
+                          : "bg-red-50 border-red-500/30 text-red-800"
+                        }`}
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                     >
                       <div className="flex items-center gap-3">
                         {statusMessage.type === "success" ? (
-                          <CheckCircle2 size={20} className="shrink-0 text-emerald-400" />
+                          <CheckCircle2 size={20} className="shrink-0 text-emerald-600" />
                         ) : (
-                          <AlertCircle size={20} className="shrink-0 text-red-400" />
+                          <AlertCircle size={20} className="shrink-0 text-red-600" />
                         )}
                         <span>{statusMessage.text}</span>
                       </div>
@@ -564,14 +563,14 @@ export default function Contact() {
                       {/* Quick Multi-Channel Action Buttons After Sending */}
                       {statusMessage.type === "success" && submittedData && (
                         <div className="pt-2 border-t border-emerald-500/20 flex flex-wrap items-center gap-2 mt-1">
-                          <span className="text-xs text-slate-300 font-mono mr-1">Instant delivery options:</span>
+                          <span className="text-xs text-slate-700 font-mono mr-1">Instant delivery options:</span>
                           <a
                             href={`https://wa.me/918080945510?text=${encodeURIComponent(
                               `Hi Sangmeshwar,\n\nName: ${submittedData.name}\nEmail: ${submittedData.email}\nSubject: ${submittedData.subject}\n\nMessage:\n${submittedData.message}`
                             )}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-3.5 py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-200 border border-emerald-500/40 text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-sm"
+                            className="px-3.5 py-1.5 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-400 text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-sm"
                           >
                             <FaWhatsapp size={14} />
                             <span>Forward on WhatsApp</span>
@@ -584,7 +583,7 @@ export default function Contact() {
                             )}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-3.5 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 border border-cyan-500/40 text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-sm"
+                            className="px-3.5 py-1.5 rounded-lg bg-cyan-100 hover:bg-cyan-200 text-cyan-900 border border-cyan-400 text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-sm"
                           >
                             <Mail size={13} />
                             <span>Open in Gmail</span>
@@ -600,17 +599,16 @@ export default function Contact() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     {/* Name Input */}
                     <div>
-                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-300 mb-2">
-                        Your Name <span className="text-cyan-400">*</span>
+                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-2">
+                        Your Name <span className="text-cyan-600">*</span>
                       </label>
                       <div
-                        className={`flex items-center rounded-xl overflow-hidden bg-white/[0.04] border transition-all ${
-                          errors.name
-                            ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
-                            : "border-white/10 focus-within:border-cyan-400 focus-within:ring-2 focus-within:ring-cyan-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(0,245,255,0.15)]"
-                        }`}
+                        className={`flex items-center rounded-xl overflow-hidden bg-slate-50 border transition-all ${errors.name
+                            ? "border-red-400 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
+                            : "border-slate-200 focus-within:border-cyan-500 focus-within:ring-2 focus-within:ring-cyan-500/20 focus-within:bg-white focus-within:shadow-[0_0_20px_rgba(8,145,178,0.12)]"
+                          }`}
                       >
-                        <div className="px-4 py-3.5 bg-white/[0.03] border-r border-white/10 flex items-center justify-center text-cyan-400 shrink-0">
+                        <div className="px-4 py-3.5 bg-slate-100/80 border-r border-slate-200 flex items-center justify-center text-cyan-600 shrink-0">
                           <User size={18} />
                         </div>
                         <input
@@ -619,11 +617,11 @@ export default function Contact() {
                           value={formState.name}
                           onChange={handleChange}
                           placeholder="e.g. John Doe"
-                          className="w-full px-4 py-3.5 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none font-sans"
+                          className="w-full px-4 py-3.5 bg-transparent text-sm text-slate-900 placeholder-slate-400 focus:outline-none font-sans"
                         />
                       </div>
                       {errors.name && (
-                        <p className="text-[11px] text-red-400 mt-1.5 flex items-center gap-1 font-mono">
+                        <p className="text-[11px] text-red-600 mt-1.5 flex items-center gap-1 font-mono">
                           <AlertCircle size={12} /> {errors.name}
                         </p>
                       )}
@@ -631,17 +629,16 @@ export default function Contact() {
 
                     {/* Email Input */}
                     <div>
-                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-300 mb-2">
-                        Your Email <span className="text-purple-400">*</span>
+                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-2">
+                        Your Email <span className="text-purple-600">*</span>
                       </label>
                       <div
-                        className={`flex items-center rounded-xl overflow-hidden bg-white/[0.04] border transition-all ${
-                          errors.email
-                            ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
-                            : "border-white/10 focus-within:border-purple-400 focus-within:ring-2 focus-within:ring-purple-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(191,0,255,0.15)]"
-                        }`}
+                        className={`flex items-center rounded-xl overflow-hidden bg-slate-50 border transition-all ${errors.email
+                            ? "border-red-400 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
+                            : "border-slate-200 focus-within:border-purple-500 focus-within:ring-2 focus-within:ring-purple-500/20 focus-within:bg-white focus-within:shadow-[0_0_20px_rgba(147,51,234,0.12)]"
+                          }`}
                       >
-                        <div className="px-4 py-3.5 bg-white/[0.03] border-r border-white/10 flex items-center justify-center text-purple-400 shrink-0">
+                        <div className="px-4 py-3.5 bg-slate-100/80 border-r border-slate-200 flex items-center justify-center text-purple-600 shrink-0">
                           <Mail size={18} />
                         </div>
                         <input
@@ -650,11 +647,11 @@ export default function Contact() {
                           value={formState.email}
                           onChange={handleChange}
                           placeholder="e.g. john@example.com"
-                          className="w-full px-4 py-3.5 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none font-sans"
+                          className="w-full px-4 py-3.5 bg-transparent text-sm text-slate-900 placeholder-slate-400 focus:outline-none font-sans"
                         />
                       </div>
                       {errors.email && (
-                        <p className="text-[11px] text-red-400 mt-1.5 flex items-center gap-1 font-mono">
+                        <p className="text-[11px] text-red-600 mt-1.5 flex items-center gap-1 font-mono">
                           <AlertCircle size={12} /> {errors.email}
                         </p>
                       )}
@@ -664,22 +661,21 @@ export default function Contact() {
                   {/* Row 2: Subject Input with Dedicated Icon and Preset Selector */}
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
-                        Subject / Inquiry Topic <span className="text-pink-400">*</span>
+                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-700">
+                        Subject / Inquiry Topic <span className="text-pink-600">*</span>
                       </label>
-                      <span className="text-[11px] text-slate-400 font-mono hidden sm:inline">
+                      <span className="text-[11px] text-slate-500 font-mono hidden sm:inline">
                         Click a topic below or type your own
                       </span>
                     </div>
 
                     <div
-                      className={`flex items-center rounded-xl overflow-hidden bg-white/[0.04] border transition-all ${
-                        errors.subject
-                          ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
-                          : "border-white/10 focus-within:border-pink-400 focus-within:ring-2 focus-within:ring-pink-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(236,72,153,0.15)]"
-                      }`}
+                      className={`flex items-center rounded-xl overflow-hidden bg-slate-50 border transition-all ${errors.subject
+                          ? "border-red-400 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
+                          : "border-slate-200 focus-within:border-pink-500 focus-within:ring-2 focus-within:ring-pink-500/20 focus-within:bg-white focus-within:shadow-[0_0_20px_rgba(219,39,119,0.12)]"
+                        }`}
                     >
-                      <div className="px-4 py-3.5 bg-white/[0.03] border-r border-white/10 flex items-center justify-center text-pink-400 shrink-0">
+                      <div className="px-4 py-3.5 bg-slate-100/80 border-r border-slate-200 flex items-center justify-center text-pink-600 shrink-0">
                         <Sparkles size={18} />
                       </div>
                       <input
@@ -688,11 +684,11 @@ export default function Contact() {
                         value={formState.subject}
                         onChange={handleChange}
                         placeholder="e.g. AI / ML Internship or Engineering Opportunity"
-                        className="w-full px-4 py-3.5 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none font-sans"
+                        className="w-full px-4 py-3.5 bg-transparent text-sm text-slate-900 placeholder-slate-400 focus:outline-none font-sans"
                       />
                     </div>
                     {errors.subject && (
-                      <p className="text-[11px] text-red-400 mt-1.5 flex items-center gap-1 font-mono">
+                      <p className="text-[11px] text-red-600 mt-1.5 flex items-center gap-1 font-mono">
                         <AlertCircle size={12} /> {errors.subject}
                       </p>
                     )}
@@ -707,11 +703,10 @@ export default function Contact() {
                             key={sub.id}
                             type="button"
                             onClick={() => setFormState((prev) => ({ ...prev, subject: sub.subject }))}
-                            className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center gap-2.5 ${
-                              isSelected
-                                ? "bg-cyan-500/20 border-cyan-400 text-cyan-200 shadow-md shadow-cyan-500/20 scale-[1.02]"
-                                : "bg-white/[0.03] border-white/10 text-slate-300 hover:border-cyan-500/40 hover:bg-white/[0.06] hover:text-white"
-                            }`}
+                            className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer flex items-center gap-2.5 ${isSelected
+                                ? "bg-cyan-100 border-cyan-400 text-cyan-900 shadow-sm scale-[1.02]"
+                                : "bg-slate-50 border-slate-200 text-slate-700 hover:border-cyan-400 hover:bg-cyan-50/50 hover:text-slate-950"
+                              }`}
                           >
                             <div
                               className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 shadow-sm"
@@ -719,7 +714,7 @@ export default function Contact() {
                             >
                               <SubIcon size={15} />
                             </div>
-                            <span className="text-xs font-mono font-medium leading-tight truncate">
+                            <span className="text-xs font-mono font-semibold leading-tight truncate">
                               {sub.title}
                             </span>
                           </button>
@@ -731,21 +726,20 @@ export default function Contact() {
                   {/* Row 3: Message Textarea with Terminal Header & Live Character Count */}
                   <div>
                     <div
-                      className={`rounded-xl overflow-hidden bg-white/[0.04] border transition-all ${
-                        errors.message
-                          ? "border-red-500/60 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
-                          : "border-white/10 focus-within:border-cyan-400 focus-within:ring-2 focus-within:ring-cyan-400/20 focus-within:bg-white/[0.07] focus-within:shadow-[0_0_25px_rgba(0,245,255,0.15)]"
-                      }`}
+                      className={`rounded-xl overflow-hidden bg-slate-50 border transition-all ${errors.message
+                          ? "border-red-400 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20"
+                          : "border-slate-200 focus-within:border-cyan-500 focus-within:ring-2 focus-within:ring-cyan-500/20 focus-within:bg-white focus-within:shadow-[0_0_20px_rgba(8,145,178,0.12)]"
+                        }`}
                     >
                       {/* Textarea Header Bar */}
-                      <div className="px-4 py-2.5 bg-white/[0.03] border-b border-white/10 flex items-center justify-between text-xs font-mono">
-                        <div className="flex items-center gap-2 text-cyan-400">
+                      <div className="px-4 py-2.5 bg-slate-100/80 border-b border-slate-200 flex items-center justify-between text-xs font-mono">
+                        <div className="flex items-center gap-2 text-cyan-700">
                           <MessageSquare size={15} />
-                          <span className="font-bold uppercase tracking-wider text-slate-200">
-                            Message Content <span className="text-cyan-400">*</span>
+                          <span className="font-bold uppercase tracking-wider text-slate-800">
+                            Message Content <span className="text-cyan-600">*</span>
                           </span>
                         </div>
-                        <span className="text-[11px] text-slate-400">
+                        <span className="text-[11px] text-slate-500">
                           {formState.message.length} chars
                         </span>
                       </div>
@@ -755,11 +749,11 @@ export default function Contact() {
                         value={formState.message}
                         onChange={handleChange}
                         placeholder="Describe your project, role, research collaboration, or technical inquiry..."
-                        className="w-full p-4 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none resize-none leading-relaxed font-sans"
+                        className="w-full p-4 bg-transparent text-sm text-slate-900 placeholder-slate-400 focus:outline-none resize-none leading-relaxed font-sans"
                       />
                     </div>
                     {errors.message && (
-                      <p className="text-[11px] text-red-400 mt-1.5 flex items-center gap-1 font-mono">
+                      <p className="text-[11px] text-red-600 mt-1.5 flex items-center gap-1 font-mono">
                         <AlertCircle size={12} /> {errors.message}
                       </p>
                     )}
@@ -769,7 +763,7 @@ export default function Contact() {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 hover:from-cyan-400 hover:to-pink-400 flex items-center justify-center gap-2.5 shadow-xl shadow-cyan-500/25 transition-all disabled:opacity-50 cursor-pointer group"
+                    className="w-full py-4 rounded-xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-cyan-600 via-indigo-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 flex items-center justify-center gap-2.5 shadow-xl shadow-cyan-500/20 transition-all disabled:opacity-50 cursor-pointer group"
                     whileHover={{ scale: isSubmitting ? 1 : 1.01 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   >

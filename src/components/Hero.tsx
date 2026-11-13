@@ -123,12 +123,12 @@ export default function Hero() {
         />
 
         {/* Ambient Subtle Cyber Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a08_1px,transparent_1px),linear-gradient(to_bottom,#0f172a08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35" />
       </div>
 
-      {/* Subtle vignettes */}
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-[#050508]/40 via-transparent to-[#050508] pointer-events-none z-0" />
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#050508]/50 via-transparent to-[#050508]/50 pointer-events-none z-0" />
+      {/* Subtle vignettes for clean light background */}
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/30 via-transparent to-white pointer-events-none z-0" />
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/40 via-transparent to-white/40 pointer-events-none z-0" />
 
       {/* Main Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -141,20 +141,20 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             {/* Availability Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <Sparkles size={13} className="text-cyan-400" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-cyan-500/40 text-xs font-semibold text-cyan-700 bg-cyan-50/70 mb-6 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+              <Sparkles size={13} className="text-cyan-600" />
               Available for Opportunities &amp; Internships
             </div>
 
             {/* Intro text */}
-            <p className="text-sm md:text-base font-semibold tracking-widest uppercase text-slate-400 mb-2">
+            <p className="text-sm md:text-base font-semibold tracking-widest uppercase text-slate-500 mb-2">
               Hi, I&apos;m
             </p>
 
             {/* Name */}
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.08] mb-4">
-              <span className="text-white">SANGMESHWAR </span>
+              <span className="text-slate-950">SANGMESHWAR </span>
               <br className="hidden sm:inline" />
               <span className="text-gradient">NAIK</span>
             </h1>
@@ -165,7 +165,7 @@ export default function Hero() {
             </div>
 
             {/* Description */}
-            <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+            <p className="text-base md:text-lg text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8 font-medium">
               Building intelligent solutions through Artificial Intelligence, Machine Learning,
               and modern software engineering. Passionate about transforming innovative ideas
               into real-world applications.
@@ -176,7 +176,7 @@ export default function Hero() {
               {/* View Projects */}
               <motion.button
                 onClick={() => scrollTo("projects")}
-                className="group relative px-7 py-3.5 rounded-xl font-semibold text-sm text-white overflow-hidden shadow-lg shadow-cyan-500/25 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 transition-all flex items-center gap-2 cursor-pointer"
+                className="group relative px-7 py-3.5 rounded-xl font-semibold text-sm text-white overflow-hidden shadow-lg shadow-cyan-500/25 bg-gradient-to-r from-cyan-600 via-indigo-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 transition-all flex items-center gap-2 cursor-pointer"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
@@ -191,28 +191,28 @@ export default function Hero() {
                     window.dispatchEvent(new CustomEvent("open-resume-modal"));
                   }
                 }}
-                className="group px-7 py-3.5 rounded-xl font-semibold text-sm text-white glass hover:border-purple-400/50 hover:text-purple-300 transition-all flex items-center gap-2 cursor-pointer shadow-md shadow-purple-500/10"
+                className="group px-7 py-3.5 rounded-xl font-semibold text-sm text-purple-700 glass border border-purple-500/30 bg-purple-50/70 hover:bg-purple-100 hover:border-purple-400 transition-all flex items-center gap-2 cursor-pointer shadow-sm"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
-                <Download size={16} className="text-purple-400 group-hover:translate-y-0.5 transition-transform" />
+                <Download size={16} className="text-purple-600 group-hover:translate-y-0.5 transition-transform" />
                 <span>View &amp; Download CV</span>
               </motion.button>
 
               {/* Contact Me */}
               <motion.button
                 onClick={() => scrollTo("contact")}
-                className="group px-7 py-3.5 rounded-xl font-semibold text-sm text-slate-200 glass hover:border-cyan-400/50 hover:text-cyan-300 transition-all flex items-center gap-2 cursor-pointer"
+                className="group px-7 py-3.5 rounded-xl font-semibold text-sm text-slate-800 glass border border-slate-200 bg-white/80 hover:border-cyan-400 hover:text-cyan-700 hover:bg-cyan-50/50 transition-all flex items-center gap-2 cursor-pointer shadow-sm"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
-                <Mail size={16} className="text-cyan-400" />
+                <Mail size={16} className="text-cyan-600" />
                 <span>Contact Me</span>
               </motion.button>
             </div>
 
             {/* Social Links & Quick Info */}
-            <div className="flex items-center justify-center lg:justify-start gap-4 text-slate-400">
+            <div className="flex items-center justify-center lg:justify-start gap-4 text-slate-600">
               <span className="text-xs uppercase tracking-wider text-slate-500 font-semibold">
                 Find me on:
               </span>
@@ -220,7 +220,7 @@ export default function Hero() {
                 href="https://github.com/Sangmeshwar-Naik"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all shadow-sm"
+                className="w-11 h-11 rounded-xl glass border border-slate-200 bg-white/80 flex items-center justify-center text-slate-700 hover:text-slate-950 hover:border-cyan-500 hover:bg-cyan-50/50 transition-all shadow-sm"
                 aria-label="GitHub Profile"
               >
                 <FaGithub size={18} />
@@ -229,7 +229,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/sangmeshwar-naik-555828385"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 hover:bg-[#0a66c2]/10 transition-all shadow-sm"
+                className="w-11 h-11 rounded-xl glass border border-slate-200 bg-white/80 flex items-center justify-center text-slate-700 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 hover:bg-[#0a66c2]/10 transition-all shadow-sm"
                 aria-label="LinkedIn Profile"
               >
                 <FaLinkedin size={18} />
@@ -275,8 +275,8 @@ export default function Hero() {
                   onClick={() => setCardMode("lanyard")}
                   className={`px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 shadow-md ${
                     cardMode === "lanyard"
-                      ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-cyan-500/25 scale-105 border border-cyan-400/40"
-                      : "glass text-slate-400 hover:text-white border border-white/10"
+                      ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-cyan-500/25 scale-105 border border-cyan-400/40"
+                      : "glass text-slate-700 bg-white/80 hover:text-slate-900 border border-slate-200"
                   }`}
                   title="Switch to 3D Physics Lanyard Card"
                 >
@@ -287,8 +287,8 @@ export default function Hero() {
                   onClick={() => setCardMode("classic")}
                   className={`px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-1.5 shadow-md ${
                     cardMode === "classic"
-                      ? "bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-purple-500/25 scale-105 border border-purple-400/40"
-                      : "glass text-slate-400 hover:text-white border border-white/10"
+                      ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-purple-500/25 scale-105 border border-purple-400/40"
+                      : "glass text-slate-700 bg-white/80 hover:text-slate-900 border border-slate-200"
                   }`}
                   title="Switch to Classic Card View"
                 >
@@ -304,14 +304,14 @@ export default function Hero() {
                     frontImage="/profile-card.png"
                     backImage="/profile-card.png"
                     imageFit="contain"
-                    cardColor="#080b1f"
+                    cardColor="#0f172a"
                     orientation="square"
                     finish="glossy"
                     cornerRadius={0.08}
                     size={0.68}
                     anchor="center"
                     strapLength={0.42}
-                    strapColor="#0a0f2d"
+                    strapColor="#1e293b"
                     strapWidth={0.65}
                     metal="gold"
                     gravity={1}
@@ -324,31 +324,31 @@ export default function Hero() {
 
                   {/* Floating Satellite Badge 1 (Top Right) - Spacious Rounded Pill */}
                   <motion.div
-                    className="absolute top-20 -right-2 sm:top-24 sm:-right-4 z-20 glass px-4 sm:px-4.5 py-2.5 sm:py-3 rounded-2xl border border-cyan-500/40 flex items-center gap-2.5 sm:gap-3 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                    className="absolute top-20 -right-2 sm:top-24 sm:-right-4 z-20 glass px-4 sm:px-4.5 py-2.5 sm:py-3 rounded-2xl border border-cyan-500/30 bg-white/95 flex items-center gap-2.5 sm:gap-3 shadow-xl pointer-events-none"
                     animate={{ y: [0, -6, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
-                      <Brain size={16} className="text-cyan-400" />
+                      <Brain size={16} className="text-cyan-600" />
                     </div>
                     <div className="text-left">
-                      <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Focus</p>
-                      <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Deep Learning</p>
+                      <p className="text-[9px] sm:text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Focus</p>
+                      <p className="text-xs sm:text-sm font-bold text-slate-900 whitespace-nowrap mt-0.5">Deep Learning</p>
                     </div>
                   </motion.div>
 
                   {/* Floating Satellite Badge 2 (Bottom Left) - Spacious Rounded Pill */}
                   <motion.div
-                    className="absolute bottom-10 -left-2 sm:bottom-12 sm:-left-4 z-20 glass px-4 sm:px-4.5 py-2.5 sm:py-3 rounded-2xl border border-purple-500/40 flex items-center gap-2.5 sm:gap-3 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                    className="absolute bottom-10 -left-2 sm:bottom-12 sm:-left-4 z-20 glass px-4 sm:px-4.5 py-2.5 sm:py-3 rounded-2xl border border-purple-500/30 bg-white/95 flex items-center gap-2.5 sm:gap-3 shadow-xl pointer-events-none"
                     animate={{ y: [0, 6, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                   >
                     <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center shrink-0">
-                      <Cpu size={16} className="text-purple-400" />
+                      <Cpu size={16} className="text-purple-600" />
                     </div>
                     <div className="text-left">
-                      <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Domain</p>
-                      <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Computer Vision</p>
+                      <p className="text-[9px] sm:text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Domain</p>
+                      <p className="text-xs sm:text-sm font-bold text-slate-900 whitespace-nowrap mt-0.5">Computer Vision</p>
                     </div>
                   </motion.div>
                 </div>
@@ -361,14 +361,14 @@ export default function Hero() {
                 >
                   <div className="relative w-full max-w-[340px] sm:max-w-[430px]">
                     {/* Central Profile Card with portrait photo and monogram logo */}
-                    <div className="relative rounded-3xl p-6 sm:p-9 pt-8 sm:pt-10 border border-blue-500/30 bg-[#080b1f]/95 backdrop-blur-2xl w-full shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] overflow-hidden">
+                    <div className="relative rounded-3xl p-6 sm:p-9 pt-8 sm:pt-10 border border-slate-200/90 bg-white/95 backdrop-blur-2xl w-full shadow-[0_20px_50px_rgba(0,0,0,0.08)] overflow-hidden">
                       {/* Dotted Matrix Background Pattern across Upper Section */}
-                      <div className="absolute inset-x-0 top-0 h-3/4 bg-[radial-gradient(#38bdf8_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-25 pointer-events-none" />
+                      <div className="absolute inset-x-0 top-0 h-3/4 bg-[radial-gradient(#0891b2_1.5px,transparent_1.5px)] [background-size:18px_18px] opacity-15 pointer-events-none" />
 
                       {/* Inner flex column with generous top space above photo */}
                       <div className="relative z-10 pt-4 pb-1 sm:pt-6 flex flex-col items-center text-center">
                         {/* Portrait with Glowing Gold Border and Generous Top Clearance */}
-                        <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_32px_rgba(251,191,36,0.5)] mb-3.5 bg-white shrink-0">
+                        <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-[2.5px] border-amber-400 shadow-[0_0_28px_rgba(251,191,36,0.4)] mb-3.5 bg-white shrink-0">
                           <Image
                             src="/profile.jpg"
                             alt="Sangmeshwar Anil Naik"
@@ -380,7 +380,7 @@ export default function Hero() {
                         </div>
 
                         {/* Monogram Emblem Badge */}
-                        <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-amber-400/80 shadow-[0_0_20px_rgba(251,191,36,0.45)] bg-[#070814] mb-3.5 shrink-0">
+                        <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-amber-400/80 shadow-[0_0_16px_rgba(251,191,36,0.35)] bg-slate-900 mb-3.5 shrink-0">
                           <Image
                             src="/logo.jpg"
                             alt="SAN Monogram"
@@ -391,31 +391,31 @@ export default function Hero() {
                         </div>
 
                         {/* Name & Academic Credentials */}
-                        <h3 className="text-2xl sm:text-[26px] font-black text-white tracking-tight leading-snug">
+                        <h3 className="text-2xl sm:text-[26px] font-black text-slate-950 tracking-tight leading-snug">
                           Sangmeshwar Anil Naik
                         </h3>
-                        <p className="text-sm sm:text-base font-semibold text-cyan-400 mt-1 mb-5">
+                        <p className="text-sm sm:text-base font-semibold text-cyan-600 mt-1 mb-5">
                           B.E. AIML @ VTU
                         </p>
 
                         {/* Status Strip Pill */}
-                        <div className="w-full py-3 px-5 rounded-xl bg-[#030617]/90 border border-white/10 flex items-center justify-between text-xs sm:text-sm text-slate-300 font-mono mb-4 shadow-inner">
-                          <span className="flex items-center gap-2 text-emerald-400 font-medium">
-                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                        <div className="w-full py-3 px-5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs sm:text-sm text-slate-700 font-mono mb-4 shadow-sm">
+                          <span className="flex items-center gap-2 text-emerald-600 font-bold">
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                             CGPA 8.4 / 10
                           </span>
-                          <span className="text-slate-300">Mangalore, KA</span>
+                          <span className="text-slate-600 font-medium">Mangalore, KA</span>
                         </div>
 
                         {/* Bottom Integrated Specification Pills */}
-                        <div className="w-full pt-4 border-t border-white/10 grid grid-cols-2 gap-3.5 text-center">
-                          <div className="py-3 px-3.5 rounded-xl bg-[#030617]/75 border border-white/10 shadow-sm">
-                            <span className="text-xs text-slate-400 block font-medium">Specialization</span>
-                            <p className="text-sm sm:text-base font-bold text-white mt-1">AI &amp; ML</p>
+                        <div className="w-full pt-4 border-t border-slate-100 grid grid-cols-2 gap-3.5 text-center">
+                          <div className="py-3 px-3.5 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
+                            <span className="text-xs text-slate-500 block font-medium">Specialization</span>
+                            <p className="text-sm sm:text-base font-bold text-slate-900 mt-1">AI &amp; ML</p>
                           </div>
-                          <div className="py-3 px-3.5 rounded-xl bg-[#030617]/75 border border-white/10 shadow-sm">
-                            <span className="text-xs text-slate-400 block font-medium">Graduation</span>
-                            <p className="text-sm sm:text-base font-bold text-cyan-400 mt-1">2027</p>
+                          <div className="py-3 px-3.5 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
+                            <span className="text-xs text-slate-500 block font-medium">Graduation</span>
+                            <p className="text-sm sm:text-base font-bold text-cyan-600 mt-1">2027</p>
                           </div>
                         </div>
                       </div>
@@ -423,31 +423,31 @@ export default function Hero() {
 
                     {/* Floating Satellite Badge 1 (Top Right) */}
                     <motion.div
-                      className="absolute -top-3 -right-2 sm:-top-5 sm:-right-4 z-20 glass px-4 sm:px-4.5 py-2.5 sm:py-3 rounded-2xl border border-cyan-500/40 flex items-center gap-2.5 sm:gap-3 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                      className="absolute -top-3 -right-2 sm:-top-5 sm:-right-4 z-20 glass px-4 sm:px-4.5 py-2.5 sm:py-3 rounded-2xl border border-cyan-500/30 bg-white/95 flex items-center gap-2.5 sm:gap-3 shadow-xl pointer-events-none"
                       animate={{ y: [0, -6, 0] }}
                       transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                     >
                       <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0">
-                        <Brain size={16} className="text-cyan-400" />
+                        <Brain size={16} className="text-cyan-600" />
                       </div>
                       <div className="text-left">
-                        <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Focus</p>
-                        <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Deep Learning</p>
+                        <p className="text-[9px] sm:text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Focus</p>
+                        <p className="text-xs sm:text-sm font-bold text-slate-900 whitespace-nowrap mt-0.5">Deep Learning</p>
                       </div>
                     </motion.div>
 
                     {/* Floating Satellite Badge 2 (Bottom Left) */}
                     <motion.div
-                      className="absolute -bottom-3 -left-2 sm:-bottom-5 sm:-left-4 z-20 glass px-4 sm:px-4.5 py-2.5 sm:py-3 rounded-2xl border border-purple-500/40 flex items-center gap-2.5 sm:gap-3 shadow-[0_12px_35px_rgba(0,0,0,0.65)] pointer-events-none"
+                      className="absolute -bottom-3 -left-2 sm:-bottom-5 sm:-left-4 z-20 glass px-4 sm:px-4.5 py-2.5 sm:py-3 rounded-2xl border border-purple-500/30 bg-white/95 flex items-center gap-2.5 sm:gap-3 shadow-xl pointer-events-none"
                       animate={{ y: [0, 6, 0] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                     >
                       <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center shrink-0">
-                        <Cpu size={16} className="text-purple-400" />
+                        <Cpu size={16} className="text-purple-600" />
                       </div>
                       <div className="text-left">
-                        <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold tracking-wider leading-none">Domain</p>
-                        <p className="text-xs sm:text-sm font-bold text-white whitespace-nowrap mt-0.5">Computer Vision</p>
+                        <p className="text-[9px] sm:text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Domain</p>
+                        <p className="text-xs sm:text-sm font-bold text-slate-900 whitespace-nowrap mt-0.5">Computer Vision</p>
                       </div>
                     </motion.div>
                   </div>

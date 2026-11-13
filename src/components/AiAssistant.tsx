@@ -608,32 +608,32 @@ export default function AiAssistant() {
             if (soundEnabled) playSynthesizedSound("pop");
             setIsOpen((prev) => !prev);
           }}
-          className="relative group p-3.5 sm:p-4 rounded-2xl glass border border-cyan-500/40 shadow-2xl shadow-cyan-500/30 bg-[#07091e]/95 text-white flex items-center gap-3 cursor-pointer hover:border-cyan-400 hover:shadow-cyan-400/40 transition-all"
+          className="relative group p-3.5 sm:p-4 rounded-2xl bg-white/95 border border-slate-200 shadow-xl text-slate-800 flex items-center gap-3 cursor-pointer hover:border-cyan-400 hover:shadow-cyan-400/20 transition-all"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           aria-label="Open Professional AI Assistant"
         >
           {/* Luminous Pulsing Beacon */}
           <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-cyan-400 animate-ping opacity-75" />
-          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-[#07091e]" />
+          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-cyan-500 border-2 border-white" />
 
           {/* Holographic Glowing Avatar */}
           <div className="relative w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 p-0.5 shadow-md flex items-center justify-center shrink-0">
-            <div className="w-full h-full rounded-xl bg-[#07091e] flex items-center justify-center text-cyan-300 group-hover:scale-105 transition-transform">
-              <Bot size={20} className="text-cyan-400 group-hover:text-white transition-colors" />
+            <div className="w-full h-full rounded-xl bg-white flex items-center justify-center text-cyan-600 group-hover:scale-105 transition-transform">
+              <Bot size={20} className="text-cyan-600 group-hover:text-cyan-700 transition-colors" />
             </div>
           </div>
 
           {/* Text Labels */}
           <div className="text-left hidden sm:block pr-1">
             <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold text-white font-mono tracking-tight">SAN-AI</span>
-              <span className="px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 text-[9px] font-mono font-semibold border border-cyan-500/30">
+              <span className="text-xs font-bold text-slate-900 font-mono tracking-tight">SAN-AI</span>
+              <span className="px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-700 text-[9px] font-mono font-semibold border border-cyan-200">
                 ACTIVE
               </span>
             </div>
-            <p className="text-[10px] text-slate-300 font-mono flex items-center gap-1 mt-0.5">
-              <Sparkles size={10} className="text-cyan-400" />
+            <p className="text-[10px] text-slate-500 font-mono flex items-center gap-1 mt-0.5">
+              <Sparkles size={10} className="text-cyan-600" />
               <span>Ask AI Assistant</span>
             </p>
           </div>
@@ -654,7 +654,7 @@ export default function AiAssistant() {
           >
             {/* Backdrop for Mobile or Fullscreen */}
             <motion.div
-              className={`fixed inset-0 bg-black/70 backdrop-blur-md ${
+              className={`fixed inset-0 bg-slate-900/60 backdrop-blur-md ${
                 !isFullscreen ? "sm:hidden" : ""
               }`}
               initial={{ opacity: 0 }}
@@ -665,7 +665,7 @@ export default function AiAssistant() {
 
             {/* Chat Box Container */}
             <motion.div
-              className={`relative glass border border-cyan-500/40 shadow-2xl shadow-cyan-500/30 bg-[#070818]/98 flex flex-col overflow-hidden ${
+              className={`relative border border-slate-200 shadow-2xl bg-white/98 text-slate-900 flex flex-col overflow-hidden ${
                 isFullscreen
                   ? "w-full h-full rounded-2xl"
                   : "w-full sm:w-[440px] max-h-[85vh] sm:max-h-[640px] h-[580px] rounded-3xl"
@@ -676,35 +676,35 @@ export default function AiAssistant() {
               transition={{ duration: 0.25, ease: "easeOut" }}
             >
               {/* Header Bar */}
-              <div className="p-4 border-b border-white/10 flex items-center justify-between bg-black/40">
+              <div className="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
                 <div className="flex items-center gap-3">
                   <div className="relative w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 p-0.5 shadow-md shrink-0">
-                    <div className="w-full h-full rounded-xl bg-[#07091e] flex items-center justify-center text-cyan-300">
+                    <div className="w-full h-full rounded-xl bg-white flex items-center justify-center text-cyan-600">
                       <Bot size={18} />
                     </div>
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="text-sm font-bold text-white font-mono flex items-center gap-1.5">
+                      <h3 className="text-sm font-bold text-slate-950 font-mono flex items-center gap-1.5">
                         <span>Sangmeshwar AI</span>
                       </h3>
-                      <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[9px] font-mono text-emerald-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-[9px] font-mono text-emerald-700 font-semibold">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         <span>Online</span>
                       </span>
                     </div>
-                    <p className="text-[10px] text-slate-400 font-mono">
+                    <p className="text-[10px] text-slate-500 font-mono">
                       VTU AIML • Medical Vision • Quantum ML
                     </p>
                   </div>
                 </div>
 
                 {/* Control Action Icons */}
-                <div className="flex items-center gap-1 text-slate-400">
+                <div className="flex items-center gap-1 text-slate-500">
                   {/* Sound Toggle */}
                   <button
                     onClick={() => setSoundEnabled((prev) => !prev)}
-                    className="p-1.5 rounded-lg hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer"
+                    className="p-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-950 transition-colors cursor-pointer"
                     title={soundEnabled ? "Mute audio cues" : "Enable audio cues"}
                   >
                     {soundEnabled ? <Volume2 size={15} /> : <VolumeX size={15} />}
@@ -713,7 +713,7 @@ export default function AiAssistant() {
                   {/* Reset Chat */}
                   <button
                     onClick={handleResetChat}
-                    className="p-1.5 rounded-lg hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer"
+                    className="p-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-950 transition-colors cursor-pointer"
                     title="Reset conversation"
                   >
                     <RotateCcw size={15} />
@@ -722,7 +722,7 @@ export default function AiAssistant() {
                   {/* Fullscreen Toggle (Desktop) */}
                   <button
                     onClick={() => setIsFullscreen((prev) => !prev)}
-                    className="hidden sm:inline-flex p-1.5 rounded-lg hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer"
+                    className="hidden sm:inline-flex p-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-950 transition-colors cursor-pointer"
                     title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
                   >
                     {isFullscreen ? <Minimize2 size={15} /> : <Maximize2 size={15} />}
@@ -731,7 +731,7 @@ export default function AiAssistant() {
                   {/* Close */}
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-1.5 rounded-lg hover:bg-white/[0.08] hover:text-white transition-colors cursor-pointer ml-1"
+                    className="p-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-950 transition-colors cursor-pointer ml-1"
                     title="Close Assistant"
                   >
                     <X size={17} />
@@ -740,7 +740,7 @@ export default function AiAssistant() {
               </div>
 
               {/* Chat Messages Feed */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs">
+              <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs bg-slate-50/50">
                 {messages.map((msg) => (
                   <div
                     key={msg.id}
@@ -749,10 +749,10 @@ export default function AiAssistant() {
                     }`}
                   >
                     <div
-                      className={`max-w-[88%] p-3.5 sm:p-4 rounded-2xl leading-relaxed whitespace-pre-line shadow-lg ${
+                      className={`max-w-[88%] p-3.5 sm:p-4 rounded-2xl leading-relaxed whitespace-pre-line shadow-sm ${
                         msg.sender === "user"
-                          ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium shadow-cyan-500/20"
-                          : "bg-white/[0.04] border border-white/10 text-slate-200 font-sans"
+                          ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-medium shadow-md shadow-cyan-500/20"
+                          : "bg-white border border-slate-200 text-slate-800 font-sans"
                       }`}
                     >
                       {/* Formatted Text Content */}
@@ -760,7 +760,7 @@ export default function AiAssistant() {
 
                       {/* Interactive Action Chips inside AI message */}
                       {msg.actions && msg.actions.length > 0 && (
-                        <div className="mt-3 pt-3 border-t border-white/10 flex flex-wrap gap-1.5">
+                        <div className="mt-3 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
                           {msg.actions.map((act, i) => {
                             const ActIcon = act.icon || ArrowRight;
                             if (act.href) {
@@ -770,7 +770,7 @@ export default function AiAssistant() {
                                   href={act.href}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/25 hover:border-cyan-400 text-[11px] font-mono font-semibold transition-all shadow-sm"
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-800 hover:bg-cyan-100 hover:border-cyan-400 text-[11px] font-mono font-semibold transition-all shadow-sm"
                                 >
                                   <span>{act.label}</span>
                                   <ActIcon size={11} />
@@ -781,7 +781,7 @@ export default function AiAssistant() {
                               <button
                                 key={i}
                                 onClick={act.onClick}
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/25 hover:border-cyan-400 text-[11px] font-mono font-semibold transition-all cursor-pointer shadow-sm"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-800 hover:bg-cyan-100 hover:border-cyan-400 text-[11px] font-mono font-semibold transition-all cursor-pointer shadow-sm"
                               >
                                 <span>{act.label}</span>
                                 <ActIcon size={11} />
@@ -793,20 +793,20 @@ export default function AiAssistant() {
                     </div>
 
                     {/* Metadata strip (time, copy, speak) */}
-                    <div className="flex items-center gap-2 text-[9px] text-slate-500 mt-1 font-mono px-1">
+                    <div className="flex items-center gap-2 text-[9px] text-slate-400 mt-1 font-mono px-1">
                       <span>{msg.time}</span>
                       {msg.sender === "ai" && (
                         <>
                           <span>•</span>
                           <button
                             onClick={() => handleCopyMessage(msg.id, msg.text)}
-                            className="hover:text-cyan-400 transition-colors flex items-center gap-0.5 cursor-pointer"
+                            className="hover:text-cyan-600 transition-colors flex items-center gap-0.5 cursor-pointer"
                             title="Copy response"
                           >
                             {copiedId === msg.id ? (
                               <>
-                                <Check size={10} className="text-emerald-400" />
-                                <span className="text-emerald-400">Copied</span>
+                                <Check size={10} className="text-emerald-600" />
+                                <span className="text-emerald-600">Copied</span>
                               </>
                             ) : (
                               <>
@@ -818,10 +818,10 @@ export default function AiAssistant() {
                           <span>•</span>
                           <button
                             onClick={() => handleSpeak(msg.id, msg.text)}
-                            className="hover:text-cyan-400 transition-colors flex items-center gap-0.5 cursor-pointer"
+                            className="hover:text-cyan-600 transition-colors flex items-center gap-0.5 cursor-pointer"
                             title={speakingId === msg.id ? "Stop voice" : "Read aloud"}
                           >
-                            <Volume2 size={10} className={speakingId === msg.id ? "text-cyan-400 animate-pulse" : ""} />
+                            <Volume2 size={10} className={speakingId === msg.id ? "text-cyan-600 animate-pulse" : ""} />
                             <span>{speakingId === msg.id ? "Stop" : "Listen"}</span>
                           </button>
                         </>
@@ -832,11 +832,11 @@ export default function AiAssistant() {
 
                 {/* Live Neural Typing Indicator */}
                 {isTyping && (
-                  <div className="flex items-center gap-2 p-3.5 rounded-2xl bg-white/[0.04] border border-cyan-500/20 w-fit text-cyan-400">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce" />
-                    <span className="w-2 h-2 rounded-full bg-purple-400 animate-bounce [animation-delay:0.2s]" />
-                    <span className="w-2 h-2 rounded-full bg-pink-400 animate-bounce [animation-delay:0.4s]" />
-                    <span className="text-[10px] font-mono text-slate-400 ml-1">
+                  <div className="flex items-center gap-2 p-3.5 rounded-2xl bg-white border border-cyan-300 w-fit text-cyan-600 shadow-sm">
+                    <span className="w-2 h-2 rounded-full bg-cyan-500 animate-bounce" />
+                    <span className="w-2 h-2 rounded-full bg-purple-500 animate-bounce [animation-delay:0.2s]" />
+                    <span className="w-2 h-2 rounded-full bg-pink-500 animate-bounce [animation-delay:0.4s]" />
+                    <span className="text-[10px] font-mono text-slate-500 ml-1">
                       Analyzing portfolio neural graph...
                     </span>
                   </div>
@@ -846,7 +846,7 @@ export default function AiAssistant() {
               </div>
 
               {/* Quick Topic Categories & Suggestions Strip */}
-              <div className="border-t border-white/10 bg-black/30 p-2.5">
+              <div className="border-t border-slate-200 bg-slate-50 p-2.5">
                 {/* Category Pills */}
                 <div className="flex gap-1.5 overflow-x-auto pb-2 scrollbar-none">
                   {KNOWLEDGE_CATEGORIES.map((cat, idx) => (
@@ -855,8 +855,8 @@ export default function AiAssistant() {
                       onClick={() => setSelectedCategory(idx)}
                       className={`whitespace-nowrap px-3 py-1.5 rounded-xl text-[10px] font-mono font-semibold transition-all shrink-0 cursor-pointer flex items-center gap-1 ${
                         selectedCategory === idx
-                          ? "bg-cyan-500/25 border border-cyan-400/50 text-cyan-300"
-                          : "bg-white/[0.03] border border-white/10 text-slate-400 hover:text-white"
+                          ? "bg-cyan-100 border border-cyan-300 text-cyan-800 shadow-sm"
+                          : "bg-white border border-slate-200 text-slate-600 hover:text-slate-950"
                       }`}
                     >
                       <span>{cat.icon}</span>
@@ -872,9 +872,9 @@ export default function AiAssistant() {
                       <button
                         key={pIdx}
                         onClick={() => handleSend(prompt)}
-                        className="whitespace-nowrap px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-500/10 text-[10px] text-slate-300 hover:text-white font-mono transition-all shrink-0 cursor-pointer flex items-center gap-1"
+                        className="whitespace-nowrap px-3 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-cyan-400 hover:bg-cyan-50 text-[10px] text-slate-700 hover:text-slate-950 font-mono transition-all shrink-0 cursor-pointer flex items-center gap-1 shadow-sm"
                       >
-                        <Zap size={10} className="text-cyan-400 shrink-0" />
+                        <Zap size={10} className="text-cyan-600 shrink-0" />
                         <span>{prompt}</span>
                       </button>
                     )
@@ -883,19 +883,19 @@ export default function AiAssistant() {
               </div>
 
               {/* Input Command Bar */}
-              <div className="p-3 border-t border-white/10 bg-black/50 flex items-center gap-2">
+              <div className="p-3 border-t border-slate-200 bg-white flex items-center gap-2">
                 <input
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSend()}
                   placeholder="Ask about AI models, CGPA, stack, certifications..."
-                  className="flex-1 bg-white/[0.04] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400/60 focus:ring-1 focus:ring-cyan-500/40 font-sans transition-all"
+                  className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 font-sans transition-all"
                 />
                 <button
                   onClick={() => handleSend()}
                   disabled={!input.trim() || isTyping}
-                  className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 flex items-center justify-center text-white disabled:opacity-40 hover:opacity-95 hover:scale-105 active:scale-95 transition-all cursor-pointer shrink-0 shadow-lg shadow-cyan-500/25"
+                  className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 flex items-center justify-center text-white disabled:opacity-40 hover:opacity-95 hover:scale-105 active:scale-95 transition-all cursor-pointer shrink-0 shadow-md shadow-cyan-500/20"
                   aria-label="Send query"
                 >
                   <Send size={15} />

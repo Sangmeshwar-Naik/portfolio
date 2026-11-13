@@ -210,8 +210,8 @@ export default function Skills() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-none glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10 mx-auto">
-            <Sparkles size={13} className="text-cyan-400" />
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-700 bg-cyan-50/70 mb-4 shadow-sm mx-auto">
+            <Sparkles size={13} className="text-cyan-600" />
             Technologies &amp; Expertise
           </div>
           <h2 className="sr-only">Orbital Tech Radar</h2>
@@ -221,8 +221,8 @@ export default function Skills() {
               highlightText="Tech Radar"
               fontWeight={900}
               fontSize={75}
-              color="#ffffff"
-              accentColor="#00f5ff"
+              color="#0f172a"
+              accentColor="#0891b2"
               dashLength={4}
               dashGap={2}
               specks={12}
@@ -237,7 +237,7 @@ export default function Skills() {
               align="center"
             />
           </div>
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-center">
+          <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-center font-medium">
             Click any rotating category node on the orbit below to project and explore its verified technical skills.
           </p>
         </motion.div>
@@ -250,17 +250,17 @@ export default function Skills() {
           <div className="flex items-center gap-3 mb-6 z-20">
             <button
               onClick={() => setIsRotating(!isRotating)}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none glass border border-white/10 text-xs font-semibold text-slate-300 hover:text-white hover:border-cyan-500/40 transition-all cursor-pointer shadow-lg"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl glass border border-slate-200 bg-white/90 text-xs font-semibold text-slate-700 hover:text-slate-950 hover:border-cyan-400 transition-all cursor-pointer shadow-sm"
               title={isRotating ? "Pause Orbit" : "Resume Orbit"}
             >
               {isRotating ? (
                 <>
-                  <Pause size={12} className="text-cyan-400" />
+                  <Pause size={12} className="text-cyan-600" />
                   <span>Pause Circular Orbit</span>
                 </>
               ) : (
                 <>
-                  <Play size={12} className="text-emerald-400" />
+                  <Play size={12} className="text-emerald-600" />
                   <span>Resume Circular Orbit</span>
                 </>
               )}
@@ -275,23 +275,23 @@ export default function Skills() {
             {/* Outer Decorative Track Rings */}
             <div className="absolute inset-0 rounded-full border border-dashed border-cyan-500/25 pointer-events-none" />
             <div className="absolute inset-8 rounded-full border border-purple-500/20 pointer-events-none" />
-            <div className="absolute inset-16 rounded-full border border-white/5 pointer-events-none" />
+            <div className="absolute inset-16 rounded-full border border-slate-200 pointer-events-none" />
 
             {/* Glowing Central Reactor Hub */}
             <button
               onClick={() => handleOpenCategory(allCategoriesNode)}
-              className="relative z-10 w-28 h-28 sm:w-36 sm:h-36 rounded-full glass border border-cyan-500/40 flex flex-col items-center justify-center text-center p-3 shadow-2xl shadow-cyan-500/30 bg-[#080816]/95 backdrop-blur-xl hover:scale-105 hover:border-cyan-400 transition-all cursor-pointer group"
+              className="relative z-10 w-28 h-28 sm:w-36 sm:h-36 rounded-full glass border border-cyan-400 flex flex-col items-center justify-center text-center p-3 shadow-xl bg-white/95 backdrop-blur-xl hover:scale-105 hover:border-cyan-500 transition-all cursor-pointer group"
               title="Click to view all 35 skills"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping mb-1.5" />
-              <Cpu size={24} className="text-cyan-400 group-hover:rotate-90 transition-transform duration-500" />
-              <span className="text-[11px] sm:text-xs font-bold text-white mt-1 leading-tight uppercase font-mono group-hover:text-cyan-300 transition-colors">
+              <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-ping mb-1.5" />
+              <Cpu size={24} className="text-cyan-600 group-hover:rotate-90 transition-transform duration-500" />
+              <span className="text-[11px] sm:text-xs font-bold text-slate-950 mt-1 leading-tight uppercase font-mono group-hover:text-cyan-700 transition-colors">
                 Tech Orbit
               </span>
-              <span className="text-[10px] text-slate-400 font-mono mt-0.5">
+              <span className="text-[10px] text-slate-500 font-mono mt-0.5">
                 35 Skills
               </span>
-              <span className="text-[9px] text-cyan-400 font-mono opacity-80 group-hover:opacity-100">
+              <span className="text-[9px] text-cyan-600 font-mono opacity-80 group-hover:opacity-100 font-semibold">
                 Explore All
               </span>
             </button>
@@ -341,10 +341,10 @@ export default function Skills() {
                     >
                       <button
                         onClick={() => handleOpenCategory(category)}
-                        className="group relative p-3.5 sm:p-4.5 rounded-2xl glass border border-white/15 hover:border-cyan-400 transition-all duration-300 flex items-center gap-2.5 sm:gap-3 cursor-pointer shadow-xl bg-[#090918]/95 hover:scale-108 hover:shadow-cyan-500/30 min-w-[145px] sm:min-w-[170px]"
+                        className="group relative p-3.5 sm:p-4.5 rounded-2xl glass border border-slate-200/90 hover:border-cyan-400 transition-all duration-300 flex items-center gap-2.5 sm:gap-3 cursor-pointer shadow-lg bg-white/95 hover:scale-108 hover:shadow-xl min-w-[145px] sm:min-w-[170px]"
                       >
                         <div
-                          className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform"
+                          className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform"
                           style={{
                             backgroundColor: `${category.color}20`,
                             color: category.color,
@@ -354,12 +354,12 @@ export default function Skills() {
                         </div>
 
                         <div className="text-left pr-1">
-                          <span className="text-xs sm:text-[13px] font-bold text-white font-mono block whitespace-nowrap group-hover:text-cyan-300 transition-colors">
+                          <span className="text-xs sm:text-[13px] font-bold text-slate-900 font-mono block whitespace-nowrap group-hover:text-cyan-700 transition-colors">
                             {category.title}
                           </span>
-                          <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono flex items-center gap-1 mt-0.5">
+                          <span className="text-[10px] sm:text-[11px] text-slate-500 font-mono flex items-center gap-1 mt-0.5">
                             <span>{category.skills.length} skills</span>
-                            <ChevronRight size={11} className="text-cyan-400 group-hover:translate-x-0.5 transition-transform" />
+                            <ChevronRight size={11} className="text-cyan-600 group-hover:translate-x-0.5 transition-transform" />
                           </span>
                         </div>
                       </button>
@@ -372,8 +372,8 @@ export default function Skills() {
 
           {/* Prompt Banner below the Orbit */}
           <div className="mt-8 text-center">
-            <p className="text-xs sm:text-sm text-slate-400 font-mono flex items-center justify-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+            <p className="text-xs sm:text-sm text-slate-500 font-mono flex items-center justify-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-ping" />
               <span>Click any rotating node to open its verified skills deck</span>
             </p>
           </div>
@@ -389,7 +389,7 @@ export default function Skills() {
               <button
                 key={category.id}
                 onClick={() => handleOpenCategory(category)}
-                className="group p-6 sm:p-7 rounded-2xl sm:rounded-3xl border border-white/10 bg-[#070818]/90 backdrop-blur-xl hover:border-cyan-400/50 transition-all text-left flex flex-col justify-between hover:bg-cyan-500/[0.05] hover:-translate-y-1 shadow-xl cursor-pointer relative overflow-hidden min-h-[175px]"
+                className="group p-6 sm:p-7 rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-cyan-400 transition-all text-left flex flex-col justify-between hover:bg-cyan-50/30 hover:-translate-y-1 shadow-md cursor-pointer relative overflow-hidden min-h-[175px]"
               >
                 {/* Subtle corner glow */}
                 <div
@@ -400,7 +400,7 @@ export default function Skills() {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
+                      className="w-11 h-11 rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform"
                       style={{
                         backgroundColor: `${category.color}20`,
                         color: category.color,
@@ -408,21 +408,21 @@ export default function Skills() {
                     >
                       <Icon size={20} />
                     </div>
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-300 font-mono">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-mono">
                       {category.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-cyan-700 transition-colors leading-snug">
                     {category.title}
                   </h3>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs">
-                  <span className="text-slate-400 font-mono text-[11px]">
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span className="text-slate-500 font-mono text-[11px]">
                     {category.skills.length} Skills
                   </span>
-                  <span className="text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform flex items-center gap-0.5 text-xs">
+                  <span className="text-cyan-700 font-semibold group-hover:translate-x-1 transition-transform flex items-center gap-0.5 text-xs">
                     <span>Open</span>
                     <ChevronRight size={13} />
                   </span>
@@ -441,7 +441,7 @@ export default function Skills() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-black/85 backdrop-blur-md"
+              className="absolute inset-0 bg-slate-900/50 backdrop-blur-md"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -450,7 +450,7 @@ export default function Skills() {
 
             {/* Modal Dialog - Spacious Rounded Box */}
             <motion.div
-              className="relative z-10 w-full max-w-4xl rounded-3xl p-7 sm:p-9 border border-cyan-500/40 shadow-2xl shadow-cyan-500/25 bg-[#080816]/95 backdrop-blur-2xl max-h-[90vh] overflow-y-auto"
+              className="relative z-10 w-full max-w-4xl rounded-3xl p-7 sm:p-9 border border-slate-200 shadow-2xl bg-white/98 backdrop-blur-2xl max-h-[90vh] overflow-y-auto text-slate-900"
               initial={{ opacity: 0, scale: 0.94, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.94, y: 20 }}
@@ -459,17 +459,17 @@ export default function Skills() {
               {/* Close Button */}
               <button
                 onClick={() => setSelectedCategory(null)}
-                className="absolute top-5 right-5 p-2.5 rounded-xl bg-white/[0.05] border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                className="absolute top-5 right-5 p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-950 hover:bg-slate-200 transition-colors cursor-pointer"
                 aria-label="Close skills dialog"
               >
                 <X size={20} />
               </button>
 
               {/* Modal Category Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10 mb-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 mb-6">
                 <div className="flex items-center gap-4">
                   <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl"
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md"
                     style={{
                       backgroundColor: `${selectedCategory.color}25`,
                       color: selectedCategory.color,
@@ -479,14 +479,14 @@ export default function Skills() {
                   </div>
                   <div>
                     <div className="flex items-center gap-2.5">
-                      <h3 className="text-2xl font-black text-white tracking-tight">
+                      <h3 className="text-2xl font-black text-slate-950 tracking-tight">
                         {selectedCategory.title}
                       </h3>
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-mono">
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 border border-cyan-300 font-mono">
                         {selectedCategory.skills.length} Technologies
                       </span>
                     </div>
-                    <p className="text-xs text-slate-300 mt-1.5 max-w-xl">
+                    <p className="text-xs text-slate-600 mt-1.5 max-w-xl">
                       {selectedCategory.description}
                     </p>
                   </div>
@@ -500,8 +500,8 @@ export default function Skills() {
                       onClick={() => setSelectedCategory(cat)}
                       className={`px-3 py-1.5 rounded-xl text-[11px] font-mono font-semibold transition-all cursor-pointer ${
                         selectedCategory.id === cat.id
-                          ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40"
-                          : "text-slate-400 hover:text-white border border-white/5 bg-white/[0.02]"
+                          ? "bg-cyan-100 text-cyan-800 border border-cyan-400 font-bold"
+                          : "text-slate-600 hover:text-slate-950 border border-slate-200 bg-slate-50"
                       }`}
                     >
                       {cat.title}
@@ -534,34 +534,34 @@ export default function Skills() {
                       onMouseLeave={() => setHoveredSkill(null)}
                       className={`p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${
                         isHovered
-                          ? "border-cyan-400/60 bg-cyan-500/10 shadow-lg shadow-cyan-500/20 scale-102"
-                          : "border-white/10 bg-black/40 hover:border-white/20"
+                          ? "border-cyan-400 bg-cyan-50/60 shadow-md scale-102"
+                          : "border-slate-200 bg-slate-50/80 hover:border-slate-300"
                       }`}
                     >
                       <div>
                         <div className="flex items-center justify-between mb-3.5">
                           <div
-                            className="w-11 h-11 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center shadow-lg"
+                            className="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm"
                             style={{ color: skill.color }}
                           >
                             <SkillIcon size={20} />
                           </div>
 
-                          <span className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 uppercase">
+                          <span className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full bg-white border border-slate-200 text-slate-700 uppercase">
                             {skill.level}
                           </span>
                         </div>
 
-                        <h4 className="text-sm sm:text-base font-bold text-white leading-snug">
+                        <h4 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
                           {skill.name}
                         </h4>
                       </div>
 
-                      <div className="mt-3.5 pt-2.5 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-                        <span className="text-cyan-400/90 truncate">
+                      <div className="mt-3.5 pt-2.5 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+                        <span className="text-cyan-700 truncate font-semibold">
                           {skill.tag || selectedCategory.title}
                         </span>
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                        <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                       </div>
                     </motion.div>
                   );
@@ -569,13 +569,13 @@ export default function Skills() {
               </div>
 
               {/* Bottom Footer Action */}
-              <div className="mt-7 pt-4 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xs text-slate-400 font-mono">
+              <div className="mt-7 pt-4 border-t border-slate-200 flex items-center justify-between">
+                <span className="text-xs text-slate-500 font-mono">
                   Verified proficiency supported by academic coursework and project code.
                 </span>
                 <button
                   onClick={() => setSelectedCategory(null)}
-                  className="px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white glass border border-white/10 hover:border-cyan-400/40 transition-all cursor-pointer"
+                  className="px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:text-slate-950 glass border border-slate-200 hover:border-cyan-400 transition-all cursor-pointer"
                 >
                   Back to Orbit Wheel
                 </button>

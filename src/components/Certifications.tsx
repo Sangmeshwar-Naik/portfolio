@@ -260,8 +260,8 @@ export default function Certifications() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10 mx-auto">
-            <Award size={13} className="text-cyan-400" />
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-semibold text-cyan-700 mb-4 shadow-sm mx-auto">
+            <Award size={13} className="text-cyan-600" />
             Accreditations &amp; Honors
           </div>
           <h2 className="sr-only">Certifications &amp; Achievements</h2>
@@ -271,8 +271,8 @@ export default function Certifications() {
               highlightText="Achievements"
               fontWeight={900}
               fontSize={72}
-              color="#ffffff"
-              accentColor="#00f5ff"
+              color="#0f172a"
+              accentColor="#0284c7"
               dashLength={4}
               dashGap={2}
               specks={12}
@@ -287,7 +287,7 @@ export default function Certifications() {
               align="center"
             />
           </div>
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-center">
+          <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-center font-normal">
             Cryptographically verified credentials, proctored distinctions, and national technical awards.
           </p>
         </motion.div>
@@ -302,45 +302,45 @@ export default function Certifications() {
         >
           <div
             data-crosshair-target
-            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-cyan-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-cyan-500/5 group flex flex-col justify-center cursor-crosshair"
+            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-cyan-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
           >
-            <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:scale-105 transition-transform inline-block">
+            <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 group-hover:scale-105 transition-transform inline-block">
               8+
             </div>
-            <div className="text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wider mt-1.5">
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-1.5">
               Industry Certifications
             </div>
           </div>
           <div
             data-crosshair-target
-            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-purple-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-purple-500/5 group flex flex-col justify-center cursor-crosshair"
+            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-purple-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
           >
-            <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 group-hover:scale-105 transition-transform inline-block">
+            <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 group-hover:scale-105 transition-transform inline-block">
               929 &amp; 860
             </div>
-            <div className="text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wider mt-1.5">
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-1.5">
               Certiport Exam Scores
             </div>
           </div>
           <div
             data-crosshair-target
-            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-amber-500/5 group flex flex-col justify-center cursor-crosshair"
+            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
           >
-            <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 group-hover:scale-105 transition-transform inline-block">
+            <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 group-hover:scale-105 transition-transform inline-block">
               93%
             </div>
-            <div className="text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wider mt-1.5">
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-1.5">
               National C++ Challenge
             </div>
           </div>
           <div
             data-crosshair-target
-            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-white/10 bg-[#070818]/90 backdrop-blur-xl text-center hover:border-emerald-500/40 transition-all hover:-translate-y-1 shadow-xl shadow-emerald-500/5 group flex flex-col justify-center cursor-crosshair"
+            className="rounded-2xl p-6 sm:p-7 min-h-[140px] border border-slate-200/90 bg-white/95 backdrop-blur-xl text-center hover:border-emerald-500/40 transition-all hover:-translate-y-1 shadow-md group flex flex-col justify-center cursor-crosshair"
           >
-            <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 group-hover:scale-105 transition-transform inline-block">
+            <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 group-hover:scale-105 transition-transform inline-block">
               100%
             </div>
-            <div className="text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wider mt-1.5">
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-wider mt-1.5">
               Credly &amp; AICTE Verified
             </div>
           </div>
@@ -376,14 +376,14 @@ export default function Certifications() {
                 whileTap={{ scale: 0.97 }}
                 className={`relative px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                   isActive
-                    ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg shadow-cyan-500/25 scale-105 border border-cyan-400/40"
-                    : "glass border border-white/10 text-slate-300 hover:text-white hover:border-white/20 hover:bg-white/[0.04]"
+                    ? "bg-gradient-to-r from-cyan-600 to-purple-600 text-white shadow-md scale-105 border border-cyan-500/40"
+                    : "bg-white/90 border border-slate-200 text-slate-700 hover:text-slate-950 hover:bg-slate-50"
                 }`}
               >
                 {isActive && (
                   <motion.span
                     layoutId="activeCertFilter"
-                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 -z-10 shadow-lg shadow-cyan-500/25"
+                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-600 to-purple-600 -z-10 shadow-md"
                     transition={{ type: "spring", stiffness: 320, damping: 25 }}
                   />
                 )}
@@ -442,7 +442,7 @@ export default function Certifications() {
                       /* Main 3D Holographic Credential Dossier (Left Side) - Spacious Rounded Box */
                       <motion.div
                         data-crosshair-target
-                        className="w-full rounded-2xl sm:rounded-3xl p-8 sm:p-10 border border-white/10 hover:border-cyan-400/50 transition-all text-left group shadow-2xl relative bg-[#070818]/95 backdrop-blur-xl hover:shadow-cyan-500/20"
+                        className="w-full rounded-2xl sm:rounded-3xl p-8 sm:p-10 border border-slate-200/90 hover:border-cyan-400/50 transition-all text-left group shadow-xl relative bg-white/95 backdrop-blur-xl hover:shadow-2xl"
                         initial={{ opacity: 0, scale: 0.88, rotateX: 16, y: 35 }}
                         whileInView={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -455,52 +455,52 @@ export default function Certifications() {
                       >
                         {/* Shimmering Brand Light Orb */}
                         <div
-                          className="absolute -top-10 -right-10 w-44 h-44 blur-3xl opacity-15 group-hover:opacity-35 transition-opacity pointer-events-none rounded-3xl"
+                          className="absolute -top-10 -right-10 w-44 h-44 blur-3xl opacity-15 group-hover:opacity-30 transition-opacity pointer-events-none rounded-3xl"
                           style={{ backgroundColor: item.color }}
                         />
 
                         {/* Top Protocol Bar */}
                         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                           <div className="flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping" />
-                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 shadow-sm">
+                            <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-ping" />
+                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1 rounded-full bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-sm">
                               {item.type}
                             </span>
                           </div>
-                          <span className="text-xs font-bold text-amber-300 font-mono flex items-center gap-1 px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 shadow-sm">
+                          <span className="text-xs font-bold text-amber-800 font-mono flex items-center gap-1 px-3 py-1 rounded-full border border-amber-300 bg-amber-50 shadow-sm">
                             <span>★</span>
                             <span>{item.badge}</span>
                           </span>
                         </div>
 
                         {/* Title & Issuer */}
-                        <h3 className="text-xl sm:text-[23px] font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                        <h3 className="text-xl sm:text-[23px] font-bold text-slate-950 group-hover:text-cyan-600 transition-colors leading-snug">
                           {item.title}
                         </h3>
 
-                        <p className="text-sm font-semibold text-purple-400 mt-2 flex items-center gap-1.5">
-                          <Building size={14} className="text-purple-400/80" />
+                        <p className="text-sm font-semibold text-purple-600 mt-2 flex items-center gap-1.5">
+                          <Building size={14} className="text-purple-600/80" />
                           <span>{item.issuer}</span>
                         </p>
 
-                        <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 my-4 font-mono">
-                          <Calendar size={14} className="text-cyan-400" />
+                        <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 my-4 font-mono">
+                          <Calendar size={14} className="text-cyan-600" />
                           <span>{item.period}</span>
                         </div>
 
                         {/* Performance Cyber Gauge for Scored Credentials */}
                         {item.scorePercent && (
-                          <div className="mb-5 p-4 rounded-xl bg-black/50 border border-white/5 relative overflow-hidden">
+                          <div className="mb-5 p-4 rounded-xl bg-slate-50 border border-slate-200 relative overflow-hidden">
                             <div className="flex items-center justify-between text-xs mb-2 font-mono">
-                              <span className="text-slate-300 flex items-center gap-1.5">
-                                <Target size={14} className="text-emerald-400" />
+                              <span className="text-slate-700 flex items-center gap-1.5 font-medium">
+                                <Target size={14} className="text-emerald-600" />
                                 <span>Exam Score Matrix</span>
                               </span>
-                              <span className="font-bold text-emerald-300">{item.score}</span>
+                              <span className="font-bold text-emerald-700">{item.score}</span>
                             </div>
-                            <div className="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden border border-white/10">
+                            <div className="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden border border-slate-300">
                               <motion.div
-                                className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 rounded-full"
+                                className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 rounded-full"
                                 initial={{ width: 0 }}
                                 whileInView={{ width: `${item.scorePercent}%` }}
                                 viewport={{ once: false }}
@@ -510,7 +510,7 @@ export default function Certifications() {
                           </div>
                         )}
 
-                        <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed mb-6">
+                        <p className="text-sm sm:text-[15px] text-slate-600 leading-relaxed mb-6">
                           {item.description}
                         </p>
 
@@ -519,7 +519,7 @@ export default function Certifications() {
                           {item.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-cyan-500/30 transition-colors shadow-sm"
+                              className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-slate-100 border border-slate-200 text-slate-700 group-hover:border-cyan-400/40 transition-colors shadow-sm"
                             >
                               {skill}
                             </span>
@@ -527,14 +527,14 @@ export default function Certifications() {
                         </div>
 
                         {/* Footer Quick Action */}
-                        <div className="pt-3.5 border-t border-white/10 flex items-center justify-between text-xs">
+                        <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs">
                           <span className="text-[10px] text-slate-500 font-mono flex items-center gap-1">
-                            <ShieldCheck size={12} className="text-emerald-400" />
+                            <ShieldCheck size={12} className="text-emerald-600" />
                             <span>AUTHENTICATED</span>
                           </span>
                           <button
                             onClick={() => setSelectedItem(item)}
-                            className="inline-flex items-center gap-1.5 font-semibold text-cyan-400 hover:text-cyan-300 cursor-pointer group-hover:translate-x-0.5 transition-transform"
+                            className="inline-flex items-center gap-1.5 font-semibold text-cyan-600 hover:text-cyan-700 cursor-pointer group-hover:translate-x-0.5 transition-transform"
                           >
                             <span>Inspect Dossier</span>
                             <ExternalLink size={12} />
@@ -550,27 +550,27 @@ export default function Certifications() {
                         viewport={{ once: false, amount: 0.2 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                       >
-                        <div className="inline-flex items-center gap-2 px-4.5 py-2 rounded-xl glass border border-purple-500/30 text-purple-300 text-xs font-bold shadow-lg shadow-purple-500/10 font-mono">
-                          <Calendar size={13} className="text-purple-400" />
+                        <div className="inline-flex items-center gap-2 px-4.5 py-2 rounded-xl bg-purple-50 border border-purple-200 text-purple-700 text-xs font-bold shadow-sm font-mono">
+                          <Calendar size={13} className="text-purple-600" />
                           <span>{item.period}</span>
                         </div>
-                        <div className="inline-flex items-center gap-2 px-4.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold shadow-sm">
-                          <Building size={13} className="text-cyan-400" />
+                        <div className="inline-flex items-center gap-2 px-4.5 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold shadow-sm">
+                          <Building size={13} className="text-cyan-600" />
                           <span>{item.issuer}</span>
                         </div>
-                        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold font-mono shadow-sm">
+                        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-50 border border-amber-300 text-amber-800 text-[11px] font-bold font-mono shadow-sm">
                           <Award size={13} />
                           <span>{item.badge}</span>
                         </div>
                         {item.score && (
-                          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold font-mono shadow-sm">
+                          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-[11px] font-bold font-mono shadow-sm">
                             <Target size={13} />
                             <span>{item.score}</span>
                           </div>
                         )}
                         <button
                           onClick={() => setSelectedItem(item)}
-                          className="mt-1 inline-flex items-center gap-1 text-[11px] text-cyan-400 hover:text-cyan-300 font-mono cursor-pointer"
+                          className="mt-1 inline-flex items-center gap-1 text-[11px] text-cyan-600 hover:text-cyan-700 font-mono cursor-pointer"
                         >
                           <span>[Open Credential Matrix]</span>
                         </button>
@@ -583,7 +583,7 @@ export default function Certifications() {
                   {/* ========================================================== */}
                   <motion.div
                     data-crosshair-target
-                    className="absolute left-5 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl glass border border-white/25 bg-[#090918] flex items-center justify-center shadow-2xl z-20 group cursor-pointer"
+                    className="absolute left-5 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shadow-md z-20 group cursor-pointer"
                     initial={{ scale: 0, rotate: -45 }}
                     whileInView={{ scale: 1, rotate: 0 }}
                     viewport={{ once: false, amount: 0.2 }}
@@ -625,7 +625,7 @@ export default function Certifications() {
                       /* Main 3D Holographic Credential Dossier (Right Side) - Spacious Rounded */
                       <motion.div
                         data-crosshair-target
-                        className="w-full rounded-2xl sm:rounded-3xl p-8 sm:p-10 border border-white/10 hover:border-purple-400/50 transition-all text-left group shadow-2xl relative bg-[#070818]/95 backdrop-blur-xl hover:shadow-purple-500/20"
+                        className="w-full rounded-2xl sm:rounded-3xl p-8 sm:p-10 border border-slate-200/90 hover:border-purple-400/50 transition-all text-left group shadow-xl relative bg-white/95 backdrop-blur-xl hover:shadow-2xl"
                         initial={{ opacity: 0, scale: 0.88, rotateX: 16, y: 35 }}
                         whileInView={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -638,52 +638,52 @@ export default function Certifications() {
                       >
                         {/* Shimmering Brand Light Orb */}
                         <div
-                          className="absolute -top-10 -right-10 w-40 h-40 blur-3xl opacity-15 group-hover:opacity-35 transition-opacity pointer-events-none"
+                          className="absolute -top-10 -right-10 w-40 h-40 blur-3xl opacity-15 group-hover:opacity-30 transition-opacity pointer-events-none"
                           style={{ backgroundColor: item.color }}
                         />
 
                         {/* Top Protocol Bar - Inset with Full Padding */}
                         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                           <div className="flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-ping" />
-                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1.5 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                            <span className="w-2.5 h-2.5 rounded-full bg-purple-500 animate-ping" />
+                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 shadow-sm">
                               {item.type}
                             </span>
                           </div>
-                          <span className="text-xs font-bold text-amber-300 font-mono flex items-center gap-1.5 px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 shadow-sm">
+                          <span className="text-xs font-bold text-amber-800 font-mono flex items-center gap-1.5 px-3 py-1 rounded-full border border-amber-300 bg-amber-50 shadow-sm">
                             <span>★</span>
                             <span>{item.badge}</span>
                           </span>
                         </div>
 
                         {/* Title & Issuer */}
-                        <h3 className="text-xl sm:text-[22px] font-bold text-white group-hover:text-purple-300 transition-colors leading-snug">
+                        <h3 className="text-xl sm:text-[22px] font-bold text-slate-950 group-hover:text-purple-600 transition-colors leading-snug">
                           {item.title}
                         </h3>
 
-                        <p className="text-sm font-semibold text-cyan-400 mt-2 flex items-center gap-1.5">
-                          <Building size={15} className="text-cyan-400/80" />
+                        <p className="text-sm font-semibold text-cyan-600 mt-2 flex items-center gap-1.5">
+                          <Building size={15} className="text-cyan-600/80" />
                           <span>{item.issuer}</span>
                         </p>
 
-                        <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 my-4 font-mono">
-                          <Calendar size={14} className="text-cyan-400" />
+                        <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 my-4 font-mono">
+                          <Calendar size={14} className="text-cyan-600" />
                           <span>{item.period}</span>
                         </div>
 
                         {/* Performance Cyber Gauge for Scored Credentials */}
                         {item.scorePercent && (
-                          <div className="mb-5 p-4 sm:p-5 rounded-2xl bg-black/50 border border-white/5 relative overflow-hidden">
+                          <div className="mb-5 p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 relative overflow-hidden">
                             <div className="flex items-center justify-between text-xs mb-2 font-mono">
-                              <span className="text-slate-300 flex items-center gap-1.5">
-                                <Target size={14} className="text-emerald-400" />
+                              <span className="text-slate-700 flex items-center gap-1.5 font-medium">
+                                <Target size={14} className="text-emerald-600" />
                                 <span>Exam Score Matrix</span>
                               </span>
-                              <span className="font-bold text-emerald-300">{item.score}</span>
+                              <span className="font-bold text-emerald-700">{item.score}</span>
                             </div>
-                            <div className="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden border border-white/10">
+                            <div className="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden border border-slate-300">
                               <motion.div
-                                className="h-full bg-gradient-to-r from-purple-500 via-pink-400 to-cyan-400 rounded-full"
+                                className="h-full bg-gradient-to-r from-purple-500 via-pink-400 to-cyan-500 rounded-full"
                                 initial={{ width: 0 }}
                                 whileInView={{ width: `${item.scorePercent}%` }}
                                 viewport={{ once: false }}
@@ -693,7 +693,7 @@ export default function Certifications() {
                           </div>
                         )}
 
-                        <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed mb-6">
+                        <p className="text-sm sm:text-[15px] text-slate-600 leading-relaxed mb-6">
                           {item.description}
                         </p>
 
@@ -702,7 +702,7 @@ export default function Certifications() {
                           {item.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-white/[0.04] border border-white/10 text-slate-300 group-hover:border-purple-500/20"
+                              className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-slate-100 border border-slate-200 text-slate-700 group-hover:border-purple-400/40 transition-colors shadow-sm"
                             >
                               {skill}
                             </span>
@@ -710,14 +710,14 @@ export default function Certifications() {
                         </div>
 
                         {/* Footer Quick Action */}
-                        <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
                           <span className="text-[10px] text-slate-500 font-mono flex items-center gap-1">
-                            <ShieldCheck size={13} className="text-emerald-400" />
+                            <ShieldCheck size={13} className="text-emerald-600" />
                             <span>AUTHENTICATED</span>
                           </span>
                           <button
                             onClick={() => setSelectedItem(item)}
-                            className="inline-flex items-center gap-1.5 font-semibold text-purple-400 hover:text-purple-300 cursor-pointer group-hover:translate-x-0.5 transition-transform"
+                            className="inline-flex items-center gap-1.5 font-semibold text-purple-600 hover:text-purple-700 cursor-pointer group-hover:translate-x-0.5 transition-transform"
                           >
                             <span>Inspect Dossier</span>
                             <ExternalLink size={13} />
@@ -733,27 +733,27 @@ export default function Certifications() {
                         viewport={{ once: false, amount: 0.2 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                       >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass border border-cyan-500/30 text-cyan-300 text-xs font-bold shadow-lg shadow-cyan-500/10 font-mono">
-                          <Calendar size={13} className="text-cyan-400" />
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-700 text-xs font-bold shadow-sm font-mono">
+                          <Calendar size={13} className="text-cyan-600" />
                           <span>{item.period}</span>
                         </div>
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold">
-                          <Building size={13} className="text-purple-400" />
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold shadow-sm">
+                          <Building size={13} className="text-purple-600" />
                           <span>{item.issuer}</span>
                         </div>
-                        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold font-mono">
+                        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-50 border border-amber-300 text-amber-800 text-[11px] font-bold font-mono shadow-sm">
                           <Award size={13} />
                           <span>{item.badge}</span>
                         </div>
                         {item.score && (
-                          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold font-mono">
+                          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-[11px] font-bold font-mono shadow-sm">
                             <Target size={13} />
                             <span>{item.score}</span>
                           </div>
                         )}
                         <button
                           onClick={() => setSelectedItem(item)}
-                          className="mt-1 inline-flex items-center gap-1 text-[11px] text-cyan-400 hover:text-cyan-300 font-mono cursor-pointer"
+                          className="mt-1 inline-flex items-center gap-1 text-[11px] text-cyan-600 hover:text-cyan-700 font-mono cursor-pointer"
                         >
                           <span>[Open Credential Matrix]</span>
                         </button>
@@ -772,36 +772,36 @@ export default function Certifications() {
                     viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className="rounded-2xl p-7 sm:p-8 border border-white/10 text-left bg-[#070818]/90 backdrop-blur-xl shadow-xl">
+                    <div className="rounded-2xl p-7 sm:p-8 border border-slate-200 text-left bg-white/95 backdrop-blur-xl shadow-xl">
                       <div className="flex flex-wrap items-center justify-between gap-2.5 mb-3.5">
-                        <span className="text-xs px-3.5 py-1 rounded-full bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30">
+                        <span className="text-xs px-3.5 py-1 rounded-full bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
                           {item.type}
                         </span>
-                        <span className="text-xs font-bold text-amber-300 font-mono px-2.5 py-1 rounded-full border border-amber-400/30 bg-amber-400/10">
+                        <span className="text-xs font-bold text-amber-800 font-mono px-2.5 py-1 rounded-full border border-amber-300 bg-amber-50 shadow-sm">
                           ★ {item.badge}
                         </span>
                       </div>
 
-                      <h3 className="text-lg font-bold text-white mt-1 leading-snug">
+                      <h3 className="text-lg font-bold text-slate-950 mt-1 leading-snug">
                         {item.title}
                       </h3>
 
-                      <p className="text-sm font-semibold text-purple-400 mt-1.5">
+                      <p className="text-sm font-semibold text-purple-600 mt-1.5">
                         {item.issuer}
                       </p>
 
-                      <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 my-3 font-mono">
-                        <Calendar size={13} className="text-cyan-400" />
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 my-3 font-mono">
+                        <Calendar size={13} className="text-cyan-600" />
                         <span>{item.period}</span>
                       </div>
 
                       {item.score && (
-                        <div className="text-xs font-bold text-emerald-400 mb-2.5 font-mono">
+                        <div className="text-xs font-bold text-emerald-600 mb-2.5 font-mono">
                           {item.score}
                         </div>
                       )}
 
-                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
                         {item.description}
                       </p>
 
@@ -809,17 +809,17 @@ export default function Certifications() {
                         {item.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="px-2.5 py-1 rounded-xl text-[11px] font-medium bg-white/[0.04] border border-white/10 text-slate-300"
+                            className="px-2.5 py-1 rounded-xl text-[11px] font-medium bg-slate-100 border border-slate-200 text-slate-700 shadow-sm"
                           >
                             {skill}
                           </span>
                         ))}
                       </div>
 
-                      <div className="pt-3 border-t border-white/10 flex justify-end">
+                      <div className="pt-3 border-t border-slate-100 flex justify-end">
                         <button
                           onClick={() => setSelectedItem(item)}
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-600 hover:text-cyan-700"
                         >
                           <span>View Details</span>
                           <ExternalLink size={13} />
@@ -840,7 +840,7 @@ export default function Certifications() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+              className="absolute inset-0 bg-slate-900/60 backdrop-blur-md"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -850,7 +850,7 @@ export default function Certifications() {
             {/* Modal Dialog - Spacious Rounded Box */}
             <motion.div
               data-crosshair-target
-              className="relative z-10 w-full max-w-xl rounded-3xl p-7 sm:p-9 border border-cyan-500/40 shadow-2xl shadow-cyan-500/20 text-left bg-[#080816]/95 backdrop-blur-2xl overflow-hidden"
+              className="relative z-10 w-full max-w-xl rounded-3xl p-7 sm:p-9 border border-slate-200 shadow-2xl text-left bg-white/98 backdrop-blur-2xl overflow-hidden text-slate-900"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -864,49 +864,49 @@ export default function Certifications() {
               />
               <button
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-5 right-5 p-2.5 rounded-xl bg-white/[0.05] border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                className="absolute top-5 right-5 p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-950 hover:bg-slate-200 transition-colors cursor-pointer"
               >
                 <X size={18} />
               </button>
 
               <div className="flex items-center gap-4 mb-5">
                 <div
-                  className="w-13 h-13 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center shadow-lg"
+                  className="w-13 h-13 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center shadow-md"
                   style={{ color: selectedItem.color }}
                 >
                   <selectedItem.icon size={26} />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-50 text-cyan-700 border border-cyan-200">
                     {selectedItem.badge}
                   </span>
-                  <div className="text-xs text-purple-400 font-semibold mt-1.5">
+                  <div className="text-xs text-purple-600 font-semibold mt-1.5">
                     {selectedItem.issuer}
                   </div>
                 </div>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-950 mb-2 leading-snug">
                 {selectedItem.title}
               </h3>
 
-              <div className="flex items-center gap-2 text-xs text-slate-400 mb-5">
-                <Calendar size={13} className="text-cyan-400" />
+              <div className="flex items-center gap-2 text-xs text-slate-500 mb-5">
+                <Calendar size={13} className="text-cyan-600" />
                 <span>{selectedItem.period}</span>
-                <span className="text-slate-600">•</span>
-                <span className="text-slate-300">{selectedItem.category}</span>
+                <span className="text-slate-400">•</span>
+                <span className="text-slate-700 font-medium">{selectedItem.category}</span>
               </div>
 
               {selectedItem.score && (
-                <div className="p-4 rounded-2xl bg-white/[0.03] border border-emerald-500/30 mb-5">
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 mb-5">
                   <div className="flex items-center justify-between text-xs mb-2">
-                    <span className="text-slate-300 font-semibold">Performance Metric</span>
-                    <span className="text-emerald-400 font-bold">{selectedItem.score}</span>
+                    <span className="text-slate-700 font-semibold">Performance Metric</span>
+                    <span className="text-emerald-700 font-bold">{selectedItem.score}</span>
                   </div>
                   {selectedItem.scorePercent && (
-                    <div className="w-full h-2.5 bg-black/50 rounded-full overflow-hidden">
+                    <div className="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full"
+                        className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"
                         style={{ width: `${selectedItem.scorePercent}%` }}
                       />
                     </div>
@@ -914,19 +914,19 @@ export default function Certifications() {
                 </div>
               )}
 
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
                 {selectedItem.description}
               </p>
 
               <div className="mb-7">
-                <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+                <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
                   Verified Technical Competencies
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {selectedItem.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3.5 py-1.5 rounded-xl text-xs font-medium bg-white/[0.04] border border-white/10 text-cyan-200"
+                      className="px-3.5 py-1.5 rounded-xl text-xs font-medium bg-cyan-50 border border-cyan-200 text-cyan-800"
                     >
                       {skill}
                     </span>
@@ -934,20 +934,20 @@ export default function Certifications() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-5 border-t border-white/10">
+              <div className="flex items-center justify-end gap-3 pt-5 border-t border-slate-200">
                 {selectedItem.credentialUrl ? (
                   <a
                     href={selectedItem.credentialUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-xs font-bold shadow-md hover:shadow-lg transition-all cursor-pointer"
                   >
                     <span>Verify Credly Badge</span>
                     <ExternalLink size={14} />
                   </a>
                 ) : (
-                  <div className="inline-flex items-center gap-1.5 text-xs text-slate-400">
-                    <ShieldCheck size={14} className="text-emerald-400" />
+                  <div className="inline-flex items-center gap-1.5 text-xs text-slate-600">
+                    <ShieldCheck size={14} className="text-emerald-600" />
                     <span>Verified Academic &amp; Industry Credential</span>
                   </div>
                 )}

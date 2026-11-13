@@ -21,7 +21,7 @@ const staticParticles = [
 export default function LoadingScreen() {
   return (
     <motion.div
-      className="fixed inset-0 z-[99999] bg-[#050508] flex flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[99999] bg-white flex flex-col items-center justify-center overflow-hidden"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7, ease: "easeInOut" }}
@@ -33,7 +33,7 @@ export default function LoadingScreen() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-amber-500/40 shadow-2xl shadow-amber-500/25 bg-[#0a0a14]">
+        <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-amber-500/40 shadow-xl bg-slate-100">
           <Image
             src="/logo.jpg"
             alt="SAN Logo"
@@ -48,29 +48,29 @@ export default function LoadingScreen() {
       {/* Futuristic Dual Ring Spinner */}
       <div className="relative w-20 h-20">
         <motion.div
-          className="absolute inset-0 w-full h-full rounded-full border-2 border-transparent border-t-cyan-400 border-r-purple-500"
+          className="absolute inset-0 w-full h-full rounded-full border-2 border-transparent border-t-cyan-500 border-r-purple-600"
           animate={{ rotate: 360 }}
           transition={{ duration: 1.1, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 w-12 h-12 -mt-6 -ml-6 rounded-full border-2 border-transparent border-b-pink-500 border-l-cyan-400"
+          className="absolute top-1/2 left-1/2 w-12 h-12 -mt-6 -ml-6 rounded-full border-2 border-transparent border-b-pink-500 border-l-cyan-500"
           animate={{ rotate: -360 }}
           transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_12px_#00f5ff]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse shadow-[0_0_12px_#0284c7]" />
         </div>
       </div>
 
       {/* Loading status */}
-      <p className="mt-8 text-xs text-slate-400 font-semibold tracking-widest uppercase animate-pulse">
+      <p className="mt-8 text-xs text-slate-600 font-semibold tracking-widest uppercase animate-pulse">
         Initializing AI Environment...
       </p>
 
       {/* Subtle Progress Bar */}
-      <div className="mt-5 w-44 h-1 bg-white/10 rounded-full overflow-hidden">
+      <div className="mt-5 w-44 h-1 bg-slate-200 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full"
+          className="h-full bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full"
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
           transition={{ duration: 1.3, ease: "easeInOut" }}

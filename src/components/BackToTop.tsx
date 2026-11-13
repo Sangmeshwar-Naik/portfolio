@@ -49,7 +49,7 @@ export default function BackToTop() {
         >
           <button
             onClick={scrollToTop}
-            className="relative w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-300 shadow-xl shadow-cyan-500/10 cursor-pointer group hover:scale-108 transition-all bg-[#080918]/90"
+            className="relative w-12 h-12 rounded-2xl bg-white/95 border border-slate-200 flex items-center justify-center text-slate-700 hover:text-cyan-600 shadow-md cursor-pointer group hover:scale-108 transition-all"
             title={`Scroll to Top (${Math.round(progress)}%)`}
             aria-label="Scroll to top"
           >
@@ -59,14 +59,14 @@ export default function BackToTop() {
                 cx="20"
                 cy="20"
                 r={radius}
-                className="stroke-white/10 fill-none"
+                className="stroke-slate-200 fill-none"
                 strokeWidth="2.5"
               />
               <circle
                 cx="20"
                 cy="20"
                 r={radius}
-                className="stroke-cyan-400 fill-none transition-all duration-150"
+                className="stroke-cyan-500 fill-none transition-all duration-150"
                 strokeWidth="2.5"
                 strokeDasharray={circumference}
                 strokeDashoffset={strokeDashoffset}
@@ -76,7 +76,7 @@ export default function BackToTop() {
 
             <ArrowUp
               size={18}
-              className="group-hover:-translate-y-0.5 transition-transform text-cyan-400"
+              className="group-hover:-translate-y-0.5 transition-transform text-cyan-600"
             />
           </button>
         </motion.div>
