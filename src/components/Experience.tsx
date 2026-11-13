@@ -148,7 +148,7 @@ export default function Experience() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-xs font-semibold text-purple-700 mb-4 mx-auto shadow-sm">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-xl bg-purple-50 border border-purple-200 text-xs font-semibold text-purple-700 mb-4 mx-auto shadow-sm">
             <Sparkles size={13} className="text-purple-600" />
             Milestones &amp; Learning
           </div>
@@ -212,15 +212,15 @@ export default function Experience() {
                     }}
                   >
                     {isEven ? (
-                      /* Main Story Card on the Left - Spacious Rounded Box with Full Corner Clearance */
-                      <div className="rounded-2xl sm:rounded-3xl p-8 sm:p-10 border border-slate-200/90 hover:border-cyan-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
-                        <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/5 blur-3xl pointer-events-none group-hover:bg-cyan-500/10 transition-all rounded-3xl" />
+                      /* Main Story Card on the Left - Square with Curved Corners and Full Clearance */
+                      <div className="rounded-2xl p-8 sm:p-10 border border-slate-200/90 hover:border-cyan-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
+                        <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/5 blur-3xl pointer-events-none group-hover:bg-cyan-500/10 transition-all rounded-2xl" />
                         <div className="flex flex-wrap items-center justify-between gap-3 mb-5 relative z-10">
-                          <span className="text-xs px-4 py-1.5 rounded-full bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
+                          <span className="text-xs px-3.5 py-1.5 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
                             {item.type}
                           </span>
                           {item.highlight && (
-                            <span className="text-xs font-bold text-amber-800 px-3 py-1 rounded-full border border-amber-300 bg-amber-50 shadow-sm">
+                            <span className="text-xs font-bold text-amber-800 px-3.5 py-1.5 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                               ★ {item.highlight}
                             </span>
                           )}
@@ -304,15 +304,15 @@ export default function Experience() {
                     }}
                   >
                     {!isEven ? (
-                      /* Main Story Card on the Right - Spacious Rounded Box with Full Corner Clearance */
-                      <div className="rounded-2xl sm:rounded-3xl p-8 sm:p-10 border border-slate-200/90 hover:border-purple-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
-                        <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 blur-3xl pointer-events-none group-hover:bg-purple-500/10 transition-all rounded-3xl" />
+                      /* Main Story Card on the Right - Square with Curved Corners and Full Clearance */
+                      <div className="rounded-2xl p-8 sm:p-10 border border-slate-200/90 hover:border-purple-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
+                        <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 blur-3xl pointer-events-none group-hover:bg-purple-500/10 transition-all rounded-2xl" />
                         <div className="flex flex-wrap items-center justify-between gap-3 mb-5 relative z-10">
-                          <span className="text-xs px-4 py-1.5 rounded-full bg-purple-50 text-purple-700 font-semibold border border-purple-200 shadow-sm">
+                          <span className="text-xs px-3.5 py-1.5 rounded-xl bg-purple-50 text-purple-700 font-semibold border border-purple-200 shadow-sm">
                             {item.type}
                           </span>
                           {item.highlight && (
-                            <span className="text-xs font-bold text-amber-800 px-3 py-1 rounded-full border border-amber-300 bg-amber-50 shadow-sm">
+                            <span className="text-xs font-bold text-amber-800 px-3.5 py-1.5 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                               ★ {item.highlight}
                             </span>
                           )}
@@ -381,11 +381,11 @@ export default function Experience() {
                   >
                     <div className="rounded-2xl p-7 sm:p-8 border border-slate-200 bg-white/95 backdrop-blur-xl shadow-xl">
                       <div className="flex flex-wrap items-center justify-between gap-2.5 mb-4">
-                        <span className="text-xs px-3.5 py-1 rounded-full bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
+                        <span className="text-xs px-3 py-1 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
                           {item.type}
                         </span>
                         {item.highlight && (
-                          <span className="text-xs font-bold text-amber-800 px-2.5 py-1 rounded-full border border-amber-300 bg-amber-50 shadow-sm">
+                          <span className="text-xs font-bold text-amber-800 px-3 py-1 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                             ★ {item.highlight}
                           </span>
                         )}

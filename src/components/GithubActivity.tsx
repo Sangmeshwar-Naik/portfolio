@@ -518,11 +518,11 @@ export default function GithubActivity() {
               {/* Left Column: Repository Intelligence & Architecture */}
               <div className="lg:col-span-6 space-y-6">
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-50 text-purple-700 border border-purple-200">
+                  <span className="px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-purple-50 text-purple-700 border border-purple-200">
                     {selectedRepo.domain}
                   </span>
-                  <span className="px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-cyan-50 text-cyan-700 border border-cyan-200 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
+                  <span className="px-3 py-1.5 rounded-xl text-xs font-mono font-semibold bg-cyan-50 text-cyan-700 border border-cyan-200 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-md bg-cyan-500 animate-ping" />
                     <span>git: {selectedRepo.branch}</span>
                   </span>
                 </div>
@@ -634,7 +634,7 @@ export default function GithubActivity() {
                       </span>
                     </div>
 
-                    <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1.5">
+                    <span className="text-[10px] font-mono px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
                       <span>LIVE RUNTIME</span>
                     </span>

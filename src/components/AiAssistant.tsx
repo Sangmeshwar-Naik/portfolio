@@ -628,7 +628,7 @@ export default function AiAssistant() {
           <div className="text-left hidden sm:block pr-1">
             <div className="flex items-center gap-1.5">
               <span className="text-xs font-bold text-slate-900 font-mono tracking-tight">SAN-AI</span>
-              <span className="px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-700 text-[9px] font-mono font-semibold border border-cyan-200">
+              <span className="px-2 py-0.5 rounded-md bg-cyan-50 text-cyan-700 text-[9px] font-mono font-semibold border border-cyan-200">
                 ACTIVE
               </span>
             </div>
@@ -688,7 +688,7 @@ export default function AiAssistant() {
                       <h3 className="text-sm font-bold text-slate-950 font-mono flex items-center gap-1.5">
                         <span>Sangmeshwar AI</span>
                       </h3>
-                      <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-[9px] font-mono text-emerald-700 font-semibold">
+                      <span className="flex items-center gap-1 px-2 py-0.5 rounded-md bg-emerald-50 border border-emerald-200 text-[9px] font-mono text-emerald-700 font-semibold">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         <span>Online</span>
                       </span>

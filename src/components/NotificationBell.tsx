@@ -274,8 +274,8 @@ export default function NotificationBell() {
         {/* Unread Counter Badge with Pulsing Beacon */}
         {unreadCount > 0 && (
           <>
-            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-rose-500 animate-ping opacity-75 pointer-events-none" />
-            <span className="absolute -top-1.5 -right-1.5 min-w-[20px] h-[20px] px-1 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-[10px] font-mono font-black text-white flex items-center justify-center border-2 border-white shadow-md shadow-rose-500/30">
+            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-md bg-rose-500 animate-ping opacity-75 pointer-events-none" />
+            <span className="absolute -top-1.5 -right-1.5 min-w-[20px] h-[20px] px-1 rounded-md bg-gradient-to-r from-rose-500 to-pink-500 text-[10px] font-mono font-black text-white flex items-center justify-center border-2 border-white shadow-md shadow-rose-500/30">
               {unreadCount > 9 ? "9+" : unreadCount}
             </span>
           </>
@@ -307,7 +307,7 @@ export default function NotificationBell() {
                       Inquiries &amp; Messages
                     </h3>
                     {unreadCount > 0 && (
-                      <span className="px-2.5 py-0.5 rounded-full bg-cyan-100 border border-cyan-300 text-cyan-800 text-[10px] font-mono font-bold">
+                      <span className="px-2.5 py-0.5 rounded-lg bg-cyan-100 border border-cyan-300 text-cyan-800 text-[10px] font-mono font-bold">
                         {unreadCount} new
                       </span>
                     )}

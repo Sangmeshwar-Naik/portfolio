@@ -253,14 +253,14 @@ export default function Hero() {
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
             />
 
-            {/* Revolving Cyber Dashed Orbital Rings behind the Card */}
+            {/* Revolving Cyber Dashed Orbital Rings behind the Card - Square with Curved Corners */}
             <motion.div
-              className="absolute w-[320px] h-[320px] sm:w-[460px] sm:h-[460px] rounded-full border border-dashed border-cyan-500/30 pointer-events-none transform-gpu"
+              className="absolute w-[320px] h-[320px] sm:w-[460px] sm:h-[460px] rounded-3xl border border-dashed border-cyan-500/30 pointer-events-none transform-gpu"
               animate={{ rotate: 360 }}
               transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
             />
             <motion.div
-              className="absolute w-[280px] h-[280px] sm:w-[410px] sm:h-[410px] rounded-full border border-dotted border-purple-500/35 pointer-events-none transform-gpu"
+              className="absolute w-[280px] h-[280px] sm:w-[410px] sm:h-[410px] rounded-3xl border border-dotted border-purple-500/35 pointer-events-none transform-gpu"
               animate={{ rotate: -360 }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
             />

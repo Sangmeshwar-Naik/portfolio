@@ -445,11 +445,11 @@ export default function Projects() {
 
                           {/* Top Badges */}
                           <div className="relative z-10 flex items-center justify-between p-4.5">
-                            <span className="px-3.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-semibold text-cyan-700 border border-slate-200 shadow-md">
+                            <span className="px-3.5 py-1 rounded-xl bg-white/90 backdrop-blur-md text-xs font-semibold text-cyan-700 border border-slate-200 shadow-md">
                               {project.badge}
                             </span>
                             {project.featured && (
-                              <span className="px-3 py-1 rounded-full bg-amber-400/20 text-amber-700 text-[11px] font-bold tracking-wider uppercase border border-amber-400/40 backdrop-blur-md shadow-sm">
+                              <span className="px-3 py-1 rounded-xl bg-amber-400/20 text-amber-700 text-[11px] font-bold tracking-wider uppercase border border-amber-400/40 backdrop-blur-md shadow-sm">
                                 Featured
                               </span>
                             )}
@@ -460,7 +460,7 @@ export default function Projects() {
                             <div className="w-11 h-11 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 flex items-center justify-center text-cyan-600 shadow-md group-hover:scale-110 transition-transform">
                               <Icon size={22} />
                             </div>
-                            <span className="text-xs text-slate-700 font-mono font-medium px-3.5 py-1 rounded-full bg-white/90 border border-slate-200 backdrop-blur-md shadow-sm">
+                            <span className="text-xs text-slate-700 font-mono font-medium px-3.5 py-1 rounded-xl bg-white/90 border border-slate-200 backdrop-blur-md shadow-sm">
                               {project.date}
                             </span>
                           </div>
@@ -594,16 +594,16 @@ export default function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="px-3.5 py-1 rounded-full text-xs font-semibold bg-white/90 text-cyan-700 border border-slate-200 backdrop-blur-md shadow-sm">
+                  <span className="px-3.5 py-1 rounded-xl text-xs font-semibold bg-white/90 text-cyan-700 border border-slate-200 backdrop-blur-md shadow-sm">
                     {selectedProject.badge}
                   </span>
                   {selectedProject.featured && (
-                    <span className="px-3 py-1 rounded-full bg-amber-400/20 text-amber-700 text-[10px] font-bold tracking-wider uppercase border border-amber-400/40 backdrop-blur-md shadow-sm">
+                    <span className="px-3 py-1 rounded-xl bg-amber-400/20 text-amber-700 text-[10px] font-bold tracking-wider uppercase border border-amber-400/40 backdrop-blur-md shadow-sm">
                       Featured
                     </span>
                   )}
                 </div>
-                <div className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs text-slate-700 font-mono bg-white/90 px-3 py-1 rounded-full border border-slate-200 backdrop-blur-md shadow-sm">
+                <div className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs text-slate-700 font-mono bg-white/90 px-3 py-1 rounded-xl border border-slate-200 backdrop-blur-md shadow-sm">
                   <Calendar size={13} className="text-cyan-600" />
                   <span>{selectedProject.date}</span>
                 </div>

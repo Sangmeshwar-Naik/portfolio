@@ -169,7 +169,7 @@ export default function About() {
           viewport={{ once: false, amount: 0.25 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-700 bg-cyan-50/70 mb-4 shadow-sm mx-auto">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-xl glass border border-cyan-500/30 text-xs font-semibold text-cyan-700 bg-cyan-50/70 mb-4 shadow-sm mx-auto">
             <Sparkles size={13} className="text-cyan-600" />
             Biography &amp; Architecture
           </div>
@@ -235,8 +235,8 @@ export default function About() {
                   </div>
                 </div>
 
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-500/30 text-emerald-800 text-xs sm:text-sm font-semibold shadow-sm">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-500/30 text-emerald-800 text-xs sm:text-sm font-semibold shadow-sm">
+                  <span className="w-2.5 h-2.5 rounded-md bg-emerald-500 animate-pulse" />
                   <span>Available for Roles &amp; Internships</span>
                 </div>
               </div>
@@ -357,7 +357,7 @@ export default function About() {
                   <p className="text-xs sm:text-sm text-slate-500 font-mono mt-0.5">Formal Education &amp; Scores</p>
                 </div>
               </div>
-              <span className="text-xs uppercase font-bold tracking-wider px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-mono">
+              <span className="text-xs uppercase font-bold tracking-wider px-3.5 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 font-mono">
                 Verified
               </span>
             </div>
@@ -389,7 +389,7 @@ export default function About() {
                       <h4 className="text-base sm:text-lg font-bold text-slate-950 leading-snug group-hover:text-cyan-700 transition-colors">
                         {edu.degree}
                       </h4>
-                      <span className="text-xs sm:text-sm px-4 py-1.5 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-300 font-bold font-mono shrink-0 shadow-sm">
+                      <span className="text-xs sm:text-sm px-4 py-1.5 rounded-xl bg-cyan-50 text-cyan-800 border border-cyan-300 font-bold font-mono shrink-0 shadow-sm">
                         {edu.score}
                       </span>
                     </div>

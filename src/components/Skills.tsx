@@ -210,7 +210,7 @@ export default function Skills() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-semibold text-cyan-700 bg-cyan-50/70 mb-4 shadow-sm mx-auto">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-xl glass border border-cyan-500/30 text-xs font-semibold text-cyan-700 bg-cyan-50/70 mb-4 shadow-sm mx-auto">
             <Sparkles size={13} className="text-cyan-600" />
             Technologies &amp; Expertise
           </div>
@@ -273,17 +273,17 @@ export default function Skills() {
           {/* The Circular Orbit Arena */}
           <div className="relative w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] md:w-[520px] md:h-[520px] flex items-center justify-center">
             {/* Outer Decorative Track Rings */}
-            <div className="absolute inset-0 rounded-full border border-dashed border-cyan-500/25 pointer-events-none" />
-            <div className="absolute inset-8 rounded-full border border-purple-500/20 pointer-events-none" />
-            <div className="absolute inset-16 rounded-full border border-slate-200 pointer-events-none" />
+            <div className="absolute inset-0 rounded-3xl border border-dashed border-cyan-500/25 pointer-events-none" />
+            <div className="absolute inset-8 rounded-2xl border border-purple-500/20 pointer-events-none" />
+            <div className="absolute inset-16 rounded-2xl border border-slate-200 pointer-events-none" />
 
-            {/* Glowing Central Reactor Hub */}
+            {/* Glowing Central Reactor Hub - Square with Curved Corners */}
             <button
               onClick={() => handleOpenCategory(allCategoriesNode)}
-              className="relative z-10 w-28 h-28 sm:w-36 sm:h-36 rounded-full glass border border-cyan-400 flex flex-col items-center justify-center text-center p-3 shadow-xl bg-white/95 backdrop-blur-xl hover:scale-105 hover:border-cyan-500 transition-all cursor-pointer group"
+              className="relative z-10 w-28 h-28 sm:w-36 sm:h-36 rounded-2xl sm:rounded-3xl glass border border-cyan-400 flex flex-col items-center justify-center text-center p-3 shadow-xl bg-white/95 backdrop-blur-xl hover:scale-105 hover:border-cyan-500 transition-all cursor-pointer group"
               title="Click to view all 35 skills"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-ping mb-1.5" />
+              <span className="w-2.5 h-2.5 rounded-md bg-cyan-500 animate-ping mb-1.5" />
               <Cpu size={24} className="text-cyan-600 group-hover:rotate-90 transition-transform duration-500" />
               <span className="text-[11px] sm:text-xs font-bold text-slate-950 mt-1 leading-tight uppercase font-mono group-hover:text-cyan-700 transition-colors">
                 Tech Orbit
@@ -429,7 +429,7 @@ export default function Skills() {
                       <h3 className="text-2xl font-black text-slate-950 tracking-tight">
                         {selectedCategory.title}
                       </h3>
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 border border-cyan-300 font-mono">
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-xl bg-cyan-100 text-cyan-800 border border-cyan-300 font-mono">
                         {selectedCategory.skills.length} Technologies
                       </span>
                     </div>
@@ -494,7 +494,7 @@ export default function Skills() {
                             <SkillIcon size={20} />
                           </div>
 
-                          <span className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full bg-white border border-slate-200 text-slate-700 uppercase">
+                          <span className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 uppercase">
                             {skill.level}
                           </span>
                         </div>

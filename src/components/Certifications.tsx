@@ -260,7 +260,7 @@ export default function Certifications() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-semibold text-cyan-700 mb-4 shadow-sm mx-auto">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-xl bg-cyan-50 border border-cyan-200 text-xs font-semibold text-cyan-700 mb-4 shadow-sm mx-auto">
             <Award size={13} className="text-cyan-600" />
             Accreditations &amp; Honors
           </div>
@@ -462,12 +462,12 @@ export default function Certifications() {
                         {/* Top Protocol Bar */}
                         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                           <div className="flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-ping" />
-                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1 rounded-full bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-sm">
+                            <span className="w-2.5 h-2.5 rounded-md bg-cyan-500 animate-ping" />
+                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1 rounded-xl bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-sm">
                               {item.type}
                             </span>
                           </div>
-                          <span className="text-xs font-bold text-amber-800 font-mono flex items-center gap-1 px-3 py-1 rounded-full border border-amber-300 bg-amber-50 shadow-sm">
+                          <span className="text-xs font-bold text-amber-800 font-mono flex items-center gap-1 px-3 py-1 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                             <span>★</span>
                             <span>{item.badge}</span>
                           </span>
@@ -645,12 +645,12 @@ export default function Certifications() {
                         {/* Top Protocol Bar - Inset with Full Padding */}
                         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                           <div className="flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-purple-500 animate-ping" />
-                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 shadow-sm">
+                            <span className="w-2.5 h-2.5 rounded-md bg-purple-500 animate-ping" />
+                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1.5 rounded-xl bg-purple-50 text-purple-700 border border-purple-200 shadow-sm">
                               {item.type}
                             </span>
                           </div>
-                          <span className="text-xs font-bold text-amber-800 font-mono flex items-center gap-1.5 px-3 py-1 rounded-full border border-amber-300 bg-amber-50 shadow-sm">
+                          <span className="text-xs font-bold text-amber-800 font-mono flex items-center gap-1.5 px-3 py-1 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                             <span>★</span>
                             <span>{item.badge}</span>
                           </span>
@@ -774,10 +774,10 @@ export default function Certifications() {
                   >
                     <div className="rounded-2xl p-7 sm:p-8 border border-slate-200 text-left bg-white/95 backdrop-blur-xl shadow-xl">
                       <div className="flex flex-wrap items-center justify-between gap-2.5 mb-3.5">
-                        <span className="text-xs px-3.5 py-1 rounded-full bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
+                        <span className="text-xs px-3.5 py-1 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
                           {item.type}
                         </span>
-                        <span className="text-xs font-bold text-amber-800 font-mono px-2.5 py-1 rounded-full border border-amber-300 bg-amber-50 shadow-sm">
+                        <span className="text-xs font-bold text-amber-800 font-mono px-2.5 py-1 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                           ★ {item.badge}
                         </span>
                       </div>

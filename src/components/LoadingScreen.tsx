@@ -45,15 +45,15 @@ export default function LoadingScreen() {
         </div>
       </motion.div>
 
-      {/* Futuristic Dual Ring Spinner */}
+      {/* Futuristic Dual Ring Spinner - Square with Curved Corners */}
       <div className="relative w-20 h-20">
         <motion.div
-          className="absolute inset-0 w-full h-full rounded-full border-2 border-transparent border-t-cyan-500 border-r-purple-600"
+          className="absolute inset-0 w-full h-full rounded-2xl border-2 border-transparent border-t-cyan-500 border-r-purple-600"
           animate={{ rotate: 360 }}
           transition={{ duration: 1.1, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 w-12 h-12 -mt-6 -ml-6 rounded-full border-2 border-transparent border-b-pink-500 border-l-cyan-500"
+          className="absolute top-1/2 left-1/2 w-12 h-12 -mt-6 -ml-6 rounded-xl border-2 border-transparent border-b-pink-500 border-l-cyan-500"
           animate={{ rotate: -360 }}
           transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
         />

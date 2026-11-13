@@ -110,7 +110,7 @@ export default function ResumeModal() {
                     <h3 className="text-sm sm:text-base font-bold text-slate-950 font-mono tracking-tight">
                       Sangmeshwar Anil Naik
                     </h3>
-                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold">
+                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono px-2.5 py-0.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                       <span>Verified Official Resume</span>
                     </span>
@@ -314,7 +314,7 @@ export default function ResumeModal() {
                           Sept 2023 – July 2027 (Currently Pursuing, Class of 2027)
                         </p>
                       </div>
-                      <span className="px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-black font-mono text-xs shadow-sm">
+                      <span className="px-4 py-1.5 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-800 font-black font-mono text-xs shadow-sm">
                         CGPA: 8.4 / 10
                       </span>
                     </div>
@@ -331,7 +331,7 @@ export default function ResumeModal() {
                           Completed 2022
                         </p>
                       </div>
-                      <span className="px-4 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 font-bold font-mono text-xs">
+                      <span className="px-4 py-1.5 rounded-xl bg-purple-50 border border-purple-200 text-purple-700 font-bold font-mono text-xs">
                         64.33%
                       </span>
                     </div>
@@ -348,7 +348,7 @@ export default function ResumeModal() {
                           Completed 2020
                         </p>
                       </div>
-                      <span className="px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold font-mono text-xs">
+                      <span className="px-4 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold font-mono text-xs">
                         79.04%
                       </span>
                     </div>
@@ -365,7 +365,7 @@ export default function ResumeModal() {
                     <div className="p-5 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
                       <div className="flex items-center justify-between mb-1.5">
                         <h5 className="font-bold text-slate-950 text-sm">AWS Academy Data Engineering</h5>
-                        <span className="text-[10px] font-mono text-amber-800 px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-300">
+                        <span className="text-[10px] font-mono text-amber-800 px-2.5 py-0.5 rounded-lg bg-amber-50 border border-amber-300">
                           Credly
                         </span>
                       </div>
@@ -377,7 +377,7 @@ export default function ResumeModal() {
                     <div className="p-5 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
                       <div className="flex items-center justify-between mb-1.5">
                         <h5 className="font-bold text-slate-950 text-sm">IT Specialist – Data Analytics</h5>
-                        <span className="text-[10px] font-mono text-emerald-800 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-300">
+                        <span className="text-[10px] font-mono text-emerald-800 px-2.5 py-0.5 rounded-lg bg-emerald-50 border border-emerald-300">
                           929 / 1000 (93%)
                         </span>
                       </div>
@@ -389,7 +389,7 @@ export default function ResumeModal() {
                     <div className="p-5 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
                       <div className="flex items-center justify-between mb-1.5">
                         <h5 className="font-bold text-slate-950 text-sm">National C++ Mastery Challenge</h5>
-                        <span className="text-[10px] font-mono text-cyan-800 px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200">
+                        <span className="text-[10px] font-mono text-cyan-800 px-2.5 py-0.5 rounded-lg bg-cyan-50 border border-cyan-200">
                           93% Score
                         </span>
                       </div>
@@ -401,7 +401,7 @@ export default function ResumeModal() {
                     <div className="p-5 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
                       <div className="flex items-center justify-between mb-1.5">
                         <h5 className="font-bold text-slate-950 text-sm">AI/ML for Geodata Analytics</h5>
-                        <span className="text-[10px] font-mono text-pink-800 px-2.5 py-0.5 rounded-full bg-pink-50 border border-pink-200">
+                        <span className="text-[10px] font-mono text-pink-800 px-2.5 py-0.5 rounded-lg bg-pink-50 border border-pink-200">
                           ISRO - IIRS
                         </span>
                       </div>

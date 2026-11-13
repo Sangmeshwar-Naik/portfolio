@@ -260,7 +260,7 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
         >
           {/* Centered Symmetrical Direct Communication Pill */}
-          <div className="inline-flex items-center justify-center gap-2.5 px-5 py-2 rounded-full glass border border-cyan-500/30 text-xs sm:text-sm font-semibold text-cyan-700 bg-cyan-50/70 mb-4 shadow-sm mx-auto">
+          <div className="inline-flex items-center justify-center gap-2.5 px-5 py-2 rounded-xl glass border border-cyan-500/30 text-xs sm:text-sm font-semibold text-cyan-700 bg-cyan-50/70 mb-4 shadow-sm mx-auto">
             <Sparkles size={14} className="text-cyan-600 shrink-0" />
             <div className="w-[195px] h-[22px] relative flex items-center justify-center mx-auto">
               <TechText
@@ -326,8 +326,8 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-500/30 text-emerald-800 text-xs font-semibold mb-4 shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-emerald-50 border border-emerald-500/30 text-emerald-800 text-xs font-semibold mb-4 shadow-sm">
+                  <span className="w-2 h-2 rounded-md bg-emerald-500 animate-pulse" />
                   <span>Available for Full-Time Roles &amp; Internships</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight mb-2">
@@ -472,7 +472,7 @@ export default function Contact() {
                         <p className="text-sm sm:text-base font-bold text-slate-900 mt-0.5">
                           Bidar &amp; Mangalore, Karnataka, India
                         </p>
-                        <div className="flex items-center gap-2 mt-2 font-mono text-xs text-cyan-800 bg-cyan-100 border border-cyan-200 px-3.5 py-1.5 rounded-full w-fit">
+                        <div className="flex items-center gap-2 mt-2 font-mono text-xs text-cyan-800 bg-cyan-100 border border-cyan-200 px-3.5 py-1.5 rounded-xl w-fit">
                           <Clock size={12} className="animate-spin text-cyan-600" style={{ animationDuration: "12s" }} />
                           <span>{currentTime ? `${currentTime} IST` : "IST (UTC +5:30)"}</span>
                         </div>
@@ -533,8 +533,8 @@ export default function Contact() {
                       </p>
                     </div>
                   </div>
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-500/30 text-emerald-800 text-xs font-mono font-semibold shrink-0 w-fit self-start sm:self-auto shadow-sm">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-emerald-50 border border-emerald-500/30 text-emerald-800 text-xs font-mono font-semibold shrink-0 w-fit self-start sm:self-auto shadow-sm">
+                    <span className="w-2 h-2 rounded-md bg-emerald-500 animate-pulse" />
                     <span className="whitespace-nowrap">Live Channel Active</span>
                   </div>
                 </div>
