@@ -201,7 +201,7 @@ export default function Skills() {
 
       <div
         ref={containerRef}
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8"
       >
         {/* Section Header */}
         <motion.div
@@ -271,7 +271,7 @@ export default function Skills() {
           </div>
 
           {/* The Circular Orbit Arena - Roomy & Expanded */}
-          <div className="relative w-[360px] h-[360px] sm:w-[500px] sm:h-[500px] md:w-[560px] md:h-[560px] flex items-center justify-center">
+          <div className="relative w-[380px] h-[380px] sm:w-[530px] sm:h-[530px] md:w-[600px] md:h-[600px] flex items-center justify-center">
             {/* Outer Decorative Track Rings */}
             <div className="absolute inset-0 rounded-3xl border border-dashed border-cyan-500/25 pointer-events-none" />
             <div className="absolute inset-8 rounded-2xl border border-purple-500/20 pointer-events-none" />
@@ -280,18 +280,18 @@ export default function Skills() {
             {/* Glowing Central Reactor Hub - Big Square with Curved Corners */}
             <button
               onClick={() => handleOpenCategory(allCategoriesNode)}
-              className="relative z-10 w-32 h-32 sm:w-40 sm:h-40 rounded-2xl sm:rounded-3xl glass border border-cyan-400 flex flex-col items-center justify-center text-center p-4 shadow-2xl bg-white/95 backdrop-blur-xl hover:scale-105 hover:border-cyan-500 transition-all cursor-pointer group"
+              className="relative z-10 w-36 h-36 sm:w-44 sm:h-44 rounded-2xl sm:rounded-3xl glass border border-cyan-400 flex flex-col items-center justify-center text-center p-5 shadow-2xl bg-white/95 backdrop-blur-xl hover:scale-105 hover:border-cyan-500 transition-all cursor-pointer group"
               title="Click to view all 35 skills"
             >
-              <span className="w-2.5 h-2.5 rounded-md bg-cyan-500 animate-ping mb-1.5" />
-              <Cpu size={26} className="text-cyan-600 group-hover:rotate-90 transition-transform duration-500" />
-              <span className="text-xs sm:text-sm font-bold text-slate-950 mt-1 leading-tight uppercase font-mono group-hover:text-cyan-700 transition-colors">
+              <span className="w-2.5 h-2.5 rounded-md bg-cyan-500 animate-ping mb-2" />
+              <Cpu size={28} className="text-cyan-600 group-hover:rotate-90 transition-transform duration-500" />
+              <span className="text-xs sm:text-sm font-bold text-slate-950 mt-1.5 leading-tight uppercase font-mono group-hover:text-cyan-700 transition-colors">
                 Tech Orbit
               </span>
-              <span className="text-[11px] text-slate-500 font-mono mt-0.5">
+              <span className="text-[11px] sm:text-xs text-slate-500 font-mono mt-0.5">
                 35 Skills
               </span>
-              <span className="text-[10px] text-cyan-600 font-mono opacity-80 group-hover:opacity-100 font-semibold">
+              <span className="text-[10px] sm:text-[11px] text-cyan-600 font-mono opacity-80 group-hover:opacity-100 font-semibold mt-0.5">
                 Explore All
               </span>
             </button>
@@ -341,20 +341,20 @@ export default function Skills() {
                     >
                       <button
                         onClick={() => handleOpenCategory(category)}
-                        className="group relative p-4 sm:p-5 rounded-2xl glass border border-slate-200/90 hover:border-cyan-400 transition-all duration-300 flex items-center gap-3 sm:gap-3.5 cursor-pointer shadow-lg bg-white/95 hover:scale-108 hover:shadow-xl min-w-[155px] sm:min-w-[185px]"
+                        className="group relative p-4.5 sm:p-5.5 rounded-2xl glass border border-slate-200/90 hover:border-cyan-400 transition-all duration-300 flex items-center gap-3.5 sm:gap-4 cursor-pointer shadow-lg bg-white/95 hover:scale-108 hover:shadow-xl min-w-[165px] sm:min-w-[195px]"
                       >
                         <div
-                          className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform"
+                          className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform"
                           style={{
                             backgroundColor: `${category.color}20`,
                             color: category.color,
                           }}
                         >
-                          <CatIcon size={20} />
+                          <CatIcon size={21} />
                         </div>
 
                         <div className="text-left pr-1">
-                          <span className="text-xs sm:text-[13.5px] font-bold text-slate-900 font-mono block whitespace-nowrap group-hover:text-cyan-700 transition-colors">
+                          <span className="text-xs sm:text-[14px] font-bold text-slate-900 font-mono block whitespace-nowrap group-hover:text-cyan-700 transition-colors">
                             {category.title}
                           </span>
                           <span className="text-[10px] sm:text-[11px] text-slate-500 font-mono flex items-center gap-1 mt-0.5">

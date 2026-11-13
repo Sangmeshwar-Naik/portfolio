@@ -251,7 +251,7 @@ export default function Contact() {
         <div className="absolute bottom-1/4 -right-48 w-[550px] h-[550px] bg-purple-500/10 rounded-full blur-[130px]" />
       </div>
 
-      <div ref={containerRef} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={containerRef} className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           className="w-full flex flex-col items-center justify-center text-center mx-auto mb-16 sm:mb-20"
@@ -316,7 +316,7 @@ export default function Contact() {
         </motion.div>
 
         {/* Elevated Standalone Communication Island - Spacious Rounded Box */}
-        <div className="relative glass rounded-3xl p-8 sm:p-12 lg:p-14 border border-slate-200/90 shadow-xl bg-white/95 backdrop-blur-xl">
+        <div className="relative glass rounded-3xl p-9 sm:p-14 lg:p-16 border border-slate-200/90 shadow-xl bg-white/95 backdrop-blur-xl">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Contact Channels Left Panel */}
             <motion.div
@@ -517,7 +517,7 @@ export default function Contact() {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="p-8 sm:p-11 lg:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl backdrop-blur-xl relative">
+              <div className="p-9 sm:p-12 lg:p-14 rounded-3xl bg-white border border-slate-200 shadow-xl backdrop-blur-xl relative">
                 {/* Header Bar with generous padding & no corner clipping */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7 pb-6 border-b border-slate-100">
                   <div className="flex items-center gap-3.5">

@@ -275,7 +275,7 @@ export default function GithubActivity() {
 
       <div
         ref={containerRef}
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8"
       >
         {/* Section Header */}
         <motion.div
@@ -498,7 +498,7 @@ export default function GithubActivity() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -25 }}
             transition={{ type: "spring", stiffness: 90, damping: 18 }}
-            className="rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-14 border border-slate-200/90 shadow-2xl relative overflow-hidden mb-20 bg-white/98 backdrop-blur-2xl text-slate-900"
+            className="rounded-2xl sm:rounded-3xl p-9 sm:p-14 lg:p-16 border border-slate-200/90 shadow-2xl relative overflow-hidden mb-20 bg-white/98 backdrop-blur-2xl text-slate-900"
           >
             {/* Cyber Corner HUD Crosshairs */}
             <div className="absolute top-4 left-4 font-mono text-cyan-600/50 text-xs pointer-events-none">

@@ -251,7 +251,7 @@ export default function Certifications() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
       </div>
 
-      <div ref={containerRef} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={containerRef} className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           className="w-full flex flex-col items-center justify-center text-center mx-auto mb-16"
@@ -439,10 +439,10 @@ export default function Certifications() {
                     )}
 
                     {isEven ? (
-                      /* Main 3D Holographic Credential Dossier (Left Side) - Big & Compactful Box */
+                      /* Main 3D Holographic Credential Dossier (Left Side) - Extra Roomy with Deep Insets */
                       <motion.div
                         data-crosshair-target
-                        className="w-full rounded-2xl p-8 sm:p-10 md:p-12 border border-slate-200/90 hover:border-cyan-400/50 transition-all text-left group shadow-xl relative bg-white/95 backdrop-blur-xl hover:shadow-2xl"
+                        className="w-full rounded-2xl p-9 sm:p-12 md:p-14 border border-slate-200/90 hover:border-cyan-400/50 transition-all text-left group shadow-xl relative bg-white/95 backdrop-blur-xl hover:shadow-2xl"
                         initial={{ opacity: 0, scale: 0.88, rotateX: 16, y: 35 }}
                         whileInView={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -460,14 +460,14 @@ export default function Certifications() {
                         />
 
                         {/* Top Protocol Bar */}
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+                        <div className="flex flex-wrap items-center gap-3 mb-6">
                           <div className="flex items-center gap-2">
                             <span className="w-2.5 h-2.5 rounded-md bg-cyan-500 animate-ping" />
-                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1 rounded-xl bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-sm">
+                            <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1.5 rounded-xl bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-sm">
                               {item.type}
                             </span>
                           </div>
-                          <span className="text-xs font-bold text-amber-800 font-mono flex items-center gap-1 px-3 py-1 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
+                          <span className="text-xs font-bold text-amber-800 font-mono flex items-center gap-1 px-3.5 py-1.5 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                             <span>★</span>
                             <span>{item.badge}</span>
                           </span>
@@ -622,10 +622,10 @@ export default function Certifications() {
                     )}
 
                     {!isEven ? (
-                      /* Main 3D Holographic Credential Dossier (Right Side) - Big & Compactful */
+                      /* Main 3D Holographic Credential Dossier (Right Side) - Extra Roomy with Deep Insets */
                       <motion.div
                         data-crosshair-target
-                        className="w-full rounded-2xl p-8 sm:p-10 md:p-12 border border-slate-200/90 hover:border-purple-400/50 transition-all text-left group shadow-xl relative bg-white/95 backdrop-blur-xl hover:shadow-2xl"
+                        className="w-full rounded-2xl p-9 sm:p-12 md:p-14 border border-slate-200/90 hover:border-purple-400/50 transition-all text-left group shadow-xl relative bg-white/95 backdrop-blur-xl hover:shadow-2xl"
                         initial={{ opacity: 0, scale: 0.88, rotateX: 16, y: 35 }}
                         whileInView={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -643,14 +643,14 @@ export default function Certifications() {
                         />
 
                         {/* Top Protocol Bar - Inset with Full Padding */}
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+                        <div className="flex flex-wrap items-center gap-3 mb-6">
                           <div className="flex items-center gap-2">
                             <span className="w-2.5 h-2.5 rounded-md bg-purple-500 animate-ping" />
                             <span className="text-xs uppercase font-mono tracking-wider font-bold px-3.5 py-1.5 rounded-xl bg-purple-50 text-purple-700 border border-purple-200 shadow-sm">
                               {item.type}
                             </span>
                           </div>
-                          <span className="text-xs font-bold text-amber-800 font-mono flex items-center gap-1.5 px-3 py-1 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
+                          <span className="text-xs font-bold text-amber-800 font-mono flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl border border-amber-300 bg-amber-50 shadow-sm">
                             <span>★</span>
                             <span>{item.badge}</span>
                           </span>
@@ -772,8 +772,8 @@ export default function Certifications() {
                     viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className="rounded-2xl p-8 sm:p-9 border border-slate-200 text-left bg-white/95 backdrop-blur-xl shadow-xl">
-                      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <div className="rounded-2xl p-8 sm:p-10 border border-slate-200 text-left bg-white/95 backdrop-blur-xl shadow-xl">
+                      <div className="flex flex-wrap items-center gap-3 mb-4">
                         <span className="text-xs px-3.5 py-1.5 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
                           {item.type}
                         </span>

@@ -159,7 +159,7 @@ export default function About() {
 
       <div
         ref={containerRef}
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8"
       >
         {/* Section Header */}
         <motion.div
@@ -205,9 +205,9 @@ export default function About() {
         {/* TOP ROW: EXECUTIVE BIOGRAPHY & LIVE METRIC CARDS                */}
         {/* ============================================================== */}
         <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-stretch mb-14 sm:mb-18">
-          {/* Executive Overview Card - Big & Compactful Box */}
+          {/* Executive Overview Card - Big & Compactful Box with Deep Clearance */}
           <motion.div
-            className="lg:col-span-7 rounded-3xl p-8 sm:p-11 lg:p-13 pb-10 sm:pb-12 border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-cyan-400/50 transition-all flex flex-col justify-between relative shadow-xl group min-h-[520px]"
+            className="lg:col-span-7 rounded-3xl p-9 sm:p-12 lg:p-14 pb-11 sm:pb-13 border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-cyan-400/50 transition-all flex flex-col justify-between relative shadow-xl group min-h-[540px]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
@@ -341,7 +341,7 @@ export default function About() {
         <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-start">
           {/* Academic Education Timeline Card */}
           <motion.div
-            className="lg:col-span-6 rounded-3xl p-8 sm:p-11 lg:p-13 pb-10 sm:pb-12 border border-slate-200/90 bg-white/95 backdrop-blur-xl shadow-xl hover:border-purple-400/50 transition-all"
+            className="lg:col-span-6 rounded-3xl p-9 sm:p-12 lg:p-14 pb-11 sm:pb-13 border border-slate-200/90 bg-white/95 backdrop-blur-xl shadow-xl hover:border-purple-400/50 transition-all"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
@@ -415,7 +415,7 @@ export default function About() {
             transition={{ duration: 0.7 }}
           >
             {/* 6 Core Specialization Domains Grid */}
-            <div className="rounded-3xl p-8 sm:p-11 lg:p-13 border border-slate-200/90 bg-white/95 backdrop-blur-xl shadow-xl hover:border-cyan-400/50 transition-all">
+            <div className="rounded-3xl p-9 sm:p-12 lg:p-14 border border-slate-200/90 bg-white/95 backdrop-blur-xl shadow-xl hover:border-cyan-400/50 transition-all">
               <div className="flex items-center gap-3.5 pb-6 border-b border-slate-100 mb-7">
                 <div className="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-600 shadow-sm shrink-0">
                   <Compass size={24} />

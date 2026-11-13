@@ -139,7 +139,7 @@ export default function Experience() {
         <div className="absolute bottom-1/3 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
       </div>
 
-      <div ref={containerRef} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={containerRef} className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           className="w-full flex flex-col items-center justify-center text-center mx-auto mb-20"
@@ -212,10 +212,10 @@ export default function Experience() {
                     }}
                   >
                     {isEven ? (
-                      /* Main Story Card on the Left - Square with Curved Corners and Full Clearance */
-                      <div className="rounded-2xl p-8 sm:p-10 md:p-12 border border-slate-200/90 hover:border-cyan-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
+                      /* Main Story Card on the Left - Extra Spacious with Deep Insets */
+                      <div className="rounded-2xl p-9 sm:p-12 md:p-14 border border-slate-200/90 hover:border-cyan-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
                         <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/5 blur-3xl pointer-events-none group-hover:bg-cyan-500/10 transition-all rounded-2xl" />
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 relative z-10">
+                        <div className="flex flex-wrap items-center gap-3 mb-6 relative z-10">
                           <span className="text-xs px-4 py-2 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
                             {item.type}
                           </span>
@@ -304,10 +304,10 @@ export default function Experience() {
                     }}
                   >
                     {!isEven ? (
-                      /* Main Story Card on the Right - Square with Curved Corners and Full Clearance */
-                      <div className="rounded-2xl p-8 sm:p-10 md:p-12 border border-slate-200/90 hover:border-purple-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
+                      /* Main Story Card on the Right - Extra Spacious with Deep Insets */
+                      <div className="rounded-2xl p-9 sm:p-12 md:p-14 border border-slate-200/90 hover:border-purple-400/50 bg-white/95 backdrop-blur-xl transition-all text-left w-full group shadow-xl relative">
                         <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 blur-3xl pointer-events-none group-hover:bg-purple-500/10 transition-all rounded-2xl" />
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 relative z-10">
+                        <div className="flex flex-wrap items-center gap-3 mb-6 relative z-10">
                           <span className="text-xs px-4 py-2 rounded-xl bg-purple-50 text-purple-700 font-semibold border border-purple-200 shadow-sm">
                             {item.type}
                           </span>
@@ -379,8 +379,8 @@ export default function Experience() {
                       damping: 16,
                     }}
                   >
-                    <div className="rounded-2xl p-8 sm:p-9 border border-slate-200 bg-white/95 backdrop-blur-xl shadow-xl">
-                      <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <div className="rounded-2xl p-8 sm:p-10 border border-slate-200 bg-white/95 backdrop-blur-xl shadow-xl">
+                      <div className="flex flex-wrap items-center gap-3 mb-5">
                         <span className="text-xs px-3.5 py-1.5 rounded-xl bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200 shadow-sm">
                           {item.type}
                         </span>

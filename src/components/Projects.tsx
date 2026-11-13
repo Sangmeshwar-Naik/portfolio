@@ -245,7 +245,7 @@ export default function Projects() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-3xl" />
       </div>
 
-      <div ref={containerRef} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={containerRef} className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           className="w-full flex flex-col items-center justify-center text-center mx-auto mb-16"
@@ -443,8 +443,8 @@ export default function Projects() {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
 
-                          {/* Top Badges */}
-                          <div className="relative z-10 flex items-center justify-between p-5">
+                          {/* Top Badges - Generously Inset from Corners */}
+                          <div className="relative z-10 flex items-center justify-between p-6 sm:p-7">
                             <span className="px-3.5 py-1.5 rounded-xl bg-white/90 backdrop-blur-md text-xs font-semibold text-cyan-700 border border-slate-200 shadow-md">
                               {project.badge}
                             </span>
@@ -456,7 +456,7 @@ export default function Projects() {
                           </div>
 
                           {/* Central/Bottom Icon & Date */}
-                          <div className="absolute bottom-4 left-5 right-5 z-10 flex items-center justify-between">
+                          <div className="absolute bottom-5 left-6 sm:left-7 right-6 sm:right-7 z-10 flex items-center justify-between">
                             <div className="w-11 h-11 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 flex items-center justify-center text-cyan-600 shadow-md group-hover:scale-110 transition-transform">
                               <Icon size={22} />
                             </div>
@@ -466,8 +466,8 @@ export default function Projects() {
                           </div>
                         </div>
 
-                        {/* Body Content with generous breathing room */}
-                        <div className="p-8 sm:p-9 md:p-10">
+                        {/* Body Content with extra generous breathing room */}
+                        <div className="p-9 sm:p-10 md:p-12">
                           <h3 className="text-xl sm:text-[23px] font-bold text-slate-950 group-hover:text-cyan-600 transition-colors mb-3.5 leading-snug">
                             {project.title}
                           </h3>
@@ -496,7 +496,7 @@ export default function Projects() {
                       </div>
 
                       {/* Card Actions Footer */}
-                      <div className="px-8 sm:px-9 pb-8 pt-5 border-t border-slate-100 flex items-center justify-between">
+                      <div className="px-9 sm:px-10 pb-9 pt-6 border-t border-slate-100 flex items-center justify-between">
                         <div className="flex items-center gap-2.5">
                           <a
                             href={project.githubUrl}
