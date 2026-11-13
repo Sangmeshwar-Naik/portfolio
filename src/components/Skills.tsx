@@ -371,65 +371,12 @@ export default function Skills() {
           </div>
 
           {/* Prompt Banner below the Orbit */}
-          <div className="mt-8 text-center">
+          <div className="mt-10 sm:mt-12 text-center pb-4 sm:pb-8">
             <p className="text-xs sm:text-sm text-slate-500 font-mono flex items-center justify-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-ping" />
               <span>Click any rotating node to open its verified skills deck</span>
             </p>
           </div>
-        </div>
-
-        {/* ============================================================== */}
-        {/* COMPACT CATEGORY LAUNCHPAD CARDS (Spacious, Clear & Readable)  */}
-        {/* ============================================================== */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-5">
-          {orbitalCategories.map((category) => {
-            const Icon = category.icon;
-            return (
-              <button
-                key={category.id}
-                onClick={() => handleOpenCategory(category)}
-                className="group p-6 sm:p-7 rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-white/95 backdrop-blur-xl hover:border-cyan-400 transition-all text-left flex flex-col justify-between hover:bg-cyan-50/30 hover:-translate-y-1 shadow-md cursor-pointer relative overflow-hidden min-h-[175px]"
-              >
-                {/* Subtle corner glow */}
-                <div
-                  className="absolute top-0 right-0 w-20 h-20 blur-xl opacity-10 group-hover:opacity-30 transition-opacity pointer-events-none"
-                  style={{ backgroundColor: category.color }}
-                />
-
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform"
-                      style={{
-                        backgroundColor: `${category.color}20`,
-                        color: category.color,
-                      }}
-                    >
-                      <Icon size={20} />
-                    </div>
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-mono">
-                      {category.badge}
-                    </span>
-                  </div>
-
-                  <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-cyan-700 transition-colors leading-snug">
-                    {category.title}
-                  </h3>
-                </div>
-
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <span className="text-slate-500 font-mono text-[11px]">
-                    {category.skills.length} Skills
-                  </span>
-                  <span className="text-cyan-700 font-semibold group-hover:translate-x-1 transition-transform flex items-center gap-0.5 text-xs">
-                    <span>Open</span>
-                    <ChevronRight size={13} />
-                  </span>
-                </div>
-              </button>
-            );
-          })}
         </div>
       </div>
 
